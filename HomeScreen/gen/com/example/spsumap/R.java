@@ -21,8 +21,11 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int spsumapbkgd=0x7f020001;
+        public static final int button=0x7f020000;
+        public static final int button_clicked=0x7f020001;
+        public static final int button_state=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int spsumapbkgd=0x7f020004;
     }
     public static final class id {
         public static final int Share=0x7f080002;
@@ -52,17 +55,6 @@ public final class R {
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
