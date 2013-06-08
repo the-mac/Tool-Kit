@@ -20,6 +20,11 @@
 		FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */; };
 		FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */; };
 		FE8F2CC11763E85900707570 /* qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC01763E85900707570 /* qr_code.png */; };
+		FE8F2CC31763EC0100707570 /* share.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC21763EC0100707570 /* share.jpg */; };
+		FE8F2CC51763EC9A00707570 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC41763EC9A00707570 /* share.png */; };
+		FE8F2CC71763EE0A00707570 /* share_72.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC61763EE0A00707570 /* share_72.png */; };
+		FE8F2CC91763EE3000707570 /* share_57.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC81763EE3000707570 /* share_57.png */; };
+		FE8F2CCB1763EE3600707570 /* share_57.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CCA1763EE3600707570 /* share_57.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		FE8F2CB41763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		FE8F2CB71763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		FE8F2CC01763E85900707570 /* qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code.png; sourceTree = "<group>"; };
+		FE8F2CC21763EC0100707570 /* share.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = share.jpg; sourceTree = "<group>"; };
+		FE8F2CC41763EC9A00707570 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		FE8F2CC61763EE0A00707570 /* share_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_72.png; sourceTree = "<group>"; };
+		FE8F2CC81763EE3000707570 /* share_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_57.png; sourceTree = "<group>"; };
+		FE8F2CCA1763EE3600707570 /* share_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		FE8F2C8C1763E7CD00707570 = {
 			isa = PBXGroup;
 			children = (
+				FE8F2CCA1763EE3600707570 /* share_57.png */,
 				FE8F2C9E1763E7CD00707570 /* iShareScreen */,
 				FE8F2C971763E7CD00707570 /* Frameworks */,
 				FE8F2C961763E7CD00707570 /* Products */,
@@ -98,6 +109,10 @@
 		FE8F2C9F1763E7CD00707570 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE8F2CC81763EE3000707570 /* share_57.png */,
+				FE8F2CC61763EE0A00707570 /* share_72.png */,
+				FE8F2CC41763EC9A00707570 /* share.png */,
+				FE8F2CC21763EC0100707570 /* share.jpg */,
 				FE8F2CC01763E85900707570 /* qr_code.png */,
 				FE8F2CA01763E7CD00707570 /* iShareScreen-Info.plist */,
 				FE8F2CA11763E7CD00707570 /* InfoPlist.strings */,
@@ -187,6 +202,11 @@
 				FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */,
 				FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */,
 				FE8F2CC11763E85900707570 /* qr_code.png in Resources */,
+				FE8F2CC31763EC0100707570 /* share.jpg in Resources */,
+				FE8F2CC51763EC9A00707570 /* share.png in Resources */,
+				FE8F2CC71763EE0A00707570 /* share_72.png in Resources */,
+				FE8F2CC91763EE3000707570 /* share_57.png in Resources */,
+				FE8F2CCB1763EE3600707570 /* share_57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +352,7 @@
 				FE8F2CBD1763E7CD00707570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
