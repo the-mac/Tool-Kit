@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE8F2C991763E7CD00707570 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F2C981763E7CD00707570 /* UIKit.framework */; };
+		FE8F2C9B1763E7CD00707570 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F2C9A1763E7CD00707570 /* Foundation.framework */; };
+		FE8F2C9D1763E7CD00707570 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F2C9C1763E7CD00707570 /* CoreGraphics.framework */; };
+		FE8F2CA31763E7CD00707570 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CA11763E7CD00707570 /* InfoPlist.strings */; };
+		FE8F2CA51763E7CD00707570 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2CA41763E7CD00707570 /* main.m */; };
+		FE8F2CA91763E7CD00707570 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2CA81763E7CD00707570 /* AppDelegate.m */; };
+		FE8F2CAB1763E7CD00707570 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAA1763E7CD00707570 /* Default.png */; };
+		FE8F2CAD1763E7CD00707570 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAC1763E7CD00707570 /* Default@2x.png */; };
+		FE8F2CAF1763E7CD00707570 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAE1763E7CD00707570 /* Default-568h@2x.png */; };
+		FE8F2CB21763E7CD00707570 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2CB11763E7CD00707570 /* ViewController.m */; };
+		FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */; };
+		FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */; };
+		FE8F2CC11763E85900707570 /* qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC01763E85900707570 /* qr_code.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE8F2C951763E7CD00707570 /* iShareScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShareScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8F2C981763E7CD00707570 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE8F2C9A1763E7CD00707570 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE8F2C9C1763E7CD00707570 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE8F2CA01763E7CD00707570 /* iShareScreen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iShareScreen-Info.plist"; sourceTree = "<group>"; };
+		FE8F2CA21763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE8F2CA41763E7CD00707570 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE8F2CA61763E7CD00707570 /* iShareScreen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iShareScreen-Prefix.pch"; sourceTree = "<group>"; };
+		FE8F2CA71763E7CD00707570 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE8F2CA81763E7CD00707570 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE8F2CAA1763E7CD00707570 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FE8F2CAC1763E7CD00707570 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FE8F2CAE1763E7CD00707570 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE8F2CB01763E7CD00707570 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE8F2CB11763E7CD00707570 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE8F2CB41763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		FE8F2CB71763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		FE8F2CC01763E85900707570 /* qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE8F2C921763E7CD00707570 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F2C991763E7CD00707570 /* UIKit.framework in Frameworks */,
+				FE8F2C9B1763E7CD00707570 /* Foundation.framework in Frameworks */,
+				FE8F2C9D1763E7CD00707570 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE8F2C8C1763E7CD00707570 = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C9E1763E7CD00707570 /* iShareScreen */,
+				FE8F2C971763E7CD00707570 /* Frameworks */,
+				FE8F2C961763E7CD00707570 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE8F2C961763E7CD00707570 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C951763E7CD00707570 /* iShareScreen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE8F2C971763E7CD00707570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C981763E7CD00707570 /* UIKit.framework */,
+				FE8F2C9A1763E7CD00707570 /* Foundation.framework */,
+				FE8F2C9C1763E7CD00707570 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE8F2C9E1763E7CD00707570 /* iShareScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2CBE1763E7F000707570 /* Classes */,
+				FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */,
+				FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */,
+				FE8F2C9F1763E7CD00707570 /* Supporting Files */,
+			);
+			path = iShareScreen;
+			sourceTree = "<group>";
+		};
+		FE8F2C9F1763E7CD00707570 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2CC01763E85900707570 /* qr_code.png */,
+				FE8F2CA01763E7CD00707570 /* iShareScreen-Info.plist */,
+				FE8F2CA11763E7CD00707570 /* InfoPlist.strings */,
+				FE8F2CA41763E7CD00707570 /* main.m */,
+				FE8F2CA61763E7CD00707570 /* iShareScreen-Prefix.pch */,
+				FE8F2CAA1763E7CD00707570 /* Default.png */,
+				FE8F2CAC1763E7CD00707570 /* Default@2x.png */,
+				FE8F2CAE1763E7CD00707570 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE8F2CBE1763E7F000707570 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2CBF1763E7FC00707570 /* Headers */,
+				FE8F2CA81763E7CD00707570 /* AppDelegate.m */,
+				FE8F2CB11763E7CD00707570 /* ViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		FE8F2CBF1763E7FC00707570 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2CA71763E7CD00707570 /* AppDelegate.h */,
+				FE8F2CB01763E7CD00707570 /* ViewController.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE8F2C941763E7CD00707570 /* iShareScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8F2CBB1763E7CD00707570 /* Build configuration list for PBXNativeTarget "iShareScreen" */;
+			buildPhases = (
+				FE8F2C911763E7CD00707570 /* Sources */,
+				FE8F2C921763E7CD00707570 /* Frameworks */,
+				FE8F2C931763E7CD00707570 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iShareScreen;
+			productName = iShareScreen;
+			productReference = FE8F2C951763E7CD00707570 /* iShareScreen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE8F2C8D1763E7CD00707570 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Christopher Miller";
+			};
+			buildConfigurationList = FE8F2C901763E7CD00707570 /* Build configuration list for PBXProject "iShareScreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FE8F2C8C1763E7CD00707570;
+			productRefGroup = FE8F2C961763E7CD00707570 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE8F2C941763E7CD00707570 /* iShareScreen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE8F2C931763E7CD00707570 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F2CA31763E7CD00707570 /* InfoPlist.strings in Resources */,
+				FE8F2CAB1763E7CD00707570 /* Default.png in Resources */,
+				FE8F2CAD1763E7CD00707570 /* Default@2x.png in Resources */,
+				FE8F2CAF1763E7CD00707570 /* Default-568h@2x.png in Resources */,
+				FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */,
+				FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */,
+				FE8F2CC11763E85900707570 /* qr_code.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE8F2C911763E7CD00707570 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F2CA51763E7CD00707570 /* main.m in Sources */,
+				FE8F2CA91763E7CD00707570 /* AppDelegate.m in Sources */,
+				FE8F2CB21763E7CD00707570 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE8F2CA11763E7CD00707570 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8F2CA21763E7CD00707570 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8F2CB41763E7CD00707570 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8F2CB71763E7CD00707570 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE8F2CB91763E7CD00707570 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE8F2CBA1763E7CD00707570 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE8F2CBC1763E7CD00707570 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iShareScreen/iShareScreen-Prefix.pch";
+				INFOPLIST_FILE = "iShareScreen/iShareScreen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE8F2CBD1763E7CD00707570 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iShareScreen/iShareScreen-Prefix.pch";
+				INFOPLIST_FILE = "iShareScreen/iShareScreen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE8F2C901763E7CD00707570 /* Build configuration list for PBXProject "iShareScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F2CB91763E7CD00707570 /* Debug */,
+				FE8F2CBA1763E7CD00707570 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8F2CBB1763E7CD00707570 /* Build configuration list for PBXNativeTarget "iShareScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F2CBC1763E7CD00707570 /* Debug */,
+				FE8F2CBD1763E7CD00707570 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE8F2C8D1763E7CD00707570 /* Project object */;
+}
