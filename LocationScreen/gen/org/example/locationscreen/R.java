@@ -31,9 +31,9 @@ public final class R {
         public static final int btn_star_=0x7f080004;
         public static final int filmname=0x7f080002;
         public static final int imageView1=0x7f080008;
-        public static final int movieaddress=0x7f080007;
+        public static final int movieaddress=0x7f080006;
         public static final int movielocate=0x7f080005;
-        public static final int movieprovider=0x7f080006;
+        public static final int movieprovider=0x7f080007;
         public static final int scrollView1=0x7f080000;
         public static final int subtilte=0x7f080003;
     }
