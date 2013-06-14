@@ -293,7 +293,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHomeScreen/iHomeScreen-Prefix.pch";
 				INFOPLIST_FILE = "iHomeScreen/iHomeScreen-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iHomeScreen;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -304,7 +304,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHomeScreen/iHomeScreen-Prefix.pch";
 				INFOPLIST_FILE = "iHomeScreen/iHomeScreen-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iHomeScreen;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -328,6 +328,7 @@
 				FE1B4710176900E000D38C1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
