@@ -1,35 +1,36 @@
 //
 //  AppDelegate.m
-//  iCalendarScreen
+//  iDetailsScreen
 //
 //  Created by Christopher Miller on 6/14/13.
 //  Copyright (c) 2013 Christopher Miller. All rights reserved.
-//
+
 
 #import "AppDelegate.h"
+#import "Recipe.h"
 
-#import "ViewController.h"
+#import "RecipeDetailViewController.h"
 
 @implementation AppDelegate
 
-static BOOL debug;
-
-+(BOOL) debugging
-{
-    return debug;
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    debug = YES;
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+//    BOOL useRecipe = NO;
+    Recipe * recipe = [[Recipe alloc] init];
+//
+//    // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+//        if(useRecipe) self.viewController = [[RecipeDetailViewController alloc] initWithRecipe:recipe];
+//        else
+        self.viewController = [[RecipeDetailViewController alloc] initWithNibName:@"RecipeDetailViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+//        if(useRecipe)
+        self.viewController = [[RecipeDetailViewController alloc] initWithRecipe:recipe];
+//        else self.viewController = [[RecipeDetailViewController alloc] initWithNibName:@"RecipeDetailViewController_iPad" bundle:nil];
     }
+//    self.viewController = [[RecipeDetailViewController alloc] initWithNibName:@"RecipeDetailViewController_iPad" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
