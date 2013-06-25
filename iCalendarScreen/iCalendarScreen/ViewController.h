@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *contactEmail;
 @property (weak, nonatomic) IBOutlet UILabel *contactPhone;
 @property (strong, nonatomic) DetailController *theDetailScreen;
-@property (strong, nonatomic) NSArray* events;
+//@property (strong, nonatomic) NSDictionary* eventsDictionary;
+//@property (strong, nonatomic) NSArray* events;
 @end

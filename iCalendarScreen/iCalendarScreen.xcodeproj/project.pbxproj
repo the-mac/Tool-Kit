@@ -22,6 +22,8 @@
 		FE4B3E8C1775072C005A895F /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3E8A1775072C005A895F /* DetailController.m */; };
 		FE4B3E8D1775072C005A895F /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE4B3E8B1775072C005A895F /* DetailController.xib */; };
 		FE4B3E9017750788005A895F /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3E8F17750788005A895F /* Detail.m */; };
+		FE790F001778B81900FE29E4 /* new-no--object.json in Resources */ = {isa = PBXBuildFile; fileRef = FE790EFF1778B81900FE29E4 /* new-no--object.json */; };
+		FE790F031778B85E00FE29E4 /* DetailsSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE790F021778B85E00FE29E4 /* DetailsSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		FE4B3E8B1775072C005A895F /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 		FE4B3E8E17750788005A895F /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
 		FE4B3E8F17750788005A895F /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
+		FE790EFF1778B81900FE29E4 /* new-no--object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "new-no--object.json"; sourceTree = "<group>"; };
+		FE790F011778B85E00FE29E4 /* DetailsSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsSingleton.h; sourceTree = "<group>"; };
+		FE790F021778B85E00FE29E4 /* DetailsSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,8 @@
 				FE1B473F176BB10C00D38C1E /* ViewController_iPhone.xib */,
 				FE1B4742176BB10C00D38C1E /* ViewController_iPad.xib */,
 				FE1B472B176BB10C00D38C1E /* Supporting Files */,
+				FE790F011778B85E00FE29E4 /* DetailsSingleton.h */,
+				FE790F021778B85E00FE29E4 /* DetailsSingleton.m */,
 			);
 			path = iCalendarScreen;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 		FE1B472B176BB10C00D38C1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE790EFF1778B81900FE29E4 /* new-no--object.json */,
 				FE1B472C176BB10C00D38C1E /* iCalendarScreen-Info.plist */,
 				FE1B472D176BB10C00D38C1E /* InfoPlist.strings */,
 				FE1B4730176BB10C00D38C1E /* main.m */,
@@ -181,6 +189,7 @@
 				FE1B4741176BB10C00D38C1E /* ViewController_iPhone.xib in Resources */,
 				FE1B4744176BB10C00D38C1E /* ViewController_iPad.xib in Resources */,
 				FE4B3E8D1775072C005A895F /* DetailController.xib in Resources */,
+				FE790F001778B81900FE29E4 /* new-no--object.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +205,7 @@
 				FE1B473E176BB10C00D38C1E /* ViewController.m in Sources */,
 				FE4B3E8C1775072C005A895F /* DetailController.m in Sources */,
 				FE4B3E9017750788005A895F /* Detail.m in Sources */,
+				FE790F031778B85E00FE29E4 /* DetailsSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

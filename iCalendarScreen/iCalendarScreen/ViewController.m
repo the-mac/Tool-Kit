@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "DetailController.h"
+#import "DetailsSingleton.h"
 #import "Detail.h"
 
 @interface ViewController ()
@@ -16,23 +17,6 @@
 @end
 
 @implementation ViewController
-
--(Detail*) create:(NSString*) s with:(NSString*) w
-              and:(NSString*) d and:(NSString*) l and:(NSString*) de
-              and:(NSString*) cn with:(NSString*) ce and:(NSString*) cp
-{
-    Detail * detail = [[Detail alloc]init];
-    detail.summary = s;
-    detail.who = w;
-    detail.date = d;
-    detail.location = l;
-    detail.description = de;
-    detail.contactName = cn;
-    detail.contactEmail = ce;
-    detail.contactPhone = cp;
-    
-    return detail;
-}
 
 -(void) update:(Detail *) detail
 {
@@ -59,11 +43,7 @@
         
         if(self.theDetailScreen == nil)
             self.theDetailScreen = [[DetailController alloc] initWithNibName:@"DetailController" bundle:nil];
-        
-        if([AppDelegate debugging]) NSLog(@"The detail: %@",detail);
-        
-        self.theDetailScreen.theDetail = detail;
-
+                
         [self presentViewController:self.theDetailScreen animated:YES completion:nil];
 
         [self.theDetailScreen update:detail];
@@ -73,35 +53,96 @@
 -(void) setup
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
-
-    Detail * d = [self.events objectAtIndex:0];
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSString *finalPath = [path stringByAppendingPathComponent:@"new-no--object.json"];
+    NSData* data = [NSData dataWithContentsOfFile:finalPath];
+    [self fetchedData:data];
+    
+    Detail * d = [DetailsSingleton getDetailAt:0 and:0];
 
     if(d == nil) return;
     
     [self update:d];
 }
 
+- (void)fileWillLoad
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    	NSString *path = [[NSBundle mainBundle] bundlePath];
+    	NSString *finalPath = [path stringByAppendingPathComponent:@"new-no--object.json"];
+        NSData* data = [NSData dataWithContentsOfFile:finalPath];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+    });
+}
+
+- (void)fetchedData:(NSData *)responseData {
+    NSString * longDescription = @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.\n Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.";
+
+    //parse out the json data
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData //1
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSDictionary* eventsDictionary = [json objectForKey:@"bwEventList"]; //2
+    NSArray * events = [eventsDictionary objectForKey:@"events"]; //2
+    
+    for (NSDictionary *event in events) {
+        
+        // GATHER SUMMARY INFORMATION
+        NSString * title = [event objectForKey:@"summary"];//
+        NSString * attendees = @"Christopher";//[event objectForKey:@""];//
+        
+        // GATHER DATE INFORMATION
+        NSDictionary * d0 = [event objectForKey:@"start"];
+        NSString * date = [NSString stringWithFormat:@"%@ %@",[d0 objectForKey:@"dayname"],[d0 objectForKey:@"shortdate"]];//@"6/27/13";
+        
+        
+        // GATHER LOCATION INFORMATION
+        NSDictionary * l0 = [event objectForKey:@"location"];
+        NSString * location = [l0 objectForKey:@"address"];//@"J-251, The Atrium";
+
+        // GATHER CONTACT INFORMATION
+        NSDictionary * c0 = [event objectForKey:@"contact"];
+        NSString * contactName = [c0 objectForKey:@"name"];//@"Christopher Miller";
+        NSString * contactEmail = [c0 objectForKey:@"phone"];//@"cmiller3@spsu.edu";
+        NSString * contactPhone = [c0 objectForKey:@"link"];//@"000-000-0000";
+        
+        [DetailsSingleton
+            create:title        // SUMMARY
+            with:attendees    // ATTENDEES
+            and:date            // DATE
+            and:location        // LOCATION
+            and:longDescription // DESCRIPTION
+            and:contactName     // CONTACT NAME
+            with:contactEmail   // CONTACT EMAIL
+            and:contactPhone    // CONTACT PHONE
+        ];
+    }
+    
+}
+
 - (void)viewDidLoad
 {
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
     [super viewDidLoad];
+//    [self fileWillLoad];
     
-    NSString * longDescription = @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.\n Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.";
-    
-    //Detail * d = [self create:@"Summary" with:@"who" and:@"date" and:@"location" and:@"description" and:@"cName" with:@"cEmail" and:@"cPhone"];
-    Detail * d1 = [self create:@"First" with:@"Christopher" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    Detail * d2 = [self create:@"Second" with:@"Jaymes" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    Detail * d3 = [self create:@"Third" with:@"James" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    Detail * d4 = [self create:@"Fourth" with:@"Josh" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    Detail * d5 = [self create:@"Fifth" with:@"Roger" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    
-//    self.events = @[@"Event 1",@"Event 2",@"Event 3",@"Event 4"];
-    self.events = @[d1,d2,d3,d4,d5];
+//    Detail * d = [self create:@"Summary" with:@"who" and:@"date" and:@"location" and:@"description" and:@"cName" with:@"cEmail" and:@"cPhone"];
+//    Detail * d1 = [DetailsSingleton create:@"First" with:@"Christopher" and:@"6/27/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
+//    Detail * d2 = [DetailsSingleton create:@"Second" with:@"Jaymes" and:@"6/26/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
+//    Detail * d3 = [DetailsSingleton create:@"Third" with:@"James" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
+//    Detail * d4 = [DetailsSingleton create:@"Fourth" with:@"Josh" and:@"6/25/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
+//    Detail * d5 = [DetailsSingleton create:@"Fifth" with:@"Roger" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
     
     [self setup];
 }
 
 - (void)didReceiveMemoryWarning
 {
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -109,17 +150,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    return [DetailsSingleton getSections];
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [DetailsSingleton getHeaderAt:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.events count];
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    return [DetailsSingleton getRowsAt:section];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -128,69 +180,32 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-//    NSDictionary * event = [self.events objectAtIndex:indexPath.row];
-//    NSString * event = [self.events objectAtIndex:indexPath.row];
-
-    Detail * event = [self.events objectAtIndex:indexPath.row];
+    int row = indexPath.row;
+    int section = indexPath.section;
+    Detail * event = [DetailsSingleton getDetailAt:section and:row];
+    
     cell.textLabel.text = event.summary;
-    cell.detailTextLabel.text = event.who;
-
-//    cell.detailTextLabel.text = [event objectForKey:@"description"];
+    cell.detailTextLabel.text = event.description;
+    
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [_objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //    if (!self.detailViewController) {
-    //        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    //    }
-    //    NSDate *object = _objects[indexPath.row];
-    //    self.detailViewController.detailItem = object;
-    //    [self.navigationController pushViewController:self.detailViewController animated:YES];
-    
-//    NSDictionary * event = [self.events objectAtIndex:indexPath.row];
-//    NSString * event = [self.events objectAtIndex:indexPath.row];
-    
-    
-    Detail * event = [self.events objectAtIndex:indexPath.row];
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+     
+    int row = indexPath.row;
+    int section = indexPath.section;
+    Detail * event = [DetailsSingleton getDetailAt:section and:row];
 
     [self update:event];
-    
-//    NSString * summary = [event objectForKey:@"summary"];
-//    NSString * desc = [event objectForKey:@"description"];
-//    [AlertViewSingleton show:summary andThe:desc];
 }
 @end

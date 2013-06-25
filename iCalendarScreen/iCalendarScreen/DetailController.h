@@ -18,6 +18,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *contactName;
 @property (weak, nonatomic) IBOutlet UILabel *contactEmail;
 @property (weak, nonatomic) IBOutlet UILabel *contactPhone;
-@property (strong, nonatomic) Detail *theDetail;
 -(void) update:(Detail *) detail;
 @end

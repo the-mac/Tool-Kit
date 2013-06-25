@@ -1,0 +1,384 @@
+
+        {"bwEventList": {
+      
+        "events": [
+           
+          {
+            "summary" : "First Day of Class Summer 2013",
+            "subscriptionId" : "",
+            "calPath" : "%2Fpublic%2Fcals%2FMainCal",
+            "guid" : "19dcc363-1ad2-4b62-8418-309ff8ed7c28",
+            "recurrenceId" : "",
+            "link" : "",
+            "eventlink" : "http://calendar.spsu.edu:80/feeder/feeder/event/eventView.do?b=de&amp;calPath=%2Fpublic%2Fcals%2FMainCal&amp;guid=19dcc363-1ad2-4b62-8418-309ff8ed7c28&amp;recurrenceId=",
+            "status" : "CONFIRMED",
+            "start" : {
+              "allday" : "true",
+              "shortdate" : "5/20/13",
+              "longdate" : "May 20, 2013",
+              "dayname" : "Monday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130520T040000Z",
+              "datetime" : "20130520",
+              "timezone" : ""
+            },
+            "end" : {
+              "allday" : "true",
+              "shortdate" : "5/20/13",
+              "longdate" : "May 20, 2013",
+              "dayname" : "Monday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130520T040000Z",
+              "datetime" : "20130520",
+              "timezone" : ""
+            },
+            "location" : {
+              "address" : "",
+              "link" : ""
+            },
+            "contact" : {
+              "name" : "",
+              "phone" : "",
+              "link" : ""
+            },
+            "calendar" : {
+              "name" : "MainCal",
+              "displayName" : "MainCal",
+              "path" : "/public/cals/MainCal",
+              "encodedPath" : "%2Fpublic%2Fcals%2FMainCal"
+            },
+            "categories" : [
+              "Academic Calendar"
+            ],
+            "description" : "",
+            "cost" : "",
+            "xproperties" : [
+              
+              {
+                "X-ALT-DESC" : {
+                  "values" : {
+                     
+                       "text" : "&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div style=&amp;#39;font-family:Arial; font-size: 10pt; color: #000000;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;"
+                  }
+                }
+              },
+              {
+                "X-MS-OLK-SENDER" : {
+                  "values" : {
+                     
+                       "text" : "mailto:kmoss2@spsu.edu"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-ALLDAYEVENT" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-INTENDEDSTATUS" : {
+                  "values" : {
+                     
+                       "text" : "BUSY"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-DISALLOW-COUNTER" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              }
+
+            ]
+         },
+          {
+            "summary" : "End of Drop/Add",
+            "subscriptionId" : "",
+            "calPath" : "%2Fpublic%2Fcals%2FMainCal",
+            "guid" : "830fb952-a7de-4edd-aaed-730414f3a752",
+            "recurrenceId" : "",
+            "link" : "",
+            "eventlink" : "http://calendar.spsu.edu:80/feeder/feeder/event/eventView.do?b=de&amp;calPath=%2Fpublic%2Fcals%2FMainCal&amp;guid=830fb952-a7de-4edd-aaed-730414f3a752&amp;recurrenceId=",
+            "status" : "CONFIRMED",
+            "start" : {
+              "allday" : "true",
+              "shortdate" : "5/23/13",
+              "longdate" : "May 23, 2013",
+              "dayname" : "Thursday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130523T040000Z",
+              "datetime" : "20130523",
+              "timezone" : ""
+            },
+            "end" : {
+              "allday" : "true",
+              "shortdate" : "5/23/13",
+              "longdate" : "May 23, 2013",
+              "dayname" : "Thursday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130523T040000Z",
+              "datetime" : "20130523",
+              "timezone" : ""
+            },
+            "location" : {
+              "address" : "",
+              "link" : ""
+            },
+            "contact" : {
+              "name" : "",
+              "phone" : "",
+              "link" : ""
+            },
+            "calendar" : {
+              "name" : "MainCal",
+              "displayName" : "MainCal",
+              "path" : "/public/cals/MainCal",
+              "encodedPath" : "%2Fpublic%2Fcals%2FMainCal"
+            },
+            "categories" : [
+              "Academic Calendar"
+            ],
+            "description" : "",
+            "cost" : "",
+            "xproperties" : [
+              
+              {
+                "X-ALT-DESC" : {
+                  "values" : {
+                     
+                       "text" : "&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div style=&amp;#39;font-family:Arial; font-size: 10pt; color: #000000;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;"
+                  }
+                }
+              },
+              {
+                "X-MS-OLK-SENDER" : {
+                  "values" : {
+                     
+                       "text" : "mailto:kmoss2@spsu.edu"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-ALLDAYEVENT" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-INTENDEDSTATUS" : {
+                  "values" : {
+                     
+                       "text" : "BUSY"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-DISALLOW-COUNTER" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              }
+
+            ]
+         },
+          {
+            "summary" : "Last Day to Pay for Summer Term",
+            "subscriptionId" : "",
+            "calPath" : "%2Fpublic%2Fcals%2FMainCal",
+            "guid" : "853cb2d5-ec05-4a91-b5c1-b1130eba59b7",
+            "recurrenceId" : "",
+            "link" : "",
+            "eventlink" : "http://calendar.spsu.edu:80/feeder/feeder/event/eventView.do?b=de&amp;calPath=%2Fpublic%2Fcals%2FMainCal&amp;guid=853cb2d5-ec05-4a91-b5c1-b1130eba59b7&amp;recurrenceId=",
+            "status" : "CONFIRMED",
+            "start" : {
+              "allday" : "true",
+              "shortdate" : "5/23/13",
+              "longdate" : "May 23, 2013",
+              "dayname" : "Thursday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130523T040000Z",
+              "datetime" : "20130523",
+              "timezone" : ""
+            },
+            "end" : {
+              "allday" : "true",
+              "shortdate" : "5/23/13",
+              "longdate" : "May 23, 2013",
+              "dayname" : "Thursday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130523T040000Z",
+              "datetime" : "20130523",
+              "timezone" : ""
+            },
+            "location" : {
+              "address" : "",
+              "link" : ""
+            },
+            "contact" : {
+              "name" : "",
+              "phone" : "",
+              "link" : ""
+            },
+            "calendar" : {
+              "name" : "MainCal",
+              "displayName" : "MainCal",
+              "path" : "/public/cals/MainCal",
+              "encodedPath" : "%2Fpublic%2Fcals%2FMainCal"
+            },
+            "categories" : [
+              "Academic Calendar"
+            ],
+            "description" : "",
+            "cost" : "",
+            "xproperties" : [
+              
+              {
+                "X-ALT-DESC" : {
+                  "values" : {
+                     
+                       "text" : "&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div style=&amp;#39;font-family:Arial; font-size: 10pt; color: #000000;&amp;#39;&amp;gt;&amp;lt;div style=&amp;quot;font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;"
+                  }
+                }
+              },
+              {
+                "X-MS-OLK-SENDER" : {
+                  "values" : {
+                     
+                       "text" : "mailto:kmoss2@spsu.edu"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-ALLDAYEVENT" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-INTENDEDSTATUS" : {
+                  "values" : {
+                     
+                       "text" : "BUSY"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-DISALLOW-COUNTER" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              }
+
+            ]
+         },
+          {
+            "summary" : "Delete Schedules for Non-Payment",
+            "subscriptionId" : "",
+            "calPath" : "%2Fpublic%2Fcals%2FMainCal",
+            "guid" : "fb2d68de-8989-49fa-9599-69ca7ae57780",
+            "recurrenceId" : "",
+            "link" : "",
+            "eventlink" : "http://calendar.spsu.edu:80/feeder/feeder/event/eventView.do?b=de&amp;calPath=%2Fpublic%2Fcals%2FMainCal&amp;guid=fb2d68de-8989-49fa-9599-69ca7ae57780&amp;recurrenceId=",
+            "status" : "CONFIRMED",
+            "start" : {
+              "allday" : "true",
+              "shortdate" : "5/24/13",
+              "longdate" : "May 24, 2013",
+              "dayname" : "Friday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130524T040000Z",
+              "datetime" : "20130524",
+              "timezone" : ""
+            },
+            "end" : {
+              "allday" : "true",
+              "shortdate" : "5/24/13",
+              "longdate" : "May 24, 2013",
+              "dayname" : "Friday",
+              "time" : "12:00 AM",
+              "utcdate" : "20130524T040000Z",
+              "datetime" : "20130524",
+              "timezone" : ""
+            },
+            "location" : {
+              "address" : "",
+              "link" : ""
+            },
+            "contact" : {
+              "name" : "",
+              "phone" : "",
+              "link" : ""
+            },
+            "calendar" : {
+              "name" : "MainCal",
+              "displayName" : "MainCal",
+              "path" : "/public/cals/MainCal",
+              "encodedPath" : "%2Fpublic%2Fcals%2FMainCal"
+            },
+            "categories" : [
+              "Academic Calendar"
+            ],
+            "description" : "",
+            "cost" : "",
+            "xproperties" : [
+              
+              {
+                "X-ALT-DESC" : {
+                  "values" : {
+                     
+                       "text" : "&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div style=&amp;#39;font-family:Arial; font-size: 10pt; color: #000000;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;"
+                  }
+                }
+              },
+              {
+                "X-MS-OLK-SENDER" : {
+                  "values" : {
+                     
+                       "text" : "mailto:kmoss2@spsu.edu"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-ALLDAYEVENT" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-CDO-INTENDEDSTATUS" : {
+                  "values" : {
+                     
+                       "text" : "BUSY"
+                  }
+                }
+              },
+              {
+                "X-MICROSOFT-DISALLOW-COUNTER" : {
+                  "values" : {
+                     
+                       "text" : "TRUE"
+                  }
+                }
+              }
+
+            ]
+         }
+        ]
+    }}
+  
