@@ -21,46 +21,54 @@
 -(void) update:(Detail *) detail
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    self.currentEvent = detail;
+    
+    if([AppDelegate debugging]) NSLog(@"%@",[detail date]);
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad running iPhone 3.2 or later.
-        // set up the iPad-specific view
-        
-        self.summary.text = detail.summary;
-        self.who.text = detail.who;
-        self.date.text = detail.date;
-        self.location.text = detail.location;
-        self.description.text = detail.description;
-        self.contactName.text = detail.contactName;
-        self.contactEmail.text = detail.contactEmail;
-        self.contactPhone.text = detail.contactPhone;
-    }
-    else {
-        if([AppDelegate debugging]) NSLog(@"Opening the detail screen for the iPhone");
-        
-        // The device is an iPhone or iPod touch.
-        // set up the iPhone/iPod Touch view
-        
+//        // The device is an iPad running iPhone 3.2 or later.
+//        // set up the iPad-specific view
+//        
+//        self.summary.text = detail.summary;
+//        self.who.text = detail.who;
+//        self.date.text = detail.date;
+//        self.location.text = detail.location;
+//        self.description.text = detail.description;
+//        self.contactName.text = detail.contactName;
+//        self.contactEmail.text = detail.contactEmail;
+//        self.contactPhone.text = detail.contactPhone;
+    } else {
+//        if([AppDelegate debugging]) NSLog(@"Opening the detail screen for the iPhone");
+//        
+//        // The device is an iPhone or iPod touch.
+//        // set up the iPhone/iPod Touch view
+//        
         if(self.theDetailScreen == nil)
             self.theDetailScreen = [[DetailController alloc] initWithNibName:@"DetailController" bundle:nil];
                 
         [self presentViewController:self.theDetailScreen animated:YES completion:nil];
+//
+        [self.theDetailScreen updateDetails:detail];
 
-        [self.theDetailScreen update:detail];
+//        UITableView *table = (UITableView *)[self.view viewWithTag:2];
+//        [table reloadData];
     }
 }
 
 -(void) setup
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
-    
+    self.sections = @[@"Summary",@"Location",@"Description",@"Contact"];
+
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSString *finalPath = [path stringByAppendingPathComponent:@"new-no--object.json"];
+    
     NSData* data = [NSData dataWithContentsOfFile:finalPath];
     [self fetchedData:data];
     
     Detail * d = [DetailsSingleton getDetailAt:0 and:0];
-
+    
     if(d == nil) return;
     
     [self update:d];
@@ -126,16 +134,7 @@
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
     
-    [super viewDidLoad];
-//    [self fileWillLoad];
-    
-//    Detail * d = [self create:@"Summary" with:@"who" and:@"date" and:@"location" and:@"description" and:@"cName" with:@"cEmail" and:@"cPhone"];
-//    Detail * d1 = [DetailsSingleton create:@"First" with:@"Christopher" and:@"6/27/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-//    Detail * d2 = [DetailsSingleton create:@"Second" with:@"Jaymes" and:@"6/26/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-//    Detail * d3 = [DetailsSingleton create:@"Third" with:@"James" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-//    Detail * d4 = [DetailsSingleton create:@"Fourth" with:@"Josh" and:@"6/25/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-//    Detail * d5 = [DetailsSingleton create:@"Fifth" with:@"Roger" and:@"6/28/13" and:@"J-251, The Atrium" and:longDescription and:@"Christopher Miller" with:@"" and:@""];
-    
+    [super viewDidLoad]; 
     [self setup];
 }
 
@@ -148,23 +147,98 @@
 }
 
 
+-(void) processEventSummary :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
+{
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    cell.textLabel.text = event.summary;
+    cell.detailTextLabel.text = event.description;
+}
+
+-(void) processEventLocation :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
+{
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = event.summary;
+    cell.detailTextLabel.text = event.description;
+}
+
+-(void) processEventDescription :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
+{
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = event.description;
+}
+
+-(void) processEventContact :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
+{
+    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = event.contactName;
+    cell.detailTextLabel.text = event.contactEmail;
+}
+
+//Manages the height of the cell.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
+    
+    if (tableView.tag == 1) {
+        return 40;
+    } else {
+        int row = indexPath.row;
+        if(row == 0){ return 75; }
+        else if(row == 1){ return 75.; }
+        else if(row == 2){ return 150; }
+        else if(row == 3){ return 150; }
+    }
+    
+	return 40;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
     
-    return [DetailsSingleton getSections];
+    if (tableView.tag == 1) {
+        return [DetailsSingleton getSections];
+    } else {
+        return 4;
+    }
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [DetailsSingleton getHeaderAt:section];
+    if (tableView.tag == 1) {
+        return [DetailsSingleton getHeaderAt:section];
+    } else {
+        return [self.sections objectAtIndex:section];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if (tableView.tag == 1) {
+        return [DetailsSingleton getRowsAt:section];
+    } else {
+        return 1;
+    }
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)s
+{
+    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, tableView.bounds.size.width - 10, 18)];
     
-    return [DetailsSingleton getRowsAt:section];
+    if (tableView.tag == 1) {
+        label.text = [DetailsSingleton getHeaderAt:s];
+    } else {
+        label.text = [self.sections objectAtIndex:s];
+    }
+    label.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    label.backgroundColor = [UIColor clearColor];
+    [headerView addSubview:label];
+    return headerView;
+    
 }
 
 // Customize the appearance of table view cells.
@@ -175,17 +249,31 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
     
     int row = indexPath.row;
     int section = indexPath.section;
-    Detail * event = [DetailsSingleton getDetailAt:section and:row];
-    
-    cell.textLabel.text = event.summary;
-    cell.detailTextLabel.text = event.description;
+
+    if (tableView.tag == 1) {
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+        Detail * event = [DetailsSingleton getDetailAt:section and:row];
+        cell.textLabel.text = event.summary;
+        cell.detailTextLabel.text = event.description;
+
+    } else {
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        if(section == 0){ [self processEventSummary:self.currentEvent with:cell and:row]; }
+        else if(section == 1){ [self processEventLocation:self.currentEvent with:cell and:row]; }
+        else if(section == 2){ [self processEventDescription:self.currentEvent with:cell and:row]; }
+        else if(section == 3){ [self processEventContact:self.currentEvent with:cell and:row]; }
+    }
     
     return cell;
 }
@@ -204,8 +292,25 @@
      
     int row = indexPath.row;
     int section = indexPath.section;
-    Detail * event = [DetailsSingleton getDetailAt:section and:row];
+    
+    if (tableView.tag == 1) {
+        if([AppDelegate debugging]) NSLog(@"Selected an event");
+        
+        Detail * d = [DetailsSingleton getDetailAt:section and:row];
+        
+        [self update:d];
+//        Detail * event = [DetailsSingleton getDetailAt:section and:row];
+//        
+//        self.currentEvent = event;
+//        
+//        [self update:event];
+        
+        UITableView *table = (UITableView *)[self.view viewWithTag:2];
+        [table reloadData];
+    } else {
+        if([AppDelegate debugging]) NSLog(@"Selected the details content");
 
-    [self update:event];
+        if(YES/* PHONE OPTION HAS BEEN CLICKED*/){/* CALL THE LISTED NUMBER */}
+    }
 }
 @end
