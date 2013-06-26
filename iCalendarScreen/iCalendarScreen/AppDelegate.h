@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define DEUBBING_OUTPUT @"\n\n%s\n\n"
 
 @class ViewController;
 

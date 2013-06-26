@@ -20,49 +20,34 @@
 
 -(void) update:(Detail *) detail
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     self.currentEvent = detail;
     
     if([AppDelegate debugging]) NSLog(@"%@",[detail date]);
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//        // The device is an iPad running iPhone 3.2 or later.
-//        // set up the iPad-specific view
-//        
-//        self.summary.text = detail.summary;
-//        self.who.text = detail.who;
-//        self.date.text = detail.date;
-//        self.location.text = detail.location;
-//        self.description.text = detail.description;
-//        self.contactName.text = detail.contactName;
-//        self.contactEmail.text = detail.contactEmail;
-//        self.contactPhone.text = detail.contactPhone;
-    } else {
-//        if([AppDelegate debugging]) NSLog(@"Opening the detail screen for the iPhone");
-//        
-//        // The device is an iPhone or iPod touch.
-//        // set up the iPhone/iPod Touch view
-//        
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if([AppDelegate debugging]) NSLog(@"Opening the detail screen for the iPhone");
+        
+        // The device is an iPhone or iPod touch.
+        // set up the iPhone/iPod Touch view
+        
         if(self.theDetailScreen == nil)
             self.theDetailScreen = [[DetailController alloc] initWithNibName:@"DetailController" bundle:nil];
                 
         [self presentViewController:self.theDetailScreen animated:YES completion:nil];
-//
-        [self.theDetailScreen updateDetails:detail];
 
-//        UITableView *table = (UITableView *)[self.view viewWithTag:2];
-//        [table reloadData];
+        [self.theDetailScreen updateDetails:detail];
     }
 }
 
 -(void) setup
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     self.sections = @[@"Summary",@"Location",@"Description",@"Contact"];
 
     NSString *path = [[NSBundle mainBundle] bundlePath];
-    NSString *finalPath = [path stringByAppendingPathComponent:@"new-no--object.json"];
+    NSString *finalPath = [path stringByAppendingPathComponent:@"newest-no--object.json"];
     
     NSData* data = [NSData dataWithContentsOfFile:finalPath];
     [self fetchedData:data];
@@ -85,7 +70,6 @@
 }
 
 - (void)fetchedData:(NSData *)responseData {
-    NSString * longDescription = @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.\n Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.";
 
     //parse out the json data
     NSError* error;
@@ -94,12 +78,49 @@
                                                            error:&error];
     NSDictionary* eventsDictionary = [json objectForKey:@"bwEventList"]; //2
     NSArray * events = [eventsDictionary objectForKey:@"events"]; //2
+    events = [events sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        
+        NSDictionary * dict_0 = (NSDictionary *)a;
+        NSDictionary * dict_1 = (NSDictionary *)b;
+        
+        NSDictionary * start_0 = [dict_0 objectForKey:@"start"];
+        NSDictionary * start_1 = [dict_1 objectForKey:@"start"];
+        
+        //Convert NSString to NSDate:
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        //Specify only 1 M for month, 1 d for day and 1 h for hour
+        [dateFormatter setDateFormat:@"EEEE M/d/yy"];
+        
+        
+        NSString * date_0 = [NSString stringWithFormat:@"%@ %@",[start_0 objectForKey:@"dayname"],[start_0 objectForKey:@"shortdate"]];//@"6/27/13";
+        NSString * date_1 = [NSString stringWithFormat:@"%@ %@",[start_1 objectForKey:@"dayname"],[start_1 objectForKey:@"shortdate"]];//@"6/27/13";
+
+        NSDate *first = [dateFormatter dateFromString:date_0];
+        NSDate *second = [dateFormatter dateFromString:date_1];
+        return [first compare:second];
+    }];
     
-    for (NSDictionary *event in events) {
+//    NSDictionary * indices = [[NSDictionary alloc]init];
+//    int count = [events count];
+//    int position = 0;
+//    
+//    for (int index = 0; index < count - 1; index++) {
+//        NSDictionary * nsd1 = [events objectAtIndex:index];
+//        NSDictionary * nsd2 = [events objectAtIndex:index + 1];
+//        
+//        [indices setValue:@"" forKey:@""];
+//    }
+    int index = 0;
+    for (NSDictionary *event = [events objectAtIndex:index++]; index < [events count]; event = [events objectAtIndex:index++]) {
+//        statements
+//    }
+//    for (NSDictionary *event in events) {
         
         // GATHER SUMMARY INFORMATION
-        NSString * title = [event objectForKey:@"summary"];//
-        NSString * attendees = @"Christopher";//[event objectForKey:@""];//
+        NSString * summary = [event objectForKey:@"summary"];//
+        NSString * desc = [event objectForKey:@"description"];//
+        NSString * cost = [event objectForKey:@"cost"];//[event objectForKey:@""];//
         
         // GATHER DATE INFORMATION
         NSDictionary * d0 = [event objectForKey:@"start"];
@@ -113,26 +134,25 @@
         // GATHER CONTACT INFORMATION
         NSDictionary * c0 = [event objectForKey:@"contact"];
         NSString * contactName = [c0 objectForKey:@"name"];//@"Christopher Miller";
-        NSString * contactEmail = [c0 objectForKey:@"phone"];//@"cmiller3@spsu.edu";
-        NSString * contactPhone = [c0 objectForKey:@"link"];//@"000-000-0000";
+        NSString * contactEmail = [c0 objectForKey:@"link"];//@"cmiller3@spsu.edu";
+        NSString * contactPhone = [c0 objectForKey:@"phone"];//@"000-000-0000";
         
         [DetailsSingleton
-            create:title        // SUMMARY
-            with:attendees    // ATTENDEES
+            create:summary      // SUMMARY
+            with:cost           // ATTENDEES
             and:date            // DATE
             and:location        // LOCATION
-            and:longDescription // DESCRIPTION
+            and:desc            // DESCRIPTION
             and:contactName     // CONTACT NAME
             with:contactEmail   // CONTACT EMAIL
             and:contactPhone    // CONTACT PHONE
         ];
     }
-    
 }
 
 - (void)viewDidLoad
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     [super viewDidLoad]; 
     [self setup];
@@ -140,7 +160,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -149,54 +169,54 @@
 
 -(void) processEventSummary :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
-    
-    cell.textLabel.text = event.summary;
-    cell.detailTextLabel.text = event.description;
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [event.summary length] == 0 ? @"No Summary Posted" : event.summary;
 }
 
 -(void) processEventLocation :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = event.summary;
-    cell.detailTextLabel.text = event.description;
+    cell.textLabel.text = [event.location length] == 0 ? @"No Location Posted" : event.location;
 }
 
 -(void) processEventDescription :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = event.description;
+    cell.textLabel.text = [event.desc length] == 0 ? @"No Description Posted" : event.desc;
 }
 
 -(void) processEventContact :(Detail*)event with:(UITableViewCell*) cell and:(NSInteger) row
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = event.contactName;
-    cell.detailTextLabel.text = event.contactEmail;
+    cell.textLabel.text = [event.contactName length] == 0 ? @"No Contact Posted" : event.contactName;
 }
 
 //Manages the height of the cell.
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
     if (tableView.tag == 1) {
-        return 40;
+        return 45;
     } else {
-        int row = indexPath.row;
-        if(row == 0){ return 75; }
-        else if(row == 1){ return 75.; }
-        else if(row == 2){ return 150; }
-        else if(row == 3){ return 150; }
+        int section = indexPath.section;
+        int desc_size = [self.currentEvent.desc length];
+        int name_size = [self.currentEvent.contactName length];
+        
+        if(section == 0){ return 45; }
+        else if(section == 1){ return 45; }
+        else if(section == 2){ return (desc_size*.45)+45; }
+        else if(section == 3){ return (name_size*.45)+45; }
     }
     
-	return 40;
+	return 45;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     if (tableView.tag == 1) {
         return [DetailsSingleton getSections];
@@ -216,12 +236,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
+    
+    int row = -1;
     if (tableView.tag == 1) {
-        return [DetailsSingleton getRowsAt:section];
+        row = [DetailsSingleton getRowsAt:section];
     } else {
-        return 1;
+        row = 1;
     }
+    NSLog(@"Row is %d in numberOfRowsInSection",row);
+    return row;
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)s
@@ -244,7 +268,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -252,15 +276,18 @@
     
     int row = indexPath.row;
     int section = indexPath.section;
-
+    
+//    NSLog(@"Row is %d outside table 1",row);
     if (tableView.tag == 1) {
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
+        
+//        NSLog(@"Row is %d inside table 1",row);
         Detail * event = [DetailsSingleton getDetailAt:section and:row];
         cell.textLabel.text = event.summary;
-        cell.detailTextLabel.text = event.description;
+//        cell.detailTextLabel.text = event.desc;
 
     } else {
         if (cell == nil) {
@@ -280,7 +307,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    //if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
     
     // Return NO if you do not want the specified item to be editable.
     return NO;
@@ -288,7 +315,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([AppDelegate debugging]) NSLog(@"%s",__PRETTY_FUNCTION__);
+    if([AppDelegate debugging]) NSLog(DEUBBING_OUTPUT,__PRETTY_FUNCTION__);
      
     int row = indexPath.row;
     int section = indexPath.section;
@@ -299,11 +326,6 @@
         Detail * d = [DetailsSingleton getDetailAt:section and:row];
         
         [self update:d];
-//        Detail * event = [DetailsSingleton getDetailAt:section and:row];
-//        
-//        self.currentEvent = event;
-//        
-//        [self update:event];
         
         UITableView *table = (UITableView *)[self.view viewWithTag:2];
         [table reloadData];

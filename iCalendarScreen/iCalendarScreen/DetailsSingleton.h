@@ -10,6 +10,7 @@
 #import "Detail.h"
 
 @interface DetailsSingleton : NSObject
++(void)sort;
 +(NSInteger) getSections;
 +(NSString*) getHeaderAt:(NSInteger) section;
 +(NSInteger) getRowsAt:(NSInteger) section;

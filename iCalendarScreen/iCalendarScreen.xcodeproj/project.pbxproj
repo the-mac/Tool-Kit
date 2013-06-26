@@ -22,6 +22,7 @@
 		FE40572D177A0A420002FC35 /* DetailController0.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE40572C177A0A420002FC35 /* DetailController0.xib */; };
 		FE405730177A100E0002FC35 /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE40572F177A100E0002FC35 /* StringHelper.m */; };
 		FE405733177A146B0002FC35 /* ViewController_iPad0.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE405731177A146B0002FC35 /* ViewController_iPad0.xib */; };
+		FE405735177A97D60002FC35 /* newest-no--object.json in Resources */ = {isa = PBXBuildFile; fileRef = FE405734177A97D60002FC35 /* newest-no--object.json */; };
 		FE4B3E8C1775072C005A895F /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3E8A1775072C005A895F /* DetailController.m */; };
 		FE4B3E8D1775072C005A895F /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE4B3E8B1775072C005A895F /* DetailController.xib */; };
 		FE4B3E9017750788005A895F /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3E8F17750788005A895F /* Detail.m */; };
@@ -51,6 +52,7 @@
 		FE40572E177A100E0002FC35 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		FE40572F177A100E0002FC35 /* StringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelper.m; sourceTree = "<group>"; };
 		FE405732177A146B0002FC35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad0.xib; sourceTree = "<group>"; };
+		FE405734177A97D60002FC35 /* newest-no--object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "newest-no--object.json"; sourceTree = "<group>"; };
 		FE4B3E891775072C005A895F /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		FE4B3E8A1775072C005A895F /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		FE4B3E8B1775072C005A895F /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		FE1B472B176BB10C00D38C1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE405734177A97D60002FC35 /* newest-no--object.json */,
 				FE790EFF1778B81900FE29E4 /* new-no--object.json */,
 				FE1B472C176BB10C00D38C1E /* iCalendarScreen-Info.plist */,
 				FE1B472D176BB10C00D38C1E /* InfoPlist.strings */,
@@ -203,6 +206,7 @@
 				FE790F001778B81900FE29E4 /* new-no--object.json in Resources */,
 				FE40572D177A0A420002FC35 /* DetailController0.xib in Resources */,
 				FE405733177A146B0002FC35 /* ViewController_iPad0.xib in Resources */,
+				FE405735177A97D60002FC35 /* newest-no--object.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

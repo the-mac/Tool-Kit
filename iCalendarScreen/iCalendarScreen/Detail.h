@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Detail : NSObject
+@property (nonatomic) NSInteger index;
 @property (strong, nonatomic) NSString * summary;
 @property (strong, nonatomic) NSString * who;
 @property (strong, nonatomic) NSString * date;
 @property (strong, nonatomic) NSString * location;
-@property (strong, nonatomic) NSString * description;
+@property (strong, nonatomic) NSString * desc;
 @property (strong, nonatomic) NSString * contactName;
 @property (strong, nonatomic) NSString * contactEmail;
 @property (strong, nonatomic) NSString * contactPhone;

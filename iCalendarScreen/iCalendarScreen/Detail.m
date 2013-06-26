@@ -13,11 +13,12 @@
 -(Detail*) init
 {
     self = [super init];
+    self.index = -1;
     self.summary = @"Default Text";
     self.who = @"Default Text";
     self.date = @"Default Text";
     self.location = @"Default Text";
-    self.description = @"Default Text";
+    self.desc = @"Default Text";
     self.contactName = @"Default Text";
     self.contactEmail = @"Default Text";
     self.contactPhone = @"Default Text";
