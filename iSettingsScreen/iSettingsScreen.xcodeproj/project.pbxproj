@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE3BC5EC177C19CE00477859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3BC5EB177C19CE00477859 /* UIKit.framework */; };
+		FE3BC5EE177C19CE00477859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3BC5ED177C19CE00477859 /* Foundation.framework */; };
+		FE3BC5F0177C19CE00477859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3BC5EF177C19CE00477859 /* CoreGraphics.framework */; };
+		FE3BC5F6177C19CE00477859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC5F4177C19CE00477859 /* InfoPlist.strings */; };
+		FE3BC5F8177C19CE00477859 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC5F7177C19CE00477859 /* main.m */; };
+		FE3BC5FC177C19CE00477859 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC5FB177C19CE00477859 /* AppDelegate.m */; };
+		FE3BC5FE177C19CE00477859 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC5FD177C19CE00477859 /* Default.png */; };
+		FE3BC600177C19CE00477859 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC5FF177C19CE00477859 /* Default@2x.png */; };
+		FE3BC602177C19CE00477859 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC601177C19CE00477859 /* Default-568h@2x.png */; };
+		FE3BC605177C19CE00477859 /* SettingsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC604177C19CE00477859 /* SettingsScreen.m */; };
+		FE3BC608177C19CE00477859 /* SettingsScreen_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC606177C19CE00477859 /* SettingsScreen_iPhone.xib */; };
+		FE3BC60B177C19CE00477859 /* SettingsScreen_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC609177C19CE00477859 /* SettingsScreen_iPad.xib */; };
+		FE3BC618177C1A9700477859 /* LlamaSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC616177C1A9700477859 /* LlamaSettings.m */; };
+		FE3BC619177C1A9700477859 /* LlamaSettingsNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC617177C1A9700477859 /* LlamaSettingsNotes.txt */; };
+		FE3BC61D177C1ABF00477859 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC61C177C1ABF00477859 /* ColorHelper.m */; };
+		FE3BC62D177C1AF900477859 /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC620177C1AF900477859 /* ButtonCell.m */; };
+		FE3BC62E177C1AF900477859 /* CellFullWide.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC622177C1AF900477859 /* CellFullWide.m */; };
+		FE3BC62F177C1AF900477859 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC624177C1AF900477859 /* CellTextField.m */; };
+		FE3BC630177C1AF900477859 /* CellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC626177C1AF900477859 /* CellTextView.m */; };
+		FE3BC631177C1AF900477859 /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC628177C1AF900477859 /* DisplayCell.m */; };
+		FE3BC632177C1AF900477859 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC62A177C1AF900477859 /* EditableTableViewCell.m */; };
+		FE3BC633177C1AF900477859 /* SourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC62C177C1AF900477859 /* SourceCell.m */; };
+		FE3BC63D177C1B1D00477859 /* ColorBoxPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC636177C1B1C00477859 /* ColorBoxPicker.m */; };
+		FE3BC63E177C1B1D00477859 /* ColorTouchPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC638177C1B1D00477859 /* ColorTouchPicker.m */; };
+		FE3BC63F177C1B1D00477859 /* LSColorDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC63A177C1B1D00477859 /* LSColorDisplay.m */; };
+		FE3BC640177C1B1D00477859 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC63C177C1B1D00477859 /* WebViewController.m */; };
+		FE3BC642177C1B6F00477859 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE3BC641177C1B6F00477859 /* Settings.plist */; };
+		FE3BC646177C1E1000477859 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3BC645177C1E1000477859 /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE3BC5E8177C19CE00477859 /* iSettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3BC5EB177C19CE00477859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE3BC5ED177C19CE00477859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE3BC5EF177C19CE00477859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE3BC5F3177C19CE00477859 /* iSettingsScreen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSettingsScreen-Info.plist"; sourceTree = "<group>"; };
+		FE3BC5F5177C19CE00477859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE3BC5F7177C19CE00477859 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE3BC5F9177C19CE00477859 /* iSettingsScreen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSettingsScreen-Prefix.pch"; sourceTree = "<group>"; };
+		FE3BC5FA177C19CE00477859 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE3BC5FB177C19CE00477859 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE3BC5FD177C19CE00477859 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FE3BC5FF177C19CE00477859 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FE3BC601177C19CE00477859 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE3BC603177C19CE00477859 /* SettingsScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsScreen.h; sourceTree = "<group>"; };
+		FE3BC604177C19CE00477859 /* SettingsScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsScreen.m; sourceTree = "<group>"; };
+		FE3BC607177C19CE00477859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsScreen_iPhone.xib; sourceTree = "<group>"; };
+		FE3BC60A177C19CE00477859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsScreen_iPad.xib; sourceTree = "<group>"; };
+		FE3BC614177C1A9700477859 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FE3BC615177C1A9700477859 /* LlamaSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LlamaSettings.h; sourceTree = "<group>"; };
+		FE3BC616177C1A9700477859 /* LlamaSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LlamaSettings.m; sourceTree = "<group>"; };
+		FE3BC617177C1A9700477859 /* LlamaSettingsNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LlamaSettingsNotes.txt; sourceTree = "<group>"; };
+		FE3BC61B177C1ABF00477859 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
+		FE3BC61C177C1ABF00477859 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
+		FE3BC61F177C1AF900477859 /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
+		FE3BC620177C1AF900477859 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
+		FE3BC621177C1AF900477859 /* CellFullWide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellFullWide.h; sourceTree = "<group>"; };
+		FE3BC622177C1AF900477859 /* CellFullWide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellFullWide.m; sourceTree = "<group>"; };
+		FE3BC623177C1AF900477859 /* CellTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextField.h; sourceTree = "<group>"; };
+		FE3BC624177C1AF900477859 /* CellTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextField.m; sourceTree = "<group>"; };
+		FE3BC625177C1AF900477859 /* CellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextView.h; sourceTree = "<group>"; };
+		FE3BC626177C1AF900477859 /* CellTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextView.m; sourceTree = "<group>"; };
+		FE3BC627177C1AF900477859 /* DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayCell.h; sourceTree = "<group>"; };
+		FE3BC628177C1AF900477859 /* DisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayCell.m; sourceTree = "<group>"; };
+		FE3BC629177C1AF900477859 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
+		FE3BC62A177C1AF900477859 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		FE3BC62B177C1AF900477859 /* SourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCell.h; sourceTree = "<group>"; };
+		FE3BC62C177C1AF900477859 /* SourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCell.m; sourceTree = "<group>"; };
+		FE3BC635177C1B1C00477859 /* ColorBoxPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorBoxPicker.h; sourceTree = "<group>"; };
+		FE3BC636177C1B1C00477859 /* ColorBoxPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorBoxPicker.m; sourceTree = "<group>"; };
+		FE3BC637177C1B1C00477859 /* ColorTouchPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTouchPicker.h; sourceTree = "<group>"; };
+		FE3BC638177C1B1D00477859 /* ColorTouchPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTouchPicker.m; sourceTree = "<group>"; };
+		FE3BC639177C1B1D00477859 /* LSColorDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSColorDisplay.h; sourceTree = "<group>"; };
+		FE3BC63A177C1B1D00477859 /* LSColorDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSColorDisplay.m; sourceTree = "<group>"; };
+		FE3BC63B177C1B1D00477859 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		FE3BC63C177C1B1D00477859 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		FE3BC641177C1B6F00477859 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		FE3BC645177C1E1000477859 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE3BC5E5177C19CE00477859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3BC646177C1E1000477859 /* MediaPlayer.framework in Frameworks */,
+				FE3BC5EC177C19CE00477859 /* UIKit.framework in Frameworks */,
+				FE3BC5EE177C19CE00477859 /* Foundation.framework in Frameworks */,
+				FE3BC5F0177C19CE00477859 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE3BC5DF177C19CE00477859 = {
+			isa = PBXGroup;
+			children = (
+				FE3BC5F1177C19CE00477859 /* iSettingsScreen */,
+				FE3BC5EA177C19CE00477859 /* Frameworks */,
+				FE3BC5E9177C19CE00477859 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE3BC5E9177C19CE00477859 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC5E8177C19CE00477859 /* iSettingsScreen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE3BC5EA177C19CE00477859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC645177C1E1000477859 /* MediaPlayer.framework */,
+				FE3BC5EB177C19CE00477859 /* UIKit.framework */,
+				FE3BC5ED177C19CE00477859 /* Foundation.framework */,
+				FE3BC5EF177C19CE00477859 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE3BC5F1177C19CE00477859 /* iSettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC611177C19D700477859 /* Classes */,
+				FE3BC606177C19CE00477859 /* SettingsScreen_iPhone.xib */,
+				FE3BC609177C19CE00477859 /* SettingsScreen_iPad.xib */,
+				FE3BC5F2177C19CE00477859 /* Supporting Files */,
+			);
+			path = iSettingsScreen;
+			sourceTree = "<group>";
+		};
+		FE3BC5F2177C19CE00477859 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC641177C1B6F00477859 /* Settings.plist */,
+				FE3BC613177C1A6500477859 /* LlamaSettingsFiles */,
+				FE3BC5F3177C19CE00477859 /* iSettingsScreen-Info.plist */,
+				FE3BC5F4177C19CE00477859 /* InfoPlist.strings */,
+				FE3BC5F7177C19CE00477859 /* main.m */,
+				FE3BC5F9177C19CE00477859 /* iSettingsScreen-Prefix.pch */,
+				FE3BC5FD177C19CE00477859 /* Default.png */,
+				FE3BC5FF177C19CE00477859 /* Default@2x.png */,
+				FE3BC601177C19CE00477859 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE3BC611177C19D700477859 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC5FB177C19CE00477859 /* AppDelegate.m */,
+				FE3BC604177C19CE00477859 /* SettingsScreen.m */,
+				FE3BC612177C19E300477859 /* Headers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		FE3BC612177C19E300477859 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC5FA177C19CE00477859 /* AppDelegate.h */,
+				FE3BC603177C19CE00477859 /* SettingsScreen.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		FE3BC613177C1A6500477859 /* LlamaSettingsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC634177C1B0600477859 /* Views */,
+				FE3BC61E177C1AD500477859 /* TableCells */,
+				FE3BC61A177C1AA200477859 /* Helpers */,
+				FE3BC614177C1A9700477859 /* Constants.h */,
+				FE3BC615177C1A9700477859 /* LlamaSettings.h */,
+				FE3BC616177C1A9700477859 /* LlamaSettings.m */,
+				FE3BC617177C1A9700477859 /* LlamaSettingsNotes.txt */,
+			);
+			name = LlamaSettingsFiles;
+			sourceTree = "<group>";
+		};
+		FE3BC61A177C1AA200477859 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC61B177C1ABF00477859 /* ColorHelper.h */,
+				FE3BC61C177C1ABF00477859 /* ColorHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FE3BC61E177C1AD500477859 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC61F177C1AF900477859 /* ButtonCell.h */,
+				FE3BC620177C1AF900477859 /* ButtonCell.m */,
+				FE3BC621177C1AF900477859 /* CellFullWide.h */,
+				FE3BC622177C1AF900477859 /* CellFullWide.m */,
+				FE3BC623177C1AF900477859 /* CellTextField.h */,
+				FE3BC624177C1AF900477859 /* CellTextField.m */,
+				FE3BC625177C1AF900477859 /* CellTextView.h */,
+				FE3BC626177C1AF900477859 /* CellTextView.m */,
+				FE3BC627177C1AF900477859 /* DisplayCell.h */,
+				FE3BC628177C1AF900477859 /* DisplayCell.m */,
+				FE3BC629177C1AF900477859 /* EditableTableViewCell.h */,
+				FE3BC62A177C1AF900477859 /* EditableTableViewCell.m */,
+				FE3BC62B177C1AF900477859 /* SourceCell.h */,
+				FE3BC62C177C1AF900477859 /* SourceCell.m */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		FE3BC634177C1B0600477859 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BC635177C1B1C00477859 /* ColorBoxPicker.h */,
+				FE3BC636177C1B1C00477859 /* ColorBoxPicker.m */,
+				FE3BC637177C1B1C00477859 /* ColorTouchPicker.h */,
+				FE3BC638177C1B1D00477859 /* ColorTouchPicker.m */,
+				FE3BC639177C1B1D00477859 /* LSColorDisplay.h */,
+				FE3BC63A177C1B1D00477859 /* LSColorDisplay.m */,
+				FE3BC63B177C1B1D00477859 /* WebViewController.h */,
+				FE3BC63C177C1B1D00477859 /* WebViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE3BC5E7177C19CE00477859 /* iSettingsScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE3BC60E177C19CE00477859 /* Build configuration list for PBXNativeTarget "iSettingsScreen" */;
+			buildPhases = (
+				FE3BC5E4177C19CE00477859 /* Sources */,
+				FE3BC5E5177C19CE00477859 /* Frameworks */,
+				FE3BC5E6177C19CE00477859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSettingsScreen;
+			productName = iSettingsScreen;
+			productReference = FE3BC5E8177C19CE00477859 /* iSettingsScreen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE3BC5E0177C19CE00477859 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Christopher Miller";
+			};
+			buildConfigurationList = FE3BC5E3177C19CE00477859 /* Build configuration list for PBXProject "iSettingsScreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FE3BC5DF177C19CE00477859;
+			productRefGroup = FE3BC5E9177C19CE00477859 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE3BC5E7177C19CE00477859 /* iSettingsScreen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE3BC5E6177C19CE00477859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3BC5F6177C19CE00477859 /* InfoPlist.strings in Resources */,
+				FE3BC5FE177C19CE00477859 /* Default.png in Resources */,
+				FE3BC600177C19CE00477859 /* Default@2x.png in Resources */,
+				FE3BC602177C19CE00477859 /* Default-568h@2x.png in Resources */,
+				FE3BC608177C19CE00477859 /* SettingsScreen_iPhone.xib in Resources */,
+				FE3BC60B177C19CE00477859 /* SettingsScreen_iPad.xib in Resources */,
+				FE3BC619177C1A9700477859 /* LlamaSettingsNotes.txt in Resources */,
+				FE3BC642177C1B6F00477859 /* Settings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE3BC5E4177C19CE00477859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3BC5F8177C19CE00477859 /* main.m in Sources */,
+				FE3BC5FC177C19CE00477859 /* AppDelegate.m in Sources */,
+				FE3BC605177C19CE00477859 /* SettingsScreen.m in Sources */,
+				FE3BC618177C1A9700477859 /* LlamaSettings.m in Sources */,
+				FE3BC61D177C1ABF00477859 /* ColorHelper.m in Sources */,
+				FE3BC62D177C1AF900477859 /* ButtonCell.m in Sources */,
+				FE3BC62E177C1AF900477859 /* CellFullWide.m in Sources */,
+				FE3BC62F177C1AF900477859 /* CellTextField.m in Sources */,
+				FE3BC630177C1AF900477859 /* CellTextView.m in Sources */,
+				FE3BC631177C1AF900477859 /* DisplayCell.m in Sources */,
+				FE3BC632177C1AF900477859 /* EditableTableViewCell.m in Sources */,
+				FE3BC633177C1AF900477859 /* SourceCell.m in Sources */,
+				FE3BC63D177C1B1D00477859 /* ColorBoxPicker.m in Sources */,
+				FE3BC63E177C1B1D00477859 /* ColorTouchPicker.m in Sources */,
+				FE3BC63F177C1B1D00477859 /* LSColorDisplay.m in Sources */,
+				FE3BC640177C1B1D00477859 /* WebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE3BC5F4177C19CE00477859 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE3BC5F5177C19CE00477859 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE3BC606177C19CE00477859 /* SettingsScreen_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE3BC607177C19CE00477859 /* en */,
+			);
+			name = SettingsScreen_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FE3BC609177C19CE00477859 /* SettingsScreen_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE3BC60A177C19CE00477859 /* en */,
+			);
+			name = SettingsScreen_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE3BC60C177C19CE00477859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE3BC60D177C19CE00477859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE3BC60F177C19CE00477859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSettingsScreen/iSettingsScreen-Prefix.pch";
+				INFOPLIST_FILE = "iSettingsScreen/iSettingsScreen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE3BC610177C19CE00477859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSettingsScreen/iSettingsScreen-Prefix.pch";
+				INFOPLIST_FILE = "iSettingsScreen/iSettingsScreen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE3BC5E3177C19CE00477859 /* Build configuration list for PBXProject "iSettingsScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3BC60C177C19CE00477859 /* Debug */,
+				FE3BC60D177C19CE00477859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE3BC60E177C19CE00477859 /* Build configuration list for PBXNativeTarget "iSettingsScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3BC60F177C19CE00477859 /* Debug */,
+				FE3BC610177C19CE00477859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE3BC5E0177C19CE00477859 /* Project object */;
+}

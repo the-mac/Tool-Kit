@@ -1,0 +1,204 @@
+Misc for me:
+	Function methods:
+		- resetToDefaults
+
+		- getBoolSetting:default
+		- getIntSetting:default
+		- getFloatSetting:default
+		- getColorSetting:default
+		- getDateSetting:default
+		- getTimeSetting:default
+		- etc.
+
+
+Supported Preference Specifiers:
+
+--------------------------------------------------------------------------------
+
+Type					string		PSTextFieldSpecifier			text field entry
+Title					string
+Key					string
+DefaultValue				string
+isSecure				boolean
+keyboardType				string
+AutocapitalizationType			string
+AutocorrectionType			string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSTitleValueSpecifier			value displayer
+Title					string
+Key					string
+DefaultValue				string
+Vaules					array
+Titles					array
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSToggleSwitchSpecifier			switch
+Title					string
+Key					string
+DefaultValue				boolean
+TrueValue				boolean		boolean for "ON" position
+FalseValue				boolean		boolean for "OFF" position
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSSliderSpecifier				slider
+Title					string
+Key						string
+DefaultValue				string	?
+MinimumValue				number
+MaximumValue				number
+MinimumValueImage			string (21x21)
+MaximumValueImage			string (21x21)
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSMultiValueSpecifier			popup with more values
+Title					string
+Key					string
+DefaultValue				string
+Values					array
+Titles					array
+
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSGroupSpecifier (**)			group header
+Title					string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		PSChildPaneSpecifier	(* NOT SUPPORTED *)
+Title					string
+File					string		"foo.plist" -> "foo"
+
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+-- New Additions Follow -------
+
+/* these are for setting defaults/checking defaults -only used when 
+   the thing is first instantiated.  Useful for one-time-only settings */
+/* ie:  LSHiddenInt/Version="1.0"  -- if you're using version 1.1 of the app,
+   you can check this, and update any necessary items to migrate settings */
+
+
+--------------------------------------------------------------------------------
+
+Type					string		LSHiddenBoolSpecifier
+Key					string
+Value					bool
+
+
+--------------------------------------------------------------------------------
+
+Type					string		LSHiddenIntSpecifier
+Key					string
+Value					int
+
+
+--------------------------------------------------------------------------------
+
+Type					string		LSHiddenFloatSpecifier
+Key					string
+Value					float
+
+
+--------------------------------------------------------------------------------
+
+Type					string		LSHiddenStringSpecifier
+Key					string
+Value					string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		LSHiddensSetSpecifier
+Key					string
+Value					bool
+/* HiddensSet is set to YES once they have been set.  Set to No to reset them */
+
+
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLFullButtonSpecifier (**)		a pressable button, calls delegate with Key as a parameter
+Title					string
+Key					string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLURLButtonSpecifier (**)
+Title					string
+WebTitle				string		(optional) title to put in the header on the web view page
+Key					string		URL to launch in the system
+ExternalLaunch				boolean		launch externally(YES) or with builtin browser(NO)
+Restrictive				boolean		if yes, no navigation interface will be given
+Preload					boolean		if yes, the webview is preloaded when the plist is parsed
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLColorPickerSpecifier (**)
+Title					string
+Key					string
+DefaultValue				string "red, green, blue" as three reals [0.0, 1.0] or as three ints [0, 255]
+PickerType				string		TextualList - list of color names to pick from 
+								- names in ColorNames
+								- values in ColorValues
+							Color1Column - 8 colors, one column of 8
+								- values in ColorValues
+							Color2Columns - 8 colors, two columns of 4
+								- values in ColorValues
+							Touch - full screen touch display
+ColorNames				array of string	up to 8 color names
+ColorValues				array of string (as DefaultValue above)
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLSegmentedSpecifier (**)	segmented view
+Key					string
+DefaultValue				int
+Titles					array of strings
+Images					array of image names in the resources
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLTextAreaSpecifier			a scrollable text area
+Title					string
+Height					number
+Content					string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLInfoTextSpecifier			a blob of text displayed, smallish
+Content					string
+
+
+--------------------------------------------------------------------------------
+
+Type					string		BLVolumeSpecifier
+Title					string
+MinimumValueImage			string (21x21)
+MaximumValueImage			string (21x21)
+
+	NOTE: If you use this one, be sure to include MediaPlayer.framework in your project
+
+================================================================================
+
+Any section can have:  (TBD)
+Disable					array - value=0 is array 0, value=1 is array 1, etc (array of keys)
+Enable					array - value=0 is array 0, value=1 is array 1, etc (array of keys)
