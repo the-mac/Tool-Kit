@@ -1,2 +1,3 @@
 https://itunes.apple.com/itunes-u/developing-apps-for-ios-hd/id395605774
 http://pcottle.github.io/learnGitBranching/index.html
+http://d2o9nyf4hwsci4.cloudfront.net/2011/fall/seminars/Git_magic/Git_magic.mp4
