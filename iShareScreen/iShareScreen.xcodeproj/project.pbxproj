@@ -16,9 +16,9 @@
 		FE8F2CAB1763E7CD00707570 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAA1763E7CD00707570 /* Default.png */; };
 		FE8F2CAD1763E7CD00707570 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAC1763E7CD00707570 /* Default@2x.png */; };
 		FE8F2CAF1763E7CD00707570 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CAE1763E7CD00707570 /* Default-568h@2x.png */; };
-		FE8F2CB21763E7CD00707570 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2CB11763E7CD00707570 /* ViewController.m */; };
-		FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */; };
-		FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */; };
+		FE8F2CB21763E7CD00707570 /* ShareScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2CB11763E7CD00707570 /* ShareScreen.m */; };
+		FE8F2CB51763E7CD00707570 /* ShareScreen_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB31763E7CD00707570 /* ShareScreen_iPhone.xib */; };
+		FE8F2CB81763E7CD00707570 /* ShareScreen_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CB61763E7CD00707570 /* ShareScreen_iPad.xib */; };
 		FE8F2CC11763E85900707570 /* qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC01763E85900707570 /* qr_code.png */; };
 		FE8F2CC31763EC0100707570 /* share.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC21763EC0100707570 /* share.jpg */; };
 		FE8F2CC51763EC9A00707570 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F2CC41763EC9A00707570 /* share.png */; };
@@ -41,10 +41,10 @@
 		FE8F2CAA1763E7CD00707570 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FE8F2CAC1763E7CD00707570 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FE8F2CAE1763E7CD00707570 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FE8F2CB01763E7CD00707570 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FE8F2CB11763E7CD00707570 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FE8F2CB41763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		FE8F2CB71763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		FE8F2CB01763E7CD00707570 /* ShareScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareScreen.h; sourceTree = "<group>"; };
+		FE8F2CB11763E7CD00707570 /* ShareScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareScreen.m; sourceTree = "<group>"; };
+		FE8F2CB41763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareScreen_iPhone.xib; sourceTree = "<group>"; };
+		FE8F2CB71763E7CD00707570 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareScreen_iPad.xib; sourceTree = "<group>"; };
 		FE8F2CC01763E85900707570 /* qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code.png; sourceTree = "<group>"; };
 		FE8F2CC21763EC0100707570 /* share.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = share.jpg; sourceTree = "<group>"; };
 		FE8F2CC41763EC9A00707570 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				FE8F2CBE1763E7F000707570 /* Classes */,
-				FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */,
-				FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */,
+				FE8F2CB31763E7CD00707570 /* ShareScreen_iPhone.xib */,
+				FE8F2CB61763E7CD00707570 /* ShareScreen_iPad.xib */,
 				FE8F2C9F1763E7CD00707570 /* Supporting Files */,
 			);
 			path = iShareScreen;
@@ -130,7 +130,7 @@
 			children = (
 				FE8F2CBF1763E7FC00707570 /* Headers */,
 				FE8F2CA81763E7CD00707570 /* AppDelegate.m */,
-				FE8F2CB11763E7CD00707570 /* ViewController.m */,
+				FE8F2CB11763E7CD00707570 /* ShareScreen.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8F2CA71763E7CD00707570 /* AppDelegate.h */,
-				FE8F2CB01763E7CD00707570 /* ViewController.h */,
+				FE8F2CB01763E7CD00707570 /* ShareScreen.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 				FE8F2CAB1763E7CD00707570 /* Default.png in Resources */,
 				FE8F2CAD1763E7CD00707570 /* Default@2x.png in Resources */,
 				FE8F2CAF1763E7CD00707570 /* Default-568h@2x.png in Resources */,
-				FE8F2CB51763E7CD00707570 /* ViewController_iPhone.xib in Resources */,
-				FE8F2CB81763E7CD00707570 /* ViewController_iPad.xib in Resources */,
+				FE8F2CB51763E7CD00707570 /* ShareScreen_iPhone.xib in Resources */,
+				FE8F2CB81763E7CD00707570 /* ShareScreen_iPad.xib in Resources */,
 				FE8F2CC11763E85900707570 /* qr_code.png in Resources */,
 				FE8F2CC31763EC0100707570 /* share.jpg in Resources */,
 				FE8F2CC51763EC9A00707570 /* share.png in Resources */,
@@ -219,7 +219,7 @@
 			files = (
 				FE8F2CA51763E7CD00707570 /* main.m in Sources */,
 				FE8F2CA91763E7CD00707570 /* AppDelegate.m in Sources */,
-				FE8F2CB21763E7CD00707570 /* ViewController.m in Sources */,
+				FE8F2CB21763E7CD00707570 /* ShareScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,20 +234,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FE8F2CB31763E7CD00707570 /* ViewController_iPhone.xib */ = {
+		FE8F2CB31763E7CD00707570 /* ShareScreen_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FE8F2CB41763E7CD00707570 /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = ShareScreen_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		FE8F2CB61763E7CD00707570 /* ViewController_iPad.xib */ = {
+		FE8F2CB61763E7CD00707570 /* ShareScreen_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FE8F2CB71763E7CD00707570 /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = ShareScreen_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

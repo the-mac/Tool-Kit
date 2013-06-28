@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Christopher Miller. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ShareScreen.h"
 
-@interface ViewController ()
+@interface ShareScreen ()
 
 @end
 
-@implementation ViewController
+@implementation ShareScreen
 
 - (void)viewDidLoad
 {
