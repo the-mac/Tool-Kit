@@ -4,6 +4,7 @@ http://pcottle.github.io/learnGitBranching/index.html
 http://d2o9nyf4hwsci4.cloudfront.net/2011/fall/seminars/Git_magic/Git_magic.mp4
 
 Learning Android:
+http://cse.spsu.edu/cslab/tutors/android.htm
 http://developer.android.com/training/index.html
 
 Learning iOS:
