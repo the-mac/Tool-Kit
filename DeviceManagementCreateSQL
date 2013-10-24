@@ -1,6 +1,5 @@
-CREATE DATABASE DeviceList;
-USE DATABASE DeviceList;
-/
+/* The following was run on the-mac.org phpMyAdmin MySQL Database */
+
 CREATE TABLE Device (
     ID			INT 		  NOT NULL,
     DeviceName 	VARCHAR (255) NOT NULL,
@@ -30,3 +29,40 @@ CREATE TABLE UsersDevice (
 	FOREIGN KEY (DeviceID) REFERENCES Device(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (UsersID) REFERENCES Users(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+/* The following was the result of running the Device SQL statement above */
+Device
+
+Column		Type		Null	Default		Comments
+ID		int(11)		No 	 	 
+DeviceName	varchar(255)	No 	 	 
+ScreenSize	varchar(255)	No 	 	 
+OS		varchar(255)	No 	 	 
+OSVersion	varchar(255)	No 	 	
+
+PHP CODE: $sql = "SELECT * FROM `Device` LIMIT 0, 30 ";
+
+/* The following was the result of running the Users SQL statement above */
+Users
+
+Column		Type		Null	Default		Comments
+ID		int(11)		No 	 	 
+UserName	varchar(255)	No 	 	 
+Email		varchar(255)	No 	 	 
+PhoneNumber	varchar(255)	No 	 	 
+
+
+PHP CODE: $sql = "SELECT * FROM `Users` LIMIT 0, 30 ";
+
+/* The following was the result of running the UsersDevice SQL statement above */
+UsersDevice
+
+Column		 Type		Null	Default		Comments
+DeviceID	 int(11)	No 	 	 
+UsersID		 int(11)	No 	 	 
+UsersUserName	 varchar(255)	No 	 	 
+DeviceDeviceName varchar(255)	No 	 	 
+DeviceOS	 varchar(255)	No 	 	 
+
+
+PHP CODE: $sql = "SELECT * FROM `UsersDevice` LIMIT 0, 30 ";
