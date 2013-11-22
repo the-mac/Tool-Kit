@@ -96,4 +96,5 @@
                 android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
     </ScrollView>
-    </L
+
+</LinearLayout>
