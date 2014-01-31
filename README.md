@@ -3,7 +3,8 @@ Tool-Kit
 
 Location for Mobile Application Club (MAC) members to add/access content.
 
-iOS Development Tip
+
+If you are testing an iOS application…
 ========
 How to Find the UDID of iPhone, iPad or iPod Touch
 
@@ -21,4 +22,4 @@ How to Find the UDID of iPhone, iPad or iPod Touch
 
 7) Then copy (Ctrl + C on Windows and Command + C on Mac) the 40-digit UDID.
 
-8) Finally, paste into email to: cmiller3@spsu.edu or christopher.d.miller.1@gmail.com
+8) Finally, paste into an email to: The iOS developer that contacted you!
