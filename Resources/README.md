@@ -1,7 +1,7 @@
-Tool-Kit
+Resources
 ========
 
-Location for Mobile Application Club (MAC) members to add/access content.
+This folder holds all extra resources used in the Tool-Kit
 
 GitHub Resources
 ========

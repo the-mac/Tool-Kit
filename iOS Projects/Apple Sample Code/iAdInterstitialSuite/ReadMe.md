@@ -1,5 +1,5 @@
 iAdInterstitialSuite
-==========
+========
 
 iAdInterstitialSuite demonstrates how to use ADInterstitialAd in two common scenarios: magazine-style applications and games.
 
