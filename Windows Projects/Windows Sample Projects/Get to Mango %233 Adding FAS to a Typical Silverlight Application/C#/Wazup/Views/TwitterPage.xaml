@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Wazup.Views.TwitterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:localHelpers="clr-namespace:Wazup.Helpers"
+    xmlns:localWindowsControls="clr-namespace:System.Windows.Controls"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    >
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="TrendHeaderTemplate">
+            <TextBlock Text="{Binding name}" />
+        </DataTemplate>
+        <DataTemplate x:Key="TwitTemplate">
+            <Grid Margin="0,0,12,25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Width="60" Height="60" Source="{Binding profile_image_url}" VerticalAlignment="Top" Margin="0,5,7,0" />
+                <localWindowsControls:LinkLabel 
+            		Grid.Row="0" 
+            		Grid.Column="1" 
+            		Text="{Binding DecodedText}" 
+            		LinkMatchMethod="ByUriAndLinkPattern"
+            		LinkStyle="{StaticResource WrappedHyperlinkButtonStyle}" VerticalAlignment="Top" Foreground="White" Background="Black" FontSize="20" 
+                    />
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding from_user}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+                    <TextBlock Text=", " Foreground="#99FFFFFF" VerticalAlignment="Top" />
+                    <TextBlock Text="{Binding created_at}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="TrendTemplate">
+            <ListBox ItemsSource="{Binding Twits}" ItemTemplate="{StaticResource TwitTemplate}" />
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Pivot 
+            x:Name="PivotControl"
+            Title="Wazup" 
+            ItemsSource="{Binding Trends}" 
+            HeaderTemplate="{StaticResource TrendHeaderTemplate}" 
+            ItemTemplate="{StaticResource TrendTemplate}"
+            SelectionChanged="PivotControl_SelectionChanged"
+            >
+        </controls:Pivot>
+        <localHelpers:ProgressBarWithText Text="Loading Tweets..." ShowProgress="{Binding IsTwitsLoading}" />
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonDigg" IconUri="/Resources/App.Digg.png" Text="Digg" Click="AppbarButtonDigg_Click" />
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonTwitter" IconUri="/Resources/App.Twitter.png" Text="Twitter" Click="AppbarButtonTwitter_Click" />
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonBlog" IconUri="/Resources/App.Blog.png" Text="Blog" Click="AppbarButtonBlog_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+</phone:PhoneApplicationPage>

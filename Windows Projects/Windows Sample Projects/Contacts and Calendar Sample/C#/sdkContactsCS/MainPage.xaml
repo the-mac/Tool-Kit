@@ -1,0 +1,156 @@
+<!-- 
+    Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://go.microsoft.com/fwlink/?LinkID=219604
+-->
+<phone:PhoneApplicationPage 
+    x:Class="sdkContactsCS.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+
+    xmlns:MyApp="clr-namespace:sdkContactsCS"
+    
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="AccountTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=Name, Mode=OneWay}" />
+                <TextBlock Grid.Column="1" Text=" account: " />
+                <TextBlock Grid.Column="2" Text="{Binding Path=Kind, Mode=OneWay}" />
+            </Grid>
+        </DataTemplate>
+
+        <MyApp:ContactPictureConverter x:Key="ContactPictureConverter" />
+
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--Pivot Control-->
+        <controls:Pivot Title="Contacts and Calendar Test App" >
+
+            <!--Pivot item one-->
+            <controls:PivotItem Header="contacts">
+                <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBox Grid.Row="0" Grid.ColumnSpan="2" Name="contactFilterString" />
+                        <RadioButton Grid.Row="1" Grid.Column="0" Checked="FilterChange" Name="name" Content="name" />
+                        <RadioButton Grid.Row="1" Grid.Column="1" Checked="FilterChange" Name="phone" Content="phone"/>
+                        <RadioButton Grid.Row="2" Grid.Column="0" Checked="FilterChange" Name="email" Content="email"/>
+                        <Button Grid.Row="2" Grid.Column="1" Content="search" Click="SearchContacts_Click" />
+                    </Grid>
+
+                    <TextBlock Name="ContactResultsLabel" Text="Search for contacts" TextWrapping="Wrap" Margin="12,0,0,0" />
+
+                    <ListBox Name="ContactResultsData" ItemsSource="{Binding}" Tap="ContactResultsData_Tap" Height="300" Margin="24,0,0,0" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Border BorderThickness="2" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="{StaticResource PhoneAccentBrush}" >
+                                        <Image Source="{Binding Converter={StaticResource ContactPictureConverter}}" Width="48" Height="48" Stretch="Fill"  />
+                                    </Border>
+                                    <TextBlock Name="ContactResults" Text="{Binding Path=DisplayName, Mode=OneWay}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Margin="18,8,0,0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </controls:PivotItem>
+
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="accounts">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" >
+
+                        <TextBlock Text="contact accounts" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                        <ListBox Name="ContactAccounts" ItemsSource="{Binding}" ItemTemplate="{StaticResource AccountTemplate}" Height="200" Margin="24,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" >
+
+                        <TextBlock Text="appointment accounts" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                        <ListBox Name="CalendarAccounts" ItemsSource="{Binding}" ItemTemplate="{StaticResource AccountTemplate}" Height="200" Margin="24,0,0,0" />
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+
+
+            <!--Pivot item three-->
+            <controls:PivotItem Header="appointments">
+                <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                    <TextBlock Text="appointments between" Foreground="{StaticResource PhoneAccentBrush}" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="start date" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="end date" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="placeholder" Name="StartDate" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="placeholder" Name="EndDate" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="search" Click="SearchAppointments_Click" HorizontalAlignment="Center" />
+                    </Grid>
+
+                    <TextBlock Name="AppointmentResultsLabel" Text="search for appointments" TextWrapping="Wrap" />
+
+                    <ListBox Name="AppointmentResultsData" ItemsSource="{Binding}" Tap="AppointmentResultsData_Tap" Height="400"  ScrollViewer.ManipulationMode="Control" Margin="24,0,0,0" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Subject, Mode=OneWay}"  FontSize="{StaticResource PhoneFontSizeExtraLarge}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>

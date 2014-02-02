@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExtrasInfo>
+
+  <!-- Application title -->
+  <AppTitle>
+    <default>Quick Card Sample</default>
+  </AppTitle>
+
+  <!-- Search-related captions -->
+  <Consumer ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5661}">
+
+    <!-- Products caption for all product categories -->
+    <ExtensionInfo>
+      <Extensions>
+        <ExtensionName>Bing_Products_Arts_and_Crafts</ExtensionName>
+        <ExtensionName>Bing_Products_Baby_and_Nursery</ExtensionName>
+        <ExtensionName>Bing_Products_Beauty_and_Fragrance</ExtensionName>
+        <ExtensionName>Bing_Products_Books_and_Magazines</ExtensionName>
+        <ExtensionName>Bing_Products_Cameras_and_Optics</ExtensionName>
+        <ExtensionName>Bing_Products_Car_and_Garage</ExtensionName>
+        <ExtensionName>Bing_Products_Clothing_and_Shoes</ExtensionName>
+        <ExtensionName>Bing_Products_Computing</ExtensionName>
+        <ExtensionName>Bing_Products_Electronics</ExtensionName>
+        <ExtensionName>Bing_Products_Gourmet_Food_and_Chocolate</ExtensionName>
+        <ExtensionName>Bing_Products_Health_and_Wellness</ExtensionName>
+        <ExtensionName>Bing_Products_Jewelry_and_Watches</ExtensionName>
+        <ExtensionName>Bing_Products_Kitchen_and_Housewares</ExtensionName>
+        <ExtensionName>Bing_Products_Lawn_and_Garden</ExtensionName>
+        <ExtensionName>Bing_Products_Movies</ExtensionName>
+        <ExtensionName>Bing_Products_Music</ExtensionName>
+        <ExtensionName>Bing_Products_Office_Products</ExtensionName>
+        <ExtensionName>Bing_Products_Software</ExtensionName>
+        <ExtensionName>Bing_Products_Sports_and_Outdoors</ExtensionName>
+        <ExtensionName>Bing_Products_Tools_and_Hardware</ExtensionName>
+        <ExtensionName>Bing_Products_Toys</ExtensionName>
+        <ExtensionName>Bing_Products_Travel</ExtensionName>
+        <ExtensionName>Bing_Products_Vehicles</ExtensionName>
+        <ExtensionName>Bing_Products_Video_Games</ExtensionName>
+      </Extensions>
+      <CaptionString>
+        <default>Product URI Details</default>
+      </CaptionString>
+    </ExtensionInfo>
+    
+    <!-- Places caption for place categories -->
+    <ExtensionInfo>
+      <Extensions>
+        <ExtensionName>Bing_Places_Arts_and_Entertainment</ExtensionName>
+        <ExtensionName>Bing_Places_Automotive_and_Vehicles</ExtensionName>
+        <ExtensionName>Bing_Places_Business_to_Business</ExtensionName>
+        <ExtensionName>Bing_Places_Computers_and_Technology</ExtensionName>
+        <ExtensionName>Bing_Places_Education</ExtensionName>
+        <ExtensionName>Bing_Places_Food_and_Dining</ExtensionName>
+        <ExtensionName>Bing_Places_Government_and_Community</ExtensionName>
+        <ExtensionName>Bing_Places_Health_and_Beauty</ExtensionName>
+        <ExtensionName>Bing_Places_Home_and_Family</ExtensionName>
+        <ExtensionName>Bing_Places_Legal_and_Finance</ExtensionName>
+        <ExtensionName>Bing_Places_Professionals_and_Services</ExtensionName>
+        <ExtensionName>Bing_Places_Real_Estate_and_Construction</ExtensionName>
+        <ExtensionName>Bing_Places_Sports_and_Recreation</ExtensionName>
+        <ExtensionName>Bing_Places_Shopping</ExtensionName>
+        <ExtensionName>Bing_Places_Travel</ExtensionName>
+      </Extensions>
+      <CaptionString>
+        <default>Place URI Details</default>
+      </CaptionString>
+    </ExtensionInfo>    
+
+    <!-- Movies caption for all movie cards -->
+    <ExtensionInfo>
+      <Extensions>
+        <ExtensionName>Bing_Movies</ExtensionName>
+      </Extensions>
+      <CaptionString>
+        <default>Movie URI Details</default>
+      </CaptionString>
+    </ExtensionInfo>
+
+  </Consumer>
+</ExtrasInfo>

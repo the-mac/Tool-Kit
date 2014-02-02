@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.Server\Properties\Service.lsml" Checksum="679C78F29C5AF23E9956A773B0E46DF90F7B86CADA0B79571E5896A1C79F5B70" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.Server\Properties\DataSources\ApplicationData.lsml" Checksum="C9007E90610BDB16B02BFA701E17F70EAA51ACD70D7BB658DBA4901EFBFA0129" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.Server\DataSources\ApplicationData\Customers.lsml" Checksum="0312CF551E32BE389B9E64D7269AD681C63BB370B735FC4794AE5266CC8C6818" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.Server\DataSources\ApplicationData\ZipCodesSet.lsml" Checksum="20FFE339825634C5DF4978937E2550986744FEC34BD1065ECE08F377C9DEACE6" />
+  </Documents>
+</ModelDocumentManifest>

@@ -1,0 +1,73 @@
+<!-- 
+    Copyright (c) 2012 - 2013 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://code.msdn.microsoft.com/wpapps
+-->
+<phone:PhoneApplicationPage
+    x:Class="sdkWindowsRuntimeComponentWP8CS.Compute"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="sdkWindowsRuntimeComponent" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="compute" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ComputeContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock Text="Min:" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=MinVal, Mode=TwoWay}" Width="150">
+                    <TextBox.InputScope>
+                        <InputScope>
+                            <InputScopeName NameValue="Number" />
+                        </InputScope>
+                    </TextBox.InputScope>
+                </TextBox>
+                <TextBlock Text="Max:" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=MaxVal, Mode=TwoWay}" Width="150">
+                    <TextBox.InputScope>
+                        <InputScope>
+                            <InputScopeName NameValue="Number" />
+                        </InputScope>
+                    </TextBox.InputScope>
+                </TextBox>
+            </StackPanel>
+            <ProgressBar Grid.Row="1" x:Name="CalcProgress" Value="{Binding Path=ProgressPercent}" IsIndeterminate="False"/>
+            <Button Grid.Row="2" Content="Execute" x:Name="Execute" Tap="Execute_Tap_1"/>
+            <TextBlock Grid.Row="3" Text="{Binding Path=DurationSeconds}"/>
+            <phone:LongListSelector Grid.Row="4" ItemsSource="{Binding Path=Results}"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

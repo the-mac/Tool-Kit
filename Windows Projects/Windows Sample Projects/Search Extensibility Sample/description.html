@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Search Extensibility Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Search Extensibility Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 7.5, Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Search, integration
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/3/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Search-Extensibility-Sample-813ebeba">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>With Windows&nbsp;Phone OS&nbsp;7.1, apps can use App Connect to extend the Search experience on Windows Phone. With App Connect, users that search the web with the
+<span class="ui">Search</span> button can launch your app from Bing search results. This sample is a fictitious product recall app for baby, nursery, and toy products. Launch this app from the apps pivot page of a quick card after searching for products like
+ “baby doll stroller” and “baby bottle”. For more information, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/hh202957(v=vs.105).aspx">
+Search extensibility for Windows Phone</a>.</p>
+<p></p>
+<p>You need to install Windows&nbsp;Phone&nbsp;SDK&nbsp;7.1 to run this sample. To get started, go to the
+<a href="http://go.microsoft.com/fwlink/?LinkId=259204">Windows Phone Dev Center</a>.</p>
+<h3 class="procedureSubHeading">To run the sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Double-click the <span class="ui">.sln</span> file to open the solution.</p>
+</li><li>
+<p>Press F5 to start debugging the app. When the app launches for the first time, the main page will appear with instructions about how to use the sample with the device. These instructions are described in the following steps.</p>
+</li><li>
+<p>Press the <span class="ui">Start</span> button to navigate to <span value="Start">
+<span class="keyword">Start</span></span>.</p>
+</li><li>
+<p>Press the <span class="ui">Search</span> button to navigate to <span value="Bing">
+<span class="keyword">Bing</span></span>.</p>
+</li><li>
+<p>Tap the <span class="ui">Search</span> box and enter a baby, nursery, or toy search term such as “baby doll stroller” or “baby bottle”. Then tap
+<span class="ui">Go</span> to initiate the search.</p>
+</li><li>
+<p>After the search results are displayed, scroll the <span class="ui">Web</span> pivot page to the
+<span class="ui">Products</span> list. Each item displayed under Products is a product card that represents a product.</p>
+</li><li>
+<p>Tap a product in the <span class="ui">Products</span> list. This will launch the product card for the selected product.</p>
+</li><li>
+<p>The product card will show four pivot pages related to the selected product: <span class="ui">
+about</span>, <span class="ui">review</span>, <span class="ui">prices</span>, and
+<span class="ui">apps</span>. Swipe to the <span class="ui">apps</span> pivot page.</p>
+</li><li>
+<p>On the <span class="ui">apps</span> pivot page, the sample app appears as an app named
+<span class="ui">Trey Research Product Recalls</span>. Tap it to launch the app item page.</p>
+</li><li>
+<p>On the app item page, the name of the product appears and below that, a randomly generated message that the product has or has not been recalled.</p>
+</li></ol>
+</div>
+<p></p>
+<p>Windows&nbsp;Phone Emulator in Windows&nbsp;Phone&nbsp;SDK&nbsp;7.1 breaks from the debugging process when an app is relaunched. To debug a launch of the app via App Connect, you need to simulate the navigation URI. To do this, temporarily edit the
+<span class="code">DefaultTask</span> element in your app manifest file, <span value="WMAppManifest.xml">
+<span class="keyword">WMAppManifest.xml</span></span>, as described in the following steps.</p>
+<h3 class="procedureSubHeading">To debug search extensibility on Windows Phone Emulator</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>In <span class="ui">Solution Explorer</span>, expand <span class="ui">Properties</span> and double-click
+<span class="ui">WMAppManifest.xml</span>.</p>
+</li><li>
+<p>In the <span class="code">Tasks</span> element, find the <span class="code">
+DefaultTask</span> element and comment-out the line of code as shown in the following example.</p>
+<div class="code"><span>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th></th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>&lt;!--&lt;DefaultTask Name=&quot;_default&quot; NavigationPage=&quot;MainPage.xaml&quot; /&gt;--&gt;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</li><li>
+<p>Add a temporary <span class="code">DefaultTask</span> element to the <span class="code">
+Tasks</span> element that simulates a launch from a Search Extras deep link URI. You can un-comment one of the sample
+<span class="code">DefaultTask</span> elements that are provided in the sample or create your own. For example, the following shows code that simulates an App Connect launch for a product named “Baby Bottle”.</p>
+<div class="code"><span>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th></th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>&lt;DefaultTask Name=&quot;_default&quot; NavigationPage=&quot;SearchExtras?ProductName=Baby Bottle&amp;amp;Category=Bing_Products_Baby_and_Nursery&quot; /&gt;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</li><li>
+<p>Select <span class="ui">Windows Phone Emulator</span> in the <span class="ui">
+Select Target</span> drop-down menu on the Visual Studio toolbar.</p>
+</li><li>
+<p>Press F5 to start debugging the app. The app will launch to the app item page as though you had tapped the app in the
+<span class="ui">apps</span> pivot page of the corresponding product card.</p>
+</li><li>
+<p>On the app item page, the name of the product will appear and below that, a randomly generated message that the product has or has not been recalled.</p>
+</li><li>
+<p>When you are finished debugging the app with Windows&nbsp;Phone Emulator, comment-out the temporary
+<span class="code">DefaultTask</span> element and un-comment the original <span class="code">
+DefaultTask</span> element that is shown in the following example.</p>
+<div class="code"><span>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th></th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>&lt;DefaultTask Name=&quot;_default&quot; NavigationPage=&quot;MainPage.xaml&quot; /&gt;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</li></ol>
+</div>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>This sample is packaged as a Windows&nbsp;Phone&nbsp;7.5 project. It can be converted to a Windows&nbsp;Phone&nbsp;8 project, by changing the target Windows Phone OS version of the project. To create a Windows&nbsp;Phone&nbsp;8 project, you must be running the Windows&nbsp;Phone&nbsp;SDK&nbsp;8.0 on
+ Visual Studio 2012. You can download the latest version of the SDK from <a href="http://dev.windowsphone.com/downloadsdk">
+http://dev.windowsphone.com/downloadsdk</a>.</p>
+<p>To convert the sample to a Windows&nbsp;Phone&nbsp;8 project:</p>
+<ol>
+<li>
+<p>Double-click the <span class="ui">.sln</span> file to open the solution in Visual Studio.</p>
+</li><li>
+<p>Right-click the project in the <span class="ui">Solution Explorer</span> and select
+<span class="ui">Properties</span>. This opens the <span class="ui">Project Properties</span> window.</p>
+</li><li>
+<p>In the <span class="ui">Application</span> tab of the Project Properties window, select
+<span class="ui">Windows Phone OS 8.0</span> from the <span class="ui">Target Windows Phone OS Version</span> dropdown. A dialog will appear asking if you want to upgrade this project to Windows Phone OS 8.0.</p>
+</li><li>
+<p>Select <span class="ui">Yes</span> to upgrade the project.</p>
+</li></ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

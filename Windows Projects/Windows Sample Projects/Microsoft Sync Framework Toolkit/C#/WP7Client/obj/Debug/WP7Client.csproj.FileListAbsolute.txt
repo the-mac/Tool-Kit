@@ -1,0 +1,1 @@
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\WP7Client\obj\Debug\ResolveAssemblyReference.cache

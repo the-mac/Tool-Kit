@@ -1,0 +1,23 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\galasoft.mvvmlight.extras.win8.dll" HashGuid="8635689a-0317-90e3-1f19-9daa8dd22a46" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\galasoft.mvvmlight.win8.dll" HashGuid="074e0c73-ccad-7578-2ca5-abb10a561d4b" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\microsoft.aspnet.signalr.client.2.0.0\lib\portable-net45+sl5+netcore45+wp8\microsoft.aspnet.signalr.client.dll" HashGuid="d95307b0-6a7f-c57a-a3b0-cfccd3cd792d" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\microsoft.practices.servicelocation.dll" HashGuid="d3a03fc5-3dbc-3307-e1a1-f478f8f2a94d" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\microsoft.preview.windowsazure.activedirectory.authentication.0.6.1\lib\netcore45\microsoft.preview.windowsazure.activedirectory.authentication.winmd" HashGuid="fa3c0913-03e5-e32b-9dcc-ad2bc0a99f51" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\newtonsoft.json.5.0.8\lib\netcore45\newtonsoft.json.dll" HashGuid="fccaaf2a-e039-795e-45a4-59ce84d1518d" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\microsoft.net.http.2.2.15\lib\win8\system.net.http.extensions.dll" HashGuid="b50282f8-b9f8-4408-8d49-ba2efe301624" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\microsoft.net.http.2.2.15\lib\win8\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\rx-core.2.1.30214.0\lib\netcore45\system.reactive.core.dll" HashGuid="ea0d9876-0662-e9a8-457e-8b0934becc52" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\rx-interfaces.2.1.30214.0\lib\netcore45\system.reactive.interfaces.dll" HashGuid="f9d5b710-cc1d-673a-5c4a-1c6c500b8bb1" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\rx-linq.2.1.30214.0\lib\netcore45\system.reactive.linq.dll" HashGuid="fb6a772b-9896-682d-52bb-f2640068ac4f" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\rx-platformservices.2.1.30214.0\lib\netcore45\system.reactive.platformservices.dll" HashGuid="10042dba-c75f-2770-9dd9-e2b8a95f6624" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\win8nl.dll" HashGuid="47473e9b-caeb-e459-3a90-95304743b303" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\win8nl.external.dll" HashGuid="2517775b-dca4-d056-2cea-fc9036737bdf" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\win8nl.1.0.8\lib\netcore45\win8nl.utilities.dll" HashGuid="03c467d0-4535-0904-fe9e-e7ea8bd7cfbe" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\winrtbehaviors.1.0.3\lib\winrt45\winrtbehaviors.dll" HashGuid="0a752466-b26f-0d69-3170-c2cd915af41f" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\winrtvalidations.1.0.0.1\lib\netcore45\winrtvalidations.dll" HashGuid="98c99eac-3165-0eb5-696b-f4d82757cd1e" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\packages\winrtxamltoolkit.1.5.3.0\lib\netcore451\winrtxamltoolkit.dll" HashGuid="0fc2635f-bd56-35af-d932-896269c8bb92" />
+    <ReferenceAssembly PathName="c:\tfs_main\visitors\main\externallibs\xamlcropcontrol.winrt.dll" HashGuid="cde89786-6b97-6ad9-cb2f-a471f5c3c163" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

@@ -1,0 +1,132 @@
+﻿<UserControl
+    x:Class="EventBuddy.EventEditor"
+    x:Name="eventEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventBuddy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:EventBuddy.Controls"
+    xmlns:validation="using:EventBuddy.Validation"
+    xmlns:Common="using:EventBuddy.Common" mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="1360" >
+    <UserControl.Resources>
+        <validation:DateValidator x:Key="DateValidator" />
+        <validation:RequiredValidator x:Key="RequiredValidator" />
+        <Common:StringFormatConverter x:Key="StringFormatConverter" />
+    </UserControl.Resources>
+    <Grid x:Name="grid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="shown" >
+                    <Storyboard AutoReverse="False">
+                        <DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid" d:IsOptimized="True">
+                        	<DoubleAnimation.EasingFunction>
+                        		<QuarticEase EasingMode="EaseIn"/>
+                        	</DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="hidden" >
+                	<Storyboard AutoReverse="False">
+                		<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid" d:IsOptimized="True">
+                			<DoubleAnimation.EasingFunction>
+                				<QuarticEase EasingMode="EaseIn"/>
+                			</DoubleAnimation.EasingFunction>
+                		</DoubleAnimation>
+                		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                			<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                				<DiscreteObjectKeyFrame.Value>
+                					<Visibility>Collapsed</Visibility>
+                				</DiscreteObjectKeyFrame.Value>
+                			</DiscreteObjectKeyFrame>
+                		</ObjectAnimationUsingKeyFrames>
+                	</Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Border Background="Black" Opacity="0.4">
+        </Border>
+        <Grid DataContext="{Binding Event}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Style="{StaticResource PopupContentBorder}" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Grid Style="{StaticResource PopupContent}" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  Style="{StaticResource PopupContentHeader}" Text="Add Event" Grid.ColumnSpan="2" />
+                        <StackPanel  Style="{StaticResource PopupContentPanel}" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+                            
+                            <TextBlock Text="Event Title:" Style="{StaticResource PopupContentTextBlock}" />
+
+                            <controls:ValidatingTextBox x:Name="txtTitle" Validator="{StaticResource RequiredValidator}" Text="{Binding Name, Mode=TwoWay}" Height="35"/>
+
+                            <TextBlock Text="Overview:" Style="{StaticResource PopupContentTextBlock}" />
+                            
+                            <TextBox Text="{Binding Description, Mode=TwoWay}" Style="{StaticResource BasicTextBox}" Height="150" TextWrapping="Wrap"  AcceptsReturn="True"  />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="Start Time:" Style="{StaticResource PopupContentTextBlock}" />
+                                        <Border BorderBrush="Silver" BorderThickness="2">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                                <controls:ValidatingTextBox x:Name="startDate" Validator="{StaticResource DateValidator}" Grid.Column="0" Text="{Binding Start, Mode=TwoWay, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:MM/dd/yyyy hh:mm tt}'}" MinWidth="278" />
+                                        </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="End Time:" Style="{StaticResource PopupContentTextBlock}" />
+                                    <Border  BorderBrush="Silver" BorderThickness="2" >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <controls:ValidatingTextBox x:Name="endDate" Validator="{StaticResource DateValidator}" Grid.Column="0" Text="{Binding End, Mode=TwoWay, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:MM/dd/yyyy hh:mm tt}'}" MinWidth="278" />
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" >
+                                <Button Content="Cancel" Style="{StaticResource PopupContentCancelButton}" Click="OnCancelClick" />
+                                <Button Content="Save Event" Style="{StaticResource PopupContentSaveButton}" Click="OnSaveClick" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

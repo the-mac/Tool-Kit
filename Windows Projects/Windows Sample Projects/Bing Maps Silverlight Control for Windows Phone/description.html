@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bing Maps Silverlight Control for Windows Phone</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+            <link href="description/librarydescription.css" rel="Stylesheet" type="text/css" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Bing Maps Silverlight Control for Windows Phone</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Bing Maps, Windows Phone
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Maps
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">9/24/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Bing-Maps-Silverlight-161d1ba8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div class="content">
+<div class="topic">
+<div class="majorTitle"></div>
+<h1 class="title">How to: Use the Bing Maps Silverlight Control for Windows Phone</h1>
+<div id="mainSection">
+<div id="mainBody">
+<p></p>
+<p>September 25, 2012</p>
+<div class="introduction">
+<p>This topic demonstrates how you can use the Bing Maps Silverlight Control for Windows&nbsp;Phone. To find this completed map control sample, see
+<span><a href="http://msdn.microsoft.com/en-us/library/ff431744(v=vs.92).aspx">Code Samples for Windows Phone</a></span>.</p>
+<div class="alert">
+<table>
+<tbody>
+<tr>
+<th><img id="alert_note" alt="Note" src="description/IC101471.gif" title="Note"><strong>Note:</strong></th>
+</tr>
+<tr>
+<td>
+<p><br>
+The steps in the following procedure are for Visual Studio&nbsp;2010 Express for<br>
+Windows Phone. You may see some minor variations in menu commands or window layouts when you are using the add-in<br>
+for Visual Studio&nbsp;2010 Professional or Visual Studio&nbsp;2010 Ultimate.<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="alert">
+<table>
+<tbody>
+<tr>
+<th><img id="alert_note" alt="Note" src="description/IC101471.gif" title="Note"><strong>Note:</strong></th>
+</tr>
+<tr>
+<td>
+<p><img id="Icon_MultiDevice" alt="multiple devices" src="description/IC568785.png" title="multiple devices">If you are developing your application to target 256-MB devices, consider using a
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.tasks.bingmapstask(v=vs.92).aspx">BingMapsTask</a></span> instead of a
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.controls.maps.map(v=vs.92).aspx">Map</a></span> control. This helps minimize the memory impact of your application, which is of particular importance when running on a 256-MB device. For
+ more information, see&nbsp;<span><a href="http://msdn.microsoft.com/en-us/library/hh855081(v=vs.92).aspx">Developing for 256-MB Devices</a></span> and&nbsp;<span><a href="http://msdn.microsoft.com/en-us/library/hh394026(v=vs.92).aspx">How to: Use the Bing Maps Task
+ for Windows Phone</a></span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Create a New Project</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<a id="sectionToggle0"></a>
+<p>This topic shows how you can use the Bing Maps Silverlight control in a Windows&nbsp;Phone project. The finished sample includes the map control and provides two buttons for changing the map mode between
+<span class="label">Road Mode</span> and <span class="label">Aerial Mode</span> and two buttons for zooming in and out on the map.</p>
+<h3 class="procedureSubHeading">To create a new project</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Make sure you have downloaded and installed the Windows&nbsp;Phone&nbsp;SDK from the <a href="http://go.microsoft.com/fwlink/?LinkID=259416">
+Dev Center</a>.</p>
+</li><li>
+<p>Launch Visual Studio&nbsp;2010 Express for Windows&nbsp;Phone from the Windows Start menu.</p>
+</li><li>
+<p>Create a new project by clicking the <span><span class="input">File | New Project</span></span> menu command.</p>
+</li><li>
+<p>The <span><span class="input">New Project</span></span> window will be displayed. Expand the
+<span><span class="input">Visual C#</span></span> templates, and then select the
+<span><span class="input">Silverlight for Windows Phone</span></span> templates.</p>
+</li><li>
+<p>Select the <span><span class="input">Windows Phone Application</span></span> template. Fill in the project
+<span><span class="input">Name</span></span> as desired.</p>
+</li><li>
+<p>Click <span><span class="input">OK</span></span>. A new project will be created and
+<span><span class="input">MainPage.xaml</span></span> will be opened in the Visual Studio designer window.</p>
+</li></ol>
+</div>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Adding Controls</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<a id="sectionToggle1"></a>
+<p>The next step is to lay out the controls of the application using the Visual Studio designer. After adding the controls, the final layout will look similar to the following screenshot:</p>
+<img id="MapLayout" alt="MapLayout" src="description/IC430131.jpg" title="MapLayout">
+<p></p>
+<h3 class="procedureSubHeading">To add the controls of the application</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>In the Toolbox in Visual Studio, select the <span><span class="input">Map</span></span> control. Create a new
+<span><span class="input">Map</span></span> control on the designer. The default name of the control will be
+<span><span class="input">map1</span></span>.</p>
+</li><li>
+<p>In the Toolbox in Visual Studio, select the <span><span class="input">Button</span></span> control. Create four new
+<span><span class="input">Button</span></span> controls on the designer below the
+<span><span class="input">Map</span></span> control. Set the text in the four buttons to be
+<span><span class="input">Road Mode</span></span>, <span><span class="input">Aerial Mode</span></span>,
+<span><span class="input">Zoom In</span></span>, and <span><span class="input">Zoom Out</span></span>. Name the four buttons
+<span><span class="input">buttonRoad</span></span>, <span><span class="input">buttonAerial</span></span>,
+<span><span class="input">buttonZoomIn</span></span>, and <span><span class="input">buttonZoomOut</span></span>.</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        &lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,0,12,0&quot;&gt;
+            &lt;my:Map Height=&quot;462&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,6,0,0&quot; Name=&quot;map1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;444&quot; /&gt;
+
+            &lt;Button Content=&quot;Road Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,474,0,0&quot; Name=&quot;buttonRoad&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Aerial Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,474,0,0&quot; Name=&quot;buttonAerial&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Zoom In&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,535,0,0&quot; Name=&quot;buttonZoomIn&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Zoom Out&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,535,0,0&quot; Name=&quot;buttonZoomOut&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+        &lt;/Grid&gt;
+
+</pre>
+<pre id="codePreview" class="xaml">        &lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,0,12,0&quot;&gt;
+            &lt;my:Map Height=&quot;462&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,6,0,0&quot; Name=&quot;map1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;444&quot; /&gt;
+
+            &lt;Button Content=&quot;Road Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,474,0,0&quot; Name=&quot;buttonRoad&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Aerial Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,474,0,0&quot; Name=&quot;buttonAerial&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Zoom In&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,535,0,0&quot; Name=&quot;buttonZoomIn&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+            &lt;Button Content=&quot;Zoom Out&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,535,0,0&quot; Name=&quot;buttonZoomOut&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; /&gt;
+        &lt;/Grid&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>If you want the exact same layout shown in the image, copy and paste the XAML above and use it to replace the grid layout in your
+<span><span class="input">MainPage.xaml</span></span> file.</p>
+</li><li>
+<p>You can also rename the application window titles as you desire. </p>
+</li></ol>
+</div>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Adding Code</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<a id="sectionToggle2"></a>
+<p>This step will add the code to implement the four buttons.</p>
+<h3 class="procedureSubHeading">To add code</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Add a <span><span class="input">using</span></span> statement for <span class="code">
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Controls.Maps.aspx"  title="Auto generated link to Microsoft.Phone.Controls.Maps">Microsoft.Phone.Controls.Maps</a>;</span> in the <span><span class="input">MainPage.xaml.cs</span></span> file.</p>
+</li><li>
+<p>Double-click the <span><span class="input">Road Mode</span></span> button control. This will create a
+<span><span class="input">buttonRoad_Click</span></span> event handler in the <span>
+<span class="input">MainPage.xaml.cs</span></span> file. Implement the method by setting the mode:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        private void buttonRoad_Click(object sender, RoutedEventArgs e)
+        {
+            map1.Mode = new RoadMode();
+        }
+</pre>
+<pre id="codePreview" class="xaml">        private void buttonRoad_Click(object sender, RoutedEventArgs e)
+        {
+            map1.Mode = new RoadMode();
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Double-click the <span><span class="input">Aerial Mode</span></span> button control. This will create a
+<span><span class="input">buttonAerial_Click</span></span> event handler in the
+<span><span class="input">MainPage.xaml.cs</span></span> file. Implement the method by setting the mode:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        private void buttonAerial_Click(object sender, RoutedEventArgs e)
+        {
+            map1.Mode = new AerialMode();
+        }
+</pre>
+<pre id="codePreview" class="xaml">        private void buttonAerial_Click(object sender, RoutedEventArgs e)
+        {
+            map1.Mode = new AerialMode();
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Double-click the <span><span class="input">Zoom In</span></span> button control. This will create a
+<span><span class="input">buttonZoomIn_Click</span></span> event handler in the
+<span><span class="input">MainPage.xaml.cs</span></span> file. Implement the method by setting the zoom value:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        private void buttonZoomIn_Click(object sender, RoutedEventArgs e)
+        {
+            double zoom;
+            zoom = map1.ZoomLevel;
+            map1.ZoomLevel = &#43;&#43;zoom;
+        }
+</pre>
+<pre id="codePreview" class="xaml">        private void buttonZoomIn_Click(object sender, RoutedEventArgs e)
+        {
+            double zoom;
+            zoom = map1.ZoomLevel;
+            map1.ZoomLevel = &#43;&#43;zoom;
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Double-click the <span><span class="input">Zoom Out</span></span> button control. This will create a
+<span><span class="input">buttonZoomOut_Click</span></span> event handler in the
+<span><span class="input">MainPage.xaml.cs</span></span> file. Implement the method by setting the zoom value:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        private void buttonZoomOut_Click(object sender, RoutedEventArgs e)
+        {
+            double zoom;
+            zoom = map1.ZoomLevel;
+            map1.ZoomLevel = --zoom;
+        }
+</pre>
+<pre id="codePreview" class="xaml">        private void buttonZoomOut_Click(object sender, RoutedEventArgs e)
+        {
+            double zoom;
+            zoom = map1.ZoomLevel;
+            map1.ZoomLevel = --zoom;
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>The XAML for the buttons will be updated to include the event handlers:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        &lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,0,12,0&quot;&gt;
+            &lt;my:Map Height=&quot;462&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,6,0,0&quot; Name=&quot;map1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;444&quot; /&gt;
+            &lt;Button Content=&quot;Zoom In&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,535,0,0&quot; Name=&quot;buttonZoomIn&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonZoomIn_Click&quot; /&gt;
+            &lt;Button Content=&quot;Road Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,474,0,0&quot; Name=&quot;buttonRoad&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonRoad_Click&quot; /&gt;
+            &lt;Button Content=&quot;Zoom Out&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,535,0,0&quot; Name=&quot;buttonZoomOut&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonZoomOut_Click&quot; /&gt;
+            &lt;Button Content=&quot;Aerial Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,474,0,0&quot; Name=&quot;buttonAerial&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonAerial_Click&quot; /&gt;
+        &lt;/Grid&gt;
+
+</pre>
+<pre id="codePreview" class="xaml">        &lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,0,12,0&quot;&gt;
+            &lt;my:Map Height=&quot;462&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,6,0,0&quot; Name=&quot;map1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;444&quot; /&gt;
+            &lt;Button Content=&quot;Zoom In&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,535,0,0&quot; Name=&quot;buttonZoomIn&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonZoomIn_Click&quot; /&gt;
+            &lt;Button Content=&quot;Road Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;6,474,0,0&quot; Name=&quot;buttonRoad&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonRoad_Click&quot; /&gt;
+            &lt;Button Content=&quot;Zoom Out&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,535,0,0&quot; Name=&quot;buttonZoomOut&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonZoomOut_Click&quot; /&gt;
+            &lt;Button Content=&quot;Aerial Mode&quot; Height=&quot;72&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;243,474,0,0&quot; Name=&quot;buttonAerial&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;207&quot; Click=&quot;buttonAerial_Click&quot; /&gt;
+        &lt;/Grid&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li></ol>
+</div>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Building and Debugging the Application</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<a id="sectionToggle3"></a>
+<p>The application is now complete. This step will let you build, run, and debug the application.</p>
+<img id="MapRunning" alt="MapRunning" src="description/IC430132.jpg" title="MapRunning">
+<div class="alert">
+<table>
+<tbody>
+<tr>
+<th><img id="alert_note" alt="Note" src="description/IC101471.gif" title="Note"><strong>Note:</strong></th>
+</tr>
+<tr>
+<td>
+<p>When running this sample, the background of the map control will show an <span>
+<span class="input">Invalid credentials</span></span> message. You can read <a href="http://go.microsoft.com/fwlink/?LinkID=198152">
+Getting a Bing Maps Key</a> and <a href="http://go.microsoft.com/fwlink/?LinkID=201181">
+Accessing the Control Using a Bing Maps Key</a> for instructions about how to obtain and use a key.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="procedureSubHeading">To build and debug the application</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Build the solution by selecting the <span><span class="input">Debug | Build Solution</span></span> menu command. The project should build without any errors in the
+<span><span class="input">Error List</span></span> window. You can open the <span>
+<span class="input">Error List</span></span> window, if it is not already open, by selecting the
+<span><span class="input">View | Other Windows | Error List</span></span> menu command. If there are errors, review the steps above, correct any errors, and then build the solution again.</p>
+</li><li>
+<p>Run the application by selecting the <span><span class="input">Debug | Start Debugging</span></span> menu command. This will open the emulator window and launch the application. Make sure that your desktop computer has Internet access. You can then test
+ your application by clicking the buttons and verifying that map control responds.
+</p>
+</li><li>
+<p>You can set debug breakpoints in the code by placing the cursor on the desired line of code and selecting the
+<span><span class="input">Debug | Toggle Breakpoint</span></span> menu command.</p>
+</li><li>
+<p>To stop debugging, you can select the <span><span class="input">Debug | Stop Debugging</span></span> menu command.</p>
+</li></ol>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

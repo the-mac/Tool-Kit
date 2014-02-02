@@ -1,0 +1,34 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PhotoFun.PreviewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False" DataContext="{Binding Source={StaticResource dataContext}}">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="imgPreview" Width="800" Height="480" Source="{Binding Path=SelectedPreview}" Stretch="Fill"/>
+        <Button Content="X" VerticalAlignment="Top" 
+                Width="100" Height="100" 
+                HorizontalAlignment="Right" Click="Button_Click" Foreground="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" >
+        	<Button.Background>
+        		<SolidColorBrush Color="#AA000000"/>
+        	</Button.Background>
+        </Button>
+
+        <!--ContentPanel - place additional content here-->
+
+    </Grid>
+</phone:PhoneApplicationPage>

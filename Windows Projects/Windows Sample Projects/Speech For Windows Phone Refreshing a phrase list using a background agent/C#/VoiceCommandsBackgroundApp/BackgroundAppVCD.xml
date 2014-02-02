@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-us" Name="BackgroundAppEnus">
+    <!-- Command set for all US English commands-->
+    <CommandPrefix>Background App</CommandPrefix>
+    <Example>Are the Lions playing today?</Example>
+
+    <Command Name="playingTeamsCommand">
+      <Example>Are the Tigers playing today?</Example>
+      <!-- A Command element can contain up to ten ListenFor elements, and the content of any one can be recognized to activate the command. -->
+      <ListenFor>Are the {playingTeamsList} playing today?</ListenFor>
+      <ListenFor>Are the {playingTeamsList} playing tonight?</ListenFor>
+      <!--Specifies the text that will be displayed and read back to the user when the command is recognized.-->
+      <Feedback>Let me check ...</Feedback>
+      <!--You can specify an optional Target attribute that specifies the page that should load when the app launches. -->
+      <Navigate Target="/ResultPage.xaml" />
+    </Command>
+
+    <Command Name="nonPlayingTeamsCommand">
+      <Example>Are the Bears playing today?</Example>
+      <ListenFor>Are the {nonPlayingTeamsList} playing today?</ListenFor>
+      <ListenFor>Are the {nonPlayingTeamsList} playing tonight?</ListenFor>
+      <Feedback>Let me see ... </Feedback>
+      <Navigate Target="/ResultPage.xaml"/>
+    </Command>
+
+    <PhraseList Label="playingTeamsList">
+      <Item> Lions </Item>
+      <Item> Tigers </Item>
+    </PhraseList>
+
+    <PhraseList Label="nonPlayingTeamsList">
+      <Item> Bears </Item>
+    </PhraseList>
+    
+  </CommandSet>
+
+</VoiceCommands>

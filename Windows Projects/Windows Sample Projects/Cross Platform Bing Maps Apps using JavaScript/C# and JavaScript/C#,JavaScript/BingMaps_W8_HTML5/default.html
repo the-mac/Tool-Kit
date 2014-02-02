@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- BingMaps_W8_HTML5 references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+
+    <!-- Bing Maps references -->
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapicore.js"></script>
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapimodules.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/phone.css" />
+
+    <script type="text/javascript">
+        //Work around for scaling bug in IE10
+        (function () {
+            if (navigator.userAgent.match(/MSIE 10\.0/) &&
+                !navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement("style");
+                msViewportStyle.appendChild(
+                    document.createTextNode("@-ms-viewport{width:auto!important}")
+                );
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+        })();
+    </script>
+
+    <script type="text/javascript" src="js/map.js"></script>
+</head>
+    <body>
+        <div id="mapContainer">
+            <div id='myMap'></div>
+            <div class="appBar">
+                <div class="appBarContainer">
+                    <img id="searchBtn" src="images/search.png" />
+                    <img id="gpsBtn" src="images/gps.png" />
+                    <img id="trafficBtn" src="images/traffic.png" />
+                    <img id="mapModeBtn" src="images/layers.png" />
+                </div>
+            </div>
+            <div id="navBar">
+                <img id="upBtn" src="images/up.png" />
+                <img id="leftBtn" src="images/left.png" />
+                <img id="rightBtn" src="images/right.png" />
+                <img id="downBtn" src="images/down.png" />
+            </div>
+            <div id="zoomRotateBar">
+                <img id="zoomInBtn" src="images/zoomIn.png" />
+                <img id="zoomOutBtn" src="images/zoomOut.png" />
+                <div id="rotationBtns">
+                    <img id="rotateCWBtn" src="images/cwRotation.png" />
+                    <img id="rotateCCWBtn" src="images/ccwRotation.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="searchPanel" style="display:none;">
+            <h2>Search</h2>
+            <input type="text" id="searchTbx"/>
+        </div>
+
+        <div id="mapModePanel" style="display:none;">
+            <h2>Map Mode</h2>
+
+            <ul>
+                <li>
+     	            <input type="radio" name="mapMode" id="autoMode" value="auto" checked="checked"/>
+     	            <label for="autoMode">Auto</label>
+                </li>
+                <li>
+     	            <input type="radio" name="mapMode" id="aerialMode" value="aerial"/>
+     	            <label for="aerialMode">Aerial</label>
+                </li>
+                <li>
+     	            <input type="radio" name="mapMode" id="birdseyeMode" value="birdseye"/>
+     	            <label for="birdseyeMode">Birdseye</label>
+                </li>
+                <li>
+     	            <input type="radio" name="mapMode" id="osMode" value="os"/>
+     	            <label for="osMode">Ordnance Survey</label>
+                </li>
+                <li>
+                    <input type="radio" name="mapMode" id="roadMode" value="road"/>
+     	            <label for="roadMode">Road</label>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

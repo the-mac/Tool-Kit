@@ -1,0 +1,144 @@
+<!-- 
+    Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://go.microsoft.com/fwlink/?LinkID=219604
+-->
+    <phone:PhoneApplicationPage 
+    x:Class="sdkMulticastCS.Game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" FontWeight="Normal" Unloaded="PhoneApplicationPage_Unloaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="ROCK PAPER SCISSORS" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock x:Name="MyScoreName" Text="Andrew" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                <Border Background="{StaticResource PhoneForegroundBrush}" Margin="10,0" Width="50">
+                    <TextBlock x:Name="MyScoreValue" Margin="5" Text="00" Foreground="{StaticResource PhoneBackgroundBrush}" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </Border>
+                <Border Background="{StaticResource PhoneForegroundBrush}" Margin="10,0" Width="50">
+                    <TextBlock x:Name="OpponentScoreValue" Margin="5" Text="0" Foreground="{StaticResource PhoneBackgroundBrush}" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Bold" HorizontalAlignment="Center" />
+                </Border>
+                <TextBlock x:Name="OpponentScoreName" Text="Andrew" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+            </StackPanel>
+            <!--<TextBlock x:Name="PageTitle" Text="Andrew vs Brendan" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
+            
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock x:Name="MyPiecesTextBlock" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}" Text="Andrew"/>
+            <StackPanel Orientation="Horizontal" x:Name="MyGamePieces">
+                <Border BorderThickness="5">
+                    <Button  Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Click="GamePiece_Click" Tag="ROCK">
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/rock.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+                <Border BorderThickness="5">
+                    <Button Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Click="GamePiece_Click" Tag="PAPER">
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/paper.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+                <Border BorderThickness="5">
+                    <Button Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Click="GamePiece_Click" Tag="SCISSORS">
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/scissors.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+            </StackPanel>
+            <!--<TextBlock x:Name="MyChoiceTextBlock" Text="" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}" />
+            <TextBlock x:Name="OpponentsChoiceTextBlock" Text="" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}"/>-->
+            
+            <TextBlock x:Name="OpponentPiecesTextBlock" Margin="5" FontSize="{StaticResource PhoneFontSizeLarge}" Text="Andrew"/>
+            <StackPanel Orientation="Horizontal" x:Name="OpponentGamePieces">
+                <Border BorderThickness="5">
+                    <Button Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Tag="ROCK" IsEnabled="True" IsHitTestVisible="False" >
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/rock.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+                <Border BorderThickness="5">
+                    <Button Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Tag="PAPER" IsHitTestVisible="False" >
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/paper.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+                <Border BorderThickness="5">
+                    <Button Height="140" Width="140" FontSize="{StaticResource PhoneFontSizeMedium}" Tag="SCISSORS" IsHitTestVisible="False" >
+                        <Button.Content>
+                            <Rectangle HorizontalAlignment="Center"  Width="90" Height="90" CacheMode="BitmapCache" Fill="{StaticResource PhoneForegroundBrush}" Margin="0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush Stretch="Fill" ImageSource="/MyImages/scissors.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button.Content>
+                    </Button>
+                </Border>
+            </StackPanel>
+            <TextBlock x:Name="ResultTextBlock" Text="" Margin="8" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Center"/>
+            <Button x:Name="PlayAgainButton" Content="Play Again" Click="PlayAgainButton_Click" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

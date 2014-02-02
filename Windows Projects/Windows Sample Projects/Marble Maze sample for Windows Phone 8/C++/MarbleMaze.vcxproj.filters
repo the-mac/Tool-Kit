@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BasicLoader.cpp">
+      <Filter>BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicReaderWriter.cpp">
+      <Filter>BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShapes.cpp">
+      <Filter>BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="BasicTimer.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="DirectXApp.cpp" />
+    <ClCompile Include="DirectXBase.cpp" />
+    <ClCompile Include="LoadScreen.cpp" />
+    <ClCompile Include="MarbleMaze.cpp" />
+    <ClCompile Include="MediaStreamer.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="Profiler.cpp" />
+    <ClCompile Include="ProfilerGraph.cpp" />
+    <ClCompile Include="SDKMesh.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Media\Audio\Checkpoint.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Audio\MarbleFall.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Audio\MarbleHit.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Audio\MarbleRoll.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Audio\MenuChange.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Audio\MenuSelect.wav">
+      <Filter>Media\Audio</Filter>
+    </Media>
+    <Media Include="Media\Models\marble2.sdkmesh">
+      <Filter>Media\Models</Filter>
+    </Media>
+    <Media Include="Media\Models\maze1.sdkmesh">
+      <Filter>Media\Models</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\Textures\bridge.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\bridge_bump.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\checkpoint.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\cliff_sides.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\floor_section1.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\floor_section2.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\go.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\Marble.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\startgame.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\topwall_color.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\walllevel1.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Textures\loadscreen.dds">
+      <Filter>Media\Textures</Filter>
+    </Image>
+    <Image Include="Media\Tiles\FlipCycleTileMedium.png">
+      <Filter>Media\Tiles</Filter>
+    </Image>
+    <Image Include="Media\Tiles\FlipCycleTileSmall.png">
+      <Filter>Media\Tiles</Filter>
+    </Image>
+    <Image Include="Media\ApplicationIcon.png">
+      <Filter>Media</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Media">
+      <UniqueIdentifier>{51cea137-93d6-43c2-a133-74b329d6c35d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Audio">
+      <UniqueIdentifier>{936e263a-b318-46cb-9eee-ba51b7c662a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Models">
+      <UniqueIdentifier>{d8d45901-cfdd-41d4-9fb7-d2af7013a36d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures">
+      <UniqueIdentifier>{c8d85793-619a-4453-b419-17635a5b672d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Fonts">
+      <UniqueIdentifier>{172d7b6a-a307-4ce0-bfa0-8f0391971df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BasicLoader">
+      <UniqueIdentifier>{a03e1bb0-7ffe-4135-912f-04dbfde14f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Tiles">
+      <UniqueIdentifier>{5a65a42a-69e5-4955-9706-e80c41e20c38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicLoader.h">
+      <Filter>BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicReaderWriter.h">
+      <Filter>BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes.h">
+      <Filter>BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h" />
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="BasicMath.h" />
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="DirectXApp.h" />
+    <ClInclude Include="DirectXBase.h" />
+    <ClInclude Include="DirectXSample.h" />
+    <ClInclude Include="LoadScreen.h" />
+    <ClInclude Include="MarbleMaze.h" />
+    <ClInclude Include="MediaStreamer.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Physics.h" />
+    <ClInclude Include="Primitives.h" />
+    <ClInclude Include="Profiler.h" />
+    <ClInclude Include="ProfilerGraph.h" />
+    <ClInclude Include="SDKMesh.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Fonts\SegoeBlack40.spritefont">
+      <Filter>Media\Fonts</Filter>
+    </None>
+    <None Include="Media\Fonts\SegoeBold30.spritefont">
+      <Filter>Media\Fonts</Filter>
+    </None>
+    <None Include="Media\Fonts\SegoeBlack60.spritefont">
+      <Filter>Media\Fonts</Filter>
+    </None>
+    <None Include="Media\Fonts\SegoeBold45.spritefont">
+      <Filter>Media\Fonts</Filter>
+    </None>
+    <None Include="Media\Fonts\DebugFont.spritefont">
+      <Filter>Media\Fonts</Filter>
+    </None>
+    <None Include="Media\Audio\background.wma">
+      <Filter>Media\Audio</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="BasicPixelShader.hlsl" />
+    <FxCompile Include="BasicVertexShader.hlsl" />
+    <FxCompile Include="ProfilerGraphPixelShader.hlsl" />
+    <FxCompile Include="ProfilerGraphVertexShader.hlsl" />
+    <FxCompile Include="UntexturedPixelShader.hlsl" />
+    <FxCompile Include="UntexturedVertexShader.hlsl" />
+  </ItemGroup>
+</Project>

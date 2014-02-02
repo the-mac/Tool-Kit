@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bing Maps for Games with Pathfinding</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Bing Maps for Games with Pathfinding</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            XNA, Bing Maps
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Games, Artificial Intelligence, Pathfinding
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/4/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Bing-Maps-for-Games-with-bedba16c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Bing Maps Pathfinding Sample</h1>
+<p>This sample expands on the Bing Maps sample capabilities by combining the Pathfinding sample to allow the tank to drive to markers around the screen using the streets on the map. The sample presents a navigable map of the world by accessing the Bing Maps
+ REST services. The sample also allows you to switch between street and aerial view, add and remove markers, switch between walking and driving navigation, and switch the visible location.
+<br>
+<strong><br>
+NOTE:</strong> This sample requires a Bing Maps Pathfinding key to run. The register and obtain a key, visit
+<a href="http://code.msdn.microsoft.com/Bing-Maps-for-Games-with-bedba16c/https://www.bingmapsportal.com/">http://code.msdn.microsoft.com/Bing-Maps-for-Games-with-bedba16c/https://www.bingmapsportal.com/</a></p>
+<p>&nbsp;</p>
+<table border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"><img src="description/bingpathfinding1.png" alt="" width="160" height="90"></td>
+<td>
+<h1 class="heading"><img src="description/bingpathfinding2.png" alt="" width="160" height="90"></h1>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><br>
+<span style="font-size:20px; font-weight:bold">Overview</span></p>
+<div class="hxnx1" id="ID4EK">The game provides the player with a map view of Microsoft&rsquo;s Redmond headquarters and its surroundings. The game also displays a tank. By tapping the display the user may place push-pins to define a route that the tank
+ will follow. The tank will visit each push-pin in turn until the last one, navigating between them by following routes retrieved from the Bing Maps routing service. Push-pins can be removed by pressing and holding over them and the tank will recalculate its
+ route if it was currently moving towards a push-pin that has been removed.
+<p>The game allows switching between aerial and road views and between walking and driving navigation modes by using buttons on the top left. A button on the screen&rsquo;s top-right allows displaying the calculated routes which the tank follows. The user can
+ also drag the tank around the display to reposition it or use the device&rsquo;s search button to focus on a different part of the world.</p>
+<p>The game allows switching between aerial and road views and between walking and driving navigation modes by using buttons on the top left. A button on the screen&rsquo;s top-right allows displaying the calculated routes which the tank follows. The user can
+ also drag the tank around the display to reposition it or use the device&rsquo;s search button to focus on a different part of the world.</p>
+<p>The main challenge presented in this sample is using the on-screen push-pins as input for the Bing Maps routing service. This is because we are working with three different sets of coordinates:</p>
+<ul>
+<li>Screen coordinates &ndash; These correspond to the device&rsquo;s display and range from (0,0) to (800, 480).
+</li><li>Map pixel coordinates &ndash; The map displayed by the game is only a fraction of a much larger map. In the sample&rsquo;s initial state, the zoom level displayed corresponds to a map which is a square of 33,554,432 pixels. Any position can be described
+ using a pixel coordinate on the entire map. </li><li>World Geodetic System (WGS) coordinates &ndash; A standard coordinate system which describes positions on the globe using longitude and latitude.
+</li></ul>
+<p>The challenge lies in the fact that we must convert screen coordinates, which the user supplies when tapping on the display, to WGS coordinates which the Bing Maps rouging service needs to supply routing information.</p>
+<p>This is achieved by knowing which WGS coordinate corresponds to the center of the map displayed in the game. It is relatively simple to convert WGS coordinates to map pixel coordinates, and these use the same units as screen coordinates (pixels). To translate
+ a screen coordinate to a WGS coordinate, we simply measure its distance from the center of</p>
+<h1 class="heading">Extending the Sample</h1>
+<div class="hxnx1" id="ID4EVH">It is possible to change both the displayed map&rsquo;s zoom scale and the size of the area retrieved by modifying the sample code. &nbsp;</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

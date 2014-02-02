@@ -1,0 +1,22 @@
+﻿<s:ScatterViewItem x:Class="MobileConnectSample.ContentItems.ContactCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sb="clr-namespace:SurfaceBluetooth"
+                   
+    Height="132" Width="207" CanScale="False" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+    <s:ScatterViewItem.Resources>
+        <ImageBrush x:Key="ContactCardBackground" Stretch="UniformToFill"  Opacity="1.0" ImageSource="pack://application:,,,/Resources/ContactCard.png"/>
+        
+    </s:ScatterViewItem.Resources>
+    
+    <Canvas AllowDrop="False" Background="{StaticResource ContactCardBackground}"  >
+        <Image Width="60" Height="60" Source="{Binding PictureUri, Mode=OneWay}" Canvas.Left="10" Canvas.Top="30" />
+        <TextBlock Foreground="Black"  Text="{Binding FirstName, Mode=OneWay}" FontSize="14" FontWeight="Bold"  Canvas.Left="75" Canvas.Top="30" Width="110" />
+        <TextBlock Foreground="Black" Text="{Binding LastName, Mode=OneWay}" FontSize="14" FontWeight="Bold"  Canvas.Left="75" Canvas.Top="50" Width="110" />
+        <TextBlock Foreground="Black" TextAlignment="Right" Text="{Binding MobileTelephoneNumber, Mode=OneWay}" FontSize="10" Canvas.Left="75" Canvas.Top="70" Width="110" />
+        <TextBlock Foreground="Black" TextAlignment="Right"  Text="{Binding EmailAddress, Mode=OneWay}" FontSize="10" Canvas.Left="75" Canvas.Top="85" Width="110" />
+    </Canvas>
+</s:ScatterViewItem>

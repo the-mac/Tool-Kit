@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EB87627F1FAC8F417DDC560F58ECEDC8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0f42f23f-7cc7-474a-aa23-b6ed8ca59481Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=59AF12CEA39A0C1AEAA6487FF1817969" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Cross Platform Bing Maps Apps using JavaScript</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Cross Platform Bing Maps Apps using JavaScript</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 7, Javascript, Bing Maps, Windows Phone, Windows Phone 8, Windows Store app
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Phone 7, Cross Platform Code Reuse, Bing Maps, Windows Phone, Windows Phone 8, Windows Store app
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Bing Maps SDK for Windows Store apps
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/31/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This sample shows how to create a cross platform mapping application that works on the web, on mobile, and as a Windows Store app all using the Bing Maps JavaScript control. The code sample includes three apps; a web app, a Windows Phone 8 app, and a Windows
+ Store app. The Windows Phone app has a local copy of the web version of the application and loads it into a web browser control. This same approach can be used to create native applications for Andoid and iOS.</p>
+<p>The core functionality of the sample application is the web application (BingMaps_Mobile_HTML5). The main JavaScript, and CSS files along with all the images are based in this application. The other two applications reference in a link to these files. The
+ Windows Phone application also has a reference the the index.html file from the web project. The Windows Store app has a default.html file which contains most of the same content as the index.html file but has additional references to internal libraries and
+ also the Windows Store App version of the Bing Maps SDK.</p>
+<h1>Requirements</h1>
+<ul>
+<li>Windows 8 </li><li>Visual Studios 2012 </li><li><a href="http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/https://dev.windowsphone.com/en-us/downloadsdk">Bing Maps Windows Store Apps SDK</a>
+</li><li><a href="http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/https://dev.windowsphone.com/en-us/downloadsdk">Windows Phone SDK</a>
+</li></ul>
+<h1><span>Building the Sample</span></h1>
+<p>To run this sample you must install the <a href="http://go.microsoft.com/fwlink/?LinkID=264993&amp;clcid=0x409">
+Bing Maps SDK for Windows Store apps</a>&nbsp;and the <a href="http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/http://code.msdn.microsoft.com/Cross-Platform-Bing-Maps-e96600d5/https://dev.windowsphone.com/en-us/downloadsdk">
+Windows Phone SDK</a>. You will also need to get a <a href="http://msdn.microsoft.com/en-us/library/ff428642.aspx">
+Bing Maps key</a> for Windows Store apps or mobile. You must also have Windows 8 and Visual Studio 2012.</p>
+<p>Open the sample in Visual Studio and insert your Bing Maps key in the&nbsp;map.js file&nbsp;which is part of the BingMaps_Mobile_HTML5 project where it says &ldquo;YOUR_BING_MAPS_KEY&rdquo; in the source code. You must perform the following steps for your
+ app project to work correctly with Bing Maps. Detailed instructions are provided below.&nbsp;</p>
+<ul>
+<li>Open the BingMaps_W8_HTML5 project. </li><li>Add a reference to&nbsp;Bing Maps SDK </li><li>Set the desired project you wuld like to build. </li><li>Build the sample by press F5 or use <strong>Debug &gt; Start Debugging</strong>. To run the app without debugging, press Ctrl&#43;F5 or use
+<strong>Debug &gt; Start Without Debugging</strong> </li></ul>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p>The Bing Maps V7 AJAX control is a JavaScript based mapping control that is supported on most major PC &amp; Mac browsers, along with most major smart phone browsers. It is also the basis to the Bing Maps Windows Store JavaScript control with vry close parity
+ with the web version of the control. Because of this we can create cross platform applications that work on the web, mobile and as Windows Store apps using mainly only one set of code. This makes for much faster development than developing an application fro
+ each platform.</p>
+<p>One of the key aspects to creating cross platform applications is to test for features rather than creating code that uses browser detection. It's also important to keep in mind how users will use the application. Most users on mobile devices will be using
+ touch where as web users will likely be using a mouse. Due to this buttons should be big eough that it is easy to tap with a finger and mouse hover events should be avoided. Also, if single or multi touch is not supported then additional navigation tools may
+ need to be visible to the user. For intance, WP7 only supports single touch in the browser, as such the user wouldn't be able to zoom the map using pinch to zoom, so the application displays zoom buttons to the user that way they can still navigate the map.</p>
+<p>This sample&nbsp;makes&nbsp;provides the following features:</p>
+<ul>
+<li>Search (geocoding) </li><li>Display GPS location </li><li>Traffic data </li><li>Multiple Map styles </li><li>Toolbar that moves relative to the orientation of the device </li></ul>
+<p>Here is a screenshot of the Windows Store App:</p>
+<p>&nbsp;<img id="84065" src="description/CrossPlatHTML.png" alt="" width="555" height="280" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>Here is a screenshot of the Windows Phone app:</p>
+<p><img id="84066" src="description/CrossPlatHTML_WP8.PNG" alt="" width="203" height="381" style="margin-right:auto; margin-left:auto; display:block"></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

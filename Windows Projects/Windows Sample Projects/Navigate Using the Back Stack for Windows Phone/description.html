@@ -1,0 +1,1127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Navigate Using the Back Stack for Windows Phone</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Navigate Using the Back Stack for Windows Phone</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone SDK 7.1
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Navigation
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">9/12/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1 id="mainBody">Summary</h1>
+<div id="mainBody">
+<div>
+<p>This sample demonstrates how to modify the navigation of your application by manipulating its back navigation history, called the back stack. In Windows&nbsp;Phone OS&nbsp;7.1, functionality has been added to the NavigationService API for working with, and
+ enabling the inspection of, the navigation history. These properties and methods are used in the topic to inspect the back stack, remove entries, and then observe the effect those changes have on the navigation through the application.</p>
+<p><em>This is pre-release documentation for the Windows Phone OS 7.1 development platform. To provide feedback on this documentation, click
+<a href="http://wpdev.uservoice.com/pages/110707-docs" >here</a>. For the Windows Phone OS 7.0 developer documentation, click
+<a href="http://go.microsoft.com/fwlink/?LinkId=217276" >here</a>.</em></p>
+<p><em>August 19, 2011</em></p>
+<h1><span>Build and Run the Sample</span></h1>
+<p>You will need to install Windows&nbsp;Phone&nbsp;SDK&nbsp;7.1&nbsp;RC to run this sample. To get started, go to
+<a href="http://go.microsoft.com/fwlink/?LinkID=185192">App Hub</a>.</p>
+To run the sample
+<div>
+<ol>
+<li>
+<p>After unzipping the sample, double-click <span>sdkBackStackSample.sln</span> to open the solution.</p>
+</li><li>
+<p>Run the application by selecting the <span>Debug | Start Debugging</span> menu command.</p>
+</li><li>
+<p>The application launches, and the MainPage.xaml page is displayed. The bottom half of the screen displays the back stack visualization. There is nothing in the navigation history at this point, so the list is empty. The current page is shown as
+<span>[/MainPage.xaml]</span></p>
+</li><li>
+<p>Tap the <span>Next Page</span> button. Observe that the page changes to <span>
+page 1</span> and the back stack list now contains <span>/MainPage.xaml</span>.</p>
+</li><li>
+<p>Tap the <span>Next Page</span> button again. The current page is <span>page 2</span>. The back stack now contains two entries:
+<span>/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> and
+<span>/MainPage.xaml</span>. As a stack, it shows the newest entry at the top and the oldest entry at the bottom.</p>
+</li><li>
+<p>Tap the <span>Pop Last</span> button. The <span>/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> entry is removed from the back stack list.</p>
+</li><li>
+<p>Tap the hardware <span>Back</span> button on your device. The page <span>main page</span> is displayed and the back stack is empty. This happened because we removed
+<span>/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> from the back stack in the previous step, thus changing the back navigation from
+<span>Page 2 -&gt; Page1 -&gt; MainPage</span> to <span>Page2 -&gt; MainPage</span>.</p>
+</li><li>
+<p>Tap the <span>Next Page</span> button on <span>main page</span>. The page <span>
+page 1</span> is displayed. The back stack has one entry, <span>/MainPage.xaml</span>.</p>
+</li><li>
+<p>Tap the <span>Next Page</span> button on <span>page 1</span>. The page <span>page 2</span> is now displayed. The back stack has two entries,
+<span>/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> and
+<span>/MainPage.xaml</span>.</p>
+</li><li>
+<p>Tap <span>Pin To Start</span> on <span>page 2</span>.</p>
+</li><li>
+<p>A Tile named <span>page 2</span> is created on the Start screen of the device.</p>
+</li><li>
+<p>Tap the Tile you created in the preceding step. The application is launched, and
+<span>page 2</span> is displayed. Notice also that the back stack is empty. If you tap the
+<span>Back</span> button on the device, the application terminates. Observe that <span>
+page 2</span> was pinned to the Start screen on the device. The Tile was then tapped, the application launched, and Page2 is displayed. The back stack is now empty.</p>
+</li></ol>
+</div>
+<h1>Description</h1>
+<div class="alert">
+<table border="1" style="background-color:#fcfec5; border:1px solid #bbbbbb">
+<tbody>
+<tr>
+<th style="border-width:0px; text-align:left"><img src="description/030c41d9079671d09a62d8e2c1db6973.gif" alt="" width="1" height="1"><img id="alert_note" title="Note" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt="Note">
+<strong>Note:</strong> </th>
+</tr>
+<tr>
+<td style="border-width:0px">
+<p>The steps in the following procedure are for Visual Studio&nbsp;2010 Express for Windows Phone. You may see some minor variations in menu commands or window layouts when you are using the add-in for Visual Studio&nbsp;2010 Professional or Visual Studio&nbsp;2010
+ Ultimate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This topic contains the following sections:</p>
+<ul>
+<li>
+<p><span><a href="http://msdn.microsoft.com/en-us/library/hh394012%28v=vs.92%29.aspx#BKMK_BACKSTACK_INTRODUCING">Introducing the Navigation History Back Stack</a>
+</span></p>
+</li><li>
+<p><span><a href="http://msdn.microsoft.com/en-us/library/hh394012%28v=vs.92%29.aspx#BKMK_BACKSTACK_VISUALIZING">Visualizing the Back Stack</a>
+</span></p>
+</li><li>
+<p><span><a href="http://msdn.microsoft.com/en-us/library/hh394012%28v=vs.92%29.aspx#BKMK_BACKSTACK_ADDING">Adding Pages to the Application</a>
+</span></p>
+</li><li>
+<p><span><a href="http://msdn.microsoft.com/en-us/library/hh394012%28v=vs.92%29.aspx#BKMK_BACKSTACK_RUNNING">Testing the Application</a></span></p>
+</li></ul>
+<div class="alert">
+<table border="1" width="1076" height="53" style="background-color:#fcfec5; border:1px solid #bbbbbb">
+<tbody>
+<tr>
+<th style="border-width:0px; text-align:left"><img src="description/030c41d9079671d09a62d8e2c1db6973.gif" alt="" width="1" height="1"><img id="alert_note" title="Note" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt="Note">
+<strong>Note:</strong> </th>
+</tr>
+<tr>
+<td style="border-width:0px">
+<p>The terms <span class="parameter">navigation history</span> and <span class="parameter">
+back stack</span> are used interchangeably throughout this topic to refer to the back navigation history that is exposed by the
+<span><span class="input">NavigationService.BackStack</span></span> property</p>
+<a title="Collapse"><img class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt=""></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div></div>
+<h2>Introducing the Navigation History Back Stack</h2>
+<div>
+<div>
+<hr class="LW_CollapsibleArea_Hr">
+The navigation history of an application is represented as a last-in, first-out structure called a
+<span class="parameter">stack</span>. This is also referred to here as the <span class="parameter">
+back stack</span>, since it contains the set of pages in a stack structure that represents the back navigation of your application. Think of this stack as a stack of plates. The last plate you add to the stack will be the first plate you can remove. The newest
+ item is added to the top of this stack. This is referred to as a <span class="parameter">
+push</span> operation. Removing the top item in a stack is referred to as a <span class="parameter">
+pop</span> operation. You can retrieve something from a stack only by removing items one at a time from the top of the stack. The concept of a stack is shown in the following figure.</div>
+</div>
+</div>
+<div>
+<div class="sectionblock"><img id="AP_Con_BackStack_Stack" title="BackStack stack representation" src="description/IC531004.png" alt="BackStack stack representation">
+<p>When a page in your application calls <span><span class="input">Navigate</span></span>, the current page is put onto the back stack and a new instance of the destination page is created and displayed. As you navigate through pages in an application, entries
+ are added to this stack. When a page calls <span><span class="input">GoBack</span></span>, or when the user presses the phone&rsquo;s
+<span class="label">Back</span> button, the current page is abandoned and the page at the top of the stack is popped off the back stack and displayed. This back navigation continues until there are no more entries in the stack. At this point, a tap of the
+ phone&rsquo;s <span class="label">Back</span> button will terminate the application.</p>
+<p>While most applications will never have to manipulate the back stack, and function perfectly fine with the default navigation, some developers need to adjust the navigation history to provide the best user experience for their application. There are many
+ reasons for wanting to do this. For example, you may have a login page in your application. Once the user has logged in, you may not want the user to be able to navigate back to that page. This topic demonstrates how to use the
+<span><span class="input">BackStack</span></span> property and the <span><span class="input">RemoveBackEntry</span></span> method to manipulate the navigation history.</p>
+</div>
+</div>
+<div>
+<h2>Visualizing the Back Stack in the Application</h2>
+<hr>
+<div class="sectionblock">
+<p>This section describes how to visualize the navigation history, or back stack, in the application so that it can be easily inspected while the application is running. Our application consists of multiple pages. As we navigate from one page to the next, we
+ want to see what entries are on the back stack. We also want an easy way to remove entries, and see all updates to the back stack. In this application, we will visualize the back stack as a list on the screen. This is illustrated in the following figure. This
+ is done so that the concepts of the back stack can be understood. You should not need to show the back stack entries in your application, but that is up to you.</p>
+<img id="AP_Con_BackStack_InitialUI" title="BackStack Initial UI" src="description/IC531005.png" alt="BackStack Initial UI">
+<p>The grey area in the preceding figure is the visualization of the back stack in our application. As we navigate around the application, the list will be populated with the entries from the navigation history. We will use the
+<span class="label">Pop Last</span> and <span class="label">Pop To Selected</span> buttons to change the navigation history. This grey area is not on each individual page. Instead, the list is added centrally to the application&rsquo;s
+<span class="label">RootFrame</span>. The <span class="label">RootFrame</span> object is the
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.controls.phoneapplicationframe%28v=vs.92%29.aspx">PhoneApplicationFrame</a></span> associated with the application. Each application has one
+<span class="label">RootFrame</span>. Each page of the application, or instance of
+<span><span class="input">PhoneApplicationPage</span></span>, is set as the <span>
+<span class="input">Content</span></span> of this frame by the navigation framework when the user navigates to that page. The default template for the
+<span><span class="input">RootFrame</span></span> object that you get when you create a new Windows&nbsp;Phone application displays the application pages, and other elements such as the system tray and Application Bar for the application. In this example,
+ we create a template that shows the application pages but leaves room to display the back stack as a list at the bottom of the screen. As you navigate from page to page, this centralized list is updated to reflect the current state of the navigation history,
+ or back stack, of the application. For more information about the anatomy of a Windows&nbsp;Phone application, see
+<span><a href="http://msdn.microsoft.com/en-us/library/ff402536%28v=vs.92%29.aspx">Frame and Page Navigation Overview for Windows Phone</a></span>.</p>
+To visualize the back stack
+<div>
+<ol>
+<li>
+<p>In Visual Studio&nbsp;2010 Express for Windows&nbsp;Phone, create a new project by selecting the
+<span class="label">File | New Project</span> menu command.</p>
+</li><li>
+<p>The <span class="label">New Project</span> window is displayed. Expand the <span class="label">
+Visual C#</span> templates, and then select the <span class="label">Silverlight for Windows Phone</span> templates.</p>
+</li><li>
+<p>Select the <span class="label">Windows Phone Application</span> template. Fill in the
+<span class="label">Name</span> with a name of your choice.</p>
+</li><li>
+<p>Click <span class="label">OK</span>. The Windows Phone Platform selection window will appear. Select
+<span class="label">Windows Phone 7.1</span> for the <span class="label">Target Windows Phone Version</span> .</p>
+</li><li>
+<p>Click <span class="label">OK</span>. A new project is created, and <span class="label">
+MainPage.xaml</span> is opened in the Visual Studio designer window.</p>
+</li><li>
+<p>The next step is to change the template used by the <span class="label">RootFrame</span> of the application to visualize the back stack. This is done by placing a
+<span><span class="input">ListBox</span></span> in a custom <span><span class="input">ControlTemplate</span></span> for the
+<span><span class="input">RootFrame</span></span>. This new template will be defined in the
+<span><span class="input">Application.Resources</span></span> section of the App.xaml page. In the
+<span class="label">App.xaml</span> file, replace the <span><span class="input">Application.Resources</span></span> entry with the following markup. The template is made up of a grid with two rows. The ContentPresenter is in the first row of the grid. This
+ is where each page&rsquo;s content will be displayed. Another grid is added to the second row of this grid to contain the UI for the back stack. This UI consists of a
+<span><span class="input">ListBox</span></span> to show each entry in the back stack as well as some buttons to manipulate the back stack.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;Application.Resources&gt;
+        &lt;ControlTemplate x:Name=&quot;NewFrameTemplate&quot;&gt;
+            &lt;Grid x:Name=&quot;ClientArea&quot;&gt;
+                &lt;Grid.RowDefinitions&gt;
+                    &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                &lt;/Grid.RowDefinitions&gt;
+                &lt;ContentPresenter Grid.Row=&quot;0&quot;/&gt;
+                &lt;Border Grid.Row=&quot;1&quot; BorderBrush=&quot;{StaticResource PhoneForegroundBrush}&quot; BorderThickness=&quot;{StaticResource PhoneBorderThickness}&quot; Height=&quot;300&quot;&gt;
+                    &lt;Grid x:Name=&quot;ContentPanel&quot; Background=&quot;{StaticResource PhoneSemitransparentBrush}&quot;&gt;
+                        &lt;Grid.RowDefinitions&gt;
+                            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                            &lt;RowDefinition /&gt;
+                            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                        &lt;/Grid.RowDefinitions&gt;
+                        &lt;TextBlock  Grid.Row=&quot;0&quot; x:Name=&quot;CurrentPage&quot; Style=&quot;{StaticResource PhoneTextSubtleStyle}&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+                        &lt;ListBox Grid.Row=&quot;1&quot; ItemsSource=&quot;{Binding}&quot; x:Name=&quot;HistoryList&quot; 
+                                HorizontalAlignment=&quot;Center&quot; Height=&quot;300&quot;&gt;
+                            &lt;ListBox.ItemTemplate&gt;
+                                &lt;DataTemplate&gt;
+                                    &lt;Border BorderBrush=&quot;{StaticResource PhoneForegroundBrush}&quot; BorderThickness=&quot;{StaticResource PhoneBorderThickness}&quot; Width=&quot;300&quot; Margin=&quot;5&quot; 
+                                            Background=&quot;DarkGray&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                                        &lt;TextBlock Text=&quot;{Binding}&quot;/&gt;
+                                    &lt;/Border&gt;
+                                &lt;/DataTemplate&gt;
+                            &lt;/ListBox.ItemTemplate&gt;
+                        &lt;/ListBox&gt;
+                        &lt;StackPanel Grid.Row=&quot;2&quot; Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                            &lt;Button Content=&quot;Pop Last&quot; x:Name=&quot;btnPopLast&quot; IsEnabled=&quot;false&quot;/&gt;
+                            &lt;Button Content=&quot;Pop To Selected&quot; x:Name=&quot;btnPopToSelected&quot; IsEnabled=&quot;false&quot;/&gt;
+                        &lt;/StackPanel&gt;
+                    &lt;/Grid&gt;
+                &lt;/Border&gt;
+
+            &lt;/Grid&gt;
+        &lt;/ControlTemplate&gt;
+    &lt;/Application.Resources&gt;
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js">&lt;Application.Resources&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ControlTemplate&nbsp;x:Name=<span class="js__string">&quot;NewFrameTemplate&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;x:Name=<span class="js__string">&quot;ClientArea&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid.RowDefinitions&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;*&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;Auto&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid.RowDefinitions&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ContentPresenter&nbsp;Grid.Row=<span class="js__string">&quot;0&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Border&nbsp;Grid.Row=<span class="js__string">&quot;1&quot;</span>&nbsp;BorderBrush=<span class="js__string">&quot;{StaticResource&nbsp;PhoneForegroundBrush}&quot;</span>&nbsp;BorderThickness=<span class="js__string">&quot;{StaticResource&nbsp;PhoneBorderThickness}&quot;</span>&nbsp;Height=<span class="js__string">&quot;300&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;x:Name=<span class="js__string">&quot;ContentPanel&quot;</span>&nbsp;Background=<span class="js__string">&quot;{StaticResource&nbsp;PhoneSemitransparentBrush}&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid.RowDefinitions&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;Auto&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;Auto&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid.RowDefinitions&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;&nbsp;Grid.Row=<span class="js__string">&quot;0&quot;</span>&nbsp;x:Name=<span class="js__string">&quot;CurrentPage&quot;</span>&nbsp;Style=<span class="js__string">&quot;{StaticResource&nbsp;PhoneTextSubtleStyle}&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Center&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListBox&nbsp;Grid.Row=<span class="js__string">&quot;1&quot;</span>&nbsp;ItemsSource=<span class="js__string">&quot;{Binding}&quot;</span>&nbsp;x:Name=<span class="js__string">&quot;HistoryList&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HorizontalAlignment=<span class="js__string">&quot;Center&quot;</span>&nbsp;Height=<span class="js__string">&quot;300&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListBox.ItemTemplate&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataTemplate&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Border&nbsp;BorderBrush=<span class="js__string">&quot;{StaticResource&nbsp;PhoneForegroundBrush}&quot;</span>&nbsp;BorderThickness=<span class="js__string">&quot;{StaticResource&nbsp;PhoneBorderThickness}&quot;</span>&nbsp;Width=<span class="js__string">&quot;300&quot;</span>&nbsp;Margin=<span class="js__string">&quot;5&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Background=<span class="js__string">&quot;DarkGray&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Center&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;Text=<span class="js__string">&quot;{Binding}&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Border&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DataTemplate&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ListBox.ItemTemplate&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ListBox&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;Grid.Row=<span class="js__string">&quot;2&quot;</span>&nbsp;Orientation=<span class="js__string">&quot;Horizontal&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Center&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button&nbsp;Content=<span class="js__string">&quot;Pop&nbsp;Last&quot;</span>&nbsp;x:Name=<span class="js__string">&quot;btnPopLast&quot;</span>&nbsp;IsEnabled=<span class="js__string">&quot;false&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button&nbsp;Content=<span class="js__string">&quot;Pop&nbsp;To&nbsp;Selected&quot;</span>&nbsp;x:Name=<span class="js__string">&quot;btnPopToSelected&quot;</span>&nbsp;IsEnabled=<span class="js__string">&quot;false&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Border&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ControlTemplate&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Application.Resources&gt;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+</li><li>
+<p>In the <span class="label">App.xaml</span> code-behind file, add the following declarations to the top of the App class. These will be used to reference the UI elements that were created from the custom template.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// UI controls on the RootFrame template.
+ListBox historyListBox;            // ListBox for listing the navigation history
+Button popLastButton;              // Button to pop the newest entry from the back stack
+Button popToSelectedButton;        // Button to pop all entries in the back stack up to the selected entry
+TextBlock currentPageTextBlock;    // TextBlock to display the current page the user is on
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">//&nbsp;UI&nbsp;controls&nbsp;on&nbsp;the&nbsp;RootFrame&nbsp;template.</span>&nbsp;
+ListBox&nbsp;historyListBox;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;ListBox&nbsp;for&nbsp;listing&nbsp;the&nbsp;navigation&nbsp;history</span>&nbsp;
+Button&nbsp;popLastButton;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Button&nbsp;to&nbsp;pop&nbsp;the&nbsp;newest&nbsp;entry&nbsp;from&nbsp;the&nbsp;back&nbsp;stack</span>&nbsp;
+Button&nbsp;popToSelectedButton;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Button&nbsp;to&nbsp;pop&nbsp;all&nbsp;entries&nbsp;in&nbsp;the&nbsp;back&nbsp;stack&nbsp;up&nbsp;to&nbsp;the&nbsp;selected&nbsp;entry</span>&nbsp;
+TextBlock&nbsp;currentPageTextBlock;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TextBlock&nbsp;to&nbsp;display&nbsp;the&nbsp;current&nbsp;page&nbsp;the&nbsp;user&nbsp;is&nbsp;on</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+</li><li>
+<p>In the code-behind file of the <span class="label">App.xaml</span> page, add the following lines of code in the constructor, directly after the call to
+<span class="code">InitializePhoneApplication</span>. First, the template for the
+<span><span class="input">RootFrame</span></span> is set to <span class="code">
+NewFrameTemplate</span>, which is the name of the template we defined in Step 6. The event handlers for the buttons on the template are also hooked up here. Finally, a delegate is defined for the
+<span><span class="input">Navigated</span></span> event of the <span><span class="input">RootFrame</span></span> to update the history.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Set the template for the RootFrame to the new template we created in the Application.Resources in App.xaml
+RootFrame.Template = Resources[&quot;NewFrameTemplate&quot;] as ControlTemplate;
+RootFrame.ApplyTemplate();
+
+popToSelectedButton = (VisualTreeHelper.GetChild(RootFrame, 0) as FrameworkElement).FindName(&quot;btnPopToSelected&quot;) as Button;
+popToSelectedButton.Click &#43;= new RoutedEventHandler(PopToSelectedButton_Click);
+
+popLastButton = (VisualTreeHelper.GetChild(RootFrame, 0) as FrameworkElement).FindName(&quot;btnPopLast&quot;) as Button;
+popLastButton.Click &#43;= new RoutedEventHandler(PopLastButton_Click);
+
+currentPageTextBlock = (VisualTreeHelper.GetChild(RootFrame, 0) as FrameworkElement).FindName(&quot;CurrentPage&quot;) as TextBlock;
+
+historyListBox = (VisualTreeHelper.GetChild(RootFrame, 0) as FrameworkElement).FindName(&quot;HistoryList&quot;) as ListBox;
+historyListBox.SelectionChanged &#43;= new SelectionChangedEventHandler(HistoryList_SelectionChanged);
+
+// Update the navigation history listbox whenever a navigation happens in the application
+RootFrame.Navigated &#43;= delegate { RootFrame.Dispatcher.BeginInvoke(delegate { UpdateHistory(); }); };
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">//&nbsp;Set&nbsp;the&nbsp;template&nbsp;for&nbsp;the&nbsp;RootFrame&nbsp;to&nbsp;the&nbsp;new&nbsp;template&nbsp;we&nbsp;created&nbsp;in&nbsp;the&nbsp;Application.Resources&nbsp;in&nbsp;App.xaml</span>&nbsp;
+RootFrame.Template&nbsp;=&nbsp;Resources[<span class="js__string">&quot;NewFrameTemplate&quot;</span>]&nbsp;as&nbsp;ControlTemplate;&nbsp;
+RootFrame.ApplyTemplate();&nbsp;
+&nbsp;
+popToSelectedButton&nbsp;=&nbsp;(VisualTreeHelper.GetChild(RootFrame,&nbsp;<span class="js__num">0</span>)&nbsp;as&nbsp;FrameworkElement).FindName(<span class="js__string">&quot;btnPopToSelected&quot;</span>)&nbsp;as&nbsp;Button;&nbsp;
+popToSelectedButton.Click&nbsp;&#43;=&nbsp;<span class="js__operator">new</span>&nbsp;RoutedEventHandler(PopToSelectedButton_Click);&nbsp;
+&nbsp;
+popLastButton&nbsp;=&nbsp;(VisualTreeHelper.GetChild(RootFrame,&nbsp;<span class="js__num">0</span>)&nbsp;as&nbsp;FrameworkElement).FindName(<span class="js__string">&quot;btnPopLast&quot;</span>)&nbsp;as&nbsp;Button;&nbsp;
+popLastButton.Click&nbsp;&#43;=&nbsp;<span class="js__operator">new</span>&nbsp;RoutedEventHandler(PopLastButton_Click);&nbsp;
+&nbsp;
+currentPageTextBlock&nbsp;=&nbsp;(VisualTreeHelper.GetChild(RootFrame,&nbsp;<span class="js__num">0</span>)&nbsp;as&nbsp;FrameworkElement).FindName(<span class="js__string">&quot;CurrentPage&quot;</span>)&nbsp;as&nbsp;TextBlock;&nbsp;
+&nbsp;
+historyListBox&nbsp;=&nbsp;(VisualTreeHelper.GetChild(RootFrame,&nbsp;<span class="js__num">0</span>)&nbsp;as&nbsp;FrameworkElement).FindName(<span class="js__string">&quot;HistoryList&quot;</span>)&nbsp;as&nbsp;ListBox;&nbsp;
+historyListBox.SelectionChanged&nbsp;&#43;=&nbsp;<span class="js__operator">new</span>&nbsp;SelectionChangedEventHandler(HistoryList_SelectionChanged);&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Update&nbsp;the&nbsp;navigation&nbsp;history&nbsp;listbox&nbsp;whenever&nbsp;a&nbsp;navigation&nbsp;happens&nbsp;in&nbsp;the&nbsp;application</span>&nbsp;
+RootFrame.Navigated&nbsp;&#43;=&nbsp;delegate&nbsp;<span class="js__brace">{</span>&nbsp;RootFrame.Dispatcher.BeginInvoke(delegate&nbsp;<span class="js__brace">{</span>&nbsp;UpdateHistory();&nbsp;<span class="js__brace">}</span>);&nbsp;<span class="js__brace">}</span>;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="codeSnippetContainer">
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_55403c63-72fe-4825-8daf-1223d2d6a157">
+<div style="color:black"></div>
+</div>
+</div>
+</div>
+</li><li>
+<p>Add the following methods to the code-behind file for the <span class="label">
+App.xaml</span> page. <span class="code">UpdateHistory</span> refreshes the UI for the navigation back stack. This is called when the
+<span><span class="input">Navigated</span></span> event fires on the <span class="label">
+RootFrame</span>, which occurs whenever any navigation happens in the application. The method iterates over all entries in the
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.controls.phoneapplicationframe.backstack%28v=vs.92%29.aspx">BackStack</a></span> property and adds them to the
+<span><span class="input">ListBox</span></span>. It also displays the URI of the current page. If there are entries in the navigation back stack, the
+<span class="label">Pop Last</span> button is enabled. <span class="code">HistoryList_SelectionChanged</span> enables or disables the
+<span class="label">Pop To Selected</span> button depending on whether an item in the navigation history list was selected.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// Use the BackStack property to refresh the navigation history list box with the latest history.
+/// &lt;/summary&gt;
+void UpdateHistory()
+{
+   historyListBox.Items.Clear();
+   int i = 0;
+
+   foreach (JournalEntry journalEntry in RootFrame.BackStack.Reverse())
+   {
+      historyListBox.Items.Insert(0, i &#43; &quot;: &quot; &#43; journalEntry.Source);
+      i&#43;&#43;;
+   }
+   currentPageTextBlock.Text = &quot;[&quot; &#43; RootFrame.Source &#43; &quot;]&quot;;
+   if (popLastButton != null)
+   {
+       popLastButton.IsEnabled = (historyListBox.Items.Count() &gt; 0);
+   }
+}
+
+/// &lt;summary&gt;
+/// Handle the SelectionChanged event for navigation history list.
+/// &lt;/summary&gt;
+private void HistoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+   if (historyListBox != null &amp;&amp; popToSelectedButton != null)
+   {
+       popToSelectedButton.IsEnabled = (historyListBox.SelectedItems.Count &gt; 0) ? true : false;
+   }
+}</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;Use&nbsp;the&nbsp;BackStack&nbsp;property&nbsp;to&nbsp;refresh&nbsp;the&nbsp;navigation&nbsp;history&nbsp;list&nbsp;box&nbsp;with&nbsp;the&nbsp;latest&nbsp;history.</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="js__operator">void</span>&nbsp;UpdateHistory()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;historyListBox.Items.Clear();&nbsp;
+&nbsp;&nbsp;&nbsp;int&nbsp;i&nbsp;=&nbsp;<span class="js__num">0</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;foreach&nbsp;(JournalEntry&nbsp;journalEntry&nbsp;<span class="js__operator">in</span>&nbsp;RootFrame.BackStack.Reverse())&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;historyListBox.Items.Insert(<span class="js__num">0</span>,&nbsp;i&nbsp;&#43;&nbsp;<span class="js__string">&quot;:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;journalEntry.Source);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&#43;&#43;;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;currentPageTextBlock.Text&nbsp;=&nbsp;<span class="js__string">&quot;[&quot;</span>&nbsp;&#43;&nbsp;RootFrame.Source&nbsp;&#43;&nbsp;<span class="js__string">&quot;]&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(popLastButton&nbsp;!=&nbsp;null)&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popLastButton.IsEnabled&nbsp;=&nbsp;(historyListBox.Items.Count()&nbsp;&gt;&nbsp;<span class="js__num">0</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;Handle&nbsp;the&nbsp;SelectionChanged&nbsp;event&nbsp;for&nbsp;navigation&nbsp;history&nbsp;list.</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+private&nbsp;<span class="js__operator">void</span>&nbsp;HistoryList_SelectionChanged(object&nbsp;sender,&nbsp;SelectionChangedEventArgs&nbsp;e)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(historyListBox&nbsp;!=&nbsp;null&nbsp;&amp;&amp;&nbsp;popToSelectedButton&nbsp;!=&nbsp;null)&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popToSelectedButton.IsEnabled&nbsp;=&nbsp;(historyListBox.SelectedItems.Count&nbsp;&gt;&nbsp;<span class="js__num">0</span>)&nbsp;?&nbsp;true&nbsp;:&nbsp;false;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="codeSnippetContainer">
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c5e8f4bb-9552-4949-ab0c-3346fc2513bb">
+<div style="color:black"></div>
+</div>
+</div>
+</div>
+</li><li>
+<p>Add the following method to the code-behind file for the <span class="label">
+App.xaml</span> page. This handles the click event on the <span class="label">Pop Last</span> button. When the user taps this button, the last entry added to the back stack is removed. This method uses the
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.controls.phoneapplicationframe.removebackentry%28v=vs.92%29.aspx">RemoveBackEntry</a></span> method on the
+<span><span class="input">RootFrame</span></span>. After the entry has been removed, the list of back stack entries is refreshed by calling
+<span class="code">UpdateHistory</span>.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// Remove the last entry from the back stack.
+/// &lt;/summary&gt;
+private void PopLastButton_Click(object sender, RoutedEventArgs e)
+{
+    // If RemoveBackEntry is called on an empty back stack, an InvalidOperationException is thrown.
+    // Check to make sure the back stack has entries before calling RemoveBackEntry.
+    if (RootFrame.BackStack.Count() &gt; 0)
+        RootFrame.RemoveBackEntry();
+
+    // Refresh the history list since the back stack has been modified.
+    UpdateHistory();
+}</pre>
+<div class="preview">
+<pre id="codePreview" class="csharp"><span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;Remove&nbsp;the&nbsp;last&nbsp;entry&nbsp;from&nbsp;the&nbsp;back&nbsp;stack.</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;PopLastButton_Click(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;If&nbsp;RemoveBackEntry&nbsp;is&nbsp;called&nbsp;on&nbsp;an&nbsp;empty&nbsp;back&nbsp;stack,&nbsp;an&nbsp;InvalidOperationException&nbsp;is&nbsp;thrown.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Check&nbsp;to&nbsp;make&nbsp;sure&nbsp;the&nbsp;back&nbsp;stack&nbsp;has&nbsp;entries&nbsp;before&nbsp;calling&nbsp;RemoveBackEntry.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(RootFrame.BackStack.Count()&nbsp;&gt;&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RootFrame.RemoveBackEntry();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Refresh&nbsp;the&nbsp;history&nbsp;list&nbsp;since&nbsp;the&nbsp;back&nbsp;stack&nbsp;has&nbsp;been&nbsp;modified.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;UpdateHistory();&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+</li><li>
+<p>Add the following method to the code-behind file for the <span class="label">
+App.xaml</span> page. If the user selects an item on the back stack and taps <span class="label">
+Pop To Selected</span>, all entries up to the selected entry are removed from the back stack. The
+<span><a href="http://msdn.microsoft.com/en-us/library/microsoft.phone.controls.phoneapplicationframe.removebackentry%28v=vs.92%29.aspx">RemoveBackEntry</a></span> method on the
+<span><span class="input">RootFrame</span></span> is used to remove each entry from the back stack. After the entries have been removed, the back stack UI is refreshed by calling
+<span class="code">UpdateHistory</span>.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// Remove all entries from the back stack up to the selected item, but not including it.
+/// &lt;/summary&gt;
+private void PopToSelectedButton_Click(object sender, RoutedEventArgs e)
+{
+    // Make sure something has been selected.
+    if (historyListBox != null &amp;&amp; historyListBox.SelectedIndex &gt;= 0)
+    {
+        for (int i = 0; i &lt; historyListBox.SelectedIndex; i&#43;&#43;)
+        {
+            RootFrame.RemoveBackEntry();
+        }
+        // Refresh the history list since the back stack has been modified.
+        UpdateHistory();
+    }
+ }</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;Remove&nbsp;all&nbsp;entries&nbsp;from&nbsp;the&nbsp;back&nbsp;stack&nbsp;up&nbsp;to&nbsp;the&nbsp;selected&nbsp;item,&nbsp;but&nbsp;not&nbsp;including&nbsp;it.</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+private&nbsp;<span class="js__operator">void</span>&nbsp;PopToSelectedButton_Click(object&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Make&nbsp;sure&nbsp;something&nbsp;has&nbsp;been&nbsp;selected.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(historyListBox&nbsp;!=&nbsp;null&nbsp;&amp;&amp;&nbsp;historyListBox.SelectedIndex&nbsp;&gt;=&nbsp;<span class="js__num">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">for</span>&nbsp;(int&nbsp;i&nbsp;=&nbsp;<span class="js__num">0</span>;&nbsp;i&nbsp;&lt;&nbsp;historyListBox.SelectedIndex;&nbsp;i&#43;&#43;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RootFrame.RemoveBackEntry();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Refresh&nbsp;the&nbsp;history&nbsp;list&nbsp;since&nbsp;the&nbsp;back&nbsp;stack&nbsp;has&nbsp;been&nbsp;modified.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UpdateHistory();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</li></ol>
+</div>
+<p>This section described how to add a custom template for the <span><span class="input">RootFrame</span></span> of our application so that we can inspect and modify the back stack as we navigate around our application. To demonstrate this functionality,
+ we need to add multiple pages to the application. This is described in the next section.</p>
+</div>
+</div>
+<div>
+<h2>Adding Pages to the Application
+<hr>
+</h2>
+<div class="sectionblock">
+<p>To demonstrate navigation history inspection and manipulation, we need to add multiple pages to our application. This section describes how to add these pages to the application. Our example will consist of four pages:
+<span class="label">MainPage.xaml</span>, <a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">
+<span class="label">Page1.xaml</span></a>, <span class="label">Page2.xaml</span>, and
+<span class="label">Page3.xaml</span>. Each page is structured the same and uses the same UI. As a result, the following steps will be repeated for each page. In this example, no attempt has been made to reuse code through helper methods or by wrapping the
+ UI in a <span><span class="input">UserControl</span></span>.</p>
+To add pages to the application
+<div>
+<ol>
+<li>
+<p>Add a new page to the project by selecting the <span class="label">Project | Add New Item</span> menu command. The
+<span class="label">Add New Item</span> window will be displayed. Select <span class="label">
+Windows Phone Portrait Page</span> in the list of items to add and type <span class="input">
+<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> in the
+<span class="input">Name</span> field. Click <span class="label">Add</span> to add the new page to your project. A new page named
+<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">
+Page1.xaml</a> is now added to the project.</p>
+</li><li>
+<p>The first thing to do is to define the page UI. In <a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">
+Page1.xaml</a>, replace the grid named <span class="label">ContentPanel</span> with the following code. This creates a
+<span><span class="input">CheckBox</span></span> used to toggle whether the page is pinned to the Start screen and a
+<span><span class="input">Button</span></span> to navigate to the next page in the application, if a next page exists. Pinning the page to the Start screen of the phone is a very interesting case and is demonstrated here to show the state of the back stack
+ when you click on the page&rsquo;s Tile on the Start screen to launch the application. The event handlers shown in the following code are described in subsequent steps.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;!--ContentPanel - place additional content here--&gt;
+&lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,0,12,0&quot;&gt;
+    &lt;CheckBox x:Name=&quot;PinToStartCheckBox&quot; Content=&quot;Pin To Start&quot; IsChecked=&quot;False&quot; HorizontalAlignment=&quot;Center&quot; 
+              Click=&quot;PinToStartCheckBox_Click&quot;/&gt;
+    &lt;Button x:Name=&quot;btnNext&quot; Content=&quot;Next Page&quot;  Height=&quot;80&quot; VerticalAlignment=&quot;Bottom&quot; 
+            Click=&quot;btnNext_Click&quot;/&gt;
+&lt;/Grid&gt;</pre>
+<div class="preview">
+<pre id="codePreview" class="js">&lt;!--ContentPanel&nbsp;-&nbsp;place&nbsp;additional&nbsp;content&nbsp;here--&gt;&nbsp;
+&lt;Grid&nbsp;x:Name=<span class="js__string">&quot;ContentPanel&quot;</span>&nbsp;Grid.Row=<span class="js__string">&quot;1&quot;</span>&nbsp;Margin=<span class="js__string">&quot;12,0,12,0&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;CheckBox&nbsp;x:Name=<span class="js__string">&quot;PinToStartCheckBox&quot;</span>&nbsp;Content=<span class="js__string">&quot;Pin&nbsp;To&nbsp;Start&quot;</span>&nbsp;IsChecked=<span class="js__string">&quot;False&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Center&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click=<span class="js__string">&quot;PinToStartCheckBox_Click&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button&nbsp;x:Name=<span class="js__string">&quot;btnNext&quot;</span>&nbsp;Content=<span class="js__string">&quot;Next&nbsp;Page&quot;</span>&nbsp;&nbsp;Height=<span class="js__string">&quot;80&quot;</span>&nbsp;VerticalAlignment=<span class="js__string">&quot;Bottom&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click=<span class="js__string">&quot;btnNext_Click&quot;</span>/&gt;&nbsp;
+&lt;/Grid&gt;&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</li><li>
+<p>In the code-behind file for this page, add the following <span><span class="input">using</span></span> directive.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">C#
+
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Shell.aspx"  title="Auto generated link to Microsoft.Phone.Shell">Microsoft.Phone.Shell</a>;</pre>
+<div class="preview">
+<pre id="codePreview" class="csharp">C#&nbsp;
+&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Shell.aspx"  title="Auto generated link to Microsoft.Phone.Shell">Microsoft.Phone.Shell</a>;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</li><li>
+<p>Add the following variable declaration to the top of the class.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// The URI string of the next page to navigate to from this page.
+// String.Empty here means that there is no next page.
+private string nextPage;
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">//&nbsp;The&nbsp;URI&nbsp;string&nbsp;of&nbsp;the&nbsp;next&nbsp;page&nbsp;to&nbsp;navigate&nbsp;to&nbsp;from&nbsp;this&nbsp;page.</span>&nbsp;
+<span class="js__sl_comment">//&nbsp;String.Empty&nbsp;here&nbsp;means&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;next&nbsp;page.</span>&nbsp;
+private&nbsp;string&nbsp;nextPage;&nbsp;
+&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div class="codeSnippetContainer">
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6993258d-f7e8-45ea-98f9-0185f8bdcbd9">
+<div style="color:black"></div>
+</div>
+</div>
+</div>
+</li><li>
+<p>Add the following lines of code after <span class="code">InitializeComponent()</span> in the class constructor.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Set the application title - use the same application title on each page.
+ApplicationTitle.Text = &quot;SDK BACKSTACK SAMPLE&quot;;
+
+// Set a unique page title. In this example, we will use &quot;page 1&quot;, &quot;page 2&quot;, and so on.
+PageTitle.Text = &quot;page 1&quot;;
+
+// Set the URI string of the next page, or String.Empty if there is no next page.
+nextPage = &quot;/Page2.xaml&quot;;
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">//&nbsp;Set&nbsp;the&nbsp;application&nbsp;title&nbsp;-&nbsp;use&nbsp;the&nbsp;same&nbsp;application&nbsp;title&nbsp;on&nbsp;each&nbsp;page.</span>&nbsp;
+ApplicationTitle.Text&nbsp;=&nbsp;<span class="js__string">&quot;SDK&nbsp;BACKSTACK&nbsp;SAMPLE&quot;</span>;&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Set&nbsp;a&nbsp;unique&nbsp;page&nbsp;title.&nbsp;In&nbsp;this&nbsp;example,&nbsp;we&nbsp;will&nbsp;use&nbsp;&quot;page&nbsp;1&quot;,&nbsp;&quot;page&nbsp;2&quot;,&nbsp;and&nbsp;so&nbsp;on.</span>&nbsp;
+PageTitle.Text&nbsp;=&nbsp;<span class="js__string">&quot;page&nbsp;1&quot;</span>;&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Set&nbsp;the&nbsp;URI&nbsp;string&nbsp;of&nbsp;the&nbsp;next&nbsp;page,&nbsp;or&nbsp;String.Empty&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;next&nbsp;page.</span>&nbsp;
+nextPage&nbsp;=&nbsp;<span class="js__string">&quot;/Page2.xaml&quot;</span>;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<br>
+<div class="alert">
+<table border="1" width="1076" height="53" style="background-color:#fcfec5; border:1px solid #bbbbbb">
+<tbody>
+<tr>
+<th style="border-width:0px; text-align:left"><img src="description/030c41d9079671d09a62d8e2c1db6973.gif" alt="" width="1" height="1"><img id="alert_note" title="Note" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt="Note">
+<strong>Note:</strong> </th>
+</tr>
+<tr>
+<td style="border-width:0px"><a title="Collapse">The steps in this procedure are repeated for each page you add, so remember to update the
+<span class="code">PageTitle.Text</span> and <span class="code">nextPage</span> for each page that is created.<img class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt=""></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li><li>
+<p>Add the following method to override the <span><span class="input">OnNavigatedTo</span></span> event handler. Here the
+<span class="label">Next Page</span> button is shown if this page has the <span class="code">
+nextPage</span> variable set. The <span class="label">Pin To Start</span> check box is set depending on whether a Tile for this page exists.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">protected override void OnNavigatedTo(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Navigation.NavigationEventArgs.aspx"  title="Auto generated link to System.Windows.Navigation.NavigationEventArgs">System.Windows.Navigation.NavigationEventArgs</a> e)
+{
+   base.OnNavigatedTo(e);
+   
+   // Show the Next button, if we have defined a next page.
+   btnNext.Visibility = (String.IsNullOrWhiteSpace(nextPage)) ? Visibility.Collapsed : Visibility.Visible;
+
+   if (ShellTile.ActiveTiles.FirstOrDefault(o =&gt; o.NavigationUri.ToString().Contains(NavigationService.Source.ToString())) == null)
+      PinToStartCheckBox.IsChecked = false;
+   else
+      PinToStartCheckBox.IsChecked = true;
+}</pre>
+<div class="preview">
+<pre id="codePreview" class="js">protected&nbsp;override&nbsp;<span class="js__operator">void</span>&nbsp;OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs&nbsp;e)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;base.OnNavigatedTo(e);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Show&nbsp;the&nbsp;Next&nbsp;button,&nbsp;if&nbsp;we&nbsp;have&nbsp;defined&nbsp;a&nbsp;next&nbsp;page.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;btnNext.Visibility&nbsp;=&nbsp;(<span class="js__object">String</span>.IsNullOrWhiteSpace(nextPage))&nbsp;?&nbsp;Visibility.Collapsed&nbsp;:&nbsp;Visibility.Visible;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(ShellTile.ActiveTiles.FirstOrDefault(o&nbsp;=&gt;&nbsp;o.NavigationUri.ToString().Contains(NavigationService.Source.ToString()))&nbsp;==&nbsp;null)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PinToStartCheckBox.IsChecked&nbsp;=&nbsp;false;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PinToStartCheckBox.IsChecked&nbsp;=&nbsp;true;&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+</li><li>
+<p>Add the following method to handle the <span><span class="input">Click</span></span> event for the
+<span class="label">Next Page</span> button on the page. If the <span class="code">
+nextpage</span> variable has been defined for this page, the <span><a href="http://msdn.microsoft.com/en-us/library/ms591053%28v=vs.92%29.aspx">Navigate</a></span> method is called to navigate to that page.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// Navigate to the next page.
+/// &lt;/summary&gt;
+private void btnNext_Click(object sender, RoutedEventArgs e)
+{
+     // Make sure to attempt navigation only if we have defined a next page.
+     if (!String.IsNullOrWhiteSpace(nextPage))
+     {
+        this.NavigationService.Navigate(new Uri(nextPage, UriKind.Relative));
+     }
+}
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;Navigate&nbsp;to&nbsp;the&nbsp;next&nbsp;page.</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+private&nbsp;<span class="js__operator">void</span>&nbsp;btnNext_Click(object&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Make&nbsp;sure&nbsp;to&nbsp;attempt&nbsp;navigation&nbsp;only&nbsp;if&nbsp;we&nbsp;have&nbsp;defined&nbsp;a&nbsp;next&nbsp;page.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(!<span class="js__object">String</span>.IsNullOrWhiteSpace(nextPage))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.NavigationService.Navigate(<span class="js__operator">new</span>&nbsp;Uri(nextPage,&nbsp;UriKind.Relative));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+</li><li>
+<p>Add the following method to handle the <span><span class="input">Click</span></span> event for the
+<span class="label">Pin To Start</span> check box on the page. This acts like a toggle. If a Tile for this page already exists on the Start screen, it is removed. If a Tile for this page does not exist on the Start screen, one is added. For more information
+ about Tiles, see <span><a href="http://msdn.microsoft.com/en-us/library/hh202960%28v=vs.92%29.aspx">Tiles for Windows Phone</a></span>.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// Toggle pinning a Tile for this page on the Start screen.
+/// &lt;/summary&gt;
+private void PinToStartCheckBox_Click(object sender, RoutedEventArgs e)
+{
+   // Try to find a Tile that has this page's URI.
+   ShellTile tile = ShellTile.ActiveTiles.FirstOrDefault(o =&gt; o.NavigationUri.ToString().Contains(NavigationService.Source.ToString()));
+
+   if (tile == null)
+   {
+      // No Tile was found, so add one for this page.
+      StandardTileData tileData = new StandardTileData { Title = PageTitle.Text };
+      ShellTile.Create(new Uri(NavigationService.Source.ToString(), UriKind.Relative), tileData);
+   }
+   else
+   {
+      // A Tile was found, so remove it.
+      tile.Delete();
+   }
+}
+</pre>
+<div class="preview">
+<pre id="codePreview" class="js"><span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;Toggle&nbsp;pinning&nbsp;a&nbsp;Tile&nbsp;for&nbsp;this&nbsp;page&nbsp;on&nbsp;the&nbsp;Start&nbsp;screen.</span>&nbsp;
+<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+private&nbsp;<span class="js__operator">void</span>&nbsp;PinToStartCheckBox_Click(object&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Try&nbsp;to&nbsp;find&nbsp;a&nbsp;Tile&nbsp;that&nbsp;has&nbsp;this&nbsp;page's&nbsp;URI.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;ShellTile&nbsp;tile&nbsp;=&nbsp;ShellTile.ActiveTiles.FirstOrDefault(o&nbsp;=&gt;&nbsp;o.NavigationUri.ToString().Contains(NavigationService.Source.ToString()));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(tile&nbsp;==&nbsp;null)&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;No&nbsp;Tile&nbsp;was&nbsp;found,&nbsp;so&nbsp;add&nbsp;one&nbsp;for&nbsp;this&nbsp;page.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StandardTileData&nbsp;tileData&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;StandardTileData&nbsp;<span class="js__brace">{</span>&nbsp;Title&nbsp;=&nbsp;PageTitle.Text&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShellTile.Create(<span class="js__operator">new</span>&nbsp;Uri(NavigationService.Source.ToString(),&nbsp;UriKind.Relative),&nbsp;tileData);&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;A&nbsp;Tile&nbsp;was&nbsp;found,&nbsp;so&nbsp;remove&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tile.Delete();&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;
+<div class="alert">
+<table border="1" width="1076" height="53" style="background-color:#fcfec5; border:1px solid #bbbbbb">
+<tbody>
+<tr>
+<th style="border-width:0px; text-align:left"><img src="description/030c41d9079671d09a62d8e2c1db6973.gif" alt="" width="1" height="1"><img id="alert_note" title="Note" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt="Note">
+<strong>Note:</strong> </th>
+</tr>
+<tr>
+<td style="border-width:0px"><a title="Collapse">If your application allows users to pin pages, you should consider whether or not a
+<span class="label">home</span> button is needed to allow the user to get back to the root of the application quickly. The implementation of a home button will navigate to the home page of the application and then clear the entire navigation back stack. Examine
+ each navigation scenario and determine whether this functionality is needed in each case. If the pinned page is self-contained, such as contact information, it is likely the user will want to tap on the page, look at the information and then back out of the
+ application. Backing out of the application in this case can be achieved using the hardware
+<span class="label">Back</span> button. If the pinned page is an entry point into the application from which the user will navigate deeply, then a quick way to get back to the root of the application may be needed. For example, if the pinned page is a shopping
+ cart, the user may want to complete the purchases in the shopping cart and then start shopping again. In this case, giving the user a home button improves the user experience by reducing the number of taps they need to get back to the start of the application.</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="alert"></div>
+</li><li>
+<p>The previous steps describe how to add a page and update it for use in this application. To complete the application, these steps should be repeated for MainPage, Page2, and Page 3 as follows.</p>
+<div class="tableSection">
+<table border="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="border:1px solid #bbbbbb">
+<p><strong><span class="label">Page name</span></strong></p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p><strong><span class="label">New page?</span></strong></p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p><strong><span class="label">Changes for step 5</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="border:1px solid #bbbbbb">
+<p>MainPage.xaml</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>No. This page was created when you created the application. Repeat steps 2 through 8 for this page.</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>PageTitle.Text = &ldquo;main&rdquo;;</p>
+<p>nextPage = &ldquo;/Page1.xaml&rdquo;;</p>
+</td>
+</tr>
+<tr>
+<td style="border:1px solid #bbbbbb">
+<p>Page2.xaml</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>Yes. Repeat steps 1 through 8 for this page.</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>PageTitle.Text = &ldquo;page 2&rdquo;;</p>
+<p>nextPage = &ldquo;/Page3.xaml&rdquo;;</p>
+</td>
+</tr>
+<tr>
+<td style="border:1px solid #bbbbbb">
+<p>Page3.xaml</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>Yes. Repeat steps 1 through 8 for this page.</p>
+</td>
+<td style="border:1px solid #bbbbbb">
+<p>PageTitle.Text = &ldquo;page 3&rdquo;;</p>
+<p>nextPage = String.Empty</p>
+<p>Specify String.Empty for the next page because page 3 is the last page in our application and we don&rsquo;t want to navigate forward from page 3.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
+</div>
+<p>When you have completed this section, your solution in the Solution Explorer is shown in the following figure. The application has four pages, and the forward navigation through these pages is as follows:
+<span class="label">MainPage.xaml -&gt; <a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">
+Page1.xaml</a> -&gt; Page2.xaml -&gt; Page3.xaml</span>.</p>
+<img id="AP_Con_BackStack_SE" title="Solution view for BackStack HowTo" src="description/IC531006.png" alt="Solution view for BackStack HowTo"></div>
+</div>
+<div>
+<div class="LW_CollapsibleArea_TitleDiv">
+<h2><a title="Collapse"><img class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt=""><span class="LW_CollapsibleArea_Title">Testing the Application</span></a>
+<div>
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</h2>
+</div>
+<div class="sectionblock">
+<p>This section describes how to run the application that was produced in this topic.</p>
+To test the application
+<div>
+<ol>
+<li>
+<p>Run the application by selecting the <span class="label">Debug | Start Debugging</span> menu command.</p>
+</li><li>
+<p>The application launches, and the MainPage.xaml page is displayed. This is shown in the following figure. The bottom half of the screen, displays the back stack visualization. There is nothing in the navigation history at this point, so the list is empty.
+ The current page is shown as <span class="label">[/MainPage.xaml]</span></p>
+<img id="AP_Con_BackStack_InitialUI" title="BackStack Initial UI" src="description/IC531005.png" alt="BackStack Initial UI">
+</li><li>
+<p>Tap the <span class="label">Next Page</span> button. Observe that the page changes to
+<span class="label">page 1</span> and the back stack list now contains <span class="label">
+/MainPage.xaml</span> .</p>
+</li><li>
+<p>Tap the <span class="label">Next Page</span> button again. The current page is
+<span class="label">page 2</span>. The back stack now contains two entries: <span class="label">
+/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> and
+<span class="label">/MainPage.xaml</span>. As a stack, it shows the newest entry at the top and the oldest entry at the bottom. This is illustrated in the following figure.</p>
+<img id="AP_Con_BackStack_InterimUI" title="Interim UI for BackStack HowTo" src="description/IC531007.png" alt="Interim UI for BackStack HowTo">
+</li><li>
+<p>Tap the <span class="label">Pop Last</span> button. The <span class="label">
+/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> entry is removed from the back stack list.</p>
+</li><li>
+<p>Tap the hardware <span class="label">Back</span> button on your device. The page
+<span class="label">main page</span> is displayed and the back stack is empty. This happened because we removed
+<span class="label">/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> from the back stack in the previous step, thus changing the back navigation from
+<span class="label">Page 2 -&gt; Page1 -&gt; MainPage</span> to <span class="label">
+Page2 -&gt; MainPage</span>.</p>
+</li><li>
+<p>Tap the <span class="label">Next Page</span> button on <span class="label">
+main page</span>. The page <span class="label">page 1</span> is displayed. The back stack has one entry,
+<span class="label">/MainPage.xaml</span>.</p>
+</li><li>
+<p>Tap the <span class="label">Next Page</span> button on <span class="label">
+page 1</span>. The page <span class="label">page 2</span> is now displayed. The back stack has two entries,
+<span class="label">/<a href="http://code.msdn.microsoft.com/Navigate-Using-the-Back-6e6e8eb4/sourcecode?fileId=42406&amp;pathId=558213963">Page1.xaml</a></span> and
+<span class="label">/MainPage.xaml</span>.</p>
+</li><li>
+<p>Tap <span class="label">Pin To Start</span> on <span class="label">page 2</span>.</p>
+</li><li>
+<p>A Tile named <span class="label">page 2</span> is created on the Start screen of the device.</p>
+</li><li>
+<p>Tap the Tile you created in the preceding step. The application is launched, and
+<span class="label">page 2</span> is displayed. Notice also that the back stack is empty. If you tap the
+<span class="label">Back</span> button on the device, the application terminates. An example of this state is shown in the following figure.
+<span class="label">page 2</span> was pinned to the Start screen on the device. The Tile was then tapped, the application launched, and Page2 is displayed. The back stack shown in this figure is empty.</p>
+<img id="AP_Con_BackStack_FromTile" title="State of BackStack when navigation from Tile." src="description/IC531008.png" alt="State of BackStack when navigation from Tile.">
+</li></ol>
+</div>
+</div>
+</div>
+<div>
+<div class="LW_CollapsibleArea_TitleDiv">
+<h2><a title="Collapse"><img class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img" src="http://i.msdn.microsoft.com/Hash/030c41d9079671d09a62d8e2c1db6973.gif" alt=""><span class="LW_CollapsibleArea_Title">See Also</span></a>
+<div>
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</h2>
+</div>
+<div class="sectionblock">
+<h4 class="subHeading">Reference</h4>
+<div class="seeAlsoStyle"><span><a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.navigationservice%28v=vs.92%29.aspx">NavigationService</a>
+</span></div>
+<div class="seeAlsoStyle"><span><a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.navigationservice.backstack%28v=vs.92%29.aspx">BackStack</a>
+</span></div>
+<h4 class="subHeading">Other Resources</h4>
+<div class="seeAlsoStyle"><a href="http://go.microsoft.com/fwlink/?LinkId=226287">Navigation Backstack Sample</a></div>
+<div class="seeAlsoStyle"><span><a href="http://msdn.microsoft.com/en-us/library/hh202868%28v=vs.92%29.aspx">Frame, Page, and Navigation Enhancements for Windows Phone</a>
+</span></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

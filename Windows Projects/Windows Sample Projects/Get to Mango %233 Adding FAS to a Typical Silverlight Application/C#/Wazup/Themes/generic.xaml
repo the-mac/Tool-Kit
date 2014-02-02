@@ -1,0 +1,17 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:localWindowsControls="clr-namespace:System.Windows.Controls"
+    >
+    <!-- Default style for System.Windows.Controls.LinkLabel -->
+    <Style TargetType="localWindowsControls:LinkLabel">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="localWindowsControls:LinkLabel">
+                    <localWindowsControls:WrapPanel x:Name="LayoutRoot" Orientation="Horizontal" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+ 

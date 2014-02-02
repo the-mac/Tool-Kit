@@ -1,0 +1,93 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="O365_ReadPostFeedsWP8.ReadFeeds"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Feeds O365" Margin="9,-7,0,0" TextAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFB9C353"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Name="panelReadFeeds">
+                <Grid Name="gridUsername">
+                    <TextBlock Name="lblUsername" Text="Username: " Foreground="#FFFBFB14" Margin="0,19,345,23" FontSize="20"></TextBlock>
+                    <TextBox Name="txtUsername" Margin="111,0,0,0" Width="345" Background="{StaticResource PhoneTextBoxEditBackgroundBrush}" BorderBrush="{StaticResource PhoneBorderBrush}"></TextBox>
+                </Grid>
+                <Grid Name="gridGetFeedsBtn">
+                    <Button Content="Get Feeds" Height="72" HorizontalAlignment="Center" Margin="10,10,0,0" Name="btnGetFeeds" VerticalAlignment="Top" Width="160" Foreground="#FFF5D90B" Click="btnGetFeeds_Click" />
+                </Grid>
+                <Grid Name="gridFeeds" Height="350">
+                    <ListBox Height="330" BorderBrush="YellowGreen" BorderThickness="3" ScrollViewer.VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Left" Margin="10,10,0,0" Name="lstFeeds" VerticalAlignment="Top" Width="436" Background="{StaticResource PhoneBackgroundBrush}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Text="{Binding FeedText}" TextWrapping="Wrap" FontSize="20" Height="70" Foreground="Yellow"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+                <Grid Name="gridGoToPostFeedBtn">
+                    <Button Content="Go To Post Feed" Height="72" HorizontalAlignment="Center" Margin="51,10,48,0" Name="btnGoToPostFeed" VerticalAlignment="Top" Width="357" Foreground="#FFF5D90B" Click="btnGoToPostFeed_Click" />
+                </Grid>
+
+
+
+            </StackPanel>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="Black" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>

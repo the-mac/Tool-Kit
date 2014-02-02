@@ -1,0 +1,86 @@
+<!-- 
+    Copyright (c) 2012 - 2013 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://code.msdn.microsoft.com/wpapps
+-->
+<phone:PhoneApplicationPage 
+    x:Class="sdkScheduledNotificationsCS.AddNotification"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="SCHEDULED NOTIFICATIONS SAMPLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="add notification" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Content="Reminder" Name="reminderRadioButton" GroupName="ReminderOrAlarm" IsChecked="True"></RadioButton>
+                        <RadioButton Content="Alarm" Name="alarmRadioButton" GroupName="ReminderOrAlarm" ></RadioButton>
+                    </StackPanel>
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="titleLabel" Text="title" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left"  Name="titleTextBox" Text="" VerticalAlignment="Top" Width="460" MaxLength="63"/>
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="contentLabel" Text="content" VerticalAlignment="Top" />
+                    <TextBox Height="160" HorizontalAlignment="Left"  Name="contentTextBox" Text="" VerticalAlignment="Top" Width="460" TextWrapping="Wrap" MaxLength="256" AcceptsReturn="True" />
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="beginTimeLabel" Text="begin time" VerticalAlignment="Top" />
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:DatePicker x:Name="beginDatePicker" Width="220" HorizontalAlignment="Left"></toolkit:DatePicker>
+                        <toolkit:TimePicker x:Name="beginTimePicker"  Width="220" HorizontalAlignment="Right"></toolkit:TimePicker>
+                    </StackPanel>
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="expirationTimeLabel" Text="expiration time" VerticalAlignment="Top" />
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:DatePicker x:Name="expirationDatePicker" Width="220" HorizontalAlignment="Left"></toolkit:DatePicker>
+                        <toolkit:TimePicker x:Name="expirationTimePicker" Width="220" HorizontalAlignment="Right"></toolkit:TimePicker>
+                    </StackPanel>
+                    <Grid>
+                        <RadioButton Content="once" Height="72" HorizontalAlignment="Left" Margin="0,0,0,0" Name="onceRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval" IsChecked="True"/>
+                        <RadioButton Content="weekly" Height="72" HorizontalAlignment="Left" Margin="0,70,0,0" Name="weeklyRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval"/>
+                        <RadioButton Content="daily" Height="72" HorizontalAlignment="Left" Margin="0,140,0,0" Name="dailyRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval"/>
+                        <RadioButton Content="monthly" Height="72" HorizontalAlignment="Left" Margin="240,0,0,0" Name="monthlyRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval"/>
+                        <RadioButton Content="end of month" Height="72" HorizontalAlignment="Left" Margin="240,70,0,0" Name="endOfMonthRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval"/>
+                        <RadioButton Content="yearly" Height="72" HorizontalAlignment="Left" Margin="240,140,0,0" Name="yearlyRadioButton" VerticalAlignment="Top" GroupName="ScheduleInterval"/>
+                    </Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Name="param1Label" Text="context parameter 1" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Name="param1TextBox" Text="" VerticalAlignment="Top" Width="440" MaxLength="63"/>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Name="param2Label" Text="context parameter 2" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Name="param2TextBox" Text="" VerticalAlignment="Top" Width="440" MaxLength="63"/>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="Save" Click="ApplicationBarSaveButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

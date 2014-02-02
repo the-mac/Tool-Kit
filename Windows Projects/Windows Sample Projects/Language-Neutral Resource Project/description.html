@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Language-Neutral Resource Project</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Language-Neutral Resource Project</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Globalization
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">3/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Language-Neutral-Resource-5894846e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>You can use this language-neutral resource project in Visual Studio Express 2012 for Windows&nbsp;Phone or Visual Studio to create localized app title and app Tile title string for your Windows Phone app. For more information, see
+<a href="http://msdn.microsoft.com/library/windowsphone/develop/ff967550(v=vs.105).aspx">
+How to localize an app title for Windows Phone</a>.</p>
+</div>
+<a name="WP_CreatingLanguageResourceStringsforYourApp">
+<h1 class="heading"><span>Creating language resource strings for your app</span>
+</h1>
+<div id="sectionSection0" class="section" name="collapseableSection" style="">
+<p>In this set of procedures, you use Visual Studio or Visual Studio Express 2012 for Windows&nbsp;Phone to edit the language-neutral resource string table to contain localized resource title strings. Then, you rebuild the DLL that contains the new localized title
+ strings and rename the DLL file.</p>
+<h3 class="subHeading">Creating the first specific language resource strings</h3>
+<div class="subsection">
+<p>In this procedure, you create localized title strings for English (United States).</p>
+<h3 class="procedureSubHeading">To create the first specific language resource strings for your app</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Open the DLL project that you downloaded in Visual Studio or Visual Studio Express 2012 for Windows&nbsp;Phone.</p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, expand the <span class="ui">
+Resource Files</span> folder.</p>
+</li><li>
+<p>Right-click the AppResLib.rc resource, and then click <span class="ui">View Code</span>.</p>
+</li><li>
+<p>Modify the AppResLib.rc file by changing the resource string values as follows:</p>
+<div class="caption"></div>
+<div class="tableSection">
+<table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>ID</p>
+</th>
+<th>
+<p>Value</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>AppTitle</p>
+</td>
+<td>
+<p>en-US App Title</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>AppTileTitle</p>
+</td>
+<td>
+<p>en-US Tile Title</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <span class="code">AppTitle</span> string contains the English (United States) name of your app to be displayed in the app list. The
+<span class="code">AppTileTitle</span> string contains the English (United States) name of your app to be displayed in the app Tile when pinned to
+<span class="ui">Start</span>.</p>
+</li><li>
+<p>In the <span class="ui">Build</span> menu, select <span class="ui">Build Solution</span>.</p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, right-click <span class="ui">
+Solution 'AppResLib'</span>, and then click <span class="ui">Open Folder in File Explorer</span>.</p>
+<p><span class="ui">File Explorer</span> displays the project files.</p>
+</li><li>
+<p>In <span class="ui">File Explorer</span>, open the <span class="ui">Release</span> folder, and locate the latest AppResLib.dll file that you built.</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>The project folder and the solution folder both contain a <span class="ui">Release</span> folder. The AppResLib.dll file is contained in the
+<span class="ui">Release</span> folder at the root of the solution. The solution folder is easy to recognize because it contains the AppResLib.sln solution file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li><li>
+<p>Rename the file AppResLib.dll file to AppResLib.dll.0409.mui.</p>
+</li></ol>
+</div>
+<p>The DLL file that you created and renamed contains the English (en-US) app title and the app Tile title. Later, you use this file in your Windows Phone app. Your Windows Phone app recognizes this file based on the 0409 LCID value that represents English
+ (en-US).</p>
+</div>
+<h3 class="subHeading">Creating additional language resource strings</h3>
+<div class="subsection">
+<p>You can create more language resource strings and the DLL that contains those resources by following the preceding procedure. For each localized set of resource strings, you create a new DLL and rename it with the LCID and .mui extension.</p>
+<p>Repeat the previous procedure, however, you must provide a localized AppTitle string value and AppTileTitle string value for each locale. You must also rename the DLL file for each locale. Each DLL file name has the format
+<span class="code">AppResLib.dll.[locale ID].mui</span>. For more information about supported display languages, culture codes, and culture values, see
+</a><a href="http://msdn.microsoft.com/library/windowsphone/develop/ff967550(v=vs.105).aspx">How to localize an app title for Windows Phone</a>.</p>
+<p>In the next procedure, you copy the MUI files and language-neutral DLL file to the root directory of your Windows&nbsp;Phone app.
+</p>
+</div>
+<a name="BKMK_UsingtheLocalizedResourceStringsinyourWindowsPhoneApplication">
+<h3 class="subHeading">Using the localized resource strings in your Windows Phone app</h3>
+<div class="subsection">
+<p>By adding the localized MUI files and the language-neutral DLL file to your Windows&nbsp;Phone app, app users see the localized app title and the localized app Tile title based on the selected Windows&nbsp;Phone language that they choose for their Windows&nbsp;Phone.</p>
+<h3 class="procedureSubHeading">To use the localized resource strings in your Windows Phone app</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Open your existing Windows&nbsp;Phone&nbsp;8 app or create a Windows&nbsp;Phone&nbsp;8 app in either Visual Studio or Visual Studio Express 2012 for Windows&nbsp;Phone.</p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, select your Windows&nbsp;Phone&nbsp;8 project.</p>
+</li><li>
+<p>On the <span class="ui">Project</span> menu, click <span class="ui">Add</span>, and then click
+<span class="ui">Existing Item</span>.</p>
+<p>The <span class="ui">Add Existing Item</span> dialog box appears.</p>
+</li><li>
+<p>Find and select the AppResLibLangNeutral.dll file and all the AppResLib.dll.*.mui files that you created in the preceding procedures, and then click
+<span class="ui">Add</span>.</p>
+<p>The files are added to the root your Windows&nbsp;Phone project.</p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, right-click the AppResLibLangNeutral.dll file and rename it to the following:
+</p>
+<p><span class="code">AppResLib.dll</span> </p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, select the imported files (AppResLib.dll and AppResLib.dll.*.mui).</p>
+<p>In the <span class="ui">Properties</span> window, set the <span class="ui">
+Build Action</span> property to <span class="input">Content</span>.</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>If the <span class="ui">Properties</span> window is not displayed, select <span class="ui">
+Properties Window</span> from the <span class="ui">View</span> menu.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, expand <span class="ui">Properties</span> and then open the WMAppManifest.xml file.</p>
+<p>The Windows&nbsp;Phone app manifest designer is displayed.</p>
+</li><li>
+<p>Select the <span class="ui">Application UI</span> tab if it’s not already selected.</p>
+</li><li>
+<p>Set the <span class="ui">Display Name</span> to the following: </p>
+<p><span class="code">@AppResLib.dll,-100</span> </p>
+</li><li>
+<p>Set the <span class="ui">Tile Title</span> to the following: </p>
+<p><span class="code">@AppResLib.dll,-200</span> </p>
+</li><li>
+<p>Save and build the Windows&nbsp;Phone app.</p>
+</li></ol>
+</div>
+<p>The Windows&nbsp;Phone&nbsp;8 app displays the localized app title and the app Tile title based on the language and country settings of the user's Windows&nbsp;Phone&nbsp;8 phone. The
+<span class="code">AppTitle</span> string and <span class="code">AppTileTitle</span> string contained in the .mui files correspond to the language and country setting of the user's Windows&nbsp;Phone&nbsp;8 phone. If you don’t include a matching .mui file for a specific
+ supported locale, your Windows&nbsp;Phone&nbsp;8 app uses the language-neutral <span class="code">
+AppTitle</span> string and <span class="code">AppTileTitle</span> string contained in the AppResLib.dll file.</p>
+</div>
+</a><a name="BKMK_TestingtheLocalizedTitle">
+<h3 class="subHeading">Testing the localized title</h3>
+<div class="subsection">
+<p>To test your localized app title, follow the steps listed at </a><a href="http://msdn.microsoft.com/library/windowsphone/develop/hh487168(v=vs.105).aspx">How to test a localized app for Windows Phone</a>.</p>
+</div>
+</div>
+<h1 class="heading"><span><a name="seeAlsoToggle">See Also</span> </h1>
+<div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+<h4 class="subHeading">Other Resources</h4>
+<div class="seeAlsoStyle"></a><a href="http://msdn.microsoft.com/library/windowsphone/develop/ff967550(v=vs.105).aspx">How to localize an app title for Windows Phone</a>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

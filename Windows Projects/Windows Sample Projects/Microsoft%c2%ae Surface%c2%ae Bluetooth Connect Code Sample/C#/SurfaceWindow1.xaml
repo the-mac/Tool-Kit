@@ -1,0 +1,208 @@
+﻿<s:SurfaceWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sb="clr-namespace:SurfaceBluetooth"
+    
+    Width="1024" Height="768"
+    x:Class="SurfaceBluetooth.SurfaceWindow1"
+    Title="SurfaceBluetooth"
+    mc:Ignorable="d"
+    >
+    <s:SurfaceWindow.Resources>
+        <ImageBrush x:Key="WindowBackground" Stretch="UniformToFill"  Opacity="1.0" ImageSource="pack://application:,,,/Resources/WindowBackground.png"/>
+        <SolidColorBrush x:Key="ListBackground" Color="#44888888"/>
+
+        <Storyboard x:Key="FadeClear">
+            <ColorAnimation Storyboard.TargetName="blueBrush" Storyboard.TargetProperty="Color" To="#00000066" Duration="0:0:01"/>
+        </Storyboard>
+        <Storyboard x:Key="FadeBlue" >
+            <ColorAnimation Storyboard.TargetName="blueBrush" Storyboard.TargetProperty="Color" To="#66000066" Duration="0:0:01"/>
+        </Storyboard>
+
+        <DataTemplate x:Key="BluetoothDeviceItemTemplate" >
+            <StackPanel x:Name="DeviceStack" AllowDrop="True"  Margin="0,0,0,0" Height="175" Width="175" >
+                <StackPanel.Background>
+                    <SolidColorBrush x:Name="blueBrush" Color="#00000066"/>
+                </StackPanel.Background>
+                <Image Width="128" Height="128" Source="{Binding Image, Mode=OneWay}" />
+                <TextBlock Foreground="White"  HorizontalAlignment="Center" Text="{Binding DeviceName, Mode=OneWay}"  />
+            </StackPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=Connected}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource FadeBlue}"  Name="FadeBlueDevice"/>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="FadeBlueDevice"/>
+                        <BeginStoryboard Storyboard="{StaticResource FadeClear}" Name="FadeClearDevice"/>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=Connected}" Value="False">
+                    <DataTrigger.EnterActions>
+
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <Style x:Key="CursorStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Opacity" Value="1.0"/>
+            <Style.Triggers>
+                <Trigger Property="Tag" Value="Dragging">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+                <Trigger Property="Tag" Value="DragTarget">
+                    <Setter Property="Opacity" Value="0.8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <Storyboard x:Key="Rings" AutoReverse="True" RepeatBehavior="Forever" >
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_2" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_3" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_4" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_4" Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="10"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_3" Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="7"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_1" Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_2" Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="3.335"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2500000" Value="3.335"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="6.67"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ring_4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7500000" Value="7.337"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </s:SurfaceWindow.Resources>
+
+    <s:SurfaceWindow.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Rings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded" SourceName="ring_4"/>
+    </s:SurfaceWindow.Triggers>
+
+    <Grid Name="masterGrid" Background="{StaticResource WindowBackground}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="220" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="180" />
+        </Grid.RowDefinitions>
+        <s:SurfaceListBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Background="{DynamicResource ListBackground}" AllowDrop="True" s:SurfaceDragDrop.DragEnter="OnDropTargetDragEnter" s:SurfaceDragDrop.DragLeave="OnDropTargetDragLeave" s:SurfaceDragDrop.Drop="OnDrop" ItemTemplate="{StaticResource BluetoothDeviceItemTemplate}" Margin="0" Name="DeviceList" MinHeight="200" BorderThickness="0"  MinWidth="200">
+        </s:SurfaceListBox>
+        <Canvas Grid.Column="1" Grid.Row="1" Background="{StaticResource ListBackground}">
+            <Canvas x:Name="Rings" Margin="40,15,200,200">
+                <Ellipse x:Name="ring_4" Stroke="#FFFAF6F6" Height="23.739" Width="129.191" Canvas.Left="4.667" Canvas.Top="10.734" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Effect>
+                        <BlurEffect Radius="10" />
+                    </Ellipse.Effect>
+                </Ellipse>
+                <Ellipse x:Name="ring_3" Stroke="#FFFAF6F6" Height="16.826" Width="91.573" Canvas.Left="23.476" Canvas.Top="38.877" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Effect>
+                        <BlurEffect Radius="7" />
+                    </Ellipse.Effect>
+                </Ellipse>
+                <Ellipse x:Name="ring_2" Stroke="#FFFAF6F6" Height="9.914" Width="53.955" RenderTransformOrigin="0.5,0.5" Canvas.Left="42.285" Canvas.Top="60.553" Opacity="0">
+                    <Ellipse.Effect>
+                        <BlurEffect />
+                    </Ellipse.Effect>
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse x:Name="ring_1" Stroke="#FFFAF6F6" Height="5.593" RenderTransformOrigin="0.5,0.5" Width="30.443" Canvas.Left="54.041" Canvas.Top="75.644">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Effect>
+                        <BlurEffect Radius="3" />
+                    </Ellipse.Effect>
+                </Ellipse>
+            </Canvas>
+            <Image Margin="75,95,40,40" VerticalAlignment="Bottom" Height="56" Source="pack://Application:,,,/Resources/tableIcon.png" Stretch="Fill" d:IsLocked="True" />
+            <TextBlock Width="220" Height="40" Name="RadioNameText" TextWrapping="Wrap" FontSize="15" TextAlignment="Center" Canvas.Left="0" Canvas.Top="0" FontFamily="Calibri">
+            	<TextBlock.Effect>
+            		<DropShadowEffect />
+            	</TextBlock.Effect>
+            	<TextBlock.Foreground>
+            		<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}" />
+            	</TextBlock.Foreground></TextBlock>
+            <TextBlock Name="DiscoveryStatusText" Width="220" Height="20" Canvas.Left="0" Canvas.Top="155" Text="listening for Bluetooth devices..." TextWrapping="Wrap" TextAlignment="Center" FontFamily="Calibri">
+            	<TextBlock.Foreground>
+            		<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}" />
+            	</TextBlock.Foreground></TextBlock>
+        </Canvas>
+        <s:ScatterView x:Name="Scatter" Grid.RowSpan="2" Grid.ColumnSpan="2" s:SurfaceDragDrop.PreviewDragCanceled="Scatter_PreviewDragCanceled" s:SurfaceDragDrop.PreviewDragCompleted="Scatter_PreviewDragCompleted">
+            <!--   -->
+        </s:ScatterView>
+    </Grid>
+</s:SurfaceWindow>

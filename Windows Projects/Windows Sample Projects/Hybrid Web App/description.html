@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=991548924ACDE598A6CD2EE12DE08F79" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/63ba2147-8445-4402-ac52-dc9ce4523072Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F66666867F6FADB76EC910ED597D6895" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Hybrid Web App</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Hybrid Web App</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Tiles, webbrowser control, share link, mobile website as an app, hybrid web app
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last updated</label>
+                    <div id="LastUpdated">9/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Hybrid-Web-App-75b7ef74">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>This sample demonstrates how to quickly get up and running with a Windows Phone app that takes advantage of the effort you’ve already put into creating a great mobile website. This gives you an app presence in the Windows Phone Store with much less effort
+ than developing a full-blown Windows Phone app while adding some features to your app that give it advantages over websites.
+</p>
+<p>The sample app demonstrates how to:</p>
+<ul>
+<li>
+<p>Customize a Windows Phone app to showcase your mobile website.</p>
+</li><li>
+<p>Enable fast app resume to return the user to where they left off.</p>
+</li><li>
+<p>Handle the hardware back button for website navigation.</p>
+</li><li>
+<p>Pin specific webpages to the Windows Phone start screen with custom Tiles.</p>
+</li><li>
+<p>Share links to webpages on the user’s social media accounts.</p>
+</li></ul>
+<p>Key APIs used in this sample:</p>
+<ul>
+<li>
+<p><span class="label">WebBrowser</span> </p>
+</li><li>
+<p><span class="label">BackKeyPress</span> </p>
+</li><li>
+<p><span class="label">PhoneApplicationService</span> </p>
+</li><li>
+<p><span class="label">ShellTile</span> </p>
+</li><li>
+<p><span class="label">ShareLinkTask</span> </p>
+</li><li>
+<p><span class="label">OnNavigatedTo</span> </p>
+</li><li>
+<p><span class="label">OnNavigatedFrom</span> </p>
+</li></ul>
+<h3 class="procedureSubHeading">Build the sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Start Visual Studio Express 2012 for Windows&nbsp;Phone and select <span class="ui">
+File</span> &gt;<span class="ui">Open</span> &gt; <span class="ui">Project/Solution</span>.</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio Express 2012 for Windows&nbsp;Phone Solution (<span class="label">.sln</span>) file.</p>
+</li><li>
+<p>Use <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample</p>
+</li></ol>
+</div>
+<h3 class="procedureSubHeading">Run the sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>To debug the app and then run it, press F5 or use <span class="ui">Debug</span> &gt;
+<span class="ui">Start Debugging</span>. To run the app without debugging, press Ctrl&#43;F5 or use
+<span class="ui">Debug</span> &gt; <span class="ui">Start Without Debugging</span>.</p>
+</li><li>
+<p>When the app launches, you see the Microsoft Store mobile website hosted in a browser control.</p>
+</li><li>
+<p>The <span class="label">AppBar</span> at the bottom of the screen contains buttons that implement
+<span class="ui">home</span>, <span class="ui">refresh</span>, <span class="ui">
+pin to start</span>, and <span class="ui">share</span> functionality.</p>
+</li><li>
+<p>The <span class="ui">pin to start</span> button allows the user to pin the current page to Start, if it isn’t already pinned.</p>
+</li><li>
+<p>The <span class="ui">share</span> button allows the user to share a link to the current page on the social media services they have enabled on their phone.</p>
+</li><li>
+<p>The <span class="ui">shopping cart</span> menu item takes the user directly to their shopping cart, where they can complete the purchase process.</p>
+</li></ol>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

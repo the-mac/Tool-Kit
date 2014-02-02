@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Developing Secure Mobile Apps for Dynamics AX 2012</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Developing Secure Mobile Apps for Dynamics AX 2012</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WCF, Windows Azure, Microsoft Dynamics AX, Windows Phone
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Security, Mobile, Microsoft Dynamics AX Services
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">4/29/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Developing-Secure-Mobile-02105158">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:medium"><strong>Introduction</strong></span></p>
+<p>This sample demonstrates how to develop a mobile client app that communicates with Microsoft Dynamics AX 2012 from phone or tablet platforms. The sample app enables an employee to submit expense reports from a mobile device while traveling.&nbsp;&nbsp; See
+ related code sample <a href="http://code.msdn.microsoft.com/Developing-Secure-Mobile-b6ba16a2">
+Developing Secure Mobile Apps for Dynamics AX 2012 - Connector </a></p>
+<p>The code provided in this sample supports the walkthroughs in<em> </em><a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">Developing<br>
+Secure Mobile Apps for Dynamics AX 2012</a> white paper. &nbsp;Refer to the white paper for a detailed<br>
+description of the solution architecture and implementation.</p>
+<p>A mobile app for Dynamics AX 2012 enables users to send transactions to Dynamics AX 2012 even if they are not in the same domain or network as the on-premises instance of AX. For example, the solution lets clients access an AX service that may be running
+ behind a firewall. The solution involves the following components:</p>
+<ul>
+<li><strong>An AIF service</strong>. This communicates data to and from the AX 2012 database.
+</li><li><strong>A middle-tier WCF service</strong>. This makes use of the Windows Azure Service Bus and its relayed messaging capability to expose the on-premises service to mobile clients.
+</li><li><strong>A mobile client</strong>. The client communicates with the middle-tier WCF service. The client implements active federation and claims-based authentication to authenticate the user before sending data to the service.
+</li></ul>
+<p>The following diagram illustrates how different components interact to enable the mobile app to communicate with Microsoft Dynamics AX.</p>
+<p><br>
+<br>
+<img id="81127" src="description/Diagram 1.jpg" alt="" width="633" height="395"></p>
+<p>&nbsp;</p>
+<p>The following walkthroughs in<em> </em><a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">Developing Secure Mobile Apps for Dynamics AX 2012</a>, which correspond to the source<br>
+code files in this sample, demonstrate the steps for creating a mobile client app:</p>
+<ol>
+<li>Design and create the AIF service in Microsoft Dynamics AX 2012 </li><li>Create the middle-tier WCF service </li><li>Develop the client to communicate data to the middle-tier WCF service </li><li>Implement active federation and claims-based authorization for the mobile client
+</li><li>Authenticate the user and send the data to the service </li></ol>
+<p><span style="font-size:medium"><strong>Source Code Files</strong></span></p>
+<p>The development environment and pre-requisites, &nbsp;can be found in the walkthroughs for each of<br>
+these components.</p>
+<ol>
+<li><strong>ContosoMobileWindowsPhone</strong>:<br>
+This folder contains the Windows Phone implementation of the mobile client. The client communicates to the WCF service and implements authentication to ADFS.&nbsp; This is a Visual Studio project which needs the Windows Phone SDK installed as a prerequisite
+ for Windows Phone 8 or 7.1. This corresponds with the walkthroughs entitled &lsquo;Develop the client to communicate data to the middle-tier WCF service&rsquo;, &lsquo;Implement active federation and claims-based authorization for the mobile client&rsquo;,
+ and &lsquo;Authenticate the user and send the data to the<br>
+service&rsquo; in <a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">
+Developing Secure Mobile Apps for Dynamics AX 2012</a>. </li><li><strong>ContosoMobileJSClient</strong>:&nbsp; This folder contains the JavaScript<br>
+implementation for the mobile client. This corresponds to the &lsquo;Developing RESTful JavaScript Mobile Apps for Dynamics AX 2012&rsquo; section in
+<a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">Developing Secure Mobile Apps for Dynamics AX 2012</a>. The code demonstrates communication with the WCF service as well as authentication to ADFS.
+</li></ol>
+<p>See the related code sample <a href="http://code.msdn.microsoft.com/Developing-Secure-Mobile-b6ba16a2">
+Developing Secure Mobile Apps for Dynamics AX 2012 - Connector </a></p>
+<ol>
+<li><strong>ExpenseConnectorService</strong>:<br>
+This folder contains a Visual Studio 2010 project that implements the Middle-Tier WCF service. This code corresponds to the &lsquo;Create the Middle-Tier WCF Service&rsquo; walkthrough in
+<a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">Developing<br>
+Secure Mobile Apps for Dynamics AX 2012</a>.&nbsp; This also contains the windows installer project to install the service, which is &lsquo;SampleConnectorWindowsService&rsquo;.&nbsp; This folder also contains
+<strong>Sample_Expense_Mobile_Capture.xpo</strong>:&nbsp; Which contains X&#43;&#43; code for the AIF service described in the walkthrough and needs to be imported into Dynamics AX from the Development environment. This code corresponds to the &lsquo;Design and create
+ the AIF service in Microsoft Dynamics AX 2012&rsquo; walk through in <a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">
+Developing<br>
+Secure Mobile Apps for Dynamics AX 2012</a>. </li></ol>
+<p>&nbsp;</p>
+<p><span style="font-size:medium"><strong>Building the Sample</strong></span></p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Use the steps described in <a href="http://www.microsoft.com/en-us/download/details.aspx?id=36776">
+Configure Microsoft Dynamics AX Connector for Mobile Applications</a> to configure your<br>
+environment. </li><li>Before building the other projects, you must import <strong>Sample_Expense_Mobile_Capture.xpo
+</strong>and do an incremental compile in the AX Development workspace. </li></ul>
+<p><strong>Building the projects</strong></p>
+<ul>
+<li>To build the <strong>ExpenseConnectorService</strong> and <strong>ContosoMobileWindowsPhone
+</strong>projects, use the build command in Visual Studio. </li><li>To run the <strong>ContosoMobileJSClient </strong>code, Open &lsquo;SampleClient&rsquo; in the browser. To view any messages logged by the JavaScript code you can use the Internet Explorer Developer Toolbar&rsquo;s console window.
+</li></ul>
+<p><span style="font-size:medium"><strong>More Information</strong></span></p>
+<ul>
+<li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=38413">Developing Secure Mobile Apps for Dynamics AX 2012</a> provides detailed walkthroughs of the code included in this sample.
+</li><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=36776">Configure Microsoft Dynamics AX Connector for Mobile Applications</a> provides information on configuring the environment for a Dynamics AX 2012mobile app. This white paper includes
+ information on setting up Active Directory Federation Services (AD FS), the Microsoft Windows Azure Service Bus and Access Control Service<br>
+(ACS). </li><li><a href="http://blogs.msdn.com/b/dax/archive/2013/03/28/sneak-peak-of-new-mobile-apps.aspx">A sneak peek at new mobile apps (blog post)</a> provides a video of sample mobile apps for Dynamics AX 2012.
+</li><li><a href="http://blogs.msdn.com/b/dax/archive/2013/03/18/companion-apps.aspx">Introducing new native mobile device experiences (blog post)</a> describes scenarios that mobile apps for Dynamics AX 2012 can support.
+</li></ul>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

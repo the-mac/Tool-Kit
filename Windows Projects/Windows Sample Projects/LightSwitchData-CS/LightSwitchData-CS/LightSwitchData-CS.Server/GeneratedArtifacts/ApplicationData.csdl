@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Address" Type="Edm.String" MaxLength="255" />
+    <Property Name="City" Type="Edm.String" MaxLength="255" />
+    <Property Name="State" Type="Edm.String" MaxLength="255" />
+    <Property Name="ZipCode" Type="Edm.String" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ZipCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ZipCode" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Latitude" Type="Edm.String" MaxLength="255" />
+    <Property Name="Longitude" Type="Edm.String" MaxLength="255" />
+    <Property Name="City" Type="Edm.String" MaxLength="255" />
+    <Property Name="State" Type="Edm.String" MaxLength="255" />
+    <Property Name="County" Type="Edm.String" MaxLength="255" />
+    <Property Name="Type" Type="Edm.String" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Customers" EntityType="LightSwitchApplication.Customer" />
+    <EntitySet Name="ZipCodesSet" EntityType="LightSwitchApplication.ZipCodes" />
+  </EntityContainer>
+</Schema>

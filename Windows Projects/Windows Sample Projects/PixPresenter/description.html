@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PixPresenter</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>PixPresenter</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows 8, Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Sockets, Bluetooth, Windows 8, Windows RT, Windows Phone 8, add as link, nfc, pixpresenter, portable class library, proximity, windows runtime component
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">3/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/PixPresenter-Code-sharing-39ed631f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>PixPresenter is a photo sharing app that enables you to connect to another device using Proximity (NFC) and a tap gesture, and then send pictures back and forth between the connected devices. It demonstrates code sharing techniques that you can use when
+ developing an app for both Windows&nbsp;8 and Windows&nbsp;Phone&nbsp;8. These sharing techniques include sharing .NET code in a Portable Class Library, writing code using Windows Runtime APIs common to both platforms and linking the code to both projects using
+<span class="label">Add as Link</span>, and sharing C&#43;&#43; code in a Windows Runtime Component. For details about these sharing techniques, see
+<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj714089(v=vs.105).aspx">
+Windows Phone 8 and Windows 8 app development</a>. You can also view a session from the Build 2012 conference that describes PixPresenter and the code sharing techniques used to create it. To view the session, see
+<a href="http://go.microsoft.com/fwlink/?LinkId=272111">How to Leverage your Code across WP8 and Windows 8</a>.</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Important Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>To run this sample, you must have the Windows Phone SDK 8.0 installed. You can download it from
+<a href="http://dev.windowsphone.com/downloadsdk">http://dev.windowsphone.com/downloadsdk</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="procedureSubHeading">Build the sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Extract the zipped files into a local directory.</p>
+</li><li>
+<p>Start Visual Studio 2012 and select <span class="ui">File</span> &gt; <span class="ui">
+Open</span> &gt; <span class="ui">Project/Solution</span>.</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio 2012 solution file named
+<span class="label">PixPresenterAll.sln</span>.</p>
+</li><li>
+<p>Select <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample.</p>
+</li></ol>
+</div>
+<p>This solution contains a Portable Class Library. Portable Class Library projects can’t be created or compiled using the Express versions of Visual Studio. Use Visual Studio 2012 Pro, Enterprise or Ultimate to build this sample. You can add a reference to
+ a Portable Class Library in all versions of Visual Studio, including Express.</p>
+<p><b>Project Structure</b> </p>
+<p>This sample contains the following projects. </p>
+<ul>
+<li>
+<p><span class="label">PixPresenter.Portable</span> A Portable Class Library that contains portable .NET code. This compiles to a single binary which is used by both the Windows Phone PixPresenter app and the Windows Store PixPresenter app. The code in this
+ project defines the view models used by PixPresenter and localizable string resources.</p>
+</li><li>
+<p><span class="label">PixPresenter.Win8</span> The Windows Store PixPresenter app. It contains the UI (views) for the app as well as platform-specific code that is neither shareable nor portable.</p>
+</li><li>
+<p><span class="label">PixPresenter.WP8</span> The Windows Phone PixPresenter app. It contains the UI (views) for the app as well as platform-specific code that is neither shareable nor portable.</p>
+</li><li>
+<p><span class="label">FastFilters.Win8</span> A Windows Runtime Component project for the Windows Store app. It contains native code to convert a picture to grayscale. Windows Runtime Components are not binary compatible across Windows&nbsp;8 and Windows&nbsp;Phone&nbsp;8.
+ Therefore a separate project is needed to compile the Windows Runtime Component to each platform.</p>
+</li><li>
+<p><span class="label">FastFilters.WP8</span> A Windows Runtime Component project for the Windows Phone app. It contains native code to convert a picture to grayscale. Windows Runtime Components are not binary compatible across Windows&nbsp;8&nbsp;and Windows&nbsp;Phone&nbsp;8.
+ Therefore a separate project is needed to compile the Windows Runtime Component to each platform.</p>
+</li><li>
+<p><span class="label">Shared folder</span> A folder containing shared code that is added to each app using the
+<span class="ui">Add as Link</span> capability in Visual Studio. </p>
+</li></ul>
+<p>One solution was used for convenience, to maintain all code in one place. When the solution is built, it generates the Portable Class Library, the image filtering library, the Windows Store app and the Windows Phone app.</p>
+<p><b>Notes</b> </p>
+<ul class="nobullet">
+<li>
+<p>To run this sample, you must have the Windows Phone SDK 8.0 installed. You can download it from
+<a href="http://dev.windowsphone.com/downloadsdk">http://dev.windowsphone.com/downloadsdk</a></p>
+</li><li>
+<p>Portable Class Library projects can’t be created or compiled using the Express versions of Visual Studio. Use Visual Studio 2012 Pro, Enterprise or Ultimate to build this sample. You can add a reference to a Portable Class Library in all versions of Visual
+ Studio, including Express.</p>
+</li><li>
+<p>PixPresenter can connect phone to phone, phone to computer, and computer to computer.</p>
+</li><li>
+<p>PixPresenter displays photos stored in albums from the photos library on the phone and in folders from the Pictures library on a Windows&nbsp;8 computer. If you do not have pictures in these locations, the PixPresenter UI will be empty.</p>
+</li><li>
+<p>Before you run PixPresenter using the Windows Phone 8 emulator, open the emulator and access the pictures library. This will populate the media pictures library that PixPresenter uses to access the photos on a phone.</p>
+</li><li>
+<p>PixPresenter does not support Proximity connections using Wi-Fi Direct.</p>
+</li><li>
+<p>To test on Windows&nbsp;8, you can use the Proximity emulator to run the app between Windows&nbsp;8 computers on a local network. This capability is not available for the Windows Phone 8 emulator. For information on downloading and installing the Proximity network
+ emulator on Windows&nbsp;8, see <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh967765.aspx">
+Testing and Troubleshooting Proximity in apps</a></p>
+</li><li>
+<p>Verify that Bluetooth is enabled on devices when running the PixPresenter sample app.</p>
+</li><li>
+<p>The solution defines multiple build configurations, accessible from the <span class="ui">
+Build | Configuration Manager…</span> menu item in Visual Studio. To run the app on the Windows&nbsp;Phone&nbsp;8 emulator and the Windows&nbsp;8 simulator, or
+<span class="label">Local Machine</span>, select the Mixed Platforms configuration. To deploy to an ARM device, such as a Windows&nbsp;Phone&nbsp;8 device, select the ARM configuration, build and deploy.</p>
+</li></ul>
+<p><b>See also</b> </p>
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj714089(v=vs.105).aspx">Windows Phone 8 and Windows 8 app development</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj681693(v=vs.105).aspx">Maximize code reuse between Windows Phone 8 and Windows 8</a>
+</p>
+</li><li>
+<p><a href="http://go.microsoft.com/fwlink/?LinkId=272111">How to Leverage your Code across WP8 and Windows 8</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh967765.aspx">Testing and Troubleshooting Proximity in apps</a>
+</p>
+</li></ul>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

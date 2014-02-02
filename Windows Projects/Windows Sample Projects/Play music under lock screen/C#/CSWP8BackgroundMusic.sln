@@ -1,0 +1,53 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSWP8BackgroundMusic", "CSWP8BackgroundMusic\CSWP8BackgroundMusic\CSWP8BackgroundMusic.csproj", "{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAudioPlaybackAgent", "CSWP8BackgroundMusic\MyAudioPlaybackAgent\MyAudioPlaybackAgent.csproj", "{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}"
+EndProject
+Global
+	
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|ARM.Build.0 = Debug|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|x86.ActiveCfg = Debug|x86
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|x86.Build.0 = Debug|x86
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Debug|x86.Deploy.0 = Debug|x86
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|ARM.ActiveCfg = Release|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|ARM.Build.0 = Release|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|ARM.Deploy.0 = Release|ARM
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|x86.ActiveCfg = Release|x86
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|x86.Build.0 = Release|x86
+		{6F91DAE2-8489-4A48-8B94-82FBE3BF0AE8}.Release|x86.Deploy.0 = Release|x86
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|ARM.Build.0 = Debug|ARM
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|x86.ActiveCfg = Debug|x86
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Debug|x86.Build.0 = Debug|x86
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|ARM.ActiveCfg = Release|ARM
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|ARM.Build.0 = Release|ARM
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|x86.ActiveCfg = Release|x86
+		{CEA08548-A5D5-4FEE-A8E7-ACCAD8BDCC36}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

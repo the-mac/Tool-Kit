@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.WindowsAzure.StorageClient.Async</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.WindowsAzure.StorageClient.AzureTableStorageExtensions.CreateTableAsync(Microsoft.WindowsAzure.Storage.Table.CloudTable,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates the specified table.
+            </summary>
+            <param name="client">The table storage client.</param>
+            <param name="tableName">Name of the table.</param>
+            <returns>A task that completes when the async operation is finished.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.StorageClient.AzureTableStorageExtensions.CreateIfNotExistsAsync(Microsoft.WindowsAzure.Storage.Table.CloudTable,System.Threading.CancellationToken)">
+            <summary>
+            Creates the specified table if it does not already exist.
+            </summary>
+            <param name="client">The table storage client.</param>
+            <param name="tableName">Name of the table.</param>
+            <returns>A task that completes when the async operation is finished.</returns>
+        </member>
+    </members>
+</doc>

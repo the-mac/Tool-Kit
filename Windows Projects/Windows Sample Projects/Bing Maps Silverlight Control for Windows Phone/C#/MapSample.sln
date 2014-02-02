@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapSample", "MapSample\MapSample.csproj", "{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2D6E05-0C43-4EAD-AAD7-FB16FFB9107D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

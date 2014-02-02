@@ -1,0 +1,312 @@
+﻿<s:ScatterViewItem x:Class="MobileConnectSample.ContentItems.AudioCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:Generic="clr-namespace:Microsoft.Surface.Presentation.Generic;assembly=Microsoft.Surface.Presentation.Generic"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sb="clr-namespace:SurfaceBluetooth"
+              
+    Height="145" Width="145" CanScale="False" BorderThickness="0.0">
+    <s:ScatterViewItem.Resources>
+        <ImageBrush x:Key="PlayIconBrush"  ImageSource="pack://application:,,,/Resources/PlayButton.png"/>
+        <ImageBrush x:Key="PauseIconBrush" ImageSource="pack://application:,,,/Resources/PauseButton.png"/>
+
+        <Style x:Key="SVIAudioControlStyle" TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
+                        <GradientStop Color="#FFE5CC9E" Offset="0.004"/>
+                        <GradientStop Color="#FF814B40" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="#33000000"/>
+            <Setter Property="Foreground" Value="#FF515151"/>
+            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="MinWidth" Value="48"/>
+            <Setter Property="MinHeight" Value="48"/>
+            <Setter Property="CanScale" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type s:ScatterViewItem}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="ActivationTimeline">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.01"/>
+                                    <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="1.03"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.01"/>
+                                    <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="1.03"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.MaximumShadowOffset)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                    <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="25"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                    <SplineThicknessKeyFrame KeyTime="00:00:00" Value="-3,-3,-3,-3"/>
+                                    <SplineThicknessKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="0,0,0,0"/>
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.Color)">
+                                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#26000000"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.4500000" Value="#14000000"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+                                    <SplinePointKeyFrame KeySpline="0.93,0,0.891,1" KeyTime="00:00:00" Value="-1.417,-0.087"/>
+                                    <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.7000000" Value="1.369,0.47"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.8000000" Value="2.015,0.461"/>
+                                </PointAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+                                    <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00" Value="-0.849,0.372"/>
+                                    <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.7000000" Value="2.023,0.629"/>
+                                    <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.8000000" Value="2.669,0.62"/>
+                                </PointAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="DeactivationTimeline">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.03"/>
+                                    <SplineDoubleKeyFrame KeySpline="0,0,0.148,0.933" KeyTime="00:00:00.7500000" Value="1.01"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.03"/>
+                                    <SplineDoubleKeyFrame KeySpline="0,0,0.148,0.933" KeyTime="00:00:00.7500000" Value="1.01"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                    <SplineThicknessKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="-4,-4,-4,-4"/>
+                                </ThicknessAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.MaximumShadowOffset)">
+                                    <SplineDoubleKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.Color)">
+                                    <SplineColorKeyFrame KeyTime="00:00:00.7500000" Value="#26000000"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+                                    <SplinePointKeyFrame KeySpline="0,0,0,0" KeyTime="00:00:00" Value="1.241,0.304"/>
+                                    <SplinePointKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="-0.636,0.132"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.7750000" Value="-1.146,-0.035"/>
+                                </PointAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+                                    <SplinePointKeyFrame KeySpline="0,0,0,0" KeyTime="00:00:00" Value="1.879,0.551"/>
+                                    <SplinePointKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="0.018,0.291"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.7750000" Value="-0.492,0.124"/>
+                                </PointAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="GlowAni">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="HideGlowAni">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="SheenAni">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sheen2" Storyboard.TargetProperty="(UIElement.OpacityMask).(GradientBrush.GradientStops)[1].(GradientStop.Offset)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.531"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sheen2" Storyboard.TargetProperty="(UIElement.OpacityMask).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                    <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#7FFF0000"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.6000000" Value="#7FFF0000"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:01" Value="#00FF0000"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sheen2" Storyboard.TargetProperty="(UIElement.OpacityMask).(LinearGradientBrush.StartPoint)">
+                                    <SplinePointKeyFrame KeyTime="00:00:00.3000000" Value="0.5,0"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.4000000" Value="1.067,-0.034"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.6000000" Value="1.033,1.01"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:01" Value="0.234,0.92"/>
+                                </PointAnimationUsingKeyFrames>
+                                <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sheen2" Storyboard.TargetProperty="(UIElement.OpacityMask).(LinearGradientBrush.EndPoint)">
+                                    <SplinePointKeyFrame KeyTime="00:00:00.3000000" Value="0.5,1"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.4000000" Value="0.073,1.085"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:00.6000000" Value="-0.047,-0.055"/>
+                                    <SplinePointKeyFrame KeyTime="00:00:01" Value="0.766,0.08"/>
+                                </PointAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid RenderTransformOrigin="{TemplateBinding RenderTransformOrigin}" x:Name="container">
+                            <Grid.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Grid.RenderTransform>
+                            <Generic:SurfaceShadowChrome IsHitTestVisible="False" Margin="-4,-4,-4,-4" x:Name="shadow" Color="#33000000" ShadowVector="{TemplateBinding ShadowVector}"/>
+                            <Border x:Name="contentBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Width="Auto" Height="Auto">
+                                <ContentPresenter />
+                            </Border>
+                            <Rectangle Focusable="False" IsHitTestVisible="False" Opacity="0" HorizontalAlignment="Stretch" x:Name="Sheen" VerticalAlignment="Stretch">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="-0.594,0.31" StartPoint="-2.09,-0.873">
+                                        <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="0.52"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle x:Name="sheen2" IsHitTestVisible="False" Stretch="Fill" VerticalAlignment="Stretch">
+                                <Rectangle.OpacityMask>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#00FF0000" Offset="0"/>
+                                        <GradientStop Color="#00FF0000" Offset="0.772"/>
+                                        <GradientStop Color="#00FF0000" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.OpacityMask>
+                                <Rectangle.Fill>
+                                    <RadialGradientBrush RadiusX="1.40136" RadiusY="1.40136" Center="-0.127273,-0.0727273" GradientOrigin="-0.127273,-0.0727273">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <RotateTransform CenterX="-0.127273" CenterY="-0.0727273" Angle="45"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#00FFFFFF" Offset="0.0776256"/>
+                                        <GradientStop Color="#00000000" Offset="0.410959"/>
+                                        <GradientStop Color="#407F7F7F" Offset="0.60624"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.648402"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.736255"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.817352"/>
+                                        <GradientStop Color="#00000000" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.ExitActions>
+                                    <BeginStoryboard x:Name="DeactivationTimeline_BeginStoryboard">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.03"/>
+                                                <SplineDoubleKeyFrame KeySpline="0,0,0.148,0.933" KeyTime="00:00:00.7500000" Value="1.01"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.03"/>
+                                                <SplineDoubleKeyFrame KeySpline="0,0,0.148,0.933" KeyTime="00:00:00.7500000" Value="1.01"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                                <SplineThicknessKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="-4,-4,-4,-4"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.MaximumShadowOffset)">
+                                                <SplineDoubleKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.Color)">
+                                                <SplineColorKeyFrame KeyTime="00:00:00.7500000" Value="#26000000"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+                                                <SplinePointKeyFrame KeySpline="0,0,0,0" KeyTime="00:00:00" Value="1.241,0.304"/>
+                                                <SplinePointKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="-0.636,0.132"/>
+                                                <SplinePointKeyFrame KeyTime="00:00:00.7750000" Value="-1.146,-0.035"/>
+                                            </PointAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+                                                <SplinePointKeyFrame KeySpline="0,0,0,0" KeyTime="00:00:00" Value="1.879,0.551"/>
+                                                <SplinePointKeyFrame KeySpline="0,0,0.15,0.93" KeyTime="00:00:00.7500000" Value="0.018,0.291"/>
+                                                <SplinePointKeyFrame KeyTime="00:00:00.7750000" Value="-0.492,0.124"/>
+                                            </PointAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.ExitActions>
+                                <MultiTrigger.EnterActions>
+                                    <BeginStoryboard x:Name="ActivationTimeline_BeginStoryboard">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.01"/>
+                                                <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="1.03"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="container" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.01"/>
+                                                <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="1.03"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.MaximumShadowOffset)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                                <SplineDoubleKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="25"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="-3,-3,-3,-3"/>
+                                                <SplineThicknessKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.4500000" Value="0,0,0,0"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="shadow" Storyboard.TargetProperty="(Generic:SurfaceShadowChrome.Color)">
+                                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#26000000"/>
+                                                <SplineColorKeyFrame KeyTime="00:00:00.4500000" Value="#14000000"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+                                                <SplinePointKeyFrame KeySpline="0.93,0,0.891,1" KeyTime="00:00:00" Value="-1.417,-0.087"/>
+                                                <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.7000000" Value="1.369,0.47"/>
+                                                <SplinePointKeyFrame KeyTime="00:00:00.8000000" Value="2.015,0.461"/>
+                                            </PointAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Sheen" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+                                                <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00" Value="-0.849,0.372"/>
+                                                <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.7000000" Value="2.023,0.629"/>
+                                                <SplinePointKeyFrame KeySpline="0,1,1,1" KeyTime="00:00:00.8000000" Value="2.669,0.62"/>
+                                            </PointAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.EnterActions>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsActive" Value="True"/>
+                                    <Condition Property="ShowsActivationEffects" Value="True"/>
+                                </MultiTrigger.Conditions>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="contentBorder">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
+                                            <GradientStop Color="#4CA4B4BD" Offset="0"/>
+                                            <GradientStop Color="#4CDFE9EE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground" Value="#A5333333"/>
+                                <Setter Property="BorderBrush" Value="#33000000"/>
+                            </Trigger>           
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Play button style -->
+        <Style x:Key="PlayPauseToggleButtonStyle" TargetType="{x:Type s:SurfaceToggleButton}">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="IsChecked" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type s:SurfaceToggleButton}">
+                        <Viewbox Stretch="Uniform">
+                            <Grid Width="30" Height="30" x:Name="grid">
+                                <Generic:SurfaceShadowChrome CornerRadius="10,10,10,10"/>
+       
+                                <Grid x:Name="PlayIcon" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Rectangle Margin="2,2,2,2" Fill="{StaticResource PlayIconBrush}" Stroke="{x:Null}" x:Name="ellipse"/>
+                                </Grid>
+                                <Grid x:Name="PauseIcon" Visibility="Hidden">
+                                    <Rectangle Margin="2,2,2,2" Fill="{StaticResource PauseIconBrush}" Stroke="{x:Null}"/>
+                                </Grid>
+                            </Grid>
+                        </Viewbox>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.6"/>
+                            </Trigger>
+                            <!--Toggles the pause icon ON-->
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Visibility" TargetName="PlayIcon" Value="Collapsed"/>
+                                <Setter Property="Visibility" TargetName="PauseIcon" Value="Visible"/>
+                            </Trigger>
+                            <!--Toggles the play icon ON-->
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Visibility" TargetName="PlayIcon" Value="Visible"/>
+                                <Setter Property="Visibility" TargetName="PauseIcon" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </s:ScatterViewItem.Resources>
+    <Canvas Width="145" Height="145" Background="Transparent">
+        <Image Source="{Binding AlbumArt}" />
+        <s:SurfaceToggleButton Background="{StaticResource PlayIconBrush}" Canvas.Top="50" Canvas.Left="50" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"  Name="PlayButton" Style="{StaticResource PlayPauseToggleButtonStyle}"
+                             IsChecked="{Binding IsPlaying}" Opacity="0.75" BorderBrush="Transparent" Foreground="Transparent" />
+    </Canvas>
+</s:ScatterViewItem>

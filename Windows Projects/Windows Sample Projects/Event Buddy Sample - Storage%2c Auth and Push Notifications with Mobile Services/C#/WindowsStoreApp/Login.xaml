@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="EventBuddy.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventBuddy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="180" Tapped="UserControl_Tapped" >
+    
+    <Grid Margin="0 0 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="88"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <AppBarButton Icon="Permissions" Label="Login" />
+        </StackPanel>
+        <Popup Name="loginPopup" Grid.Row="0" VerticalOffset="-265" IsLightDismissEnabled="True" HorizontalAlignment="Left" >
+            <Border Style="{StaticResource PopupLoginBorder}">
+                <StackPanel Orientation="Vertical" Width="180">
+                    <StackPanel.Background>
+                        <SolidColorBrush>
+                            <Color>White</Color>
+                            <SolidColorBrush.Opacity>
+                                0.8
+                            </SolidColorBrush.Opacity>
+                        </SolidColorBrush>
+                    </StackPanel.Background>
+                    <StackPanel Style="{StaticResource PopupLoginOptionPanel}" PointerPressed="OnLoginMicrosoft">
+                        <Image Style="{StaticResource PopupLoginOptionImage}" Source="Assets/MicrosoftAccount.png" />
+                        <TextBlock Style="{StaticResource PopupLoginOptionText}">Microsoft</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource PopupLoginOptionPanel}" PointerPressed="OnLoginFacebook">
+                        <Image Style="{StaticResource PopupLoginOptionImage}" Source="Assets/Facebook.png"/>
+                        <TextBlock Style="{StaticResource PopupLoginOptionText}">Facebook</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel  Style="{StaticResource PopupLoginOptionPanel}" PointerPressed="OnLoginTwitter">
+                        <Image Style="{StaticResource PopupLoginOptionImage}" Source="Assets/Twitter.png" />
+                        <TextBlock Style="{StaticResource PopupLoginOptionText}">Twitter</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource PopupLoginOptionPanel}" PointerPressed="OnLoginGoogle">
+                        <Image Style="{StaticResource PopupLoginOptionImage}" Source="Assets/Google.png" />
+                        <TextBlock Style="{StaticResource PopupLoginOptionText}">Google</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

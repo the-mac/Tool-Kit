@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="e6e03234-95f2-4974-8fdb-ea6aa4f15142" Publisher="CN=richbrun" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>BingMapsAR</DisplayName>
+    <PublisherDisplayName>richbrun</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BingMapsAR.App">
+      <VisualElements DisplayName="Bing Maps AR Sample App" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="A sample applicationon how to create an augmented reality app that uses the Bing Maps Spatial Data Services as a data source." ForegroundText="light" BackgroundColor="#003847">
+        <DefaultTile ShowName="allLogos" ShortName="Bing Maps AR" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#003847" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+    <DeviceCapability Name="webcam" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,733 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>D3DXAMLMarbleMazeWP8</title>
+    <style type="text/css">
+ body
+{
+	color: #000000;
+	font-family:	Verdana;
+	font-size: medium;
+	font-style: normal;
+	font-weight: normal;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	width:	100%;
+}
+dl
+{
+	margin-top:	15;
+	margin-bottom:5;
+	padding-left:	1;
+}
+
+dl.authored dt {
+	font-style:	bold;
+	margin-top: 2;
+}
+
+dd {
+	margin-left:	20px;
+}
+
+ul
+{
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: 17;
+	list-style-type: disc;
+}
+
+ul.nobullet
+{
+	display: block;
+	list-style: none;
+}
+
+ul ul
+{
+	margin-bottom: 4;
+	margin-left: 17;
+	margin-top: 3;
+	list-style-type: disc;
+}
+
+ol {
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: 28;
+	list-style-type: decimal;
+}
+
+ol ol {
+	margin-bottom: 4;
+	margin-left: 28;
+	margin-top: 3;
+	list-style-type: lower-alpha;
+}
+
+li {
+	margin-top: 5;
+	margin-bottom: 5;
+}
+
+p {
+	margin-top: 10;
+	margin-bottom: 5;
+}
+
+a:link {
+	color:	#0000FF;
+}
+
+a:visited {
+	color: #DD7C3B;
+}
+
+a:hover {
+	color:	#3366FF;
+}
+
+code
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+}
+
+span.parameter {
+	font-style: italic;
+}
+
+span.italic {
+	font-style: italic;
+}
+
+span.selflink {
+	font-weight: bold;
+}
+
+span.nolink {
+	font-weight: bold;
+}
+
+div.breadCrumbs {
+	font-size: 8pt;
+	margin-bottom: 5;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	padding-bottom: 5;
+}
+
+div#mainSection
+{
+	font-size: 62.5%;
+	width: 100%;
+}
+html&gt;body #mainSection
+{
+	font-size:73%;
+	width: 100%;
+}
+
+div#mainBody
+{
+	font-size: 100%;
+	margin-left: 15;
+	margin-top: 10;
+}
+
+html&gt;body #mainBody
+{
+	font-size: 93%;
+	margin-left: 15;
+	margin-top: 10;
+	padding-bottom: 20;
+}
+
+div#mainBody p, div#mainBody ol, div#mainBody ul, div#mainBody dl
+{
+	padding-right: 5;
+}
+
+div#header
+{
+	padding-top:	0;
+	padding-bottom:	0;
+	padding-left:	0;
+	padding-right:	0;
+	width:	100%;
+}
+
+div#header table
+{
+	width:	100%;
+}
+
+div#header table td
+{
+	color: #0000FF;
+	font-size: 70%;
+	margin-top:	0;
+	margin-bottom:	0;
+	padding-right: 20;
+}
+
+div#header table tr#headerTableRow2 td
+{
+	padding-left: 13px;
+}
+
+div#header table tr#headerTableRow3 td
+{
+	padding-top: 2px;
+	padding-left: 15;
+}
+
+div#header table#bottomTable
+{
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	text-align: left;
+	padding-left: 15;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div#mainSection table td.imageCell
+{
+	white-space: nowrap;
+}
+
+div#mainBody div.alert, div#mainBody div.code, div#mainBody div.tableSection
+{
+	width:98.9%;
+}
+
+div#mainBody div.section div.alert, div#mainBody div.section div.code,
+div#mainBody div.section div.tableSection
+{
+	width:100%;
+}
+
+div#mainBody div.section ul div.alert, div#mainBody div.section ul div.code,
+div#mainBody div.section ul div.tableSection, div#mainBody div.section ol div.alert, 
+div#mainBody div.section ol div.code, div#mainBody div.section ol div.tableSection
+{
+	width:100%;
+}
+
+div.alert p, div.code p
+{
+	margin-top:5;
+	margin-bottom:8;
+}
+dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+div.tableSection p
+{
+	margin-top:1;
+	margin-bottom:4;
+}	
+li p
+{
+	margin-top:2;
+	margin-bottom:2;
+}
+div.seeAlsoNoToggleSection dl
+{
+	margin-top:8;
+	margin-bottom:1;
+	padding-left:1;
+}
+div.seeAlsoNoToggleSection dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+div.section dl
+{
+	margin-top:8;
+	margin-bottom:1;
+	padding-left:1;
+}
+div.section dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+
+div.code table
+{
+	border: 0;
+	font-size: 95%;
+	margin-bottom: 5;
+	margin-top:-.4em;
+	width: 100%
+}
+
+div.code table th
+{	
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	font-weight: bold;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 5;
+}
+
+span#runningHeaderText
+{
+	color: #8C8C8C;
+	font-size: 90%;
+	padding-left: 13;
+}
+
+span#nsrTitle
+{
+	color: #000000;
+	font-size: 160%;
+	font-weight: 400;
+	font-family: arial;
+}
+
+div#footer
+{
+	font-size: 80%;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	padding-top:	8;
+	padding-bottom:	6;
+	padding-left:	1;
+	padding-right:	1;
+	width:	100%;
+}
+
+html&gt;body div#footer
+{
+	font-size: 80%;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	padding-top:	2;
+	padding-bottom:	6;
+	padding-left:	1;
+	padding-right:	1;
+	width:	98%;
+}
+
+div.seeAlsoNoToggleSection
+{
+	margin-left:0;
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	0;
+	padding-right:	15;
+	width:	100%;
+}
+
+div.section
+{
+	margin-left:0;
+	padding-top:	0;
+	padding-bottom:	0;
+	padding-left:	16;
+	padding-right:	15;
+	width:	100%;
+}
+html&gt;body div.section
+{
+	margin-left:0;
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	16;
+	padding-right:	15;
+	width:	97%;
+}
+div.seeSection
+{
+	margin-left:0;
+	padding-top:	0;
+	padding-bottom:	2;
+	padding-left:	16;
+	padding-right:	15;
+	width:	100%;
+}
+
+.heading
+{
+	font-weight:	bold;
+	margin-top:		18;
+	margin-bottom:	8;
+}
+
+h1.heading
+{
+	color: #000000;
+	font-size:	130%;
+}
+
+.subHeading
+{
+	font-weight:	bold;
+	margin-bottom:	4;
+}
+.procedureSubHeading
+{
+	font-weight: bold;
+	margin-bottom: 4;
+}
+
+h3.subHeading
+{
+	color:  #000000;
+	font-size: 120%;
+    font-weight:800;
+}
+
+h3.procedureSubHeading
+{
+	color: #000000;
+	font-size: 120%;
+}
+
+h4.subHeading
+{
+	color: #000000;
+	font-size: 110%;
+	font-weight:800;
+}
+span.labelheading, div.labelheading
+{
+	font-size:100%;
+	color:#003399;
+}
+
+img.note
+{
+	border: 0;
+	margin-right: 3;
+}
+
+div#mainSection table
+{
+	border: 0;
+	font-size: 100%;
+	width:	98.9%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div#mainSection table tr
+{
+	vertical-align: top;
+}
+
+div#mainSection table th
+{
+	background-color: #EFEFF7;
+	border-bottom: 1px solid #C8CDDE;
+	border-left: 1px none #D5D5D3;
+	color: #000066;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: left;
+}
+
+div#mainSection table td
+{
+	background-color: #F7F7FF;
+	border-bottom: 1px solid #D5D5D3;
+	border-left: 1px none #D5D5D3;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div#mainSection table td.imageCell
+{
+	white-space: nowrap;
+}
+
+div.code table
+{
+	border: 0;
+	font-size: 95%;
+	margin-bottom: 5;
+	width: 100%
+}
+
+div.code table th
+{	
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	font-weight: bold;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 5;
+}
+
+div.alert table
+{
+	border: 0;
+	font-size: 100%;
+	width:	100%;
+}
+
+div.alert table th
+{
+	background:	#EFEFF7;
+	border-bottom-width: 0;
+	color: #000066;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.alert table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code pre
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+	word-wrap:	break-word;
+	background: #F7F7FF;
+}
+
+.tip
+{
+	color:	#0000FF;
+	font-style: italic;
+	cursor: pointer;
+	text-decoration:underline;
+}
+
+.math
+{
+	font-family: Times New Roman;
+	font-size: 125%
+}
+
+div.footerLine {
+	margin: 0;
+	width: 100%;
+	padding-top:	8;
+	padding-bottom:	6;
+	/*padding-left:	5;
+	padding-right:	2;*/
+
+}
+
+div.hr1 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #C8CDDE;
+	font-size: 1px;
+}
+
+div.hr2 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #D4DFFF;
+	font-size: 1px;
+}
+
+div.hr3 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #EEEEFF;
+	font-size: 1px;
+}
+
+span.cs {
+	display: none;
+}
+
+span.vb {
+	display: none;
+}
+
+span.cpp {
+	display: none;
+}
+
+span.nu {
+	display: inline;
+}
+
+span.fs 
+{
+	display: none;
+}
+
+span.code {
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066; 
+}
+span.ui {
+	font-weight: bold;
+}
+span.math {
+	font-style: italic;
+}
+span.input {
+	font-weight: bold;
+}
+span.term {
+	font-style: italic;
+}
+span.label 
+{
+	font-weight: bold;
+}
+span.foreignPhrase {
+	font-style: italic;
+}
+span.placeholder {
+	font-style: italic;
+}
+span.keyword 
+{
+	font-weight: bold;
+}
+span.typeparameter
+{
+	font-style:italic;
+}
+
+div.caption
+{
+	font-weight: bold;
+	font-size:100%;
+	color:#003399;
+}
+
+
+div.code span.keyword 
+{
+	color: #871F78;
+}
+
+div.code span.parameter 
+{
+	font-style: italic;
+}
+
+div.code span.literal 
+{
+	color:#8B0000;
+}
+
+div.code span.comment 
+{
+	color: #006400;
+}
+
+span.syntaxLabel
+{
+	color:#0481DA;
+	font-weight:bold;
+}
+span.introStyle
+{
+	color:DarkGray;
+}
+
+div.seeAlsoStyle
+{
+	padding-top:5px;
+
+}
+
+td.nsrBottom
+{
+	height: 0.6em;
+	width: 100%;
+}
+  </style>
+  </head>
+  <body>
+    <div id="header">
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText" />
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">D3DXAMLMarbleMazeWP8</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left" />
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <font color="DarkGray"></font>
+        <p /> <div class="summary"><p>This sample app is a port of the Marble Maze sample game targeted to Windows Phone 8. This is a fully featured game that demonstrates the use of <span sdata="langKeyword" value="DrawingSurfaceBackgroundGrid"><span class="keyword">DrawingSurfaceBackgroundGrid</span></span> API to display Direct3D graphics behind a XAML UI.</p></div><div class="introduction"><p>This sample app is a port of the Marble Maze Windows Store app. Complete implementation details of the original Marble Maze game can be found in the topic <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br230257.aspx">Developing Marble Maze</a>. Windows Phone 8 supports a subset of the features that are available for Windows Store apps. Because of this, several key changes were made to the app as it was ported. Details about these changes are provided later in this document. For more info about creating games for the phone, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj206992(v=vs.105).aspx">Games for Windows Phone</a>. For more information on creating apps that use both XAML and Direct3D, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj714079(v=vs.105).aspx">Direct3D with XAML apps for Windows Phone</a>.</p><p>This sample uses the <a href="http://msdn.microsoft.com/library/windowsphone/develop/system.windows.controls.drawingsurfacebackgroundgrid(v=vs.105).aspx">DrawingSurfaceBackgroundGrid</a> control to display Direct3D graphics covering the entire background of the app. This type of app allows you to place other XAML controls on top of background grid.  For the pure native Direct3D app version of this sample, see <a href="http://go.microsoft.com/fwlink/?LinkId=269990">Marble Maze sample for Windows 8</a>.</p><p /><p><b>Build the sample</b></p><ol><li><p>Start Visual Studio Express 2012 for Windows Phone and select <span class="ui">File</span> &gt; <span class="ui">Open</span> &gt; <span class="ui">Project/Solution</span>. </p></li><li><p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio Express 2012 for Windows Phone solution (<span class="label">.sln</span>) file. </p></li><li><p>Use <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample. </p></li></ol><p /><p><b>Run the sample</b></p><ol><li><p>To debug the app and then run it, press F5 or use <span class="ui">Debug</span> &gt; <span class="ui">Start Debugging</span>. To run the app without debugging, press Ctrl+F5 or use <span class="ui">Debug</span> &gt; <span class="ui">Start Without Debugging</span>.</p></li></ol><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><b>Caution:</b></th></tr><tr><td><p>When running the sample in the debugger and when the debugging mode is set to native, the first time you launch the sample a first-chance exception will be thrown. This is because of the way that Windows Phone Runtime APIs handle the fact that the save game file does not exist yet. It is possible to suppress this error, but that could potentially hide other exceptions that may be introduced as you modify the code, so the error is not suppressed in the sample. Click <span class="ui">Continue</span> in the error dialog to ignore the exception and allow the app to run normally.</p></td></tr></table></div><p><b>Changes made to the Marble Maze sample to run on Windows Phone</b></p><p>The following list describes the changes that were made to the Marble Maze app when it was ported from a Windows Store app to Windows Phone. Where possible, the source files in the sample solution where the relevant changes were made are listed. For more info about what’s different when developing a game for the phone, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj662930(v=vs.105).aspx">Differences in game development between the phone and the desktop</a>.</p><ol><li><p><b>Drawing 2D graphics</b> - Direct2D is not available on Windows Phone.  The Windows Store version of the game uses Direct2D to draw 2-D graphics such as GUI elements. The phone version uses helper classes provided by the DirectX Tool Kit (DirectXTK) to reimplement the game’s UI.  Source files: UserInterface.cpp, LoadScreen.cpp</p><p>DirectXTK’s SpriteFont was used in place of Direct2D fonts.  Bitmap fonts were precomputed ahead of time. Source files: MarbleMaze.cpp, UserInterface.cpp</p></li><li><p><b>Loading textures</b> - The Windows Imaging Component (WIC) APIs are not available on Windows Phone. These APIs allow you to load textures in multiple file formats. The phone version of the game uses DDS textures for the load screen instead of PNG images.  Source files: LoadScreen.cpp</p><p>Texture images were downscaled from the versions used on the desktop. This is not for performance reasons but instead to reduce the size of the app. The larger textures greatly increased the app size, but did not provide greater visual fidelity due to the phone’s smaller screen. Source files: bridge.dds, bridge_bump.dds, floor_section1.dds, floor_section2.dds, walllevel1.dds</p></li><li><p><b>Direct3D APIs</b> - Of the Direct3D APIs that are supported on the phone, most function exactly like their desktop counterparts for the supported feature level (feature level 9_3). </p></li><li><p><b>File I/O</b> – On Windows Phone, the <span sdata="langKeyword" value="LocalSettings"><span class="keyword">LocalSettings</span></span> folder is not supported.  The <span sdata="langKeyword" value="PersistentState"><span class="keyword">PersistentState</span></span> class from the desktop version was reimplemented in a custom <span sdata="langKeyword" value="SaveState"><span class="keyword">SaveState</span></span> method. Source files: MarbleMaze.cpp</p><p><span sdata="langKeyword" value="FileIO"><span class="keyword">FileIO</span></span> is not available on the phone. The implementation was changed slightly in BasicReaderWriter::ReadDataAsync and BasicReaderWriter::WriteDataAsync. Source files: BasicReaderWriter.cpp</p></li><li><p><b>Input</b> - To support the phone’s back button, <span sdata="langKeyword" value="BackPressed"><span class="keyword">BackPressed</span></span> key handling was added to the game and keyboard events were removed due to the phone’s lack of keyboard support. Source files: DirectXApp.cpp, MarbleMaze.cpp</p></li><li><p><b>Audio</b> - Due to limited support for Microsoft Media Foundation APIs, a custom WAV loading implementation was created. Source files: MediaStreamer.cpp</p><p>Code for background music playback was modified to use IMFMediaEngine. Source files: Audio.cpp</p></li></ol><p><b>See also</b></p><ul><li><p><a href="http://msdn.microsoft.com/library/windowsphone/develop/jj206992(v=vs.105).aspx">Games for Windows Phone</a></p></li></ul></div></div>
+      <div id="footer">
+        <div class="footerLine" />
+      </div>
+      <p />
+    </div>
+  </body>
+</html>

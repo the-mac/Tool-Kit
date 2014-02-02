@@ -1,0 +1,189 @@
+﻿/* Global Styles */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow:hidden;
+    font-family:"Segoe UI, Segoe WP, Helvetica, san-serif";
+    font-weight:normal;
+}
+
+h2 {
+    font-size:22pt;
+    margin:10px;
+}
+
+body {
+    font-size: 9pt;
+    letter-spacing: 0.02em;
+    background-color: #000000;
+    color: #ffffff;
+    margin-left: 24px;
+}
+
+input[type="radio"] {
+    width:20px;
+    height:20px;
+    margin:5px 0px;
+}
+
+input[type="text"] 
+{ 
+    font-size: 20px; 
+    line-height: 24px;
+    width:95%;
+    padding:5px;
+    margin:5px;
+}
+
+/* Custom Styles */
+
+#myMap {
+    position:absolute;
+    top:0; 
+    left:0;   
+    width:100%;
+    height:100%;  
+}
+
+#zoomRotateBar {
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+
+#navBar {
+    position:absolute;
+    top:60px;
+    left:10px;
+    width:55px;
+}
+
+.appBar {
+    position:absolute;
+    overflow:hidden;
+    background-color:black;
+    top:0;
+    right:0;
+    width:55px;
+    height:100%;
+}
+
+#rotationBtns {
+    float:left;
+}
+
+.appBar img, #navBar img, #zoomRotateBar img {
+    width: 35px;
+    height: 35px;
+    margin: 10px 10px 5px 10px;
+    float:left;
+}
+
+.appBar img:active, #navBar img:active, #zoomRotateBar img:active {
+    background-color:#e8e8e8;    
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+#mapModePanel, #searchPanel {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:#000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+#mapModePanel ul {
+    list-style-type:none;
+    margin:0 0 0 10px;
+    padding:0px;
+}
+
+#mapModePanel ul label {
+    font-size:25px;
+}
+
+#mapModePanel li{
+    list-style-type:none;
+    margin:0px;
+}
+
+#searchPanel input {
+    margin: 5px;
+}
+
+/* Orienation based styles */
+
+@media all and (orientation:portrait) {
+    @-ms-viewport {
+        width: 320px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+
+    #myMap {
+        bottom:55px;    
+        right:0;    
+    }
+
+    .appBar {
+        top:auto;
+        right:auto;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:55px;
+    }
+
+    .appBar .appBarContainer {
+        width:235px;
+        margin: 0 auto;
+    }
+}
+
+@media all and (orientation:landscape) {
+    @-ms-viewport {
+        width:480px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+
+    #myMap {
+        bottom:0;    
+        right:55px;    
+    }
+
+    .appBar {
+        top:0;
+        right:0;
+        width:55px;
+        height:100%;
+        display:table;
+    }
+
+    .appBar .appBarContainer {
+        height:235px;
+        display:table-cell; 
+        vertical-align:middle;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape),
+       screen and (-ms-view-state: fullscreen-portrait),
+       screen and (-ms-view-state: filled) {
+    @-ms-viewport {
+        width:100%;
+        user-zoom: fixed;
+        max-zoom: 0;
+        min-zoom: 0;
+    }
+}

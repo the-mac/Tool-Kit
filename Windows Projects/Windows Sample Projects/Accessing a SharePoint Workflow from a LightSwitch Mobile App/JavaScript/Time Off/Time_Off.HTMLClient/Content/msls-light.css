@@ -1,0 +1,124 @@
+﻿/* App Customization CSS file - light:
+   Contains styles that are meant to override the main theme file for light themes.
+   **************************************************************************************************/
+
+/* App Loading sequence */
+
+#msls-id-app-loading .ui-icon-loading {
+    background-image: url(Images/msls-loader-light.gif) !important;
+}
+
+#msls-id-progress-overlay .msls-progress {
+    background: url(Images/msls-loader-light.gif) no-repeat bottom !important;
+}
+
+/* App theme Icons
+    ***************************************************************/
+
+/* Header/dialog/footer icons */
+
+.msls-large-icon .ui-icon,
+.msls-large-icon .ui-icon-searchfield:after {
+    background-image: url(images/msls-black-icons-36.png)!important;
+    background-color: transparent;
+    border-color: #000000;
+    opacity: .7;
+}
+
+.msls-footer .msls-large-icon .ui-icon,
+.msls-footer .msls-large-icon .ui-icon-searchfield:after {
+    background-image: url(images/msls-white-icons-36.png)!important;
+    background-color: transparent;
+    border-color: #fff;
+    opacity: 1;
+}
+
+.msls-header.ui-bar-a {
+    text-shadow: 0 0px 0px #ffffff;
+}
+
+.msls-header .ui-title,
+.msls-screen-tab .ui-btn,
+.msls-screen-tab .ui-btn-text {
+    color: #2b2b2b;
+}
+
+.msls-footer .ui-btn .ui-btn-inner {
+    text-shadow: none;
+}
+
+/* Control visual states
+  *****************************************************************/
+
+/* ... disabled */
+
+.ui-body-a .ui-disabled .ui-link {
+    color: #d9d9d9 !important;
+}
+
+/* ... read only */
+
+input.msls-read-only, .msls-read-only.ui-select .ui-btn, textarea.msls-read-only {
+    background-color: transparent;
+    border-color: #888888;
+}
+
+/* ... loading */
+
+.msls-presenter.msls-loading > :not(.msls-presenter) > .msls-state-overlay,
+.msls-presenter.msls-loading > .msls-state-overlay {
+    background-image: url(Images/msls-loader-dark.gif);
+}
+
+/* ... display error (errors loading control contents or rendering the control) */
+
+.msls-display-error-icon {
+    background-image: url(images/msls-black-icons-18.png);
+}
+
+/* ... list loading */
+
+.msls-list-loading {
+    background-image: url(Images/msls-loader-dark.gif);
+}
+
+/* Focus state
+*****************************************************************/
+
+.ui-focus,
+.ui-btn:focus {
+     /*CONSIDER: some of these have four parameters, some have three*/
+    -moz-box-shadow: inset 0px 0px 1px #2EB5EF, 0px 0px 0px #2EB5EF !important;
+    -webkit-box-shadow: inset 0px 0px 1px #2EB5EF, 0px 0px 0px #2EB5EF !important;
+    box-shadow: inset 0px 0px 0px 1px #2EB5EF, 0px 0px 0px #2EB5EF !important;
+}
+
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+    -moz-box-shadow: inset 0px 0px 0px 1px #2EB5EF !important;
+    -webkit-box-shadow: inset 0px 0px 0px 1px #2EB5EF !important;
+    box-shadow: inset 0px 0px 0px 1px #2EB5EF !important;
+}
+
+.ui-bar-a .ui-shadow:focus, .ui-bar-b .ui-shadow:focus, .ui-bar-c .ui-shadow:focus {
+    -moz-box-shadow: inset 0px 0px 0px #2EB5EF, 0px 0px 0px 1px #2EB5EF!important;
+    -webkit-box-shadow: inset 0px 0px 0px #2EB5EF, 0px 0px 0px 1px #2EB5EF !important;
+    box-shadow: inset 0px 0px 0px #2EB5EF, 0px 0px 0px 1px #2EB5EF !important;
+}
+
+.msls-screen-tab .ui-btn:focus {
+    opacity: 1!important;
+    -moz-box-shadow: inset 0px 0px 0px #2EB5EF !important;
+    -webkit-box-shadow: inset 0px 0px 0px #2EB5EF !important;
+    box-shadow: inset 0px 0px 0px #2EB5EF !important;
+}
+
+/* Use the body color for the header instead of the header color defined in the theme 
+*****************************************************************/
+
+.msls-header.ui-bar-a,
+.ui-bar,
+.ui-header.ui-bar-a {
+    background: inherit;
+}
+

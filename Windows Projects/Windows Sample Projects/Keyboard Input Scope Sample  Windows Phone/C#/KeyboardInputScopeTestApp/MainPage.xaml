@@ -1,0 +1,101 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="KeyboardInputScopeTestApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--Pivot Control-->
+        <controls:Pivot Title="Keyboard Test App" >
+
+            <!--Pivot item one-->
+            <controls:PivotItem Header="all">
+
+                <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <!-- These text boxes use the short form to set the InputScope -->
+                    <!-- You must know the name of the InputScope that you want to use -->
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <TextBlock Text="your name" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="PersonalFullName" Name="txtName" Height="71" Width="460" />
+
+                    <TextBlock Text="what country are you from?" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="AddressCountryName" Name="txtCountry" Height="71" Width="460" />
+
+                    <TextBlock Text="your number" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="Number" Name="txtNumber" Height="71" Width="460" />
+
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <!-- This text box uses the long form to set the InputScope -->
+                    <!-- You can use intellisense to get the name of the InputScope that you want to use -->
+                    <!-- Put the cursor between the quotation marks after NameValue="" -->
+                    <!-- Press the space key and intellisense will list the options -->
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <!-- USE THIS TEXT BOX TO TEST THE DIFFERENT KEYBOARDS -->
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <TextBlock Text="(set scope in the XAML)" Foreground="{StaticResource PhoneSubtleBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox Name="txtChoose" Height="71" Width="460" >
+                        <TextBox.InputScope>
+                            <InputScope>
+                                <InputScopeName NameValue="Default" />
+                            </InputScope>
+                        </TextBox.InputScope>
+                    </TextBox>
+
+                    <Button Content="view" Click="button_Click" Height="71" Width="160" />
+                </StackPanel>
+            </controls:PivotItem>
+
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="about">
+                <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                    <TextBlock Text="your email" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="EmailNameOrAddress" Name="txtEmail" Height="71" Width="460" />
+
+                    <TextBlock Text="your favorite website" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="Url" Name="txtWebsite" Height="71" Width="460" />
+
+                    <TextBlock Text="call your best friend" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="TelephoneNumber" Name="txtFriend" Height="71" Width="460" />
+
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <!-- The input scope for this text box is set by code -->
+                    <!-- The code is in the MainPage_Loaded event -->
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <TextBlock Text="(set scope in the code)" Foreground="{StaticResource PhoneSubtleBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox Name="txtSetByCode" Height="71" Width="460" />
+
+                    <Button Content="view" Click="button_Click" Height="71" Width="160" />
+                </StackPanel>
+            </controls:PivotItem>
+
+
+            <!--Pivot item three-->
+            <controls:PivotItem Header="you">
+                <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                    <TextBlock Text="how are you feeling today?" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock Text="use the smiley button!" Foreground="{StaticResource PhoneAccentBrush}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBox InputScope="Chat" Name="txtFeeling" Height="194" Width="460" />
+
+                    <Button Content="view" Click="button_Click" Height="71" Width="160" />
+                </StackPanel>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>

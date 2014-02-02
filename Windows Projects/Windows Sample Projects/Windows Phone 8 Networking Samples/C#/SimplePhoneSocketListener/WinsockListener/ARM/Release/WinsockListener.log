@@ -1,0 +1,32 @@
+﻿Build started 10/30/2012 1:06:15 PM.
+     1>Project "C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\WinsockListener\WinsockListener.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\x86_arm\CL.exe /c /I"C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\WinsockListener\\" /I"Generated Files\\" /IARM\Release\ /AI"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata" /Zi /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /O2 /Oi /Oy- /GL /D _WINRT_DLL /D NDEBUG /D _WINDLL /D _UNICODE /D UNICODE /D WINAPI_FAMILY=WINAPI_FAMILY_PHONE_APP /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"pch.h" /Fp"ARM\Release\WinsockListener.pch" /Fo"ARM\Release\\" /Fd"ARM\Release\vc110.pdb" /Gd /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\lib\arm\platform.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata\Windows.winmd" /analyze- /errorReport:prompt pch.cpp
+         pch.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\x86_arm\CL.exe /c /I"C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\WinsockListener\\" /I"Generated Files\\" /IARM\Release\ /AI"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata" /Zi /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /O2 /Oi /Oy- /GL /D _WINRT_DLL /D NDEBUG /D _WINDLL /D _UNICODE /D UNICODE /D WINAPI_FAMILY=WINAPI_FAMILY_PHONE_APP /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"ARM\Release\WinsockListener.pch" /Fo"ARM\Release\\" /Fd"ARM\Release\vc110.pdb" /Gd /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\lib\arm\platform.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata\Windows.winmd" /analyze- /errorReport:prompt WinsockListener.cpp
+         WinsockListener.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\x86_arm\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.dll" /NOLOGO WindowsPhoneCore.lib RuntimeObject.lib PhoneAppModelHost.lib /NODEFAULTLIB:ole32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /WINMD /WINMDFILE:"C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:ARM /DLL ARM\Release\WinsockListener.obj
+         ARM\Release\pch.obj
+            Creating library C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.lib and object C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.exp
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_WSAStartup
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_getaddrinfo
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_socket
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_WSAGetLastError
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_freeaddrinfo
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_WSACleanup
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_bind
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_closesocket
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_getnameinfo
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_inet_ntoa
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_gethostbyname
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_WSAAddressToStringW
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_listen
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_accept
+     1>WinsockListener.obj : error LNK2001: unresolved external symbol __imp_send
+     1>C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\ARM\Release\WinsockListener\WinsockListener.dll : fatal error LNK1120: 15 unresolved externals
+     1>Done Building Project "C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\WinsockListener\WinsockListener.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.05

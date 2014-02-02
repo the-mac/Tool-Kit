@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExtrasInfo>
+
+  <!-- Application title -->
+  <AppTitle>
+    <!-- Default title of the application. -->
+    <default>Trey Research Product Recalls</default>
+    <!-- Illustrates where localized application titles would be specified. -->
+    <es-ES>Trey Research Product Recalls [es-ES]</es-ES>
+    <en-GB>Trey Research Product Recalls [en-GB]</en-GB>
+    <it-IT>Trey Research Product Recalls [it-IT]</it-IT>
+    <fr-FR>Trey Research Product Recalls [fr-FR]</fr-FR>
+    <en-US>Trey Research Product Recalls [en-US]</en-US>
+    <de-DE>Trey Research Product Recalls [de-DE]</de-DE>
+  </AppTitle>
+
+  <!-- Search-related captions -->
+  <Consumer ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5661}">
+
+    <!-- Caption for baby and nursery products. -->
+    <ExtensionInfo>
+      <Extensions>
+        <!-- Corresponding production extension for baby, nursery, and toy products. -->
+        <ExtensionName>Bing_Products_Baby_and_Nursery</ExtensionName>
+        <ExtensionName>Bing_Products_Toys</ExtensionName>
+      </Extensions>
+      <CaptionString>
+        <!-- Default caption for baby and nursery products -->
+        <default>Research baby product recalls</default>
+        <!-- Illustrates localized captions for baby and nursery products. -->
+        <es-ES>Research Baby product recalls [es-ES]</es-ES>
+        <en-GB>Research Baby product recalls [en-GB]</en-GB>
+        <it-IT>Research Baby product recalls [it-IT]</it-IT>
+        <fr-FR>Research Baby product recalls [fr-FR]</fr-FR>
+        <en-US>Research Baby product recalls [en-US]</en-US>
+        <de-DE>Research Baby product recalls [de-DE]</de-DE>
+      </CaptionString>
+    </ExtensionInfo>
+
+  </Consumer>
+</ExtrasInfo>

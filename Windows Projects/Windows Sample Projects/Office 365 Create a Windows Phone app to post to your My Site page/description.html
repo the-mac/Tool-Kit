@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Office 365: Create a Windows Phone app to post to your My Site page</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Office 365: Create a Windows Phone app to post to your My Site page</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office 365
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Phone, My Site
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/20/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Office-365-Create-a-fbf175f7">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header"><span>Summary:</span> Build a basic Windows Phone 8 app that uses the SharePoint SDK for Windows Phone 8 to read and publish posts to your My Site page of an Office 365 Developer Site from a Windows Phone 8.&nbsp;</div>
+<div id="mainSection">
+<div id="mainBody">
+<h1>Description of the sample</h1>
+<div id="sectionSection0">
+<p>By using this code sample and the SharePoint SDK for Windows Phone 8, you can authenticate yourself as a user of an Office 365 Developer Site and then read and post feeds to your My Site page.</p>
+<p>The process of authenticating a SharePoint user on a Windows Phone application is a little different from the same process on a client computer. On a Windows Phone you must first create an object of the Authenticator class, which is used as the user's credentials.
+ After the authentication is done, the Client Object Model is used to read and post feeds to an Office 365 My Site page.</p>
+</div>
+<h1>Prerequisites</h1>
+<div id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>An Office 365 Developer Site.</p>
+</li><li>
+<p>A Windows 8 development workstation.</p>
+</li><li>
+<p>Either a workstation with Hyper-V support for the phone emulator, or a Windows Phone 8 device that has been registered with a
+<a href="http://msdn.microsoft.com/library/windowsphone/develop/ff769508(v=vs.105).aspx" >
+Windows Phone developer account</a>.</p>
+</li><li>
+<p>Visual Studio 2012.</p>
+</li><li>
+<p><a href="http://dev.windowsphone.com/en-us/downloadsdk" >Windows Phone SDK 8.0</a>.</p>
+</li><li>
+<p><a href="http://www.microsoft.com/en-my/download/details.aspx?id=36818" >Microsoft SharePoint SDK for Windows Phone 8</a>.</p>
+</li></ul>
+</div>
+<h1>Key components of the sample</h1>
+<div id="sectionSection2">
+<p>The sample zip file contains the following:</p>
+<ul>
+<li>
+<p>A Windows Phone 8Visual Studio 2012 solution file that contains the AppManifest.xml file.</p>
+</li><li>
+<p>One project, O365_ReadPostFeedsWP8.</p>
+</li></ul>
+</div>
+<h1>Configure the sample</h1>
+<div id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<p>On a Windows 8 workstation, open Visual Studio 2012 with administrator privileges.</p>
+</li><li>
+<p>On the <strong><span class="ui">File</span></strong> menu, click <strong><span class="ui">Open</span></strong>,
+<strong><span class="ui">Project/Solution</span></strong> and then navigate to the folder where you unzipped the O365_ReadPostFeedsWP8.sln file. Select the O365_ReadPostFeedsWP8.sln file and click
+<strong><span class="ui">Open</span></strong>.</p>
+</li><li>
+<p>In <strong><span class="ui">Solution Explorer</span></strong>, click to expand
+<strong><span class="ui">References</span></strong>. Verify whether references to the following SharePoint SDK for Windows Phone 8 libraries are added to the project:</p>
+<ul>
+<li>
+<p><strong><span class="ui">Microsoft.SharePoint.Client.Phone</span> </strong></p>
+</li><li>
+<p><strong><span class="ui">Microsoft.SharePoint.Client.Phone.Auth.UI</span> </strong>
+</p>
+</li><li>
+<p><strong><span class="ui">Microsoft.SharePoint.Client.Phone.Runtime</span> </strong>
+</p>
+</li><li>
+<p><strong><span class="ui">Microsoft.SharePoint.Client.UserProfiles.Phone</span>
+</strong></p>
+</li></ul>
+</li><li>
+<p>Open the <strong><span class="ui">Office365.cs</span></strong> file and change the value of
+<span>Office365SiteUrl</span> to your Office 365 Developer Site URL.</p>
+</li><li>
+<p>Configure the debugger to use the Windows Phone emulator (Emulator 720p is recommended) or to use a Windows Phone 8 device that has been registered with a Windows Phone developer account. The developer account is not needed to use the phone emulator.</p>
+</li></ol>
+</div>
+<h1>Build the sample</h1>
+<div id="sectionSection4">
+<p>Right-click the solution in <strong><span class="ui">Solution Explorer</span></strong>, and click
+<strong><span class="ui">Build Solution</span></strong>.</p>
+</div>
+<h1>Run and test the sample</h1>
+<div id="sectionSection5">
+<p>Note: You must have Wi-Fi and Internet access enabled on either the Windows Phone emulator or the Windows Phone device that you will use to run the sample.</p>
+<p>When the new application is displayed on the Windows Phone 8 or Windows Phone emulator:</p>
+<ol>
+<li>
+<p>Run the solution in debug mode to explore the code sample.</p>
+</li><li>
+<p>On the <strong><span class="ui">Feeds O365</span></strong> page, enter the <strong>
+<span class="ui">Username</span></strong> associated with the feeds you want to retrieve and click
+<strong><span class="ui">Get Feeds</span></strong>.</p>
+</li><li>
+<p>You will be redirected to the Office 365 login page. Enter your Office 365 credentials and sign in to the Office 365 portal.</p>
+</li><li>
+<p>After you are signed in successfully, you will again be redirected to your application page. You will see a list of all the feeds on the
+<strong><span class="ui">Feeds O365</span></strong> page.</p>
+</li><li>
+<p>Click <strong><span class="ui">Go to Post Feed</span></strong> to navigate to the
+<strong><span class="ui">Post Feed</span></strong> page.</p>
+</li><li>
+<p>In the <strong><span class="ui">Post Text</span></strong> box, enter the text you want to post to your Office 365 My Site.</p>
+</li><li>
+<p>If the post succeeds, you will see a message saying <strong><span class="ui">Post published to Office 365 My Site successfully</span></strong>.</p>
+</li><li>
+<p>Navigate back to the <strong><span class="ui">Feeds O365</span></strong> page where you will now see the new post in the list.</p>
+</li></ol>
+</div>
+<h1>Troubleshooting</h1>
+<div id="sectionSection6">
+<p>The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how you can solve them.</p>
+<strong>
+<div class="caption"></div>
+</strong>
+<div>
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Problem</p>
+</th>
+<th>
+<p>Solution</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>The app fails to upload to your Office 365 Developer Site.</p>
+</td>
+<td>
+<p>In <strong><span class="ui">Configure the sample</span></strong> step 4, make sure you change the value of
+<span>Office365SiteUrl</span> to your Office 365 Developer Site URL before executing the program.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1>Change log</h1>
+<div id="sectionSection7"><strong>
+<div class="caption"></div>
+</strong>
+<div>
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Version</p>
+</th>
+<th>
+<p>Date</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>First version</p>
+</td>
+<td>
+<p>February, 28 2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1>Related content</h1>
+<div id="sectionSection8">
+<ul>
+<li>
+<p><a href="http://www.microsoft.com/en-my/download/details.aspx?id=36818" >Windows Phone SDK 8.0</a></p>
+</li><li>
+<p><a href="http://www.microsoft.com/en-my/download/details.aspx?id=36818" >Microsoft SharePoint SDK for Windows Phone 8</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/windowsphone/develop/ff402563(v=vs.105).aspx" >Windows Phone Emulator</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

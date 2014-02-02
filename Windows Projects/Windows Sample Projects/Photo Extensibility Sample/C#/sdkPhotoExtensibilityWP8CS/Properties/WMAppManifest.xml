@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US" />
+  <App xmlns="" ProductID="{0ef0ad47-c602-4441-9811-28ab45ce1036}" Title="sdkPhotoExtensibilityWP8CS" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="sdkPhotoExtensibilityWP8CS author" Description="Lean about extending the Photos Hub and photo viewer. " Publisher="sdkPhotoExtensibilityWP8CS" PublisherID="{3482bc98-e04f-431f-86f1-02cf5dfb716a}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <Capabilities> 
+      <!-- For accessing photos in the media library -->
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />   
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="sdkPhotoExtensibilityWP8CSToken" TaskName="_default">
+        <TemplateIconic>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileSmall.png</SmallImageURI>
+          <Count>0</Count>
+          <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileMediumLarge.png</IconImageURI>
+          <Title>Photo Extensibility Sample</Title>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
+          <HasLarge>False</HasLarge>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
+        </TemplateIconic>
+      </PrimaryToken>
+    </Tokens>
+    <Extensions>
+      
+      <!-- Extend the Photos Hub and launch to default start page. -->
+      <Extension ExtensionName="Photos_Extra_Hub" 
+                 ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" 
+                 TaskID="_default" />
+
+
+      <!-- Extend the photo apps picker. -->
+      <!-- This is only for Windows Phone OS 7.1 apps. -->
+      <Extension ExtensionName="Photos_Extra_Viewer" 
+                 ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" 
+                 TaskID="_default" />
+
+
+      <!-- Extend the share picker. -->
+      <Extension ExtensionName="Photos_Extra_Share" 
+                 ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" 
+                 TaskID="_default" />
+
+
+      <!-- Extend the photo edit picker. -->
+      <!-- This is only for Windows Phone 8 apps. -->
+      <Extension ExtensionName="Photos_Extra_Image_Editor" 
+                 ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" 
+                 TaskID="_default" />
+
+
+      <!-- Integrate as a rich media app. -->
+      <!-- This is only for Windows Phone 8 apps. -->
+      <Extension ExtensionName="Photos_Rich_Media_Edit" 
+                 ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" 
+                 TaskID="_default" />
+    </Extensions>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

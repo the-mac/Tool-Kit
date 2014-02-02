@@ -1,0 +1,36 @@
+﻿<sb:SampleContent
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="clr-namespace:System.Collections;assembly=mscorlib"
+    xmlns:sb="clr-namespace:SurfaceBluetooth;assembly=MobileConnect">
+    <!-- Add sample content here -->
+    <sb:SampleContent.Contacts>
+        <core:ArrayList>
+        <sb:ObexContactItem FirstName="Drew" LastName="Burlingame" MobileTelephoneNumber="(555) 555-5555" EmailAddress="d.burlington@contoso.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact04.jpg"/>
+        <sb:ObexContactItem FirstName="Jamie" LastName="Reding" MobileTelephoneNumber="(555) 555-5555" EmailAddress="jamie@wingtiptoys.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact08.jpg"/>
+        <sb:ObexContactItem FirstName="Dan" LastName="Jump" MobileTelephoneNumber="(555) 555-5555" EmailAddress="dan.jump@fake.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact01.jpg"/>
+        <sb:ObexContactItem FirstName="Don" LastName="Funk" MobileTelephoneNumber="(555) 555-5555" EmailAddress="don@donfunk.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact02.jpg"/>
+        <sb:ObexContactItem FirstName="Arlene" LastName="Huff" MobileTelephoneNumber="(555) 555-5555" EmailAddress="arlene@huff.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact03.jpg"/>
+        <!--<sb:ObexContactItem FirstName="Kelly" LastName="Krout" MobileTelephoneNumber="0123456789" EmailAddress="k.krout@kroutcorp.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact05.jpg"/>
+        <sb:ObexContactItem FirstName="Roland" LastName="Wacker" MobileTelephoneNumber="0123456789" EmailAddress="rol@wack.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact06.jpg"/>
+        <sb:ObexContactItem FirstName="John" LastName="Peoples" MobileTelephoneNumber="0123456789" EmailAddress="j.peeps@peoples.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact07.jpg"/>
+        <sb:ObexContactItem FirstName="Barbara" LastName="Zighetti" MobileTelephoneNumber="0123456789" EmailAddress="barb@zighetti.net" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact09.jpg"/>
+        <sb:ObexContactItem FirstName="David" LastName="Ahs" MobileTelephoneNumber="0123456789" EmailAddress="dave@ahssystems.com" PictureUri="pack://siteoforigin:,,,/SampleContent/Contacts/Contact10.jpg"/>-->
+    </core:ArrayList>
+    </sb:SampleContent.Contacts>
+    <sb:SampleContent.Photos>
+        <core:ArrayList>
+        <!--<sb:ObexImage ImageUri="pack://siteoforigin:,,,/SampleContent/Photos/BeanOnePoster.jpg"/>
+        <sb:ObexImage ImageUri="pack://siteoforigin:,,,/SampleContent/Photos/SlumberJack.jpg"/> -->
+        <sb:ObexImage ImageUri="pack://siteoforigin:,,,/SampleContent/Photos/Crowd.jpg"/>
+        <sb:ObexImage ImageUri="pack://siteoforigin:,,,/SampleContent/Photos/DJMixing.jpg"/>
+        <sb:ObexImage ImageUri="pack://siteoforigin:,,,/SampleContent/Photos/ElectricGuitar.jpg"/>
+        </core:ArrayList>
+    </sb:SampleContent.Photos>
+    <sb:SampleContent.Audio>
+        <core:ArrayList>
+        <sb:ObexAudio AudioFile="pack://siteoforigin:,,,/SampleContent/Ringtones/BeanOne.mp3" AlbumArt="pack://siteoforigin:,,,/SampleContent/Ringtones/BeanOneAlbumArt.png" />
+        <sb:ObexAudio AudioFile="pack://siteoforigin:,,,/SampleContent/Ringtones/SlumberJack.mp3" AlbumArt="pack://siteoforigin:,,,/SampleContent/Ringtones/SlumberJackAlbumArt.png" />
+            </core:ArrayList>
+    </sb:SampleContent.Audio>
+</sb:SampleContent>

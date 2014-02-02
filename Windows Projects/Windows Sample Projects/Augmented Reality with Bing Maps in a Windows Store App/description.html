@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EB87627F1FAC8F417DDC560F58ECEDC8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0f42f23f-7cc7-474a-aa23-b6ed8ca59481Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=59AF12CEA39A0C1AEAA6487FF1817969" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Augmented Reality with Bing Maps in a Windows Store App</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Augmented Reality with Bing Maps in a Windows Store App</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Bing Maps, Windows Phone 8, Windows Store app
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Bing Maps, Augmented Reality, Windows Phone 8, Windows Store app
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Bing Maps SDK for Windows Store apps
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/31/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Augmented-Reality-with-bcb17045">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This sample shows how to create an augmented reality application for Windows 8 and Windows Phone 8 that makes use of Bing Maps. The point of interest data being used in the app is being pulled from the NAVTEQ point of interest data sources in the Bing Spatial
+ Data Services. You can create your own data sources in the Bing Spatial Data Services and easily modify this application to use your data instead.<br>
+<br>
+In addition to showing nearby points of interest you can also generate driving directions, and share them. When the directions button is selected the Maps app in Windows 8 is launched and preconfigured to display walking directions from your current location
+ to the selected point of interest location. When sharing a point of interest the generated email includes the details of the selected location along with a static map image of where the item is located. The static map image is generated using the Bing Maps
+ REST Imagery Service.<br>
+<br>
+This project is built on top of an open source project called <a href="http://code.msdn.microsoft.com/Augmented-Reality-with-bcb17045/https://gart.codeplex.com/">
+GART </a>which stands for Geo AR Toolkit.&nbsp; GART was originally created to make it easy to build location based augmented reality apps for Windows Phone and is now has support for Windows 8 as well. Note that a rear facing camera is required for this application
+ as the user experience consists of looking at the screen while pointing the back of the screen in the direction you want to view.</p>
+<h1>Software Requirements</h1>
+<p>&nbsp;&bull; Windows 8<br>
+&nbsp;&bull; Visual Studios 2012<br>
+&nbsp;&bull; Bing Maps for Windows Store Apps SDK</p>
+<h1>Hardware Requirements</h1>
+<p>&nbsp;&bull; Orientation Sensor<br>
+&nbsp;&bull; Location Sensor<br>
+&nbsp;&bull; Rear Facing Camera (Optional but recommended)</p>
+<h1><span>Building the Sample</span></h1>
+<p>To run this sample you must install the Bing Maps SDK for Windows Store apps and get a Bing Maps key for Windows Store apps. You must also have Windows 8 and Visual Studio 2012.</p>
+<p>Open the sample in Visual Studio and insert your Bing Maps key in the App.xaml file in the BingMapsAR project where it says &ldquo;YOUR_BING_MAPS_KEY&rdquo; in the source code. You must perform the following steps for your app project to work correctly with
+ Bing Maps. Detailed instructions are provided below.</p>
+<li>Add a reference to&nbsp;Bing Maps SDK for C#, C&#43;&#43;, or Visual Basic. </li><li>Set the&nbsp;Active solution platform&nbsp;in Visual Studio to one of the following options.&nbsp;
+<ul>
+<li>C#, Visual Basic:&nbsp;ARM,&nbsp;x86&nbsp;or&nbsp;x64 </li><li>C&#43;&#43;:&nbsp;ARM,&nbsp;Win32&nbsp;or&nbsp;x64 </li></ul>
+</li><li>If you are using C# or Visual basic, you must add a reference to&nbsp;Microsoft Visual C&#43;&#43; Runtime Package.
+</li><li>Build the sample by press F5 or use <strong>Debug &gt; Start Debugging</strong>. To run the app without debugging, press Ctrl&#43;F5 or use
+<strong>Debug &gt; Start Without Debugging</strong>
+<p>&nbsp;</p>
+<h1>Changing the data source</h1>
+<p>Since this sample app makes use of data stored in the <a href="http://msdn.microsoft.com/en-us/library/ff701734.aspx">
+Bing Spatial Data Services</a> you can create your own data source to create a custom augmented reality app. You can find information on how to create and upload your own data source to the Bing Spatial Data Services
+<a href="http://msdn.microsoft.com/en-us/library/gg650600.aspx">here</a>.<br>
+<br>
+Once you have a data source uploaded to the Bing Spatial Data Services you can modify the
+<strong>BingMapsAR </strong>project to make use of your data. The first step is to update the
+<strong>PoiItem.cs </strong>file which is located in the <em><strong>Models </strong>
+</em>folder. This file describes the format of the data in your data source. Simply add and remove properties such that they match the column header names and types in your data source. Next open the
+<strong>MainPage.xaml.cs </strong>file and find the <strong>ARDisplay_LocationChanged
+</strong>event handler. In this event handler is some logic for switching between the NAVTEQ NA and EU data sources based on where the user is. Remove this logic and set the
+<strong>baseURL </strong>value to the query URL of your data source. Details on how to find the query URL of your data source can be found
+<a href="http://msdn.microsoft.com/en-us/library/hh127034.aspx">here</a>. Once you have done this you can customize what information is being displayed to the user by changing the properties being bound in the
+<strong>ItemPanel </strong>and <strong>PoiItem </strong>DataTemplate in the<strong> MainPage.xaml
+</strong>file.<br>
+<br>
+Note that there are limits on how large and how many data sources you can have in a Bing Maps account. These limits are documented
+<a href="http://msdn.microsoft.com/en-us/library/gg585136.aspx">here</a>.</p>
+<h1>Screenshots&nbsp;</h1>
+<p>&nbsp;<img id="85664" src="description/3.5.SampleApp.png" alt="" width="623" height="395"></p>
+<p><img id="85665" src="description/Sample2.png" alt="" width="626" height="356"></p>
+<p><img id="85666" src="description/Sample3.png" alt="" width="622" height="397"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</li>
+</div>
+
+
+    </div>
+</body>
+</html>

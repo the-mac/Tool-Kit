@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en" />
+  <App xmlns="" ProductID="{c33fd68f-e49b-4e9e-be6f-4f4e7e3de9da}" Title="sdkWalletPaymentInstrumentsWP8CS" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="sdkWalletPaymentInstrumentsWP8CS author" Description="Sample description" Publisher="sdkWalletPaymentInstrumentsWP8CS" PublisherID="{ec697bf1-b5ad-48c5-8217-f20e06603310}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_WALLET" />
+      <Capability Name="ID_CAP_WALLET_PAYMENTINSTRUMENTS" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="WalletAgent" Name="sdkWalletPaymentInstrumentsWP8CSWalletAgent" Source="sdkWalletPaymentInstrumentsWP8CSWalletAgent" Type="sdkWalletPaymentInstrumentsWP8CSWalletAgent.MyWalletAgent" />
+      </ExtendedTask>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="sdkWalletPaymentInstrumentsWP8CSToken" TaskName="_default">
+        <TemplateIconic>
+          <SmallImageURI IsRelative="true" IsResource="false">IconicTileSmall.png</SmallImageURI>
+          <Count>0</Count>
+          <IconImageURI IsRelative="true" IsResource="false">IconicTileMediumLarge.png</IconImageURI>
+          <Title>Wallet Bank Demo</Title>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
+          <HasLarge>false</HasLarge>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
+        </TemplateIconic>
+      </PrimaryToken>
+    </Tokens>
+    <!--Register as a Wallet extension. The ConsumerID for Wallet extensions is always set to {5B04B775-356B-4AA0-AAF8-6491FFEA5683}, 
+        which is the id of the phone's Wallet app. When you publish your app in the store, it will be visible as an extension in 
+        the ADD to WALLET experience in the Wallet app, giving users another way to install it. This is great discoverability opportunity for your app.-->
+    <Extensions>
+      <Extension ExtensionName="Wallet_app_payment" ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5683}" TaskID="_default"/>
+    </Extensions>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

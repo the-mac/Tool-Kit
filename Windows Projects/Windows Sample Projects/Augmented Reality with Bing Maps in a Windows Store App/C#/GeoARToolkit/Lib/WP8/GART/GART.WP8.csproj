@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA180FA9-7AB0-40D3-B5C4-BEA4A76B0630}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GART</RootNamespace>
+    <AssemblyName>GART.WP8</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8;X3D</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8;X3D</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8;X3D</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8;X3D</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WP7\GART\BaseControls\ARItemsView.cs">
+      <Link>BaseControls\ARItemsView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\BaseControls\ARRotateView.cs">
+      <Link>BaseControls\ARRotateView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\BaseControls\ARView.cs">
+      <Link>BaseControls\ARView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\BaseControls\IARItemsView.cs">
+      <Link>BaseControls\IARItemsView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\BaseControls\IARView.cs">
+      <Link>BaseControls\IARView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\BaseControls\IOrientationAware.cs">
+      <Link>BaseControls\IOrientationAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\ARDisplay.cs">
+      <Link>Controls\ARDisplay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\HeadingIndicator.cs">
+      <Link>Controls\HeadingIndicator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\OverheadMap.cs">
+      <Link>Controls\OverheadMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\VideoPreview.cs">
+      <Link>Controls\VideoPreview.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\WorldView.cs">
+      <Link>Controls\WorldView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Controls\WorldViewItem.cs">
+      <Link>Controls\WorldViewItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Converters\PercentBingZoomConverter.cs">
+      <Link>Converters\PercentBingZoomConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Converters\UnknownGeoCoordinateConverter.cs">
+      <Link>Converters\UnknownGeoCoordinateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Converters\UnknownGeoVisibilityConverter.cs">
+      <Link>Converters\UnknownGeoVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ARDefaults.cs">
+      <Link>Data\ARDefaults.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ARHelper.cs">
+      <Link>Data\ARHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ARItem.cs">
+      <Link>Data\ARItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ARValidators.cs">
+      <Link>Data\ARValidators.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ExpressionExtensions.cs">
+      <Link>Data\ExpressionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\GeoCodeCalc.cs">
+      <Link>Data\GeoCodeCalc.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\GeoExtensions.cs">
+      <Link>Data\GeoExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ItemCalculationSettings.cs">
+      <Link>Data\ItemCalculationSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\Data\ObservableObject.cs">
+      <Link>Data\ObservableObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\ServiceErrorEventArgs.cs">
+      <Link>ServiceErrorEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\UIHelper.cs">
+      <Link>UIHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\MathHelper.cs">
+      <Link>X3D\MathHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\Matrix.cs">
+      <Link>X3D\Matrix.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\Quaternion.cs">
+      <Link>X3D\Quaternion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\Vector2.cs">
+      <Link>X3D\Vector2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\Vector3.cs">
+      <Link>X3D\Vector3.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP7\GART\X3D\Viewport.cs">
+      <Link>X3D\Viewport.cs</Link>
+    </Compile>
+    <Compile Include="Controls\MapCredentials.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\WPToolkit.4.2013.06.11\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

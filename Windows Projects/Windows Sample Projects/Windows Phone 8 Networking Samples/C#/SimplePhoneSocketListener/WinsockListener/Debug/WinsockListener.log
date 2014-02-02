@@ -1,0 +1,12 @@
+﻿Build started 10/10/2012 12:06:51 AM.
+     1>Project "C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\WinsockListener\WinsockListener.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.dll" /INCREMENTAL /NOLOGO Ws2_32.lib WindowsPhoneCore.lib RuntimeObject.lib PhoneAppModelHost.lib /NODEFAULTLIB:ole32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /WINMD /WINMDFILE:"C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL Debug\WinsockListener.obj
+         Debug\pch.obj
+            Creating library C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.lib and object C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.exp
+         WinsockListener.vcxproj -> C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\Debug\WinsockListener\WinsockListener.dll
+     1>Done Building Project "C:\Users\timlav\Documents\Visual Studio 2012\Projects\SimpleSocketListener\WinsockListener\WinsockListener.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.34

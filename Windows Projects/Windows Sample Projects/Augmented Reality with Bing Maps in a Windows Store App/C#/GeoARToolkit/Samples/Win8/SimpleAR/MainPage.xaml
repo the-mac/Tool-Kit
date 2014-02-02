@@ -1,0 +1,36 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleAR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="using:GART.Controls"
+    x:Class="SimpleAR.MainPage"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar>
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button x:Name="AddItemsButton" AutomationProperties.Name="Heading"  Style="{StaticResource AppBarButtonStyle}" Click="AddItemsButton_Click"/>
+                    <Button x:Name="ClearItemsButton" AutomationProperties.Name="Heading"  Style="{StaticResource AppBarButtonStyle}" Click="ClearItemsButton_Click"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="MapButton" Style="{StaticResource MapAppBarButton}" Click="MapButton_Click"/>
+                    <Button x:Name="HeadingButton" AutomationProperties.Name="Heading"  Style="{StaticResource AppBarButtonStyle}" Click="HeadingButton_Click"/>
+                    <Button x:Name="WorldButton" AutomationProperties.Name="World"  Style="{StaticResource AppBarButtonStyle}" Click="WorldButton_Click"/>
+                    <Button x:Name="RotationButton" AutomationProperties.Name="Rotation"  Style="{StaticResource AppBarButtonStyle}" Click="RotationButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Controls:ARDisplay x:Name="ARDisplay" ServiceErrors="ARDisplay_ServiceErrors">
+            <Controls:VideoPreview />
+            <Controls:OverheadMap x:Name="OverheadMap" Credentials="AhaN4ZBwsGOnuWVfPhEyRh99c3I81NaL6zLEDFQwzQ6IUWP5JwTdjtKxG_aFxArp" Visibility="Collapsed" />
+            <Controls:HeadingIndicator x:Name="HeadingIndicator" />
+            <Controls:WorldView x:Name="WorldView" />
+        </Controls:ARDisplay>
+
+    </Grid>
+</Page>

@@ -1,0 +1,173 @@
+<!-- 
+    Copyright (c) 2012 - 2013 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://code.msdn.microsoft.com/wpapps
+-->
+<phone:PhoneApplicationPage
+    x:Class="sdkWindowsRuntimeComponentWP8CS.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:sdkWindowsRuntimeComponentWP8CS"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <!-- Converter that inverts a boolean value-->
+        <local:InvertBoolConverter x:Key="invertConverter"/>
+        
+        <!-- Converter that converts a boolean to a Visibility value-->
+        <local:VisibilityConverter x:Key="visibilityConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <phone:Panorama Title="sdkWindowsRuntimeComponent" SelectionChanged="Panorama_SelectionChanged_1" x:Name="MainPano">
+            <phone:Panorama.Background>
+                <!-- Background is 1024 x 768 -->
+                <ImageBrush ImageSource="Assets/pano background.png"/>
+            </phone:Panorama.Background>
+            <phone:PanoramaItem Header="basic demo">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock Text="num1:" VerticalAlignment="Center"/>
+                        <TextBox Width="150" x:Name="Num1" Text="2" TextAlignment="Right">
+                            <!-- Display a numeric keyboard for text entry. -->
+                            <TextBox.InputScope>
+                                <InputScope>
+                                    <InputScopeName NameValue="Number" />
+                                </InputScope>
+                            </TextBox.InputScope>
+                        </TextBox>
+                        <TextBlock Text="num2:" VerticalAlignment="Center" />
+                        <TextBox Width="150" x:Name="Num2" Text="2" TextAlignment="Right">
+                            <!-- Display a numeric keyboard for text entry. -->
+                            <TextBox.InputScope>
+                                <InputScope>
+                                    <InputScopeName NameValue="Number" />
+                                </InputScope>
+                            </TextBox.InputScope>
+                        </TextBox>
+                    </StackPanel>
+                    <Button Grid.Row="2"  Content="compute synchronously" x:Name="ComputeSync" Click="ComputeSync_Click" Margin="20"/>
+                    <Button Grid.Row="3"  Content="compute asynchronously" x:Name="ComputeAsync" Click="ComputeAsync_Click" Margin="20"/>
+                    <TextBlock Grid.Row="4"  x:Name="ResultTextBox" Margin="20" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="To view more demos, swipe left or right" HorizontalAlignment="Center"/>
+                </Grid>
+            </phone:PanoramaItem>
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="async compute">
+                <Grid x:Name="ComputeContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Checkboxes to define whether the async calculation will be run 
+                         with progress reporting, the ability to cancel, or both. -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <CheckBox Content="bulk" 
+                                  IsChecked="{Binding Path=BulkMode, Mode=TwoWay}" 
+                                  IsEnabled="{Binding Path=Executing, Converter={StaticResource invertConverter}}" 
+                                  FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                        <CheckBox Content="progress" x:Name="WithProgress"
+                                  IsChecked="{Binding Path=ReportProgress, Mode=TwoWay}" 
+                                  IsEnabled="{Binding Path=Executing, Converter={StaticResource invertConverter}}" 
+                                  FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                        <CheckBox Content="cancel" 
+                                  IsChecked="{Binding Path=CanCancel, Mode=TwoWay}" 
+                                  IsEnabled="{Binding Path=Executing, Converter={StaticResource invertConverter}}" 
+                                  FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <!-- Specify the minimum value in the sequence of numbers to look for primes.-->
+                        <TextBlock Text="min:" VerticalAlignment="Center"/>
+                        <TextBox Width="150" 
+                                Text="{Binding Path=MinVal, Mode=TwoWay}" 
+                                IsEnabled="{Binding Path=Executing, Converter={StaticResource invertConverter}}">
+                            <!-- Display a numeric keyboard for text entry. -->
+                            <TextBox.InputScope>
+                                <InputScope>
+                                    <InputScopeName NameValue="Number" />
+                                </InputScope>
+                            </TextBox.InputScope>
+                        </TextBox>
+                        <!-- Specify the maximum value in the sequence of numbers to look for primes. -->
+                        <TextBlock Text="max:" VerticalAlignment="Center"/>
+                        <TextBox Width="150" 
+                                 Text="{Binding Path=MaxVal, Mode=TwoWay}" 
+                                 IsEnabled="{Binding Path=Executing, Converter={StaticResource invertConverter}}">
+                            <!-- Display a numeric keyboard for text entry. -->
+                            <TextBox.InputScope>
+                                <InputScope>
+                                    <InputScopeName NameValue="Number" />
+                                </InputScope>
+                            </TextBox.InputScope>
+                        </TextBox>
+                    </StackPanel>
+                    
+                    <!-- Progressbar used to display the prgress of the current computation. -->
+                    <ProgressBar Grid.Row="2" x:Name="ComputeProgress" Value="{Binding Path=ProgressPercent}"  Foreground="{StaticResource PhoneForegroundBrush}" IsIndeterminate="{Binding IsChecked, Converter={StaticResource invertConverter}, ElementName=WithProgress}" Visibility="{Binding Path=Executing, Converter={StaticResource visibilityConverter}}"/>
+                    <!-- Action buttons are bound to commands on the ComputeViewModel of the app.-->
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Grid.Row="3" Content="execute" 
+                                Command="{Binding Path=ExecuteCommand}" Width="200"/>
+                        <Button Grid.Row="3" Content="cancel"  
+                                Command="{Binding Path=CancelCommand}" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                        <TextBlock  
+                            Text="{Binding Path=Results.Count, StringFormat='Primes Count: {0}'}"  />
+                        <TextBlock  
+                            Text="{Binding Path=DurationSeconds, StringFormat='Duration: {0} sec'}" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    
+                    <!-- Show all prime numbers found in a LongListSelector.-->
+                    <phone:LongListSelector Grid.Row="5" ItemsSource="{Binding Path=Results}" Margin="20,0,0,0"/>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!--Panorama item two-->
+            <phone:PanoramaItem Header="audio">
+                <Grid x:Name="AudioContentPanel">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1"  Content="play beep" 
+                            Command="{Binding PlayCommand}" Margin="20"/>
+                    <Button Grid.Row="2"   Content="stop beep" 
+                            Command="{Binding StopCommand}" Margin="20"/>
+                </Grid>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+    </Grid>
+
+</phone:PhoneApplicationPage>

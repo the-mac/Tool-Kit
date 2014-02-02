@@ -1,0 +1,59 @@
+<!-- 
+    Copyright (c) 2012 - 2013 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://code.msdn.microsoft.com/wpapps
+-->
+<phone:PhoneApplicationPage
+    x:Class="CompanyHubExample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:CompanyHubExample"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Company Hub Example" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Company Apps" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <phone:LongListSelector x:Name="CompanyAppList" ItemsSource="{Binding CompanyApps}" SelectionChanged="CompanyAppList_SelectionChanged" >
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Image}" Height="150" Width="150" VerticalAlignment="Top" Margin="10,0,20,0"/>
+                            <StackPanel>
+                                <TextBlock Width="250" Height="26" Text="{Binding Title}"  TextWrapping="Wrap" Margin="0,5,0,5" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock Width="250" Height="26" Text="{Binding Status}"  TextWrapping="Wrap" Margin="0,5,0,5" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock Width="250" Height="140" Text="{Binding Description}"  TextWrapping="Wrap" Margin="0,5,0,5" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <ProgressBar Visibility="{Binding Status, Converter={StaticResource AppStatusToVisibilityConverter}}" Value="{Binding ProgressValue}" Padding="0,0,0,50"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
+        </Grid>
+     </Grid>
+</phone:PhoneApplicationPage>

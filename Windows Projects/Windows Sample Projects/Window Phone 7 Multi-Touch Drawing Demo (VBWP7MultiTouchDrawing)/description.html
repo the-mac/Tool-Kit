@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Window Phone 7 Multi-Touch Drawing Demo (VBWP7MultiTouchDrawing)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Window Phone 7 Multi-Touch Drawing Demo (VBWP7MultiTouchDrawing)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 7
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Multi-touch, Drawing
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/28/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VBWP7MultiTouchDrawing-03d06237">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Windows Phone 7 Sample : <span style="">VB</span>WP7MultiTouchDrawing</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">This sample demonstrates how to draw pictures with Canvas Control on a multi-touch screen. If
+<span style="">you</span> simply implement <span style="">the following </span>event:
+<br>
+<span style=""><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:Consolas; color:blue">AddHandler</span><span style="font-family:Consolas; color:black">&nbsp;</span><span style="font-family:Consolas; color:#2B91AF">Touch</span><span style="font-family:Consolas; color:black">.FrameReported,&nbsp;</span><span style="font-family:Consolas; color:blue">AddressOf</span><span style="font-family:Consolas; color:black">&nbsp;</span><span style="font-family:Consolas; color:blue">Me</span><span style="font-family:Consolas; color:black">.Touch_FrameReported</span><span style="">
+</span></p>
+<p class="MsoNormal"><span style="">You can implement multi-touch draw, representing each event using only dots, but the resulting drawing is not visually appealing. InkPresenter can draw lines smoothly, but it demonstrates the action of one touch only. This
+ sample demonstrates how to draw smooth lines using up to four fingers simultaneously.
+</span></p>
+<p class="MsoNormal">Prerequisite: <br>
+Visual Studio 2010 with Windows phone SDK 7.1. <span style=""></span></p>
+<p class="MsoNormal">You can get start by checking this link: <br>
+<a href="http://create.msdn.com/en-us/home/getting_started">http://create.msdn.com/en-us/home/getting_started</a></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">1. Open the project in Visual Studio 2010.<br>
+2. Press Ctrl&#43;F5.</p>
+<p class="MsoNormal"><span style="">T</span>he emulated mouse can only simulate one point touch drawing. If you wish to test multi-touch drawing, please deploy the sample application to a real windows phone.
+<br>
+<span style=""><img src="description/image.png" alt="" width="378" height="706" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">1. Create a new <span style="">��</span>Silverlight <span style="">
+f</span>or Windows Phone<span style="">�� project</span>.<br>
+2. Add Reference to <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.aspx"  title="Auto generated link to Microsoft.Xna.Framework">Microsoft.Xna.Framework</a> dll. This dll is needed when we want to save an image to<span style=""> the</span> Media Library.
+<br>
+3. Open MainPage.xaml and replace default Grid with following code:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">
+&lt;Grid x:Name=&quot;LayoutRoot&quot; Background=&quot;Transparent&quot;&gt;
+    &lt;Grid Margin=&quot;0,1,0,0&quot; Background=&quot;White&quot; Height=&quot;780&quot;&gt;
+        &lt;Canvas x:Name=&quot;drawCanvas&quot;
+                Background=&quot;White&quot; Margin=&quot;0,0,0,60&quot;&gt;
+        &lt;/Canvas&gt;
+        &lt;Button Margin=&quot;0,700,240,0&quot; Background=&quot;DarkRed&quot; Content=&quot;Save&quot;
+                x:Name=&quot;Save&quot; Click=&quot;Save_Click&quot;&gt;&lt;/Button&gt;
+        &lt;Button Margin=&quot;240,700,0,0&quot; Background=&quot;DarkRed&quot; Content=&quot;New&quot; 
+                x:Name=&quot;New&quot; Click=&quot;New_Click&quot;&gt;&lt;/Button&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+
+</pre>
+<pre id="codePreview" class="xaml">
+&lt;Grid x:Name=&quot;LayoutRoot&quot; Background=&quot;Transparent&quot;&gt;
+    &lt;Grid Margin=&quot;0,1,0,0&quot; Background=&quot;White&quot; Height=&quot;780&quot;&gt;
+        &lt;Canvas x:Name=&quot;drawCanvas&quot;
+                Background=&quot;White&quot; Margin=&quot;0,0,0,60&quot;&gt;
+        &lt;/Canvas&gt;
+        &lt;Button Margin=&quot;0,700,240,0&quot; Background=&quot;DarkRed&quot; Content=&quot;Save&quot;
+                x:Name=&quot;Save&quot; Click=&quot;Save_Click&quot;&gt;&lt;/Button&gt;
+        &lt;Button Margin=&quot;240,700,0,0&quot; Background=&quot;DarkRed&quot; Content=&quot;New&quot; 
+                x:Name=&quot;New&quot; Click=&quot;New_Click&quot;&gt;&lt;/Button&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">4. And implement event handlers. Touch.FrameReported is the most important event in this sample, every screen touch will raise this event. In this sample, all drawing tasks are done with this:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+Partial Public Class MainPage
+    Inherits PhoneApplicationPage
+    ' Constructor
+    Public Sub New()
+        InitializeComponent()
+        'Touch.FrameReported &#43;= New TouchFrameEventHandler(AddressOf Touch_FrameReported)
+        AddHandler Touch.FrameReported, AddressOf Me.Touch_FrameReported
+    End Sub
+
+
+    'preXArray and preYArray are used to store the start point 
+    'for each touch point. currently silverlight support 4 muliti-touch
+    'here declare as 10 points for further needs. 
+    Private preXArray As Double() = New Double(9) {}
+    Private preYArray As Double() = New Double(9) {}
+
+
+    ''' &lt;summary&gt;
+    ''' Every touch action will rise this event handler. 
+    ''' &lt;/summary&gt;
+    Private Sub Touch_FrameReported(sender As Object, e As TouchFrameEventArgs)
+        Dim pointsNumber As Integer = e.GetTouchPoints(drawCanvas).Count
+        Dim pointCollection As TouchPointCollection = e.GetTouchPoints(drawCanvas)
+
+
+        For i As Integer = 0 To pointsNumber - 1
+            If pointCollection(i).Action = TouchAction.Down Then
+                preXArray(i) = pointCollection(i).Position.X
+                preYArray(i) = pointCollection(i).Position.Y
+            End If
+            If pointCollection(i).Action = TouchAction.Move Then
+                Dim line As New Line()
+
+
+                line.X1 = preXArray(i)
+                line.Y1 = preYArray(i)
+                line.X2 = pointCollection(i).Position.X
+                line.Y2 = pointCollection(i).Position.Y
+
+
+                line.Stroke = New SolidColorBrush(Colors.Black)
+                line.Fill = New SolidColorBrush(Colors.Black)
+                drawCanvas.Children.Add(line)
+
+
+                preXArray(i) = pointCollection(i).Position.X
+                preYArray(i) = pointCollection(i).Position.Y
+            End If
+        Next
+    End Sub
+
+
+    ''' &lt;summary&gt;
+    ''' Save image to Media Library so that we can view pictures we created
+    ''' &lt;/summary&gt;
+    Private Sub Save_Click(sender As Object, e As RoutedEventArgs)
+        Dim library As New MediaLibrary()
+        Dim bitMap As New WriteableBitmap(drawCanvas, Nothing)
+        Dim ms As New MemoryStream()
+        Extensions.SaveJpeg(bitMap, ms, bitMap.PixelWidth, bitMap.PixelHeight, 0, 100)
+        ms.Seek(0, SeekOrigin.Begin)
+        library.SavePicture(String.Format(&quot;Images\{0}.jpg&quot;, Guid.NewGuid()), ms)
+    End Sub
+
+
+    Private Sub New_Click(sender As Object, e As RoutedEventArgs)
+        drawCanvas.Children.Clear()
+    End Sub
+End Class
+
+</pre>
+<pre id="codePreview" class="vb">
+Partial Public Class MainPage
+    Inherits PhoneApplicationPage
+    ' Constructor
+    Public Sub New()
+        InitializeComponent()
+        'Touch.FrameReported &#43;= New TouchFrameEventHandler(AddressOf Touch_FrameReported)
+        AddHandler Touch.FrameReported, AddressOf Me.Touch_FrameReported
+    End Sub
+
+
+    'preXArray and preYArray are used to store the start point 
+    'for each touch point. currently silverlight support 4 muliti-touch
+    'here declare as 10 points for further needs. 
+    Private preXArray As Double() = New Double(9) {}
+    Private preYArray As Double() = New Double(9) {}
+
+
+    ''' &lt;summary&gt;
+    ''' Every touch action will rise this event handler. 
+    ''' &lt;/summary&gt;
+    Private Sub Touch_FrameReported(sender As Object, e As TouchFrameEventArgs)
+        Dim pointsNumber As Integer = e.GetTouchPoints(drawCanvas).Count
+        Dim pointCollection As TouchPointCollection = e.GetTouchPoints(drawCanvas)
+
+
+        For i As Integer = 0 To pointsNumber - 1
+            If pointCollection(i).Action = TouchAction.Down Then
+                preXArray(i) = pointCollection(i).Position.X
+                preYArray(i) = pointCollection(i).Position.Y
+            End If
+            If pointCollection(i).Action = TouchAction.Move Then
+                Dim line As New Line()
+
+
+                line.X1 = preXArray(i)
+                line.Y1 = preYArray(i)
+                line.X2 = pointCollection(i).Position.X
+                line.Y2 = pointCollection(i).Position.Y
+
+
+                line.Stroke = New SolidColorBrush(Colors.Black)
+                line.Fill = New SolidColorBrush(Colors.Black)
+                drawCanvas.Children.Add(line)
+
+
+                preXArray(i) = pointCollection(i).Position.X
+                preYArray(i) = pointCollection(i).Position.Y
+            End If
+        Next
+    End Sub
+
+
+    ''' &lt;summary&gt;
+    ''' Save image to Media Library so that we can view pictures we created
+    ''' &lt;/summary&gt;
+    Private Sub Save_Click(sender As Object, e As RoutedEventArgs)
+        Dim library As New MediaLibrary()
+        Dim bitMap As New WriteableBitmap(drawCanvas, Nothing)
+        Dim ms As New MemoryStream()
+        Extensions.SaveJpeg(bitMap, ms, bitMap.PixelWidth, bitMap.PixelHeight, 0, 100)
+        ms.Seek(0, SeekOrigin.Begin)
+        library.SavePicture(String.Format(&quot;Images\{0}.jpg&quot;, Guid.NewGuid()), ms)
+    End Sub
+
+
+    Private Sub New_Click(sender As Object, e As RoutedEventArgs)
+        drawCanvas.Children.Clear()
+    End Sub
+End Class
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<h2>More Information</h2>
+<p class="MsoNormal">To learn more about Touch.FrameReported event please check this link:<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.input.touch.framereported(VS.95).aspx">http://msdn.microsoft.com/en-us/library/system.windows.input.touch.framereported(VS.95).aspx</a></p>
+<p class="MsoNormal"></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

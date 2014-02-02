@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XnaGameWithAd", "XnaGameWithAd\XnaGameWithAd.csproj", "{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "XnaGameWithAdContent", "XnaGameWithAdContent\XnaGameWithAdContent.contentproj", "{E6011CBE-F5D4-4C98-8E79-5FB512A128DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{032F84A6-4082-45B8-B299-D838F11C6B39}"
+	ProjectSection(SolutionItems) = preProject
+		Microsoft Public License.rtf = Microsoft Public License.rtf
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{32753FF4-C89D-4A1D-9F5B-90D0637A7B3F}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{E6011CBE-F5D4-4C98-8E79-5FB512A128DD}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{E6011CBE-F5D4-4C98-8E79-5FB512A128DD}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Samples">
+</Property><Property Name="Solution File" Value="C:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\Samples\Samples.sln">
+</Property><Property Name="Date" Value="Friday, June 17, 2011">
+</Property><Property Name="Time" Value="12:39:35 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Wm65ClientCacheController" Source="WM65ClientCacheController\Wm65ClientCacheController.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Wm65ClientCacheController" Source="WM65ClientCacheController\Wm65ClientCacheController.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="" Source="WM65ClientCacheController\Wm65ClientCacheController.csproj" Description="The project file 'C:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\Samples\WM65ClientCacheController\Wm65ClientCacheController.csproj' cannot be opened.&#xA;&#xA;The project type is not supported by this installation.">
+</Event></UpgradeLog>

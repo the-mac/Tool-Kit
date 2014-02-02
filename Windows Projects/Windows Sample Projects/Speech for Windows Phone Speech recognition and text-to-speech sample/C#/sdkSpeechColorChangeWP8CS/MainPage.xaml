@@ -1,0 +1,55 @@
+<!-- 
+    Copyright (c) 2012 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see all Code Samples for Windows Phone, visit http://go.microsoft.com/fwlink/?LinkID=219604
+-->
+<phone:PhoneApplicationPage
+    x:Class="sdkSpeechColorChangeWP8CS.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="SPEECH CONTINUOUS RECOGNITION SAMPLE" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="change color" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnContinuousRecognition" Content="Start speech recognition"   HorizontalAlignment="Stretch" Click="btnContinuousRecognition_Click" Margin="10,0"/>
+            <TextBlock Grid.Row="1" x:Name="txtInstructions" TextWrapping="Wrap"
+                       Text="Say a color to change the backgroud of the rectangle. For example, say the word 'blue'." Visibility="Collapsed" Margin="20,0"/>
+            <TextBlock Grid.Row="2" x:Name="txtResult"  TextWrapping="Wrap"  HorizontalAlignment="Stretch" Height="50"  Margin="20,0"/>
+            <Border Grid.Row="3" x:Name="rectangleResult" Background="{StaticResource PhoneBackgroundBrush}" BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="5" Margin="10,10,10,20" CornerRadius="20"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wazup", "Wazup\Wazup.csproj", "{096706B2-969D-4934-9DDC-3F39436D47B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WazupCommon", "WazupCommon\WazupCommon.csproj", "{7822C78A-BBDF-4515-9CF7-7B997A75CE37}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://212.179.51.73:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Wazup\\Wazup.csproj
+		SccProjectName1 = Wazup
+		SccLocalPath1 = Wazup
+		SccProjectUniqueName2 = WazupCommon\\WazupCommon.csproj
+		SccProjectName2 = WazupCommon
+		SccLocalPath2 = WazupCommon
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096706B2-969D-4934-9DDC-3F39436D47B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7822C78A-BBDF-4515-9CF7-7B997A75CE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7822C78A-BBDF-4515-9CF7-7B997A75CE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7822C78A-BBDF-4515-9CF7-7B997A75CE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7822C78A-BBDF-4515-9CF7-7B997A75CE37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

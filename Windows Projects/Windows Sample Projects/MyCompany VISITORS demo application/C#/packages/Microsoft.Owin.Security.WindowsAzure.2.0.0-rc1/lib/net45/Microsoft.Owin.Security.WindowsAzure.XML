@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Owin.Security.WindowsAzure</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Owin.Security.WindowsAzure.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Security.WindowsAzure.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Security.WindowsAzure.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Security.WindowsAzure.Properties.Resources.Exception_NoStsDescriptorInMetadata">
+            <summary>
+              Looks up a localized string similar to No SecurityTokenServiceType descriptor in metadata..
+            </summary>
+        </member>
+    </members>
+</doc>

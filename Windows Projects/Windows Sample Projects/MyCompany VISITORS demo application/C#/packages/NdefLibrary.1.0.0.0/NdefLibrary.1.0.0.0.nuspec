@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NdefLibrary</id>
+    <version>1.0.0.0</version>
+    <title>NDEF Library for Proximity APIs (NFC)</title>
+    <authors>Andreas Jakl</authors>
+    <owners>Andreas Jakl</owners>
+    <licenseUrl>https://ndef.codeplex.com/license</licenseUrl>
+    <projectUrl>https://ndef.codeplex.com/</projectUrl>
+    <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The Proximity APIs for NFC (Near Field Communication) in the Windows 8 platform are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
+
+While the Proximity APIs include basic support for URIs, they lack support for more in-depth control over the NDEF records, as well as additional standardized record types.
+
+This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows 8 and Windows Phone 8.
+
+Note: this portable class library requires Visual Studio 2012 and NuGet 2.1+. Please update your NuGet package manager version in case the library installation fails ("Tools" -&gt; "Extensions and Updates...").</description>
+    <summary>Easily parse and create NDEF records with the Windows Proximity APIs (NFC)</summary>
+    <releaseNotes>Stable release 1.0.0
+- Added WpSettings records for launching Windows Phone 8 settings pages
+- Added Mailto records for sending email messages
+- Added DriveTo and WalkTo URI schemes for starting navigation on WP8
+- Added Nokia Accessories record to easily launch apps on Nokia Lumia WP8 phones
+- Added NearSpeak records for storing voice messages on tags
+- URI encoding for body text of SMS messages
+- Parameter to get the raw URI (as byte array) of Uri records
+- Various fixes and improvements</releaseNotes>
+    <copyright>Andreas Jakl, 2012</copyright>
+    <language />
+    <tags>nfc, ndef, proximity, smart poster, snep, near field communication, ndef message, record, launchapp</tags>
+  </metadata>
+</package>

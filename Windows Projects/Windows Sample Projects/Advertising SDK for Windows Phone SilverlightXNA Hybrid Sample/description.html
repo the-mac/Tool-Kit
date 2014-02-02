@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Advertising SDK for Windows Phone Silverlight/XNA Hybrid Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+            <link href="description/librarydescription.css" rel="Stylesheet" type="text/css" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Advertising SDK for Windows Phone Silverlight/XNA Hybrid Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 7, XNA, Advertising, Windows Phone Ads
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Advertising, Ads in Apps, Windows Phone Ads
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">10/5/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Advertising-SDK-for-5e580777">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div class="content">
+<div>
+<div class="topic">
+<h1 class="title">Integrating Ads into a Hybrid Silverlight/XNA App</h1>
+<div id="mainSection">
+<div id="mainBody">
+<p>The following steps are a guide to using the <code>AdComponent</code> class from the
+<code><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.Mobile.XNA.aspx"  title="Auto generated link to Microsoft.Advertising.Mobile.XNA">Microsoft.Advertising.Mobile.XNA</a></code> assembly. This class allows you to display advertising in Windows Phone 7 apps that is a mix of the Silverlight and XNA frameworks. Note: there is no support for XNA in Windows Phone 8 apps.</p>
+<div class="alert">
+<table>
+<tbody>
+<tr>
+<th align="left"><img id="Important" alt="Important" src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.Important(v=msads.20).gif?view=optimized&images=true" title="Important">Important:
+</th>
+</tr>
+<tr>
+<td><br>
+The purpose of the sample code in this topic is to illustrate a concept and related syntax. The sample does not include all the code that is found in a full production system. For example, data validation and error handling code is not included. Technical support
+ is not available for this sample or for any included source code. You can discuss this sample at the community support forum,
+<a href="http://community.microsoftadvertising.com/forums/32.aspx">Microsoft pubCenter for Mobile</a>.
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Prerequisites</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<ol class="ordered">
+<li>
+<p><a href="http://go.microsoft.com/fwlink/?LinkID=136843&amp;clcid=0x409">Microsoft Visual Studio 2010</a> or
+<a href="http://go.microsoft.com/fwlink/?LinkID=139164&amp;clcid=0x409">Microsoft Visual Studio 2010 Express</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ff402530.aspx">Windows Phone Developer Tools</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-download-install(v=msads.20).aspx">Microsoft Advertising SDK for Windows Phone</a></p>
+</li><li>
+<p>For more information about creating hybrid apps, see <a href="http://msdn.microsoft.com/en-us/library/hh202938(v=VS.92).aspx">
+How to: Combine Silverlight and the XNA Framework in a Windows Phone Application</a>.</p>
+<div class="alert">
+<table>
+<tbody>
+<tr>
+<th align="left"><img id="Important" alt="Important" src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.Important(v=msads.20).gif?view=optimized&images=true" title="Important">Important:
+</th>
+</tr>
+<tr>
+<td><br>
+Hybrid apps can target only the Windows Phone 7.1 platform.
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+</li></ol>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Integrate an Ad into a Hybrid Windows Phone Silverlight/XNA App</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<ol class="ordered">
+<li>
+<p>Create a new project by selecting the <strong>File | New Project</strong> menu command.</p>
+<p>The <strong>New Project</strong> window is displayed.</p>
+</li><li>
+<p>Expand the <strong>Visual C#</strong> templates, and then select the <strong>XNA Game Studio 4.0</strong> templates. The template for the hybrid app is also available under
+<strong>Silverlight for Windows Phone</strong>.</p>
+</li><li>
+<p>Select the <strong>Windows Phone Silverlight and XNA Application</strong> template. Fill in the project
+<strong>Name</strong> with a name of your choice. For this walkthrough, the name is
+<strong>SLXnaApp1</strong>, the default name given to the project by Visual Studio.</p>
+<img id="627c5df9-843c-4ba0-8e61-52ebe9a58593" alt="Create the XNA/Silverlight Project" src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.627c5df9-843c-4ba0-8e61-52ebe9a58593(v=msads.20).jpg?view=optimized&images=true" title="Create the XNA/Silverlight Project">
+<p></p>
+</li><li>
+<p>Click <strong>OK</strong>. Visual Studio creates a new project and opens <strong>
+MainPage.xaml</strong> in the Visual Studio designer window.</p>
+</li><li>
+<p>In <strong>Visual Studio Solution Explorer</strong>, under your project, right-click
+<strong>References</strong>, and then click <strong>Add Reference…</strong>.</p>
+<img id="1a1a09cd-e467-47cb-9f80-0ce109be41b2" alt="XNA Add Reference Context Menu" src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.1a1a09cd-e467-47cb-9f80-0ce109be41b2(v=msads.20).png?view=optimized&images=true" title="XNA Add Reference Context Menu">
+<p></p>
+</li><li>
+<p>In the <strong>Add Reference</strong> dialog box, click the <strong>.NET</strong> tab. Ctrl&#43;Click
+<strong>Microsoft.Advertising.Mobile.Xna.dll</strong> and <strong>Microsoft.Advertising.Mobile.dll</strong> to select the files, and then click
+<strong>OK</strong>.</p>
+<img id="0b12c1f4-e303-4c07-a1ea-5da3e217d62a" alt="Add References..." src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.0b12c1f4-e303-4c07-a1ea-5da3e217d62a(v=msads.20).jpg?view=optimized&images=true" title="Add References..."><strong>Author's
+ Note: </strong><em>After creating the project, you may see an item in the Warning window that says something similar to: “The project 'SilverlightXNAAppLib' cannot be referenced. The referenced project is targeted to a different framework family (.NETFramework).”
+ You can safely ignore this error for this walkthrough.</em><br>
+<br>
+</li><li>
+<p>In the <strong>Solution Explorer</strong> panel, you will see <strong>Microsoft.Advertising.Mobile.Xna.dll</strong> and the
+<strong>Microsoft.Advertising.Mobile.dll</strong> listed in the <strong>References</strong> folder of your project.</p>
+<img id="3f971e85-7f19-4ffb-b6be-07cbb4acb44d" alt="Hybrid Assemblies in Solution Explorer" src="http://i.msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-xna-silverlight-hybrid-walkthrough-ads.3f971e85-7f19-4ffb-b6be-07cbb4acb44d(v=msads.20).jpg?view=optimized&images=true" title="Hybrid Assemblies in Solution Explorer">
+<p></p>
+</li><li>
+<p>Open the <strong>GamePage.xaml.cs</strong> source code file, and add the following code in the
+<code>using</code> section of <strong>GamePage</strong> class code.</p>
+<p><code>using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.Mobile.Xna.aspx"  title="Auto generated link to Microsoft.Advertising.Mobile.Xna">Microsoft.Advertising.Mobile.Xna</a>;</code></p>
+<p><code>using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.aspx"  title="Auto generated link to Microsoft.Advertising">Microsoft.Advertising</a>;</code></p>
+<p><code>using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Diagnostics.aspx"  title="Auto generated link to System.Diagnostics">System.Diagnostics</a>;</code></p>
+</li><li>
+<p>Scroll down to the object declarations for the <code>GamePage</code> class. The last one is
+<code>SpiteBatch spriteBatch;</code>.</p>
+<p>After the line of code <code>SpiteBatch spriteBatch;</code> (and before the <code>
+GamePage</code> method) add a declaration for the <code>DrawableAd</code> class. That line of code will be
+<code>DrawableAd drawableAd;</code>. So your code will look like the following:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">    public partial class GamePage : PhoneApplicationPage
+    {
+        ContentManager contentManager;
+        GameTimer timer;
+        SpriteBatch spriteBatch;
+
+        DrawableAd drawableAd;
+
+        public GamePage()
+</pre>
+<pre id="codePreview" class="xaml">    public partial class GamePage : PhoneApplicationPage
+    {
+        ContentManager contentManager;
+        GameTimer timer;
+        SpriteBatch spriteBatch;
+
+        DrawableAd drawableAd;
+
+        public GamePage()
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Scroll down to the <code>OnNavigatedTo</code> method.</p>
+<p>In this method there is a line of code:</p>
+<p><code>// TODO: use this.content to load your game content here</code></p>
+<p>For this <code>TODO</code> item you will add the code that initializes and creates the ad on the
+<code>Game</code> page.</p>
+<p>Add the following code to the TODO item.</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">            // TODO: use this.content to load your game content here
+
+            AdComponent.Initialize(&quot;test_client&quot;);
+            
+            <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a> rect = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a>(0, 0, 480, 80);
+            drawableAd = AdComponent.Current.CreateAd(&quot;Image480_80&quot;, rect, true);
+            
+            drawableAd.AdRefreshed &#43;= new EventHandler(drawableAd_AdRefreshed);
+            drawableAd.ErrorOccurred &#43;= new EventHandler&lt;Microsoft.Advertising.AdErrorEventArgs&gt;(drawableAd_ErrorOccurred);
+</pre>
+<pre id="codePreview" class="xaml">            // TODO: use this.content to load your game content here
+
+            AdComponent.Initialize(&quot;test_client&quot;);
+            
+            <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a> rect = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a>(0, 0, 480, 80);
+            drawableAd = AdComponent.Current.CreateAd(&quot;Image480_80&quot;, rect, true);
+            
+            drawableAd.AdRefreshed &#43;= new EventHandler(drawableAd_AdRefreshed);
+            drawableAd.ErrorOccurred &#43;= new EventHandler&lt;Microsoft.Advertising.AdErrorEventArgs&gt;(drawableAd_ErrorOccurred);
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+<p>This code does the following:</p>
+<ol class="ordered">
+<li>It calls the <code>AdComponent’s Initialize()</code> method so the <code>drawableAd</code> object will use test ads and settings. For more information about test ad settings, see
+<a href="http://msdn.microsoft.com/en-us/library/(v=msads.20)">Test Values for AdUnitId and ApplicationId</a>.<br>
+<br>
+</li><li>It creates the <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.rectangle.aspx">
+XNA Rectangle</a> object that will contain the <code>drawableAd</code> object. <br>
+<br>
+</li><li>It creates the <code>drawableAd</code> object that displays the test ad.<br>
+<br>
+</li><li>It registers the <code>drawableAd</code> object’s <code>AdRefreshed</code> and
+<code>ErrorOccurred</code> event handlers.<br>
+<br>
+</li></ol>
+</li><li>
+<p>Scroll down to the <code>OnUpdate</code> method.</p>
+<p>In this method you add the code to update the XNA display. To update the state of the
+<code>AdComponent</code>, add the following code:</p>
+<p><code>AdComponent.Current.Update(e.ElapsedTime);</code></p>
+<p>so the <code>OnUpdate</code> method looks like the following:</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        // &lt;summary&gt;
+        // Allows the page to run logic, such as updating the world,
+        // checking for collisions, gathering input, and playing audio.
+        // &lt;/summary&gt;
+        private void OnUpdate(object sender, GameTimerEventArgs e)
+        {
+            // update the ad control
+            AdComponent.Current.Update(e.ElapsedTime);
+        }
+</pre>
+<pre id="codePreview" class="xaml">        // &lt;summary&gt;
+        // Allows the page to run logic, such as updating the world,
+        // checking for collisions, gathering input, and playing audio.
+        // &lt;/summary&gt;
+        private void OnUpdate(object sender, GameTimerEventArgs e)
+        {
+            // update the ad control
+            AdComponent.Current.Update(e.ElapsedTime);
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Scroll down to the <code>OnDraw</code> method.</p>
+<p>In this method you add the code that draws the XNA page. Add this code</p>
+<p><code>AdComponent.Current.Draw();</code></p>
+<p>to the <code>OnDraw</code> method so it looks like the following:</p>
+<p></p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        // &lt;summary&gt;
+        // Allows the page to draw itself.
+        // &lt;/summary&gt;
+        private void OnDraw(object sender, GameTimerEventArgs e)
+        {
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // draw the ad control
+            AdComponent.Current.Draw();  
+        }
+</pre>
+<pre id="codePreview" class="xaml">        // &lt;summary&gt;
+        // Allows the page to draw itself.
+        // &lt;/summary&gt;
+        private void OnDraw(object sender, GameTimerEventArgs e)
+        {
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // draw the ad control
+            AdComponent.Current.Draw();  
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>The last step is to add event handler code to the app. The <code>OnDraw</code> method is the last code that is automatically created by the Visual Studio Project Wizard for the hybrid project. Following that code, you will add the event handlers.</p>
+<p>After the <code>OnDraw</code> method, add the code for the event handlers. The following sample code is provided; however, note that it uses a
+<code>Debug.WriteLine</code> method to notify the debugger that the event has been raised. This is to make the walkthrough as simple as possible. You will need to change this code if you want the event handler to do something else.</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">        private void drawableAd_ErrorOccurred(object sender, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.AdErrorEventArgs.aspx"  title="Auto generated link to Microsoft.Advertising.AdErrorEventArgs">Microsoft.Advertising.AdErrorEventArgs</a> e)
+        {
+            Debug.WriteLine(&quot;Ad error occurred!&quot;);
+        }
+
+        private void drawableAd_AdRefreshed(object sender, EventArgs e)
+        {
+            Debug.WriteLine(&quot;Ad refreshed!&quot;);
+        }
+</pre>
+<pre id="codePreview" class="xaml">        private void drawableAd_ErrorOccurred(object sender, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.AdErrorEventArgs.aspx"  title="Auto generated link to Microsoft.Advertising.AdErrorEventArgs">Microsoft.Advertising.AdErrorEventArgs</a> e)
+        {
+            Debug.WriteLine(&quot;Ad error occurred!&quot;);
+        }
+
+        private void drawableAd_AdRefreshed(object sender, EventArgs e)
+        {
+            Debug.WriteLine(&quot;Ad refreshed!&quot;);
+        }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</li><li>
+<p>Make sure <strong>Windows Phone Emulator</strong> is selected in the target drop-down box at the top of Visual Studio.</p>
+</li><li>
+<p>Press <strong>F5</strong> to run the project under Windows Phone Emulator.</p>
+</li><li>
+<p>Once the app is running in the emulator, click the <strong>Change to game page</strong> button.</p>
+</li></ol>
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">Full Sample Code</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<p>Here is a complete listing of the sample code.</p>
+<div class="code">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">xaml</span>
+<pre class="hidden">using System;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.aspx"  title="Auto generated link to System.Windows">System.Windows</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Controls.aspx"  title="Auto generated link to System.Windows.Controls">System.Windows.Controls</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Documents.aspx"  title="Auto generated link to System.Windows.Documents">System.Windows.Documents</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Input.aspx"  title="Auto generated link to System.Windows.Input">System.Windows.Input</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Navigation.aspx"  title="Auto generated link to System.Windows.Navigation">System.Windows.Navigation</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Shapes.aspx"  title="Auto generated link to System.Windows.Shapes">System.Windows.Shapes</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Controls.aspx"  title="Auto generated link to Microsoft.Phone.Controls">Microsoft.Phone.Controls</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.aspx"  title="Auto generated link to Microsoft.Xna.Framework">Microsoft.Xna.Framework</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Content.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Content">Microsoft.Xna.Framework.Content</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Graphics.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Graphics">Microsoft.Xna.Framework.Graphics</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.Mobile.Xna.aspx"  title="Auto generated link to Microsoft.Advertising.Mobile.Xna">Microsoft.Advertising.Mobile.Xna</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.aspx"  title="Auto generated link to Microsoft.Advertising">Microsoft.Advertising</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Diagnostics.aspx"  title="Auto generated link to System.Diagnostics">System.Diagnostics</a>;
+
+namespace SLXnaApp1
+{
+    public partial class GamePage : PhoneApplicationPage
+    {
+        ContentManager contentManager;
+        GameTimer timer;
+        SpriteBatch spriteBatch;
+
+        DrawableAd drawableAd;
+
+        public GamePage()
+        {
+            InitializeComponent();
+
+            // Get the content manager from the application.
+            contentManager = (Application.Current as App).Content;
+
+            // Create a timer for this page.
+            timer = new GameTimer();
+            timer.UpdateInterval = TimeSpan.FromTicks(333333);
+            timer.Update &#43;= OnUpdate;
+            timer.Draw &#43;= OnDraw;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Set the sharing mode of the graphics device to turn on XNA rendering.
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(true);
+
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
+
+            // TODO: Use this.content to load your game content here.
+            AdComponent.Initialize(&quot;test_client&quot;);
+           
+            <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a> rect = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a>(0, 0, 480, 80);
+            drawableAd = AdComponent.Current.CreateAd(&quot;Image480_80&quot;, rect, true);
+            
+            drawableAd.AdRefreshed &#43;= new EventHandler(drawableAd_AdRefreshed);
+            drawableAd.ErrorOccurred &#43;= new EventHandler&lt;Microsoft.Advertising.AdErrorEventArgs&gt;(drawableAd_ErrorOccurred);
+
+            // Start the timer.
+            timer.Start();
+
+            base.OnNavigatedTo(e);
+        }
+
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            // Stop the timer.
+            timer.Stop();
+
+            // Set the sharing mode of the graphics device to turn off XNA rendering.
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(false);
+
+            base.OnNavigatedFrom(e);
+        }
+
+        /// &lt;summary&gt;
+        /// Allows the page to run logic, such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// &lt;/summary&gt;
+        private void OnUpdate(object sender, GameTimerEventArgs e)
+        {
+            // Update the ad control.
+            AdComponent.Current.Update(e.ElapsedTime);
+        }
+
+        /// &lt;summary&gt;
+        /// Allows the page to draw itself.
+        /// &lt;/summary&gt;
+        private void OnDraw(object sender, GameTimerEventArgs e)
+        {
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // Draw the ad control
+            AdComponent.Current.Draw();  
+        }
+
+        private void drawableAd_ErrorOccurred(object sender, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.AdErrorEventArgs.aspx"  title="Auto generated link to Microsoft.Advertising.AdErrorEventArgs">Microsoft.Advertising.AdErrorEventArgs</a> e)
+        {
+            Debug.WriteLine(&quot;Ad error occurred!&quot;);
+        }
+
+        private void drawableAd_AdRefreshed(object sender, EventArgs e)
+        {
+            Debug.WriteLine(&quot;Ad refreshed!&quot;);
+        }
+    }
+}
+</pre>
+<pre id="codePreview" class="xaml">using System;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.aspx"  title="Auto generated link to System.Windows">System.Windows</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Controls.aspx"  title="Auto generated link to System.Windows.Controls">System.Windows.Controls</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Documents.aspx"  title="Auto generated link to System.Windows.Documents">System.Windows.Documents</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Input.aspx"  title="Auto generated link to System.Windows.Input">System.Windows.Input</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Navigation.aspx"  title="Auto generated link to System.Windows.Navigation">System.Windows.Navigation</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Shapes.aspx"  title="Auto generated link to System.Windows.Shapes">System.Windows.Shapes</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Controls.aspx"  title="Auto generated link to Microsoft.Phone.Controls">Microsoft.Phone.Controls</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.aspx"  title="Auto generated link to Microsoft.Xna.Framework">Microsoft.Xna.Framework</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Content.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Content">Microsoft.Xna.Framework.Content</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Graphics.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Graphics">Microsoft.Xna.Framework.Graphics</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.Mobile.Xna.aspx"  title="Auto generated link to Microsoft.Advertising.Mobile.Xna">Microsoft.Advertising.Mobile.Xna</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.aspx"  title="Auto generated link to Microsoft.Advertising">Microsoft.Advertising</a>;
+using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Diagnostics.aspx"  title="Auto generated link to System.Diagnostics">System.Diagnostics</a>;
+
+namespace SLXnaApp1
+{
+    public partial class GamePage : PhoneApplicationPage
+    {
+        ContentManager contentManager;
+        GameTimer timer;
+        SpriteBatch spriteBatch;
+
+        DrawableAd drawableAd;
+
+        public GamePage()
+        {
+            InitializeComponent();
+
+            // Get the content manager from the application.
+            contentManager = (Application.Current as App).Content;
+
+            // Create a timer for this page.
+            timer = new GameTimer();
+            timer.UpdateInterval = TimeSpan.FromTicks(333333);
+            timer.Update &#43;= OnUpdate;
+            timer.Draw &#43;= OnDraw;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Set the sharing mode of the graphics device to turn on XNA rendering.
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(true);
+
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
+
+            // TODO: Use this.content to load your game content here.
+            AdComponent.Initialize(&quot;test_client&quot;);
+           
+            <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a> rect = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Xna.Framework.Rectangle.aspx"  title="Auto generated link to Microsoft.Xna.Framework.Rectangle">Microsoft.Xna.Framework.Rectangle</a>(0, 0, 480, 80);
+            drawableAd = AdComponent.Current.CreateAd(&quot;Image480_80&quot;, rect, true);
+            
+            drawableAd.AdRefreshed &#43;= new EventHandler(drawableAd_AdRefreshed);
+            drawableAd.ErrorOccurred &#43;= new EventHandler&lt;Microsoft.Advertising.AdErrorEventArgs&gt;(drawableAd_ErrorOccurred);
+
+            // Start the timer.
+            timer.Start();
+
+            base.OnNavigatedTo(e);
+        }
+
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            // Stop the timer.
+            timer.Stop();
+
+            // Set the sharing mode of the graphics device to turn off XNA rendering.
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(false);
+
+            base.OnNavigatedFrom(e);
+        }
+
+        /// &lt;summary&gt;
+        /// Allows the page to run logic, such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// &lt;/summary&gt;
+        private void OnUpdate(object sender, GameTimerEventArgs e)
+        {
+            // Update the ad control.
+            AdComponent.Current.Update(e.ElapsedTime);
+        }
+
+        /// &lt;summary&gt;
+        /// Allows the page to draw itself.
+        /// &lt;/summary&gt;
+        private void OnDraw(object sender, GameTimerEventArgs e)
+        {
+            SharedGraphicsDeviceManager.Current.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // Draw the ad control
+            AdComponent.Current.Draw();  
+        }
+
+        private void drawableAd_ErrorOccurred(object sender, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Advertising.AdErrorEventArgs.aspx"  title="Auto generated link to Microsoft.Advertising.AdErrorEventArgs">Microsoft.Advertising.AdErrorEventArgs</a> e)
+        {
+            Debug.WriteLine(&quot;Ad error occurred!&quot;);
+        }
+
+        private void drawableAd_AdRefreshed(object sender, EventArgs e)
+        {
+            Debug.WriteLine(&quot;Ad refreshed!&quot;);
+        }
+    }
+}
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<hr class="codeDivider">
+</div>
+<div class="LW_CollapsibleArea_Container">
+<div class="LW_CollapsibleArea_TitleDiv"><span class="LW_CollapsibleArea_Title">See Also</span>
+<div class="LW_CollapsibleArea_HrDiv">
+<hr class="LW_CollapsibleArea_Hr">
+</div>
+</div>
+<h4 class="subHeading">Concepts</h4>
+<a href="http://msdn.microsoft.com/en-us/library/advertising-mobile-windows-phone-sdk(v=msads.20).aspx">Microsoft Advertising SDK for Windows Phone</a><br>
+<br>
+</div>
+</div>
+<br>
+<br>
+Send feedback about this documentation to adsfdbk@microsoft.com.<br>
+<br>
+<br>
+Publication date: <br>
+2012-10-30</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

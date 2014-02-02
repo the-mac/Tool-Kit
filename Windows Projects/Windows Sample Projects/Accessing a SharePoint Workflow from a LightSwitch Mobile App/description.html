@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Accessing a SharePoint Workflow from a LightSwitch Mobile App</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Accessing a SharePoint Workflow from a LightSwitch Mobile App</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint, Visual Studio LightSwitch, Office 365
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SharePoint Workflow, mobile application development
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/7/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Accessing-a-SharePoint-48ed4467">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample contains files to accompany the MSDN Library walkthrough of the same name&nbsp;<a title="Walkthrough: Accessing a SharePoint Workflow from a LightSwitch Mobile App" href="http://msdn.microsoft.com/en-us/library/dn246942.aspx" >http://msdn.microsoft.com/en-us/library/dn246942.aspx</a>.</p>
+<p>In the walkthrough, you&rsquo;ll create a workflow for requesting and approving time off, hosting a&nbsp;list on SharePoint for Office 365. You&rsquo;ll also build a client application in HTML so that managers can approve or deny those requests on mobile
+ devices.</p>
+<p>By using LightSwitch, you can create mobile applications that access and update SharePoint workflows, which help ensure that business processes are performed in a particular sequence. For example, you might use a workflow to route a document for approval
+ or to process a payroll.</p>
+<p>The walkthrough requires Visual Studio 2012 Update 2. To host the app, you must also have a SharePoint Developer site on Office 365, which you can get from the
+<a href="http://go.microsoft.com/fwlink/?LinkId=263490" >Developer Center for Apps for Office and SharePoint</a>.</p>
+<p>As your first steps in creating your application, you'll create a SharePoint list for requesting time off and then design a workflow for approving the requests.</p>
+<h3 class="procedureSubHeading">To create the list</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>In a web browser, open your SharePoint Developer site by entering the URL <span class="input">
+https://</span> <span class="parameter">Account</span><span class="input">.sharepoint.com/sites/Developer</span>, where
+<span class="parameter">Account</span> is the name of your Office 365 developer account.</p>
+</li><li>
+<p>On the Office 365 menu bar, choose the <span class="label">Settings</span> icon, and then choose the
+<span class="label">Site Settings</span> menu item.</p>
+</li><li>
+<p>In the <span class="label">Web Designer Galleries</span> list, choose <span class="label">
+List Templates</span>.</p>
+</li><li>
+<p>On the <span class="label">Web Designer Gallery</span> page, on the menu bar, choose
+<span class="label">Files</span>, <span class="label">Upload Document</span>.</p>
+</li><li>
+<p>In the <span class="label">Add a Template</span> dialog box, choose the <span class="label">
+browse</span> button, locate the <span class="label">TimeOffListTemplate.stp</span> template file in the sample download, and then choose the
+<span class="label">OK</span> button.</p>
+</li><li>
+<p>In the <span class="label">List Template Gallery</span> dialog box, choose the
+<span class="label">Save</span> button.</p>
+</li><li>
+<p>On the Office 365 menu bar, choose the <span class="label">Settings</span> icon, choose
+<span class="label">Site Contents</span>, choose the <span class="label">add an app</span> link, and then choose
+<span class="label">Request Time Off</span>.</p>
+</li><li>
+<p>In the <span class="label">Adding Custom List</span> dialog box, name the list
+<span class="input">Request Time Off</span>, and then choose the <span class="label">
+Create</span> button.</p>
+<p>The list is added to the <span class="label">Site Contents</span> page.</p>
+</li><li>
+<p>On the <span class="label">Site Contents</span> page, choose the <span class="label">
+Request Time Off</span> list icon to open the list.</p>
+</li></ol>
+</div>
+<h3 class="procedureSubHeading">To create the workflow</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>On the menu bar, choose <span class="label">List</span>, and then, on the ribbon, choose
+<span class="label">Workflow Settings</span>, <span class="label">Create a Workflow in SharePoint Designer</span>...</p>
+</li></ol>
+</div>
+<p><img id="83889" src="description/LS_workflow2.PNG" alt="" width="597" height="347"></p>
+<p>&nbsp;</p>
+<ol>
+</ol>
+
+</div>
+
+
+    </div>
+</body>
+</html>

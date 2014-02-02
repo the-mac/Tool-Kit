@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.HTMLClient\Properties\Client.lsml" Checksum="32EB4CB3FA3B1FE6D449371CFDE7B5F1DBC68F2340919332EE2DFA39FC7DA8EC" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.HTMLClient\Properties\Proxies.lsml" Checksum="D0F6E9EFF9510CD537E514A1E1540EFB97D6EC07822222BFF068CCD2145F2CB5" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.HTMLClient\Screens\BrowseCustomers.lsml" Checksum="C3736E837EB42F50367249A5826517D6F9EE5BE1298308FCD19E62BABAE66D7E" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.HTMLClient\Screens\AddEditCustomer.lsml" Checksum="B53BDEAE0838DDE6589F961CD3BC52AC8BFA41F65F4ABF0C92E6E190CE3E2723" />
+    <Document FullPath="C:\Dev12\LightSwitchData-CS\LightSwitchData-CS\LightSwitchData-CS.HTMLClient\Screens\BrowseZipCodesSet.lsml" Checksum="C025DCE2227F33D0EE41B9525C0943964190C0B1D3DAB7493479E84E45011777" />
+  </Documents>
+</ModelDocumentManifest>

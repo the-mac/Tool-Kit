@@ -1,0 +1,73 @@
+﻿<!--******************************************************** 
+ Copyright (c) Microsoft Corporation.  All rights reserved. 
+ ********************************************************-->
+<phone:PhoneApplicationPage 
+    x:Class="ODataStreamingPhoneClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,12">
+            <TextBlock x:Name="ApplicationTitle" Text="OData Streaming Photo Client" 
+                       Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Photos" Margin="9,-7,0,0" 
+                       Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--Use the recommended progress bar.-->
+        <toolkit:PerformanceProgressBar Height="10" HorizontalAlignment="Left" Margin="10,0,10,0" 
+                                        Name="requestProgress" VerticalAlignment="Top" 
+                                        Width="455" Grid.Row="1" Visibility="Collapsed"
+                                         IsIndeterminate="false" IsHitTestVisible="False"/>
+        
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+<ListBox Margin="0,0,-12,0" Name="PhotosListBox" ItemsSource="{Binding Photos}"  
+            SelectionChanged="OnSelectionChanged" Height="Auto">
+    <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <toolkit:WrapPanel ItemHeight="150" ItemWidth="150"/>
+        </ItemsPanelTemplate>
+    </ListBox.ItemsPanel>
+    <ListBox.ItemTemplate>                       
+        <DataTemplate>
+            <StackPanel Margin="0,0,0,17" Orientation="Vertical" 
+                    HorizontalAlignment="Center">
+            <Image Source="{Binding Path=StreamUri, Mode=OneWay}" 
+                   Height="100" Width="130" />
+                <TextBlock Text="{Binding Path=FileName, Mode=OneWay}" 
+                            HorizontalAlignment="Center" Width="Auto"
+                        Style="{StaticResource PhoneTextNormalStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Icons/new.png" Text="new" Click="OnCreatePhoto"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/refresh.png" Text="refresh" Click="OnRefresh"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

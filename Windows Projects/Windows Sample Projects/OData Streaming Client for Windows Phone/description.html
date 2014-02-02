@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>OData Streaming Client for Windows Phone</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>OData Streaming Client for Windows Phone</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ViewModel pattern (MVVM), WCF Data Services, Windows Phone 7, OData, Windows Phone
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Data Binding, Data Access, OData, Phone application development, MVVM, Tombstoning
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Phone, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/15/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/OData-Streaming-Client-for-29c225fd">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<div class="saveHistory" id="allHistory"></div>
+<h2>Introduction</h2>
+<p>The Open Data Protocol (OData) enables you to define data feeds that also make binary large object (BLOB) data, such as photos, videos, and documents, available to client applications that consume OData feeds. This sample is intended to demonstrate how to
+ use a Windows Phone 7 application to access an OData service that uses a streaming provider to store and retrieve image files, along with information about each photo. For more information about how we created this streaming provider, see the
+<a href="http://go.microsoft.com/fwlink/?LinkId=198989" >Data Services Streaming Provider Series: Implementing a Streaming Provider (Part 1)</a>.</p>
+<p>This sample supports the third installment of the OData streaming provider series:
+<a href="http://go.microsoft.com/fwlink/?LinkID=218103">Accessing an OData Media Resource Stream from a Windows Phone 7 Application</a>.&nbsp;</p>
+<div>
+<h2 class="heading"><span>Prerequisites</span></h2>
+<div class="section" id="sectionSection0">
+<p>Before running this sample, make sure that the following software is installed:</p>
+<ul>
+<li class="unordered">Visual Studio 2010 </li><li class="unordered"><a href="http://go.microsoft.com/fwlink/?LinkID=218859" >Windows Phone Developer Tools</a>
+</li><li class="unordered"><a href="http://go.microsoft.com/fwlink/?LinkId=218992" >Silverlight for Windows Phone Toolkit</a> (February 2011 or a later version)
+</li><li class="unordered"><a href="http://go.microsoft.com/fwlink/?LinkId=207900" >OData client library for Windows&nbsp;Phone</a>
+</li></ul>
+<p>You must also have downloaded and configured the <a href="http://go.microsoft.com/fwlink/?LinkId=218860" >
+Streaming Photo OData Service Sample</a>.</p>
+</div>
+</div>
+<div>
+<h2 class="heading"><span>Building the Sample</span></h2>
+<div class="section" id="sectionSection1">
+<p>Use the following procedures to configure and build the sample.</p>
+<div>
+<h3><span><strong>To update the reference to the OData client library for Windows Phone 7</strong></span></h3>
+<div class="subSection">
+<ol class="ordered">
+<li>
+<p>Unzip the sample files on the local computer.</p>
+</li><li>
+<p>In Visual Studio, open the ODataStreamingPhoneClient.sln solution file in the root directory of the sample.</p>
+</li><li>
+<p>In Solution Explorer, expand <strong>References</strong> and locate the entry for <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Data.Services.Client.aspx"  title="Auto generated link to System.Data.Services.Client">System.Data.Services.Client</a>, which is indicated with a yellow triangle because the reference assembly cannot currently be located.</p>
+</li><li>
+<p>Right-click this reference to <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Data.Services.Client.aspx"  title="Auto generated link to System.Data.Services.Client">System.Data.Services.Client</a> and click <strong>Remove</strong>.</p>
+<p>This removes the incorrect reference.</p>
+</li><li>
+<p>Right-click <strong>References</strong>, and click <strong>Add Reference</strong>.</p>
+<p>This displays the Add Reference dialog box.</p>
+</li><li>
+<p>in the <strong>Add Reference</strong> dialog box, click the <strong>Browse</strong> tab, browse to the directory where you extracted the library files, click System.Data.Services.Client.dll, and then click
+<strong>OK</strong>.</p>
+<p>This adds the correct reference to the downloaded OData client library assembly.</p>
+</li></ol>
+</div>
+</div>
+<div>
+<h3><span><strong>To configure the data service URI and build the sample</strong></span></h3>
+<div class="subSection">
+<ol class="ordered">
+<li>
+<p>In the Solution Explorer, open the MainViewModel.cs file and change the value of
+<em>serviceUriString</em> to a string that is the URI of your implementation of the
+<a href="http://go.microsoft.com/fwlink/?LinkId=218860" >streaming photo sample OData service</a>.</p>
+</li><li>
+<p>Build the sample.</p>
+</li></ol>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="heading"><span>Running the Sample</span></h2>
+<div class="section" id="sectionSection2">
+<p>Use the following procedures to run the sample.</p>
+<div>
+<h3><span><strong>To run the sample on a Windows Phone 7 emulator</strong></span></h3>
+<div class="subSection">
+<ol class="ordered">
+<li>
+<p>With the project loaded in Visual Studio, press F5.</p>
+<p>The PhotoInfo feed is requested from the data service and loaded into a <a href="http://msdn.microsoft.com/en-us/library/ee474331.aspx" >
+DataServiceCollection&lt;PhotoInfo&gt;</a>, which is bound to the list box. This displays the image files (media resources) associated with the bound entities (media link entries) that are requested asynchronously as streams from the data service.</p>
+</li><li>
+<p>Tap one of the images in the list.</p>
+<p>This displays the image for the selected PhotoInfo entity in the <strong>Photo</strong> tab of the Pivot control.</p>
+</li><li>
+<p>Tap the <strong>Details</strong> tab in the Pivot control.</p>
+<p>This displays the details, which are properties of the selected PhotoInfo entity.</p>
+</li><li>
+<p>Tap the back button to return to the main page, and then tap the plus (<strong>&#43;</strong>) button.</p>
+<p>This displays the PhotoChooserTask control that allows you to select an image file stored on the phone.</p>
+</li><li>
+<p>In the displayed chooser, tap to select an image stored on the phone to upload to the data service, tap the Details tab in the Pivot control, enter any information about the image, and then tap the
+<strong>Save</strong> button.</p>
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left">Note: </th>
+</tr>
+<tr>
+<td>The data service is configured to limit uploaded images to 500 KB.</td>
+</tr>
+</tbody>
+</table>
+<p>This sends a POST request to the data service that contains the image file as a stream. A subsequent MERGE request sends the rest of the data from the newly created PhotoInfo object.</p>
+</div>
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left">Note: </th>
+</tr>
+<tr>
+<td>Because tombstoning of the application occurred when the chooser was displayed, the application downloads the same images again during binding. To prevent this repeated download, the images must be cached locally in isolated storage. Using isolated storage
+ is outside of the scope of this sample application.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+</li><li>
+<p>(Optional) in the main page, tap the <strong>Refresh</strong> button to reload PhotoInfo data from the data service.</p>
+</li></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

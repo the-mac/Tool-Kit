@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WP Authenticate Microsoft Account, Facebook, Twitter &amp; Google w/ Mobile Services</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>WP Authenticate Microsoft Account, Facebook, Twitter &amp; Google w/ Mobile Services</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Azure, Windows Phone, Windows Azure Mobile Services
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Authentication, Windows Azure, Windows Phone, Windows Azure Mobile Services
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">4/26/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1 id="Authenticate_users_using_Microsoft_Account_Facebook_Twitter_and_Google_with_Mobile_Services" class="content">
+Authenticate Windows Phone app users using Microsoft Account, Facebook, Twitter and Google with Windows Azure Mobile Services</h1>
+<h3 id="Introduction" class="content">Introduction</h3>
+<p class="content">This sample demonstrates how you can easily wire up your Windows Phone application to provide login capabilities ilities for your users to authenticate against well know social identity provides such as
+<strong>Microsoft Account</strong>, <strong>Facebook</strong>, <strong>Twitter</strong> and
+<strong>Google</strong> using <strong>Windows Azure Mobile Services</strong>.</p>
+<h3 id="Prerequisites" class="content">Prerequisites</h3>
+<div class="content">
+<ul>
+<li>Visual Studio 2012 Express for Windows 8 </li><li>and a Windows Azure account (get the <a href="http://www.windowsazure.com/en-us/pricing/free-trial/" >
+Free Trial</a>)&nbsp; </li></ul>
+</div>
+<h3 id="Building_the_Sample">Building the Sample</h3>
+<p>Follow these steps to set up the sample.</p>
+<h4 id="Setting_up_the_Cloud_Environment">Setting up the Cloud Environment</h4>
+<ol>
+<li>
+<p>Create a new <strong>Mobile Service</strong> from the Windows Azure Management Portal.</p>
+<p>To do this, log on to the <a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://manage.windowsazure.com">Windows Azure Management Portal</a>, navigate to Mobile Services and click
+<strong>New</strong>.</p>
+<p>&nbsp;<img id="72723" src="description/new-button.png" alt="" width="133" height="57"></p>
+<p>Expand <strong>Compute | Mobile Service</strong>, and click <strong>Create</strong>.</p>
+<p>&nbsp;<img id="72724" src="description/create-new-mobile-service.png" alt="" width="1160" height="464"></p>
+<p>This displays the <strong>New Mobile Service</strong> dialog.</p>
+<p>In the <strong>Create a mobile service</strong> page, type a subdomain name for the new mobile service in the
+<strong>URL</strong> textbox and wait for name verification. Once name verification completes, select
+<em>Create a new SQL Database</em> in the <strong>Database</strong> dropdown list and click the right arrow button to go to the next page.</p>
+<p>&nbsp;<img id="72725" src="description/new-mobile-service-step-1.png" alt="" width="680" height="450"></p>
+<p>This displays the <strong>Specify database settings</strong> page.</p>
+<blockquote>
+<p><strong>Note:</strong> If you already have a database in the same region as the new mobile service, you can instead choose
+<em>Use existing Database</em> and then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.</p>
+</blockquote>
+<p>In <strong>Name</strong>, type the name of the new database, then type <strong>
+Login Name</strong>, which is the administrator login name for the new SQL Database server. Type and confirm the password, and select the check box to complete the process.</p>
+<p>&nbsp;<img id="72726" src="description/new-mobile-service-step-2.png" alt="" width="680" height="450"></p>
+<blockquote>
+<p><strong>Note:</strong> If there is a mismatch or the password you supply does not meet the minimum requirements, a warning is displayed.</p>
+</blockquote>
+<p>You have now created a new mobile service that can be used by your mobile apps.</p>
+</li><li>
+<p>Register the sample application for authentication and configure <strong>Mobile Services</strong>. To do this, follow the instructions in
+<a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/#register">
+http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/#register</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> The link above provides details on how to register the sample application with
+<strong><a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/">Microsoft Account</a></strong>,
+<strong><a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/" >Facebook</a></strong>,
+<a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/" >
+<strong>Twitter</strong> </a>and <a href="http://code.msdn.microsoft.com/WP-Authenticate-Account-c7e0ef84/https://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-google-authentication/" >
+<strong>Google</strong> </a>identity providers, and explains how to register the provider-generated client secret with
+<strong>Mobile Services</strong>.</p>
+</blockquote>
+</li></ol>
+<h4 id="Setting_up_the_Local_Environment">Setting up the Local Environment</h4>
+<ol>
+<li>
+<p>Configure the Mobile Service URL and access key.</p>
+<p>Get the <strong>Mobile Service URL</strong> and <strong>Mobile Service Key</strong> values. Browse to your Mobile Service dashboard, copy the service URL and click
+<strong>Manage Keys</strong> on the bottom bar.</p>
+<p>&nbsp;<img id="72727" src="description/mobile-service-settings-dashboard.png" alt="" width="762" height="691"></p>
+<p><em>Mobile Service URL</em></p>
+<p>Now copy the <strong>Application Key</strong> value.</p>
+<p>&nbsp;<img id="72728" src="description/mobile-service-settings-keys.png" alt="" width="549" height="375"></p>
+</li><li>
+<p>In <strong>Visual Studio 2012 Express for Windows Phone</strong>, open the <strong>
+Authentication.sln</strong> solution</p>
+</li><li>
+<p>Right Click on the <strong>Authentication project </strong>and select <strong>
+Manage Nuget Packages</strong></p>
+</li><li>
+<p>In the <strong>Manage Nuget Packages Dialog</strong> change the dropdown from Stable Only &gt; Include Prerelease and Search for WindowsAzure.MobileServices.&nbsp; Select it and click Install&nbsp;(Note: at the time of writing April 26, 2013. The PCL nuget
+ for Mobile Services was pre-release.&nbsp; By the time you are reading this it may already be released as&nbsp;stable)</p>
+</li><li>
+<p>Open the <strong>App.xaml.cs</strong> file</p>
+</li><li>
+<p>Add a using statement for the MobileServices namespace</p>
+</li><li>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices">Microsoft.WindowsAzure.MobileServices</a>;
+</pre>
+<div class="preview">
+<pre class="js">using&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices">Microsoft.WindowsAzure.MobileServices</a>;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</li><li>
+<p>Supply the URL and add a using statement &nbsp;application key from the mobile service in the
+<strong>MobileServiceClient</strong> constructor.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private static MobileServiceClient mobileService = new MobileServiceClient(
+            &quot;https://{YOUR-MOBILE-SERVICE-NAME}.azure-mobile.net/&quot;,
+            &quot;{YOUR-APPLICATION-KEY}&quot;);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;MobileServiceClient&nbsp;mobileService&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MobileServiceClient(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;https://{YOUR-MOBILE-SERVICE-NAME}.azure-mobile.net/&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;{YOUR-APPLICATION-KEY}&quot;</span>);</pre>
+</div>
+</div>
+</div>
+</li><li>
+<div class="scriptcode">Open the <strong>MainPage.xaml.cs</strong> file&nbsp;&nbsp;</div>
+</li><li>
+<div class="scriptcode">Add a using statement for the MobileServices namespace
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices">Microsoft.WindowsAzure.MobileServices</a>;</pre>
+<div class="preview">
+<pre class="js">using&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices">Microsoft.WindowsAzure.MobileServices</a>;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li><li>
+<div class="endscriptcode">&nbsp;Update method OnBtnMicrosoftAccountClick to call LoginAsync
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Call LoginAsync for the given Auth Provider
+await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
+                
+//Log the logged in userId
+txtStatus.Text = string.Format(&quot;Logged in with: {0}&quot;, App.MobileService.CurrentUser.UserId);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Call&nbsp;LoginAsync&nbsp;for&nbsp;the&nbsp;given&nbsp;Auth&nbsp;Provider</span>&nbsp;
+await&nbsp;App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="cs__com">//Log&nbsp;the&nbsp;logged&nbsp;in&nbsp;userId</span>&nbsp;
+txtStatus.Text&nbsp;=&nbsp;<span class="cs__keyword">string</span>.Format(<span class="cs__string">&quot;Logged&nbsp;in&nbsp;with:&nbsp;{0}&quot;</span>,&nbsp;App.MobileService.CurrentUser.UserId);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li><li>
+<div class="endscriptcode">&nbsp;Update method OnBtnFacebookAccountClick to call LoginAsync
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Call LoginAsync for the given Auth Provider
+await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                
+//Log the logged in userId
+txtStatus.Text = string.Format(&quot;Logged in with: {0}&quot;, App.MobileService.CurrentUser.UserId);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Call&nbsp;LoginAsync&nbsp;for&nbsp;the&nbsp;given&nbsp;Auth&nbsp;Provider</span>&nbsp;
+await&nbsp;App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="cs__com">//Log&nbsp;the&nbsp;logged&nbsp;in&nbsp;userId</span>&nbsp;
+txtStatus.Text&nbsp;=&nbsp;<span class="cs__keyword">string</span>.Format(<span class="cs__string">&quot;Logged&nbsp;in&nbsp;with:&nbsp;{0}&quot;</span>,&nbsp;App.MobileService.CurrentUser.UserId);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li><li>
+<div class="endscriptcode">&nbsp;Update method OnBtnTwitterAccountClick to call LoginAsync
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Call LoginAsync for the given Auth Provider
+await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Twitter);
+                
+//Log the logged in userId
+txtStatus.Text = string.Format(&quot;Logged in with: {0}&quot;, App.MobileService.CurrentUser.UserId);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Call&nbsp;LoginAsync&nbsp;for&nbsp;the&nbsp;given&nbsp;Auth&nbsp;Provider</span>&nbsp;
+await&nbsp;App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Twitter);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="cs__com">//Log&nbsp;the&nbsp;logged&nbsp;in&nbsp;userId</span>&nbsp;
+txtStatus.Text&nbsp;=&nbsp;<span class="cs__keyword">string</span>.Format(<span class="cs__string">&quot;Logged&nbsp;in&nbsp;with:&nbsp;{0}&quot;</span>,&nbsp;App.MobileService.CurrentUser.UserId);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li><li>
+<div class="endscriptcode">Update method OnBtnGoogleAccountClick to call LoginAsync
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Call LoginAsync for the given Auth Provider
+await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Google);
+                
+//Log the logged in userId
+txtStatus.Text = string.Format(&quot;Logged in with: {0}&quot;, App.MobileService.CurrentUser.UserId);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Call&nbsp;LoginAsync&nbsp;for&nbsp;the&nbsp;given&nbsp;Auth&nbsp;Provider</span>&nbsp;
+await&nbsp;App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Google);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="cs__com">//Log&nbsp;the&nbsp;logged&nbsp;in&nbsp;userId</span>&nbsp;
+txtStatus.Text&nbsp;=&nbsp;<span class="cs__keyword">string</span>.Format(<span class="cs__string">&quot;Logged&nbsp;in&nbsp;with:&nbsp;{0}&quot;</span>,&nbsp;App.MobileService.CurrentUser.UserId);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li><li>
+<div class="endscriptcode">Update OnBtnLogoutClick to perform a logout operation
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//If there is an authenticated user then logout                
+if (App.MobileService.CurrentUser != null &amp;&amp; App.MobileService.CurrentUser.UserId != null)
+        App.MobileService.Logout();</pre>
+<div class="preview">
+<pre class="js"><span class="js__sl_comment">//If&nbsp;there&nbsp;is&nbsp;an&nbsp;authenticated&nbsp;user&nbsp;then&nbsp;logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="js__statement">if</span>&nbsp;(App.MobileService.CurrentUser&nbsp;!=&nbsp;null&nbsp;&amp;&amp;&nbsp;App.MobileService.CurrentUser.UserId&nbsp;!=&nbsp;null)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.MobileService.Logout();</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+</li></ol>
+<h3 id="Running_the_Sample">Running the Sample</h3>
+<ol>
+<li>
+<p>In Visual Studio, press the <strong>F5</strong> key to run the application.</p>
+</li><li>
+<p>In the start page, Click on the button for the authentication scenario you wish to exercise.</p>
+<img id="81273" src="description/Auth.PNG" alt="" width="369" height="663">
+</li><li>
+<p>&nbsp;An authentication dialog box will be displayed prompting you to enter the credentials of the selected identity provider.</p>
+<img id="81274" src="description/Login.PNG" alt="" width="373" height="667">
+</li><li>
+<p>A consent message requesting access to the application is shown the first time you log in to your account.&nbsp; Click Authoriz</p>
+</li><li>
+<p>After the user is authenticated, the user id is shown in the output area.</p>
+<img id="81275" src="description/LoggedIn.PNG" alt="" width="371" height="663">
+</li><li>&nbsp;Click the Logout button to log the user out before trying out another identity provider.
+</li></ol>
+<p>If you cant find a specific&nbsp;Windows Azure Mobile Services&nbsp;scenaro using Windows Phone please&nbsp;feel free to reach out to me on Twitter&nbsp;via&nbsp;<a href="http://www.twitter.com/cloudnick" >@cloudnick</a></p>
+<div class="mcePaste" id="_mcePaste" style="overflow:hidden; height:1px; left:-10000px; top:0px; width:1px">
+&#65279;</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

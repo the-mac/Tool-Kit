@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Company Hub Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Company Hub Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            company apps, lob apps, enterprise
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Company-Hub-Sample-cf060519">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>This sample illustrates the basic components and functionality required to build a Company Hub app. When the app runs, it enumerates the company apps that are available to a user, and then the user can select, install, and launch an app from the list.
+</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>This sample requires additional work to enable the functionality described. For details, see
+<span class="term">Steps to build and run the sample</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This sample shows you how to do the following:</p>
+<ul>
+<li>
+<p>Define a schema for company app management.</p>
+</li><li>
+<p>Enumerate the install status of company apps.</p>
+</li><li>
+<p>Allow a user to initiate the installation of a company app.</p>
+</li><li>
+<p>Allow a user to launch an installed company app.</p>
+</li></ul>
+<p>This sample uses the Windows Phone installation manager and app model APIs. For more info about company apps and using a Company Hub in Windows&nbsp;Phone&nbsp;8, see
+<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206943(v=vs.105).aspx">
+Company app distribution for Windows Phone</a> and <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj720571(v=vs.105).aspx">
+Developing a Company Hub app</a>. For more info about the APIs, see the <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/windows.phone.management.deployment(v=vs.105).aspx">
+Windows.Phone.Management.Deployment</a> and <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/windows.applicationmodel.aspx">
+Windows.ApplicationModel</a> API reference pages.</p>
+<p></p>
+<h3 class="procedureSubHeading">Steps to build and run the sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Register as a company account on Windows Phone Dev Center. For more info about registering for a Dev Center account, see
+<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206719(v=vs.105).aspx">
+Registration info</a>.</p>
+</li><li>
+<p>Acquire an enterprise mobile code signing certificate from Symantec. This certificate is required to generate an application enrollment token (AET) and sign company apps. To acquire the certificate, visit the Symantec
+<a href="http://go.microsoft.com/fwlink/?LinkId=268441">Enterprise Mobile Code Signing Certificate</a> website.</p>
+</li><li>
+<p>Import the certificate from Symantec and then export it in PFX format. Be sure to export the private key with the certificate. For info about importing and exporting the certificate, see
+<a href="http://go.microsoft.com/fwlink/?LinkId=299100">How to install the Windows Phone Private Enterprise Root and Intermediate certificates</a> on the Symantec website and
+<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj735576(v=vs.105).aspx">
+How to generate an application enrollment token</a> on MSDN.</p>
+</li><li>
+<p>Create an AET using the AETGenerator tool provided with Windows&nbsp;Phone&nbsp;SDK&nbsp;8.0. The AET is used to enroll phones in the company account, which is a prerequisite for installing apps published by the company. For more info about creating the AET, see
+<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj735576(v=vs.105).aspx">
+How to generate an application enrollment token</a>.</p>
+</li><li>
+<p>Obtain or create a few apps to use with the sample. These mock company apps are just for demonstration purposes and do not need to do anything, but they must match the publisher ID of the Company Hub app and should have an associated app icon.</p>
+</li><li>
+<p>Prepare the company apps for distribution using the guidance at <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/dn168929(v=vs.105).aspx">
+Preparing company apps for distribution</a>.</p>
+</li><li>
+<p>Upload the prepared company apps (XAPs) and their app icons to a secure site (such as Azure storage) that the Company Hub app can access.</p>
+</li><li>
+<p>Create an XML file that lists the company apps, their download URLs, and their product IDs as shown in the following code example. Although the format shown here isn’t required for Company Hubs in general, it is required for this specific sample to function.</p>
+<div class="code"><span>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th></th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!--This is an example file that demonstrates how a company might expose metadata and download 
+    URLs for their XAPs and icons. The data below assumes that the XAPs and icons are stored in
+    Azure storage blobs, but they can be stored in any secure site that is accessible from the 
+    app. For more information about this file, see the comments in MainPage.xaml.cs.--&gt;
+&lt;Applications&gt;
+  &lt;App Name=&quot;CompanyApp1&quot;
+       IconUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp1.png&quot;
+       XapUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp1_Debug_AnyCPU.xap&quot; Version=&quot;1.0.0.0&quot;
+       ProductId=&quot;{f42567e5-14d8-4bfc-ad05-9dc2150c7614}&quot; Description=&quot;This is CompanyApp1&quot; /&gt; 
+  &lt;App Name=&quot;CompanyApp2&quot;
+       IconUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp2.png&quot;
+       XapUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp2_Debug_AnyCPU.xap&quot; Version=&quot;1.0.0.0&quot;
+       ProductId=&quot;{6695006b-a359-4f60-aed4-ca07d2ae000d}&quot; Description=&quot;This is CompanyApp2&quot; /&gt;
+  &lt;App Name=&quot;CompanyApp3&quot;
+       IconUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp3.png&quot;
+       XapUrl=&quot;http://contosostorage.blob.core.windows.net/companyapps/CompanyApp3_Debug_AnyCPU.xap&quot; Version=&quot;1.0.0.0&quot;
+       ProductId=&quot;{4776d64b-14e7-4cc2-b20a-fb080ffc6f33}&quot; Description=&quot;This is CompanyApp3&quot; /&gt; 
+&lt;/Applications&gt;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</li><li>
+<p>Upload the XML file to a secure site that the Company Hub app can access.</p>
+</li><li>
+<p>Start Visual Studio Express 2012 for Windows&nbsp;Phone and select <span class="ui">
+File</span> &gt; <span class="ui">Open</span> &gt; <span class="ui">Project/Solution</span>.
+</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio Express 2012 for Windows&nbsp;Phone solution (<span class="label">.sln</span>) file.</p>
+</li><li>
+<p>Modify the URI used by the <span value="WebClient"><span class="keyword">WebClient</span></span> in the Company Hub sample MainPage.xaml.cs file with the URL for the XML file you created.
+</p>
+<div class="code"><span>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th></th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>client.DownloadStringAsync(new Uri(&quot;http://contosostorage.blob.core.windows.net/companyapps/Applications.xml&quot;));</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</li><li>
+<p>Select <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample.</p>
+</li><li>
+<p>Prepare the Company Hub app sample for distribution using the guidance at <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/dn168929(v=vs.105).aspx">
+Preparing company apps for distribution</a>.</p>
+</li><li>
+<p>Email the AET file and the Company Hub XAP to your device to test the sample.</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>Alternatively, these files could be provided through a secure website. Although not necessary for the sample, when distributing a production Company Hub, Microsoft recommends using Information Rights Management (IRM) if you choose email for the app distribution
+ method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li><li>
+<p>From email, tap the AET file to enroll the device.</p>
+</li><li>
+<p>From email, tap the XAP to install the Company Hub app.</p>
+</li><li>
+<p>Go to the App list on the phone and launch the Company Hub app to view, install, and launch your company apps.</p>
+<div class="alert">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left"><b>Note:</b> </th>
+</tr>
+<tr>
+<td>
+<p>For additional info about this process, see <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206943(v=vs.105).aspx">
+Company app distribution for Windows Phone</a> on MSDN.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
+</div>
+<p><b>See also</b> </p>
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206943(v=vs.105).aspx">Company app distribution for Windows Phone</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206943(v=vs.105).aspx">Developing a Company Hub app</a>
+</p>
+</li></ul>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

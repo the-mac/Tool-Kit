@@ -1,0 +1,113 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WPPushNotification.TestClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:conv="clr-namespace:WPPushNotification.TestClient.Converters"	
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+	DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.Resources>
+			<conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+			<conv:BoolToInverseVisibilityConverter x:Key="BoolToInverseVisibilityConverter"/>
+		</Grid.Resources>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Image Source="cloudbackgroundmobile.jpg" Grid.RowSpan="4" />
+
+		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="24,24,0,12">
+			<TextBlock x:Name="ApplicationTitle" Text="WEATHER SERVICE" Style="{StaticResource PhoneTextNormalStyle}"/>
+			<TextBlock x:Name="PageTitle" Text="Locations" Margin="-3,-8,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+		</StackPanel>
+
+		<Grid Grid.Row="1" x:Name="ContentPanel" Background="#10000000">
+			<ListBox DataContext="{Binding Locations}" ItemsSource="{Binding Values}" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectionChanged="ListBox_SelectionChanged" Margin="8,0,0,0">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<toolkit:ContextMenuService.ContextMenu>
+								<toolkit:ContextMenu IsZoomEnabled="False">
+									<toolkit:MenuItem Header="Pin location" Visibility="{Binding TilePinned, Converter={StaticResource BoolToInverseVisibilityConverter}}" Click="PinItem_Click"/>
+									<toolkit:MenuItem Header="Un-pin location" Visibility="{Binding TilePinned, Converter={StaticResource BoolToVisibilityConverter}}" Click="UnpinItem_Click"/>
+								</toolkit:ContextMenu>
+							</toolkit:ContextMenuService.ContextMenu>
+
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="400"/>
+							</Grid.ColumnDefinitions>
+
+							<CheckBox Grid.Column="0" IsEnabled="False" IsChecked="{Binding TilePinned}"/>
+							<TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center" FontSize="30" Margin="{StaticResource PhoneTouchTargetOverhang}"/>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+
+		<Grid Grid.Row="2" Margin="20,0,20,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+            
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Text="Image:" Foreground="#104f6f" FontSize="24" Grid.Column="0" VerticalAlignment="Center"/>
+			<toolkit:ListPicker x:Name="listMainTileImage" Grid.Column="1" Margin="{StaticResource PhoneTouchTargetOverhang}">
+				<toolkit:ListPickerItem>Star</toolkit:ListPickerItem>
+				<toolkit:ListPickerItem>Swirl</toolkit:ListPickerItem>
+			</toolkit:ListPicker>
+
+			<TextBlock Grid.Row="1" Text="Title:" Foreground="#104f6f" FontSize="24" VerticalAlignment="Center" Grid.Column="0"/>
+			<TextBox x:Name="txtMainTileTitle" Grid.Row="1" Grid.Column="1" Margin="0,0,1,0"/>
+
+			<Button Grid.Column="3" Grid.RowSpan="2" Foreground="#104f6f" Click="ChangeMainTile_Click">
+				<Button.Content>
+					<TextBlock Text="Apply to main tile" Width="100" TextWrapping="Wrap"/>
+				</Button.Content>
+			</Button>
+		</Grid>
+        
+		<StackPanel Grid.Row="3" x:Name="StatusStackPanel" Margin="20,0">
+			<TextBlock FontSize="34" FontFamily="Segoe WP Semibold" Foreground="#104f6f" Text="Status" Style="{StaticResource PhoneTextNormalStyle}" />
+			<TextBlock x:Name="txtStatus" DataContext="{StaticResource PushStatus}" Text="{Binding Message}" FontFamily="Segoe WP" FontSize="24" Foreground="#0a364c" Margin="0,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+		</StackPanel>
+
+	</Grid>
+
+
+	<!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

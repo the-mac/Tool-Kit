@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdkBackgroundAudioStreamerCS", "sdkBackgroundAudioStreamerCS\sdkBackgroundAudioStreamerCS.csproj", "{E62D08BB-9878-4DBD-8632-1211030590AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioPlaybackAgent1", "AudioPlaybackAgent1\AudioPlaybackAgent1.csproj", "{472FFA08-9791-4FDE-97DE-D74FAD9E1AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioStreamAgent1", "AudioStreamAgent1\AudioStreamAgent1.csproj", "{95E3595F-88FF-4F86-A7B2-BB16961D9693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamingAudioMediaSource", "StreamingAudioMediaSource\StreamingAudioMediaSource.csproj", "{00C59CEC-F587-4117-90B7-EB2385C0BEBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E62D08BB-9878-4DBD-8632-1211030590AD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{472FFA08-9791-4FDE-97DE-D74FAD9E1AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472FFA08-9791-4FDE-97DE-D74FAD9E1AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472FFA08-9791-4FDE-97DE-D74FAD9E1AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472FFA08-9791-4FDE-97DE-D74FAD9E1AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E3595F-88FF-4F86-A7B2-BB16961D9693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E3595F-88FF-4F86-A7B2-BB16961D9693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E3595F-88FF-4F86-A7B2-BB16961D9693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E3595F-88FF-4F86-A7B2-BB16961D9693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C59CEC-F587-4117-90B7-EB2385C0BEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C59CEC-F587-4117-90B7-EB2385C0BEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C59CEC-F587-4117-90B7-EB2385C0BEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C59CEC-F587-4117-90B7-EB2385C0BEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

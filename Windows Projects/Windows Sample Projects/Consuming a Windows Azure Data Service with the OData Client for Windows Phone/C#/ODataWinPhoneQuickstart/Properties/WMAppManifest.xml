@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{5faf691a-f1f5-4c79-a4a9-0bfa878596a3}" Title="OData on Windows Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="ODataWinPhoneQuickstart author" Description="Sample description" Publisher="ODataWinPhoneQuickstart">
+    <IconPath IsRelative="true" IsResource="false">ODataIconSmall.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="ODataWinPhoneQuickstartToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">ODataIcon.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>OData on Phone</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

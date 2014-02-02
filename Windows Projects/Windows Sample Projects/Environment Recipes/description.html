@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/02a7a187-c30f-498b-aafe-a7add4db6269Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Environment Recipes</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Environment Recipes</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 8
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Theme, memory, Resolution, Version, Sensors, emulator
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">7/11/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Environment-Recipes-2e4d167d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainBody">
+<p></p>
+<div class="introduction">
+<p>This sample demonstrates how you can use various APIs to discover information about the environment in which your app is running. The sample consists of a pivot page, on which each pivot item represents a recipe. The pivot item shows the name of the recipe,
+ a brief description of the recipe, and the important code snippet you use in the recipe. You can tap the
+<b>run recipe</b> button and see the result of the action just below this button. Each page also contains
+<b>copy snippet</b> and <b>email snippet</b> buttons with which you can copy the code snippet to the clipboard or email the code snippet.</p>
+<p>This sample uses the following API:</p>
+<div class="caption"></div>
+<div class="tableSection">
+<table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>API</p>
+</th>
+<th>
+<p>Use</p>
+</th>
+</tr>
+<tr>
+<td>
+<p><b>App.Current.Host.Content.ScaleFactor</b> </p>
+</td>
+<td>
+<p>To determine the screen resolution of the phone on which the app is running.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Application.Current.Resources</b> </p>
+</td>
+<td>
+<p>To find out whether the user has the phone set to use the light or dark theme.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Devices.Environment.DeviceType.aspx"  title="Auto generated link to Microsoft.Devices.Environment.DeviceType">Microsoft.Devices.Environment.DeviceType</a></b> </p>
+</td>
+<td>
+<p>To check whether the app is running in an emulator.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Devices.Sensors.aspx"  title="Auto generated link to Microsoft.Devices.Sensors">Microsoft.Devices.Sensors</a></b> </p>
+</td>
+<td>
+<p>To find out what sensors are available on the phone.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Windows.Phone.ApplicationModel.ApplicationProfile.Modes</b> </p>
+</td>
+<td>
+<p>To check whether the app is running in Kid’s Corner mode.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Info.DeviceStatus.ApplicationMemoryUsageLimit.aspx"  title="Auto generated link to Microsoft.Phone.Info.DeviceStatus.ApplicationMemoryUsageLimit">Microsoft.Phone.Info.DeviceStatus.ApplicationMemoryUsageLimit</a></b> </p>
+</td>
+<td>
+<p>To check whether the app is running on a low-memory device.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>System. Environment.OSVersion.Version</b> </p>
+</td>
+<td>
+<p>To determine the OS version of the phone on which the app is running.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><b>Build the sample</b> </p>
+<ol>
+<li>
+<p>Start Visual Studio Express 2012 for Windows&nbsp;Phone and select <span class="ui">
+File</span> &gt; <span class="ui">Open</span> &gt; <span class="ui">Project/Solution</span>.
+</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio Express 2012 for Windows&nbsp;Phone solution (<span class="label">.sln</span>) file.
+</p>
+</li><li>
+<p>Use <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample.
+</p>
+</li></ol>
+<p><b>Run the sample</b> </p>
+<p>To debug the app and then run it, press F5 or use <span class="ui">Debug</span> &gt;
+<span class="ui">Start Debugging</span>. To run the app without debugging, press Ctrl&#43;F5 or use
+<span class="ui">Debug</span> &gt; <span class="ui">Start Without Debugging</span>.</p>
+</div>
+<h1 class="heading"><span><a name="seeAlsoToggle">See Also</span> </h1>
+<div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+<h4 class="subHeading">Other Resources</h4>
+<div class="seeAlsoStyle"></a><a href="http://msdn.microsoft.com/library/windowsphone/develop/ff402563(v=vs.105).aspx">Windows Phone Emulator</a>
+</div>
+<div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/library/windowsphone/develop/hh855081(v=vs.105).aspx">Developing apps for lower-memory phones</a>
+</div>
+<div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/library/windowsphone/develop/hh202968(v=vs.105).aspx">Sensors for Windows Phone</a>
+</div>
+<div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/library/windowsphone/develop/dn168931(v=vs.105).aspx">Kid's Corner for Windows Phone 8</a>
+</div>
+<div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/library/windowsphone/develop/jj206974(v=vs.105).aspx">Multi-resolution apps for Windows Phone 8</a>
+</div>
+<div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/library/windowsphone/develop/ff769552(v=vs.105).aspx#BKMK_ThemeVisibilityAndOpacity">Theme Visibility and opacity</a>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="BingMapsAR.WP8.Controls.UserPushpin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:BingMapsAR.Converters"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}">
+
+    <UserControl.Resources>
+        <converters:RotationConverter x:Key="rotationConverter"
+                                      ARDisplay="{Binding}"/>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <Image Source="/Assets/SightPin.png" Height="80" Width="80" Margin="-40,-60,0,0">
+            <Image.RenderTransform>
+                <RotateTransform CenterX="40" CenterY="60" Angle="{Binding AttitudeHeading, Converter={StaticResource rotationConverter}}"/>
+            </Image.RenderTransform>
+        </Image>
+    </StackPanel>
+</UserControl>

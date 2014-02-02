@@ -1,0 +1,733 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>BasicLensWP8</title>
+    <style type="text/css">
+ body
+{
+	color: #000000;
+	font-family:	Verdana;
+	font-size: medium;
+	font-style: normal;
+	font-weight: normal;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	width:	100%;
+}
+dl
+{
+	margin-top:	15;
+	margin-bottom:5;
+	padding-left:	1;
+}
+
+dl.authored dt {
+	font-style:	bold;
+	margin-top: 2;
+}
+
+dd {
+	margin-left:	20px;
+}
+
+ul
+{
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: 17;
+	list-style-type: disc;
+}
+
+ul.nobullet
+{
+	display: block;
+	list-style: none;
+}
+
+ul ul
+{
+	margin-bottom: 4;
+	margin-left: 17;
+	margin-top: 3;
+	list-style-type: disc;
+}
+
+ol {
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: 28;
+	list-style-type: decimal;
+}
+
+ol ol {
+	margin-bottom: 4;
+	margin-left: 28;
+	margin-top: 3;
+	list-style-type: lower-alpha;
+}
+
+li {
+	margin-top: 5;
+	margin-bottom: 5;
+}
+
+p {
+	margin-top: 10;
+	margin-bottom: 5;
+}
+
+a:link {
+	color:	#0000FF;
+}
+
+a:visited {
+	color: #DD7C3B;
+}
+
+a:hover {
+	color:	#3366FF;
+}
+
+code
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+}
+
+span.parameter {
+	font-style: italic;
+}
+
+span.italic {
+	font-style: italic;
+}
+
+span.selflink {
+	font-weight: bold;
+}
+
+span.nolink {
+	font-weight: bold;
+}
+
+div.breadCrumbs {
+	font-size: 8pt;
+	margin-bottom: 5;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	padding-bottom: 5;
+}
+
+div#mainSection
+{
+	font-size: 62.5%;
+	width: 100%;
+}
+html&gt;body #mainSection
+{
+	font-size:73%;
+	width: 100%;
+}
+
+div#mainBody
+{
+	font-size: 100%;
+	margin-left: 15;
+	margin-top: 10;
+}
+
+html&gt;body #mainBody
+{
+	font-size: 93%;
+	margin-left: 15;
+	margin-top: 10;
+	padding-bottom: 20;
+}
+
+div#mainBody p, div#mainBody ol, div#mainBody ul, div#mainBody dl
+{
+	padding-right: 5;
+}
+
+div#header
+{
+	padding-top:	0;
+	padding-bottom:	0;
+	padding-left:	0;
+	padding-right:	0;
+	width:	100%;
+}
+
+div#header table
+{
+	width:	100%;
+}
+
+div#header table td
+{
+	color: #0000FF;
+	font-size: 70%;
+	margin-top:	0;
+	margin-bottom:	0;
+	padding-right: 20;
+}
+
+div#header table tr#headerTableRow2 td
+{
+	padding-left: 13px;
+}
+
+div#header table tr#headerTableRow3 td
+{
+	padding-top: 2px;
+	padding-left: 15;
+}
+
+div#header table#bottomTable
+{
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	text-align: left;
+	padding-left: 15;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div#mainSection table td.imageCell
+{
+	white-space: nowrap;
+}
+
+div#mainBody div.alert, div#mainBody div.code, div#mainBody div.tableSection
+{
+	width:98.9%;
+}
+
+div#mainBody div.section div.alert, div#mainBody div.section div.code,
+div#mainBody div.section div.tableSection
+{
+	width:100%;
+}
+
+div#mainBody div.section ul div.alert, div#mainBody div.section ul div.code,
+div#mainBody div.section ul div.tableSection, div#mainBody div.section ol div.alert, 
+div#mainBody div.section ol div.code, div#mainBody div.section ol div.tableSection
+{
+	width:100%;
+}
+
+div.alert p, div.code p
+{
+	margin-top:5;
+	margin-bottom:8;
+}
+dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+div.tableSection p
+{
+	margin-top:1;
+	margin-bottom:4;
+}	
+li p
+{
+	margin-top:2;
+	margin-bottom:2;
+}
+div.seeAlsoNoToggleSection dl
+{
+	margin-top:8;
+	margin-bottom:1;
+	padding-left:1;
+}
+div.seeAlsoNoToggleSection dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+div.section dl
+{
+	margin-top:8;
+	margin-bottom:1;
+	padding-left:1;
+}
+div.section dd p
+{
+	margin-top:2;
+	margin-bottom:8;
+}
+
+div.code table
+{
+	border: 0;
+	font-size: 95%;
+	margin-bottom: 5;
+	margin-top:-.4em;
+	width: 100%
+}
+
+div.code table th
+{	
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	font-weight: bold;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 5;
+}
+
+span#runningHeaderText
+{
+	color: #8C8C8C;
+	font-size: 90%;
+	padding-left: 13;
+}
+
+span#nsrTitle
+{
+	color: #000000;
+	font-size: 160%;
+	font-weight: 400;
+	font-family: arial;
+}
+
+div#footer
+{
+	font-size: 80%;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	padding-top:	8;
+	padding-bottom:	6;
+	padding-left:	1;
+	padding-right:	1;
+	width:	100%;
+}
+
+html&gt;body div#footer
+{
+	font-size: 80%;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	padding-top:	2;
+	padding-bottom:	6;
+	padding-left:	1;
+	padding-right:	1;
+	width:	98%;
+}
+
+div.seeAlsoNoToggleSection
+{
+	margin-left:0;
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	0;
+	padding-right:	15;
+	width:	100%;
+}
+
+div.section
+{
+	margin-left:0;
+	padding-top:	0;
+	padding-bottom:	0;
+	padding-left:	16;
+	padding-right:	15;
+	width:	100%;
+}
+html&gt;body div.section
+{
+	margin-left:0;
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	16;
+	padding-right:	15;
+	width:	97%;
+}
+div.seeSection
+{
+	margin-left:0;
+	padding-top:	0;
+	padding-bottom:	2;
+	padding-left:	16;
+	padding-right:	15;
+	width:	100%;
+}
+
+.heading
+{
+	font-weight:	bold;
+	margin-top:		18;
+	margin-bottom:	8;
+}
+
+h1.heading
+{
+	color: #000000;
+	font-size:	130%;
+}
+
+.subHeading
+{
+	font-weight:	bold;
+	margin-bottom:	4;
+}
+.procedureSubHeading
+{
+	font-weight: bold;
+	margin-bottom: 4;
+}
+
+h3.subHeading
+{
+	color:  #000000;
+	font-size: 120%;
+    font-weight:800;
+}
+
+h3.procedureSubHeading
+{
+	color: #000000;
+	font-size: 120%;
+}
+
+h4.subHeading
+{
+	color: #000000;
+	font-size: 110%;
+	font-weight:800;
+}
+span.labelheading, div.labelheading
+{
+	font-size:100%;
+	color:#003399;
+}
+
+img.note
+{
+	border: 0;
+	margin-right: 3;
+}
+
+div#mainSection table
+{
+	border: 0;
+	font-size: 100%;
+	width:	98.9%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div#mainSection table tr
+{
+	vertical-align: top;
+}
+
+div#mainSection table th
+{
+	background-color: #EFEFF7;
+	border-bottom: 1px solid #C8CDDE;
+	border-left: 1px none #D5D5D3;
+	color: #000066;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: left;
+}
+
+div#mainSection table td
+{
+	background-color: #F7F7FF;
+	border-bottom: 1px solid #D5D5D3;
+	border-left: 1px none #D5D5D3;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div#mainSection table td.imageCell
+{
+	white-space: nowrap;
+}
+
+div.code table
+{
+	border: 0;
+	font-size: 95%;
+	margin-bottom: 5;
+	width: 100%
+}
+
+div.code table th
+{	
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	font-weight: bold;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 5;
+}
+
+div.alert table
+{
+	border: 0;
+	font-size: 100%;
+	width:	100%;
+}
+
+div.alert table th
+{
+	background:	#EFEFF7;
+	border-bottom-width: 0;
+	color: #000066;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.alert table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code pre
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+	word-wrap:	break-word;
+	background: #F7F7FF;
+}
+
+.tip
+{
+	color:	#0000FF;
+	font-style: italic;
+	cursor: pointer;
+	text-decoration:underline;
+}
+
+.math
+{
+	font-family: Times New Roman;
+	font-size: 125%
+}
+
+div.footerLine {
+	margin: 0;
+	width: 100%;
+	padding-top:	8;
+	padding-bottom:	6;
+	/*padding-left:	5;
+	padding-right:	2;*/
+
+}
+
+div.hr1 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #C8CDDE;
+	font-size: 1px;
+}
+
+div.hr2 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #D4DFFF;
+	font-size: 1px;
+}
+
+div.hr3 {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	padding: 0;
+	background: #EEEEFF;
+	font-size: 1px;
+}
+
+span.cs {
+	display: none;
+}
+
+span.vb {
+	display: none;
+}
+
+span.cpp {
+	display: none;
+}
+
+span.nu {
+	display: inline;
+}
+
+span.fs 
+{
+	display: none;
+}
+
+span.code {
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066; 
+}
+span.ui {
+	font-weight: bold;
+}
+span.math {
+	font-style: italic;
+}
+span.input {
+	font-weight: bold;
+}
+span.term {
+	font-style: italic;
+}
+span.label 
+{
+	font-weight: bold;
+}
+span.foreignPhrase {
+	font-style: italic;
+}
+span.placeholder {
+	font-style: italic;
+}
+span.keyword 
+{
+	font-weight: bold;
+}
+span.typeparameter
+{
+	font-style:italic;
+}
+
+div.caption
+{
+	font-weight: bold;
+	font-size:100%;
+	color:#003399;
+}
+
+
+div.code span.keyword 
+{
+	color: #871F78;
+}
+
+div.code span.parameter 
+{
+	font-style: italic;
+}
+
+div.code span.literal 
+{
+	color:#8B0000;
+}
+
+div.code span.comment 
+{
+	color: #006400;
+}
+
+span.syntaxLabel
+{
+	color:#0481DA;
+	font-weight:bold;
+}
+span.introStyle
+{
+	color:DarkGray;
+}
+
+div.seeAlsoStyle
+{
+	padding-top:5px;
+
+}
+
+td.nsrBottom
+{
+	height: 0.6em;
+	width: 100%;
+}
+  </style>
+  </head>
+  <body>
+    <div id="header">
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText" />
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">BasicLensWP8</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left" />
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <font color="DarkGray"></font>
+        <p /> <div class="summary"><p>This sample is template for a basic lens app. It captures photos, displays them with a media viewer, and includes customizable helper classes for controlling the camera.</p></div><div class="introduction"><p>This sample is a development template that you can extend to create your own lens app. It demonstrates key points from the <a href="http://msdn.microsoft.com/library/windowsphone/design/jj662922(v=vs.105).aspx">Lens design guidelines</a> and provides a media viewer and customizable helper classes that control the camera. The helper classes use the advanced capture APIs, from the <a href="http://msdn.microsoft.com/library/windowsphone/develop/windows.phone.media.capture(v=vs.105).aspx">Windows.Phone.Media.Capture</a> namespace, to provide optimal performance and a greater selection of camera settings. For more info, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj206990(v=vs.105).aspx">Lenses for Windows Phone 8</a> and <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj662940(v=vs.105).aspx">Advanced photo capture</a>.</p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><b>Important Note:</b></th></tr><tr><td><p>We recommend using a Windows Phone 8 device to run this sample and develop camera apps. Some API calls may not work as expected on the emulator. Review the Windows Phone SDK release notes for the latest details.</p></td></tr></table></div><p>This sample demonstrates the following points from the <a href="http://msdn.microsoft.com/library/windowsphone/design/jj662922(v=vs.105).aspx">Lens design guidelines</a>:</p><ul><li><p>Lens icon support for the WXGA, WVGA, and 720P resolutions.</p></li><li><p>Swipe from the left to view previously captured photos.</p></li><li><p>Support for portrait and landscape orientations.</p></li><li><p>Support for the hardware camera shutter button.</p></li><li><p>Provides icon to control the flash.</p></li><li><p>Support for the front camera when it’s available.</p></li><li><p>Displays focus brackets while focusing.</p></li><li><p>Only one photo is saved to the camera roll per capture.</p></li><li><p>Provides a delete button for photos saved exclusively in the local folder.</p></li></ul><p>A major feature of lenses is the ability to provide a rich media experience. However, rich media is beyond the scope of this sample. For more info about rich media, see the <a href="http://msdn.microsoft.com/library/windowsphone/design/jj662922(v=vs.105).aspx">Lens design guidelines</a> and <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj662942(v=vs.105).aspx">Rich media extensibility</a>.</p><p><b>Build the sample</b></p><ol><li><p>Start Visual Studio Express 2012 for Windows Phone and select <span class="ui">File</span> &gt; <span class="ui">Open</span> &gt; <span class="ui">Project/Solution</span>. </p></li><li><p>Go to the directory in which you unzipped the sample. Double-click the Visual Studio Express 2012 for Windows Phone solution (<span class="label">.sln</span>) file. </p></li><li><p>Use <span class="ui">Build</span> &gt; <span class="ui">Rebuild Solution</span> to build the sample. </p></li></ol><p /><p><b>Run the sample</b></p><ul><li><p>To debug the app and then run it, press F5 or use <span class="ui">Debug</span> &gt; <span class="ui">Start Debugging</span>. </p></li><li><p>To run the app without debugging, press Ctrl+F5 or use <span class="ui">Debug</span> &gt; <span class="ui">Start Without Debugging</span>. </p></li></ul><p /><p><b>Launch the sample from the lens picker</b></p><ol><li><p>Run the sample, as described in the previous procedure. </p></li><li><p>Launch the built-in camera app: press the hardware camera shutter button or in the App list, tap <span class="ui">Camera</span>. </p></li><li><p>Tap the <span class="ui">lenses</span> button in the app bar. This launches the lens picker. </p></li><li><p>In the lens picker, tap the icon for the sample. This launches the sample into a viewfinder experience. </p></li></ol><p /><p><b>Use the sample</b></p><p>This sample allows you to capture photos, save photos to the camera roll, view previously captured photos, and delete photos that are only stored in the local folder. Follow these steps to use the sample.</p><ol><li><p>Run the sample, as described in the previous procedures.</p></li><li><p>In the app bar, tap the <span class="ui">front</span> button to toggle between the front camera (when available) and back camera.</p></li><li><p>In the app bar, tap the <span class="ui">flash</span> button to toggle between flash states: on, auto, and off.</p></li><li><p>Tap anywhere on the viewfinder to initiate a photo capture. Note that this will only work if your phone supports focusing on a specific region in the viewfinder. See the <span class="code">BeginPointFocusAndCapture</span> method for more info.</p></li><li><p>Press the hardware camera shutter button half way to initiate a focus operation. Press it all the way to capture a photo.</p></li><li><p>After capturing a photo, swipe from the left, across the viewfinder to slide out the media viewer.</p></li><li><p>Continue swiping from the left to view photos that are saved in the app’s local folder (and not saved in the media library).</p></li><li><p>Observe that a <span class="ui">delete</span> button appears in the app bar of the media viewer for photos that are stored exclusively in the local folder. Apps can’t delete photos from the media library, so the media viewer doesn’t display a delete button for those photos.</p></li><li><p>To view the captured photos in the camera roll, tap <span class="ui">Start</span>, then tap <span class="ui">photos</span>, and finally, tap <span class="ui">camera roll</span>.</p></li></ol><p><b>Extend the sample</b></p><p>There are a few different ways that you can make use of this sample template:</p><ul><li><p><span class="label">Incorporate a rich media viewing/editing experience:</span> Save additional info about the capture in your app’s local folder to provide a unique in-app experience. Rich media apps that implement <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj662942(v=vs.105).aspx">rich media extensibility</a> can be launched from the <span class="ui">Open</span> link of the built-in picture viewer when viewing photos they’ve saved to the library.</p></li><li><p><span class="label">Build on top of the sample:</span> Take the sample as it is and build the functionality that makes your lens unique directly on top of it.</p></li><li><p><span class="label">Replace the capture experience:</span> If your app offers a significantly different capture experience, remove the capture experience from the sample (in the MainPage.xaml and MainPage.xaml.cs files) and replace it with your own UI. If your capture experience is complex, consider creating a user control that implements your capture experience. Then put an instance of that control in the <span class="code">MediaViewer.FooterTemplate</span> of MainPage.xaml.</p></li></ul><p><b>Reconfigure the camera sensor</b></p><p>This procedure describes how you can modify the sample to use different camera settings. For more info about the available camera settings, see <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj662939(v=vs.105).aspx">Advanced capture properties</a>.</p><ol><li><p>Add a setting to the <span class="code">CameraSettings</span> class in CameraSettings.cs so that it can be persisted between camera load/unload cycles. Note that the camera is unloaded when the user scrolls two photos away from the viewfinder for performance and battery reasons. The user will expect the settings that they selected to still be in effect when they scroll back to the viewfinder.</p></li><li><p>Add a property to the <span class="code">LensViewModel</span> class that exposes the property you want to be able to configure. See the <span class="code">FlashState</span> property as an example.</p></li><li><p>Add a property to the <span class="code">CameraController</span> class to allow callers to <span class="code">get</span>/<span class="code">set</span> the property. See <span class="code">CameraController.FlashState</span> as an example.</p></li><li><p>Add a property to the <span class="code">CameraEngine</span> class to allow callers to <span class="code">get</span>/<span class="code">set</span> the property. See <span class="code">CameraEngine.FlashState</span> as an example.</p></li><li><p>Update <span class="code">LensViewModel.GetDefaultCameraSettings</span> to pick a default value for the setting.</p></li><li><p>Update <span class="code">LensViewModel.ApplyCameraSettings</span> to set the property.</p></li><li><p>Update MainPage.xaml and/or MainPage.xaml.cs to set the new property you added on <span class="code">LensViewModel</span> as you see fit.</p></li></ol><p><b>Edit the photo before saving it</b></p><p>Some lenses edit photos before saving them. If your app does that, keep in mind the following points:</p><ul><li><p>Add a call to your image modification code in the <span class="code">LensViewModel.OnStillCaptureComplete</span> method.</p></li><li><p>The <span class="code">OnStillCaptureComplete</span> method provides two JPEG-encoded streams that you can edit before saving them to the camera roll: <span class="code">thumbnailStream</span> and <span class="code">imageStream</span> (the full resolution photo).</p></li><li><p><span class="code">OnStillCaptureComplete</span> runs on a background thread. This is why the <span class="code">Dispatcher</span> invokes some of the work on the UI thread.</p></li></ul><p /><p><b>Solution overview</b></p><p>This solution is comprised of two projects: <span class="ui">MediaViewer</span> and <span class="ui">sdkBasicLensWP8CS</span>. The <span class="ui">MediaViewer</span> project contains all of the code for the media viewer control. The media viewer displays photos from the camera roll and local folder. The <span class="ui">sdkBasicLensWP8CS</span> project contains the code for the Basic Lens Sample. The primary helper classes in this sample are named <span class="code">CameraEngine</span>, <span class="code">CameraControl</span>, and <span class="code">WorkflowBase</span>. See the following sections for more info about this solution and how you can extend it.</p><p /><p><b>MediaViewer project</b></p><p /><p>Here are a few items to note about this project:</p><ul><li><p><span class="code">MediaViewer</span> class: A control which displays content in a page-by-page fashion similar to the built-in picture viewer. It supports an optional header and footer, and in between it renders items supplied by your app. This control also has the ability to allow users to pinch zoom when viewing items. The <span class="code">MediaViewer</span> is a virtualizing control, so it loads only the data it needs, and scales to very large sets of data.</p></li><li><p><span class="code">ThumbnailedImageViewer</span> class: This is the default <span class="code">ItemTemplate</span> for the <span class="code">MediaViewer</span> control, and displays images that have an associated thumbnail. Add objects to the <span class="code">MediaViewer.Items</span> collection that implement the <span class="code">IThumbnailedImage</span> interface so that the <span class="code">ThumbnailedImageViewer</span> can display them. For examples that implement this interface, see <span class="code">LocalFolderThumbnailedImage</span> and <span class="code">MediaLibraryThumbnailedImage</span>.</p></li></ul><p /><p><b>sdkBasicLensWP8CS project</b></p><p /><p>Here are a few items to note about this project:</p><ul><li><p><span class="code">MainPage</span> class: This page contains a <span class="code">MediaViewer</span> control with a <span class="code">FooterTemplate</span> that implements a photo capture experience. All presentation layer concerns are handled in the code-behind file, MainPage.xaml.cs, and the business logic is implemented in the <span class="code">LensViewModel</span> class.</p></li><li><p><span class="code">LensViewModel</span> class: This viewmodel holds the list of items to be bound to the <span class="code">MediaViewer.Item</span> collection, as well as the business logic to implement the lens. It communicates with the <span class="code">CameraEngine</span> model class.</p></li><li><p><span class="code">CameraEngine</span> class: This class handles all of the interaction with the capture API. Most importantly, it serializes most operations to reduce corner cases that would otherwise have to be handled manually. It processes a single workflow at a time, and most of the methods on this class simply queue up a new workflow. Workflows always execute in the order they were queued (FIFO), and are strictly serialized. The <span class="code">CameraEngine</span> holds a reference to the <span class="code">CameraController</span> class which directly wraps the capture API. It does not expose the <span class="code">CameraController</span> to its callers, reducing the chance of accidental unserialized access to the capture API.</p></li><li><p><span class="code">WorkflowBase</span> class: The base class for all workflows. It implements some common logic needed by all workflows.</p></li><li><p><span class="code">CameraController</span> class: This class encapsulates the capture API and is used by the workflows.</p></li></ul><p /></div></div>
+      <div id="footer">
+        <div class="footerLine" />
+      </div>
+      <p />
+    </div>
+  </body>
+</html>

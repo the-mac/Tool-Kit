@@ -1,0 +1,250 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+    <Schema Namespace="NetflixCatalog.Model" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Genre">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" m:FC_TargetPath="SyndicationTitle" />
+        <NavigationProperty Name="Titles" Relationship="NetflixCatalog.Model.TitleGenres" FromRole="Genres" ToRole="Titles" />
+      </EntityType>
+      <EntityType Name="Language">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" m:FC_TargetPath="SyndicationTitle" />
+        <NavigationProperty Name="Titles" Relationship="NetflixCatalog.Model.TitleLanguages" FromRole="Language" ToRole="Titles" />
+      </EntityType>
+      <EntityType Name="Person">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" m:FC_TargetPath="SyndicationTitle" />
+        <NavigationProperty Name="Awards" Relationship="NetflixCatalog.Model.FK_TitleAward_Person" FromRole="People" ToRole="TitleAwards" />
+        <NavigationProperty Name="TitlesActedIn" Relationship="NetflixCatalog.Model.TitleActors" FromRole="People" ToRole="Titles" />
+        <NavigationProperty Name="TitlesDirected" Relationship="NetflixCatalog.Model.TitleDirectors" FromRole="People" ToRole="Titles" />
+      </EntityType>
+      <EntityType Name="TitleAudioFormat">
+        <Key>
+          <PropertyRef Name="TitleId" />
+          <PropertyRef Name="DeliveryFormat" />
+          <PropertyRef Name="Language" />
+          <PropertyRef Name="Format" />
+        </Key>
+        <Property Name="TitleId" Type="Edm.String" Nullable="false" MaxLength="30" FixedLength="false" />
+        <Property Name="DeliveryFormat" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="Format" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <NavigationProperty Name="Title" Relationship="NetflixCatalog.Model.FK_TitleAudioFormat_Title" FromRole="TitleAudioFormats" ToRole="Titles" />
+      </EntityType>
+      <EntityType Name="TitleAward">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+        <Property Name="Year" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Won" Type="Edm.Boolean" Nullable="false" />
+        <NavigationProperty Name="Title" Relationship="NetflixCatalog.Model.FK_TitleAward_Title" FromRole="TitleAwards" ToRole="Titles" />
+        <NavigationProperty Name="Person" Relationship="NetflixCatalog.Model.FK_TitleAward_Person" FromRole="TitleAwards" ToRole="People" />
+      </EntityType>
+      <EntityType Name="Title" m:HasStream="true">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="30" FixedLength="false" />
+        <Property Name="Synopsis" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" m:FC_TargetPath="SyndicationSummary" m:FC_ContentKind="html" />
+        <Property Name="ShortSynopsis" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
+        <Property Name="AverageRating" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReleaseYear" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" MaxLength="200" Unicode="false" FixedLength="false" />
+        <Property Name="Runtime" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Rating" Type="Edm.String" Nullable="true" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="DateModified" Type="Edm.DateTime" Nullable="false" ConcurrencyMode="Fixed" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false" />
+        <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+        <Property Name="BoxArt" Type="NetflixCatalog.Model.BoxArt" Nullable="false" />
+        <Property Name="ShortName" Type="Edm.String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" m:FC_TargetPath="SyndicationTitle" />
+        <Property Name="Instant" Type="NetflixCatalog.Model.InstantAvailability" Nullable="false" />
+        <Property Name="Dvd" Type="NetflixCatalog.Model.DeliveryFormatAvailability" Nullable="false" />
+        <Property Name="BluRay" Type="NetflixCatalog.Model.DeliveryFormatAvailability" Nullable="false" />
+        <Property Name="TinyUrl" Type="Edm.String" Nullable="false" MaxLength="30" />
+        <Property Name="WebsiteUrl" Type="Edm.String" Nullable="true" MaxLength="200" />
+        <Property Name="NetflixApiId" Type="Edm.String" Nullable="false" MaxLength="200" />
+        <NavigationProperty Name="AudioFormats" Relationship="NetflixCatalog.Model.FK_TitleAudioFormat_Title" FromRole="Titles" ToRole="TitleAudioFormats" />
+        <NavigationProperty Name="Awards" Relationship="NetflixCatalog.Model.FK_TitleAward_Title" FromRole="Titles" ToRole="TitleAwards" />
+        <NavigationProperty Name="Disc" Relationship="NetflixCatalog.Model.FK_Title_Disc" FromRole="Titles1" ToRole="Titles" />
+        <NavigationProperty Name="Movie" Relationship="NetflixCatalog.Model.FK_Title_Movie" FromRole="Titles1" ToRole="Titles" />
+        <NavigationProperty Name="Season" Relationship="NetflixCatalog.Model.FK_Title_Season" FromRole="Titles1" ToRole="Titles" />
+        <NavigationProperty Name="Series" Relationship="NetflixCatalog.Model.FK_Title_Series" FromRole="Titles1" ToRole="Titles" />
+        <NavigationProperty Name="ScreenFormats" Relationship="NetflixCatalog.Model.FK_TitleScreenFormat_Title" FromRole="Titles" ToRole="TitleScreenFormats" />
+        <NavigationProperty Name="Cast" Relationship="NetflixCatalog.Model.TitleActors" FromRole="Titles" ToRole="People" />
+        <NavigationProperty Name="Languages" Relationship="NetflixCatalog.Model.TitleLanguages" FromRole="Titles" ToRole="Language" />
+        <NavigationProperty Name="Directors" Relationship="NetflixCatalog.Model.TitleDirectors" FromRole="Titles" ToRole="People" />
+        <NavigationProperty Name="Genres" Relationship="NetflixCatalog.Model.TitleGenres" FromRole="Titles" ToRole="Genres" />
+      </EntityType>
+      <ComplexType Name="BoxArt">
+        <Property Name="SmallUrl" Type="Edm.String" Nullable="true" MaxLength="80" Unicode="false" FixedLength="false" />
+        <Property Name="MediumUrl" Type="Edm.String" Nullable="true" MaxLength="80" Unicode="false" FixedLength="false" />
+        <Property Name="LargeUrl" Type="Edm.String" Nullable="true" MaxLength="80" Unicode="false" FixedLength="false" />
+        <Property Name="HighDefinitionUrl" Type="Edm.String" Nullable="true" MaxLength="80" Unicode="false" FixedLength="false" />
+      </ComplexType>
+      <ComplexType Name="InstantAvailability">
+        <Property Name="Available" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AvailableFrom" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="AvailableTo" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="HighDefinitionAvailable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Runtime" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Rating" Type="Edm.String" Nullable="true" MaxLength="10" Unicode="false" FixedLength="false" />
+      </ComplexType>
+      <ComplexType Name="DeliveryFormatAvailability">
+        <Property Name="Available" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AvailableFrom" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="AvailableTo" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Runtime" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Rating" Type="Edm.String" Nullable="true" MaxLength="10" Unicode="false" FixedLength="false" />
+      </ComplexType>
+      <EntityType Name="TitleScreenFormat">
+        <Key>
+          <PropertyRef Name="TitleId" />
+          <PropertyRef Name="DeliveryFormat" />
+          <PropertyRef Name="Format" />
+        </Key>
+        <Property Name="TitleId" Type="Edm.String" Nullable="false" MaxLength="30" FixedLength="false" />
+        <Property Name="DeliveryFormat" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="Format" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <NavigationProperty Name="Title" Relationship="NetflixCatalog.Model.FK_TitleScreenFormat_Title" FromRole="TitleScreenFormats" ToRole="Titles" />
+      </EntityType>
+      <Association Name="FK_TitleAudioFormat_Title">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="1" />
+        <End Role="TitleAudioFormats" Type="NetflixCatalog.Model.TitleAudioFormat" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Titles">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="TitleAudioFormats">
+            <PropertyRef Name="TitleId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="FK_TitleAward_Title">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="1" />
+        <End Role="TitleAwards" Type="NetflixCatalog.Model.TitleAward" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_TitleAward_Person">
+        <End Role="People" Type="NetflixCatalog.Model.Person" Multiplicity="0..1" />
+        <End Role="TitleAwards" Type="NetflixCatalog.Model.TitleAward" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_Title_Disc">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="0..1" />
+        <End Role="Titles1" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_Title_Movie">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="0..1" />
+        <End Role="Titles1" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_Title_Season">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="0..1" />
+        <End Role="Titles1" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_Title_Series">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="0..1" />
+        <End Role="Titles1" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+      </Association>
+      <Association Name="FK_TitleScreenFormat_Title">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="1" />
+        <End Role="TitleScreenFormats" Type="NetflixCatalog.Model.TitleScreenFormat" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Titles">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="TitleScreenFormats">
+            <PropertyRef Name="TitleId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="TitleActors">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+        <End Role="People" Type="NetflixCatalog.Model.Person" Multiplicity="*" />
+      </Association>
+      <Association Name="TitleLanguages">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+        <End Role="Language" Type="NetflixCatalog.Model.Language" Multiplicity="*" />
+      </Association>
+      <Association Name="TitleDirectors">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+        <End Role="People" Type="NetflixCatalog.Model.Person" Multiplicity="*" />
+      </Association>
+      <Association Name="TitleGenres">
+        <End Role="Titles" Type="NetflixCatalog.Model.Title" Multiplicity="*" />
+        <End Role="Genres" Type="NetflixCatalog.Model.Genre" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Netflix.Catalog" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="NetflixCatalog" m:IsDefaultEntityContainer="true">
+        <FunctionImport Name="Movies" EntitySet="Titles" ReturnType="Collection(NetflixCatalog.Model.Title)" m:HttpMethod="GET" />
+        <FunctionImport Name="Series" EntitySet="Titles" ReturnType="Collection(NetflixCatalog.Model.Title)" m:HttpMethod="GET" />
+        <FunctionImport Name="Seasons" EntitySet="Titles" ReturnType="Collection(NetflixCatalog.Model.Title)" m:HttpMethod="GET" />
+        <FunctionImport Name="Discs" EntitySet="Titles" ReturnType="Collection(NetflixCatalog.Model.Title)" m:HttpMethod="GET" />
+        <FunctionImport Name="Episodes" EntitySet="Titles" ReturnType="Collection(NetflixCatalog.Model.Title)" m:HttpMethod="GET" />
+        <EntitySet Name="Genres" EntityType="NetflixCatalog.Model.Genre" />
+        <EntitySet Name="Languages" EntityType="NetflixCatalog.Model.Language" />
+        <EntitySet Name="People" EntityType="NetflixCatalog.Model.Person" />
+        <EntitySet Name="TitleAudioFormats" EntityType="NetflixCatalog.Model.TitleAudioFormat" />
+        <EntitySet Name="TitleAwards" EntityType="NetflixCatalog.Model.TitleAward" />
+        <EntitySet Name="Titles" EntityType="NetflixCatalog.Model.Title" />
+        <EntitySet Name="TitleScreenFormats" EntityType="NetflixCatalog.Model.TitleScreenFormat" />
+        <AssociationSet Name="FK_TitleAudioFormat_Title" Association="NetflixCatalog.Model.FK_TitleAudioFormat_Title">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="TitleAudioFormats" EntitySet="TitleAudioFormats" />
+        </AssociationSet>
+        <AssociationSet Name="FK_TitleAward_Title" Association="NetflixCatalog.Model.FK_TitleAward_Title">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="TitleAwards" EntitySet="TitleAwards" />
+        </AssociationSet>
+        <AssociationSet Name="FK_TitleAward_Person" Association="NetflixCatalog.Model.FK_TitleAward_Person">
+          <End Role="People" EntitySet="People" />
+          <End Role="TitleAwards" EntitySet="TitleAwards" />
+        </AssociationSet>
+        <AssociationSet Name="FK_Title_Disc" Association="NetflixCatalog.Model.FK_Title_Disc">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Titles1" EntitySet="Titles" />
+        </AssociationSet>
+        <AssociationSet Name="FK_Title_Movie" Association="NetflixCatalog.Model.FK_Title_Movie">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Titles1" EntitySet="Titles" />
+        </AssociationSet>
+        <AssociationSet Name="FK_Title_Season" Association="NetflixCatalog.Model.FK_Title_Season">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Titles1" EntitySet="Titles" />
+        </AssociationSet>
+        <AssociationSet Name="FK_Title_Series" Association="NetflixCatalog.Model.FK_Title_Series">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Titles1" EntitySet="Titles" />
+        </AssociationSet>
+        <AssociationSet Name="FK_TitleScreenFormat_Title" Association="NetflixCatalog.Model.FK_TitleScreenFormat_Title">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="TitleScreenFormats" EntitySet="TitleScreenFormats" />
+        </AssociationSet>
+        <AssociationSet Name="TitleActors" Association="NetflixCatalog.Model.TitleActors">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="People" EntitySet="People" />
+        </AssociationSet>
+        <AssociationSet Name="TitleLanguages" Association="NetflixCatalog.Model.TitleLanguages">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Language" EntitySet="Languages" />
+        </AssociationSet>
+        <AssociationSet Name="TitleDirectors" Association="NetflixCatalog.Model.TitleDirectors">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="People" EntitySet="People" />
+        </AssociationSet>
+        <AssociationSet Name="TitleGenres" Association="NetflixCatalog.Model.TitleGenres">
+          <End Role="Titles" EntitySet="Titles" />
+          <End Role="Genres" EntitySet="Genres" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

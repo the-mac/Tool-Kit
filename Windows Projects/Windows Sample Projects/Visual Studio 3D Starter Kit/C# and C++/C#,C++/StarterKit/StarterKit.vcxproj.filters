@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>2bc95eec-98ea-4952-b2ba-207945a5bf30</UniqueIdentifier>
+    </Filter>
+    <Page Include="Common\StandardStyles.xaml">
+      <Filter>Common</Filter>
+    </Page>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{f4246000-c916-451e-b5f4-7be4486375be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Assets">
+      <UniqueIdentifier>8d3e431c-b2c2-4f26-90a6-30a4dfc725b0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Animation">
+      <UniqueIdentifier>{ad2276d5-7d7d-4cb1-8960-6976dce3b422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{ee36f2e1-16bb-4da1-b99f-3e93605e6c44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="DirectXPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\Shared\Direct3DBase.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\GameBase.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Game.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DDSTextureLoader.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="DirectXPage.xaml.h" />
+    <ClInclude Include="..\Shared\BasicTimer.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Direct3DBase.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DirectXHelper.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\GameBase.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\VSD3DStarter.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Animation\Animation.h">
+      <Filter>Shared\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Game.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DDSTextureLoader.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DirectXPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="..\Shared\Assets\gamelevel.fbx">
+      <Filter>Shared\Assets</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="..\Shared\Assets\teapot.fbx">
+      <Filter>Shared\Assets</Filter>
+    </MeshContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StarterKit_TemporaryKey.pfx" />
+    <None Include="..\Shared\Assets\CubeUVImage.png">
+      <Filter>Shared\Assets</Filter>
+    </None>
+    <None Include="..\Shared\Assets\GlowEffect.dgsl">
+      <Filter>Shared\Assets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Shared\Assets\GlowEffect.hlsl">
+      <Filter>Shared\Assets</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shared\Animation\SkinningVertexShader.hlsl">
+      <Filter>Shared\Animation</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Logo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

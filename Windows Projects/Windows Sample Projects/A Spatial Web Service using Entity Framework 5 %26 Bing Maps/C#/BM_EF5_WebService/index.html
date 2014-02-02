@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+
+    <script type="text/javascript">
+        var map, infobox, dataLayer;
+
+        function GetMap() {
+            map = new Microsoft.Maps.Map(document.getElementById("myMap"),
+            {
+                credentials: "YOUR_BING_MAPS_KEY"
+            });
+
+            dataLayer = new Microsoft.Maps.EntityCollection();
+            map.entities.push(dataLayer);
+
+            var infoboxLayer = new Microsoft.Maps.EntityCollection();
+            map.entities.push(infoboxLayer);
+
+            infobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0), { visible: false, offset: new Microsoft.Maps.Point(0, 20) });
+            infoboxLayer.push(infobox);
+
+            //Register and load the WKT Module
+            Microsoft.Maps.registerModule("WKTModule", "scripts/WKTModule.js");
+            Microsoft.Maps.loadModule("WKTModule");
+        }
+
+        function GetNearbyLocations(layer) {
+            var center = map.getCenter();
+            var request = "http://localhost:65521/SpatialService.svc/FindNearBy?latitude=" +
+                center.latitude + "&longitude=" + center.longitude +
+                "&radius=100000&layerName=" + layer + "&callback=?";
+
+            CallRESTService(request, DisplayData);
+        }
+
+        function FindByPolygon(layer) {
+            var request = "http://localhost:65521/SpatialService.svc/FindInPolygon?" +
+                "polygonWKT=POLYGON((-100 40,-102.5 45,-105 40,-100 40))&layerName=" +
+                layer  + "&callback=?";
+
+            CallRESTService(request, DisplayData);
+        }
+
+        function FindByBoundingBox(layer) {
+            var bbox = map.getBounds();
+
+            var request = "http://localhost:65521/SpatialService.svc/FindByBoundingBox?" +
+                "north=" + bbox.getNorth() + "&east=" + bbox.getWest() +
+                "&south=" + bbox.getSouth() + "&west=" + bbox.getEast() +
+                "&layerName=" + layer + "&callback=?";
+
+            CallRESTService(request, DisplayData);
+        }
+
+        function FindNearRoute(layer) {
+            //Generate Session key
+            map.getCredentials(function (c) {
+                var request = "http://localhost:65521/SpatialService.svc/FindNearRoute?" +
+                    "waypoints=London|Paris&radius=10000&bingMapsKey=" + c +
+                    "&layerName=" + layer + "&callback=?";
+
+                CallRESTService(request, DisplayData);
+            });
+        }
+
+        function DisplayData(data) {
+            dataLayer.clear();
+            infobox.setOptions({ visible: false });
+
+            if (data && data.Results != null) {
+                for (var i = 0; i < data.Results.length; i++) {
+                    var shape = WKTModule.Read(data.Results[i].WKT);
+
+                    //Complex shapes are returned as EntityCollections
+                    //Loop through each shape in the collection and add click event
+                    if (shape.getLength) {
+                        for (var j = 0; j < shape.getLength(); j++) {
+                            shape.get(j).Title = data.Results[i].Name;
+                            Microsoft.Maps.Events.addHandler(shape.get(j), 'click', DisplayInfobox);
+                        }
+                    }else{
+                        shape.Title = data.Results[i].Name;
+                        Microsoft.Maps.Events.addHandler(shape, 'click', DisplayInfobox);
+                    }
+
+                    dataLayer.push(shape);
+                }
+            }
+            else if (data && data.Error != null) {
+                alert("Error: " + data.Error);
+            }
+        }
+
+        function DisplayInfobox(e) {
+            var offset;
+
+            if (e.targetType == 'pushpin') {
+                infobox.setLocation(e.target.getLocation());
+
+                offset = new Microsoft.Maps.Point(0, 15);
+            }else{
+                //Handle polygons and polylines
+                var bounds = Microsoft.Maps.LocationRect.fromLocations(e.target.getLocations());
+                infobox.setLocation(bounds.center);
+
+                offset = new Microsoft.Maps.Point(0, 0);
+            }
+
+            infobox.setOptions({ visible: true, title: e.target.Title, offset : offset, height : 40 });
+        }
+
+        function CallRESTService(request, callback) {
+            var xmlHttp;
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        throw (e);
+                    }
+                }
+            }
+
+            xmlHttp.open("GET", request, false);
+            xmlHttp.onreadystatechange = function (r) {
+                if (xmlHttp.readyState == 4) {
+                    callback(eval('(' + xmlHttp.responseText + ')'));
+                }
+            };
+            xmlHttp.send();
+        }
+    </script>
+</head>
+<body onload="GetMap();">
+    <div id='myMap' style="position:relative;width:800px;height:600px;"></div><br />
+    <input type="button" value="Get Nearby Cities" onclick="GetNearbyLocations('Cities')" />
+    <input type="button" value="Get Nearby Countries" onclick="GetNearbyLocations('Countries')" />
+    <br />
+    <input type="button" value="Get Cities in Polygon" onclick="FindByPolygon('Cities')" />
+    <input type="button" value="Get Nearby in Polygon" onclick="FindByPolygon('Countries')" /><br />
+    <input type="button" value="Get Cities in View" onclick="FindByBoundingBox('Cities')" />
+    <input type="button" value="Get Countries in View" onclick="FindByBoundingBox('Countries')" /><br />
+    <input type="button" value="Find Cities Near Route" onclick="FindNearRoute('Cities')" />
+    <input type="button" value="Find Nearby Near Route" onclick="FindNearRoute('Countries')" />
+</body>
+</html>

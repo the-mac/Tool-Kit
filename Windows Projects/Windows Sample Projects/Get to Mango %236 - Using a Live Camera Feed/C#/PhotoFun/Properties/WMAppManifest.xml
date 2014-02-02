@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{9d1779dd-cf83-4e51-90ff-27f091b3a556}" Title="Photo Fun" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="PhotoFun author" Description="Sample description" Publisher="PhotoFun">
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.jpg</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_SENSORS"/>
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_ISV_CAMERA" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name ="_default" NavigationPage="MainPage.xaml"/>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="PhotoFunToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.jpg</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Photo Fun</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

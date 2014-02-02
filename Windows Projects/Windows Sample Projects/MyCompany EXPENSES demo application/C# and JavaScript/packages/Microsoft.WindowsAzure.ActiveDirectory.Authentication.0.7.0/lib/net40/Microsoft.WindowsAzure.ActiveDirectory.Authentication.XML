@@ -1,0 +1,493 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.WindowsAzure.ActiveDirectory.Authentication</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError">
+            <summary>
+            Error code returned as a property in AALException
+            </summary>
+            <summary>
+            Error code returned as a property in AALException
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.Unknown">
+            <summary>
+            Unknown error.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.InvalidArgument">
+            <summary>
+            Invalid argument.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.AuthenticationFailed">
+            <summary>
+            Authentication failed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.AuthenticationCanceled">
+            <summary>
+            Authentication canceled.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.InvalidAuthorityType">
+            <summary>
+            Invalid authority type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.InvalidCredentialType">
+            <summary>
+            Invalid credential type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.InvalidServiceUrl">
+            <summary>
+            Invalid service URL.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.SymmetricKeySizeTooSmall">
+            <summary>
+            Symmetric key size too small.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.CertificateKeySizeTooSmall">
+            <summary>
+            Certificate key size too small.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.IdentityProtocolLoginUrlNull">
+            <summary>
+            Identity protocol login URL Null.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.IdentityProtocolMismatch">
+            <summary>
+            Identity protocol mismatch.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.EmailAddressSuffixMismatch">
+            <summary>
+            Email address suffix mismatch.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.IdentityProviderRequestFailed">
+            <summary>
+            Identity provider request failed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.StsTokenRequestFailed">
+            <summary>
+            STS token request failed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.EncodedTokenTooLong">
+            <summary>
+            Encoded token too long.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.ServiceReturnedError">
+            <summary>
+            Service returned error.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.StsMetadataRequestFailed">
+            <summary>
+            STS metadata request failed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALError.NoDataFromSTS">
+            <summary>
+            No data from STS.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException">
+            <summary>
+            The exception type thown when an error occurs during token acquisition.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor">
+            <summary>
+             Initializes a new instance of the exception class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor(System.String)">
+            <summary>
+             Initializes a new instance of the exception class with a specified
+             error code.
+            </summary>
+            <param name="errorCode">The error code returned by the service or generated by client. This is the code you can rely on for exception handling.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor(System.String,System.String)">
+            <summary>
+             Initializes a new instance of the exception class with a specified
+             error code and error message.
+            </summary>
+            <param name="errorCode">The error code returned by the service or generated by client. This is the code you can rely on for exception handling.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor(System.String,System.Exception)">
+            <summary>
+             Initializes a new instance of the exception class with a specified
+             error code and a reference to the inner exception that is the cause of
+             this exception.
+            </summary>
+            <param name="errorCode">The error code returned by the service or generated by client. This is the code you can rely on for exception handling.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified. It may especially contain the actual error message returned by the service.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+             Initializes a new instance of the exception class with a specified
+             error code, error message and a reference to the inner exception that is the cause of
+             this exception.
+            </summary>
+            <param name="errorCode">The error code returned by the service or generated by client. This is the code you can rely on for exception handling.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified. It may especially contain the actual error message returned by the service.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the exception class with serialized data.
+            </summary>
+            <param name="info">The System.Runtime.Serialization.SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The System.Runtime.Serialization.StreamingContext that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Sets the System.Runtime.Serialization.SerializationInfo with information about the exception.
+            </summary>
+            <param name="info">The System.Runtime.Serialization.SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The System.Runtime.Serialization.StreamingContext that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AALException.ErrorCode">
+            <summary>
+            The error code returned by the service or generated by client. This is the code you can rely on for exception handling.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Credential">
+            <summary>
+            Abstract base class for all Credential types
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Credential.#ctor">
+            <summary>
+            Default contructor.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext">
+            <summary>
+            The main class representing the authority issuing tokens for resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.#ctor(System.String)">
+            <summary>
+            Constructor to create the context with the address of the authority.
+            Using this constructor will turn ON validation of the authority URL by default if validation is supported for the authority address.
+            </summary>
+            <param name="authority">Address of the authority to issue token.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor to create the context with the address of the authority and flag to turn address validation off.
+            Using this constructor, address validation can be turned off. Make sure you are aware of the security implication of not validating the address.
+            </summary>
+            <param name="authority">Address of the authority to issue token.</param>
+            <param name="validateAuthority">Flag to turn address validation ON or OFF.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.EndBrowserDialogSession">
+            <summary>
+            Ends browser dialog session, so user is asked for credentials on the next call to acquire token.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(System.String,Microsoft.WindowsAzure.ActiveDirectory.Authentication.Credential)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+            <param name="credential">The credential to use for token acquisition. It can of any subclass type of the Credential class, even though depending on the authority type, some credential types may not be supported.</param>
+            <returns>It contains Access Token and the Access Token's expiration time. Refresh Token property will be null for this overload.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(System.String)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+            <returns>It contains Access Token and the Access Token's expiration time. Refresh Token property will be null for this overload.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="identityProvider">The identity provider to federate with.</param>
+            <returns>It contains Access Token and the Access Token's expiration time. Refresh Token property will be null for this overload.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.GetProviders(System.String)">
+            <summary>
+            Gets list of identity providers from the service metadata endpoint
+            </summary>
+            <param name="resource">Identifier of the target resource to get identity providers for.</param>
+            <returns>List of identity providers and their supported protocols.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(System.String,System.String,System.String)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+            <param name="clientId">Identifier of the client requesting the token.</param>
+            <param name="redirectUri">Address to return to upon receiving a response from the authority.</param>
+            <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="resource">Identifier of the target resource that is the recipient of the requested token.</param>
+            <param name="clientId">Identifier of the client requesting the token.</param>
+            <param name="redirectUri">Address to return to upon receiving a response from the authority.</param>
+            <param name="loginHint">This parameter will be used to pre-populate the username field in the authentication form. Please note that the end user can still edit the username field and authenticate as a different user. This parameter can be null.</param>
+            <param name="extraQueryParameters">This parameter will be appended as is to the querystring in the HTTP autentication request to the authority. The parameter can be null.</param>
+            <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireToken(System.String,System.String,Microsoft.WindowsAzure.ActiveDirectory.Authentication.ClientCredential)">
+            <summary>
+            Acquires security token from the authority.
+            </summary>
+            <param name="authorizationCode">The authorization code received from service authorization endpoint.</param>
+            <param name="redirectUri">Address to return to upon receiving a response from the authority.</param>
+            <param name="credential">The credential to use for token acquisition.</param>
+            <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireTokenByRefreshToken(System.String,System.String)">
+            <summary>
+            Acquires a security token from the authority using a Refresh Token previously received.
+            </summary>
+            <param name="refreshToken">Refresh Token to use in the refresh flow.</param>
+            <param name="clientId">Name or ID of the client requesting the token.</param>
+            <returns>It contains Access Token, Refresh Token and the Access Token's expiration time.</returns>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.OwnerWindow">
+            <summary>
+            Owner of the browser dialog which pops up for receiving user credentials. It can be null.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult">
+            <summary>
+            Contains the results of one token acquisition operation. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.CreateAuthorizationHeader">
+            <summary>
+            Creates authorization header from authentication result.
+            </summary>
+            <returns>Created authorization header</returns>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.AccessTokenType">
+            <summary>
+            The Access Token requested. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.AccessToken">
+            <summary>
+            The Access Token requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.RefreshToken">
+            <summary>
+            The Refresh Token associated with the requested Access Token. Note: not all operations will return a Refresh Token.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.ExpiresOn">
+            <summary>
+            The point in time in which the Access Token returned in the AccessToken property ceases to be valid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.ClientCredential">
+            <summary>
+            Credential including client id and secret.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.ClientCredential.#ctor(System.String,System.String)">
+            <summary>
+            Constructor to create credential with client id and secret
+            </summary>
+            <param name="clientId">Identifier of the client requesting the token.</param>
+            <param name="clientSecret">Secret of the client requesting the token.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.ClientCredential.#ctor(System.String,System.Security.SecureString)">
+            <summary>
+            Constructor to create credential with client id and secret. This constructor accepts client secret as SecureString.
+            </summary>
+            <param name="clientId">Identifier of the client requesting the token.</param>
+            <param name="secureClientSecret">Secret of the client requesting the token in form of SecureString.</param>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.ClientCredential.ClientId">
+            <summary>
+            Identifier of the client requesting the token.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor">
+            <summary>
+            Class containing all properties returned for identity providers from service metadata.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor.Name">
+            <summary>
+            The human-readable display name for the identity provider.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor.LoginUrl">
+            <summary>
+            A constructed login request URL.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor.LogoutUrl">
+            <summary>
+            This URL allows end users to sign out of the identity provider they signed in with.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor.ImageUrl">
+            <summary>
+            The image to display, as configured in the Management Portal. Blank if there is no image.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.IdentityProviderDescriptor.EmailAddressSuffixes">
+            <summary>
+            An array of email address suffixes associated with the identity provider. Returns an empty array if there are no suffixes configured.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential">
+            <summary>
+            Credential type containing symmetric key.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential.MinKeySizeInBits">
+            <summary>
+            Minimum symmetric key size in bits
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential.#ctor(System.String,System.Byte[])">
+            <summary>
+            Constructor to create credential with issuer and symmetric key.
+            </summary>
+            <param name="issuer">Issuer of the symmetric key used as credential.</param>
+            <param name="key">Symmetric key used as credential.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential.Finalize">
+            <summary>
+            Destructor method.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential.Issuer">
+            <summary>
+            Issuer of the symmetric key used as credential.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.SymmetricKeyCredential.Key">
+            <summary>
+            Symmetric key used as credential.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase">
+            <summary>
+            Base class for authentication dialog.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.#ctor(System.Windows.Forms.WebBrowser)">
+            <summary>
+            Constructor to create the authentication dialog base using an optional Web Browser control.
+            </summary>
+            <param name="webBrowser">Optional web browser control.</param>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.returnLinkLabel_LinkClicked(System.Object,System.Windows.Forms.LinkLabelLinkClickedEventArgs)">
+            <summary>
+            Event handler for the "Return to application" label.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.headerPanel_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Event handler for mouse down on the top panel. This and following two event handlers perform the dragging operation of the form window.
+            Since, this is a border less window, there is no other way to move the window unless we do this custom event processing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.headerPanel_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Event handler for the mouse up on the top panel.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.headerPanel_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Event handler for mouse move.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindowBase.WebBrowser">
+            <summary>
+            Web Browser control used by the dialog.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.WebAuthenticationBroker">
+            <summary>
+            The browser dialog used for user authentication
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.X509CertificateCredential">
+            <summary>
+            Credential type containing X509 certificate.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.ActiveDirectory.Authentication.X509CertificateCredential.MinKeySizeInBits">
+            <summary>
+            Minimum X509 certificate key size in bits
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.X509CertificateCredential.#ctor(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Constructor to create credential with issuer and certificate.
+            </summary>
+            <param name="issuer">Issuer of the certificate used as credential.</param>
+            <param name="certificate">The certificate used as credential.</param>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.X509CertificateCredential.Issuer">
+            <summary>
+            Issuer of the certificate used as credential.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.X509CertificateCredential.Certificate">
+            <summary>
+            The certificate used as credential.
+            </summary>
+        </member>
+        <member name="T:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindow">
+            <summary>
+            Browser authentication window class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindow.Authenticate(System.Boolean,System.String,System.String,System.Windows.Forms.IWin32Window)">
+            <summary>
+            Pops up the browser authentication window and returns the credential after ACS returns a page with javascriptnotify in it
+            containing the token.
+            </summary>
+            <param name="showHrdPage">Determines whether to show HRD page or not</param>
+            <param name="url">The url to be opened in the web browser control or the resource URL in case of showing HRD page</param>
+            <param name="authority">The authority to be used for the custom HRD page</param>
+            <param name="owner">The parent window showing the authentication browser window as modal</param>
+            <returns>AssertionCredential to use with the service</returns>
+        </member>
+        <member name="M:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindow.notify(System.String)">
+            <summary>
+            This is the notify event handler.
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.ActiveDirectory.Authentication.Web.BrowserAuthenticationWindow.Result">
+            <summary>
+            Authentication result.
+            </summary>
+        </member>
+    </members>
+</doc>

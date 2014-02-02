@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ISearchService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISearchService"
+                contract="Bing.Search.ISearchService" name="BasicHttpBinding_ISearchService" />
+        </client>
+    </system.serviceModel>
+</configuration>

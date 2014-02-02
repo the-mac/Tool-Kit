@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienGame", "AlienGame\AlienGame\AlienGame.csproj", "{C34155F9-E958-45FD-A9E0-18A261025F2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienGameContent", "AlienGame\AlienGameContent\AlienGameContent.contentproj", "{A6D3BFDF-3005-4F89-8EDB-913B147922A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Any CPU = Release|Any CPU
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Any CPU.Build.0 = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Any CPU.Deploy.0 = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Release|Any CPU.ActiveCfg = Release|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{C34155F9-E958-45FD-A9E0-18A261025F2D}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{A6D3BFDF-3005-4F89-8EDB-913B147922A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D3BFDF-3005-4F89-8EDB-913B147922A4}.Debug|Windows Phone.ActiveCfg = Debug|Any CPU
+		{A6D3BFDF-3005-4F89-8EDB-913B147922A4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D3BFDF-3005-4F89-8EDB-913B147922A4}.Release|Windows Phone.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

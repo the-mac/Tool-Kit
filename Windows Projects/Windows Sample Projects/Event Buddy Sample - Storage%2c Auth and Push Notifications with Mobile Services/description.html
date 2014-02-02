@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=15EDE1F25211E852032D2691D5FEB7B8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1abb62d5-b79e-40ee-8cb8-d84c3849e6acCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=52ADCBE5376E50AE6798D3D038D063E9" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Event Buddy Sample - Storage, Auth and Push Notifications with Mobile Services</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/a6b22055-209a-49a6-9640-e20746cd0b82Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Event Buddy Sample - Storage, Auth and Push Notifications with Mobile Services</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Azure, SkyDrive, Windows 8, Windows RT, Windows Azure Mobile Services, Windows Store app, Windows Push Notification Service
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Azure, Data Access, Web Services, Services, Storage, push notifications, Windows 8, Windows Azure Mobile Services, Live Tile Notification, Live Tile Notification with Image, Windows Store app, Windows Push Notification Service
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud, Phone, Data, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/8/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1 id="Event_Buddy" class="content">Event Buddy Sample - Storage, Auth and Push Notifications with Mobile Services</h1>
+<h3 id="Introduction" class="content">Introduction</h3>
+<p class="content">In this sample you will start with a disconnected Windows Store app that manages events &amp; sessions. You will connect it to a
+<strong>Windows Azure Mobile Service</strong> to provide structured storage for both event and session entities. The application uses
+<strong>Twitter</strong> or <strong>Facebook</strong> authentication to login to your services. You will finish by sending Live Tiles using push notifications every time an attendee rates a session.</p>
+<h3 id="Prerequisites" class="content">Prerequisites</h3>
+<div class="content">
+<ul>
+<li>Visual Studio 2012 </li><li><a href="http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/https://dev.windowsphone.com/en-us/downloadsdk">Windows Phone SDK 8.0</a>
+</li><li><a href="http://msdn.microsoft.com/en-us/live/ff621310">Live SDK for Windows and Windows Phone</a>
+</li><li>and a Windows Azure account&nbsp;<span>- get the&nbsp;</span><a title="Windows Azure Free" href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AA0EDCEAF" >Windows Azure Free Trial</a>
+</li></ul>
+</div>
+<h3 id="Building_the_Sample">Building the Sample</h3>
+<p><strong>Getting Started with Mobile Services to store data</strong></p>
+<ol>
+<li>
+<p>Open the <strong>EventBuddy</strong> solution in Visual Studio and run the <strong>
+Windows Store</strong> application.</p>
+</li><li>
+<p>On Event Buddy's home page, click <strong>Add Event</strong>, enter an event name and click
+<strong>Save Event</strong>.</p>
+</li><li>
+<p>Select the event to view the <strong>Event Details</strong>.</p>
+<p><img id="106898" src="description/eventbuddy-selectevent.png" alt="EventBuddy-selectevent" width="700" height="373"></p>
+</li><li>
+<p>Navigate back to the first screen. Notice that our data is gone. This is because the application is not using Mobile Services yet, and the data is all local and just in memory.</p>
+</li><li>
+<p>Go back to Visual Studio and stop the app.</p>
+</li><li>
+<p>To connect your app to Mobile Services open Solution Explorer, right-click the project, click
+<strong>Add</strong> and then <strong>Connected Service...</strong>.</p>
+<p><img id="106899" src="description/add-connected-service-menu-option.png" alt="add-connected-service-menu-option" width="678" height="679"></p>
+</li><li>
+<p>In the <strong>Services Manager</strong> dialog box, select the <strong>Windows Azure &gt; Mobile Services</strong> tab and click
+<strong>Create service...</strong>, then select <strong>Import...</strong> from <strong>
+Subscription</strong> in the <strong>Create Mobile Service</strong> dialog box.</p>
+<p><img id="106900" src="description/create-mobile-service-dialog.png" alt="create-mobile-service-dialog" width="800" height="655"></p>
+</li><li>
+<p>In the <strong>Import Windows Azure Subscriptions</strong> dialog box, click <strong>
+Download subscription file</strong>, log in to your Windows Azure account (if required) and click
+<strong>Save</strong> when your browser requests to save the file.</p>
+<p><img id="106901" src="description/download-subscription-file.png" alt="download-subscription-file" width="800" height="655"></p>
+<blockquote>
+<p><strong>Note:</strong> The login window is displayed in the browser, which may be behind your Visual Studio window. Remember to make a note of where you saved the downloaded .publishsettings file. You can skip this step if Visual Studio is already connected
+ to your Windows Azure subscription.</p>
+</blockquote>
+</li><li>
+<p>Click <strong>Browse</strong>, navigate to the location where you saved the .publishsettings file, select the file, then click
+<strong>Open</strong> and then <strong>Import</strong>. Visual Studio imports the data needed to connect to your Windows Azure subscription.</p>
+<p><img id="106902" src="description/import-subscription-file.png" alt="import-subscription-file" width="800" height="655"></p>
+<blockquote>
+<p><strong>Security Note:</strong> After importing the publish settings, consider deleting the downloaded .publishsettings file as it contains information that can be used by others to access your account. Secure the file if you plan to keep it for use in other
+ connected app projects.</p>
+</blockquote>
+</li><li>
+<p>Back in the <strong>Create Mobile Service</strong> dialog, select your <strong>
+Subscription</strong> and the desired <strong>Region</strong> for your mobile service, then type a
+<strong>Name</strong> for your mobile service.</p>
+<blockquote>
+<p><strong>Note:</strong> Mobile service names must be unique. A red X is displayed next to
+<strong>Name</strong> when the name you supplied is not available.</p>
+</blockquote>
+</li><li>
+<p>In <strong>Database</strong>, select <strong>Create a free SQL Database</strong>, supply the
+<strong>Server user name</strong>, <strong>Server password</strong>, and <strong>
+Server password confirmation</strong> then click <strong>Create</strong>.</p>
+<p><img id="106903" src="description/configure-new-mobile-service.png" alt="configure-new-mobile-service" width="800" height="655"></p>
+<blockquote>
+<p><strong>Note</strong> As part of this sample, you create a new free SQL database instance and server. You can reuse this new database and administer it as you would any other SQL database instance. You can only have one free database instance. If you already
+ have a database in the same region as the new mobile service, you can instead choose the existing database. When you choose an existing database, make sure that you supply correct login credentials. If you supply incorrect login credentials, the mobile service
+ is created in an unhealthy state.</p>
+<p>Alternatively, you can create the mobile service from the <a href="http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/https://manage.windowsazure.com">
+Windows Azure Management Portal</a>. Once logged in, navigate to <strong>Mobile Services</strong> and click
+<strong>New</strong>. Then expand <strong>Compute | Mobile Service</strong>, then click
+<strong>Create</strong> and follow the instructions.</p>
+</blockquote>
+</li><li>
+<p>In the <strong>Services Manager</strong> dialog, select the mobile service you just created and click
+<strong>OK</strong>.</p>
+<p><img id="106904" src="description/connect-the-app-to-mobile-services.png" alt="connect-the-app-to-mobile-services" width="800" height="655"></p>
+</li><li>
+<p>After completing the steps from above, a reference to the Mobile Services client library is added to the project and your project source code is updated.</p>
+</li><li>
+<p>In Solution Explorer, open the <strong>App.xaml.cs</strong> code file, and notice the new static field that was added to the
+<strong>App</strong> class, which looks like the following example:</p>
+<span class="codelanguage">&nbsp;</span>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public static <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.MobileServiceClient.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices.MobileServiceClient">Microsoft.WindowsAzure.MobileServices.MobileServiceClient</a> 
+    eventBuddyServiceClient = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.MobileServiceClient.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices.MobileServiceClient">Microsoft.WindowsAzure.MobileServices.MobileServiceClient</a>(
+        &quot;https://eventbuddyservice.azure-mobile.net/&quot;,
+        &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;);</pre>
+<div class="preview">
+<pre class="js">public&nbsp;static&nbsp;Microsoft.WindowsAzure.MobileServices.MobileServiceClient&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;eventBuddyServiceClient&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.MobileServices.MobileServiceClient.aspx"  title="Auto generated link to Microsoft.WindowsAzure.MobileServices.MobileServiceClient">Microsoft.WindowsAzure.MobileServices.MobileServiceClient</a>(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;https://eventbuddyservice.azure-mobile.net/&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>In Server Explorer, expand <strong>Mobile Services</strong> under <strong>Windows Azure</strong>, right-click your mobile service, click
+<strong>Create Table...</strong>, and then type <strong>Event</strong> in <strong>
+Table Name</strong>.</p>
+</li><li>
+<p>Expand <strong>Advanced</strong>, verify that the table operation permissions default to
+<strong>Anybody with the Application Key</strong>, then click <strong>Create</strong>.</p>
+<p><img id="106905" src="description/newtable-event.png" alt="newtable-event" width="500" height="484"></p>
+</li><li>
+<p>Open <strong>EventsPage.xaml.cs</strong>. Navigate to the <strong>SaveEvent</strong> method and locate
+<em>// TODO: save the new event</em>. Replace it with the following code (replace
+<em>{yourClient}</em> with the MobileServiceClient field added to the App.xaml.cs file when you connected your project to the mobile service):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await App.{yourClient}.GetTable&lt;Event&gt;().InsertAsync(item); </pre>
+<div class="preview">
+<pre class="js">await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.GetTable&lt;Event&gt;().InsertAsync(item);&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>Navigate to the <strong>LoadEvents</strong> method and locate the comment <em>
+// TODO: query for existing events</em>. Replace it with the following code (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">Events = await App.{yourClient}.GetTable&lt;Event&gt;().ToEnumerableAsync(); </pre>
+<div class="preview">
+<pre class="js">Events&nbsp;=&nbsp;await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.GetTable&lt;Event&gt;().ToEnumerableAsync();&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>Run the application from Visual Studio.</p>
+</li><li>
+<p>Create a new event by clicking on the <strong>Add Event</strong> link on the home page. Enter an event name and click
+<strong>Save Event</strong> in the Add Event dialog box.</p>
+<p><img id="106906" src="description/eventbuddy-addevent-connected.png" alt="eventbuddy-addevent-connected" width="683" height="430"></p>
+</li><li>
+<p>After saving the event, go to the <a href="http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/https://manage.windowsazure.com">Windows Azure Management Portal</a> and log in with your credentials (if required). Click
+<strong>Mobile Services</strong> and then select your mobile service. Navigate to the Data view for the Mobile Service and select the Event table. You will now see that the event data was stored in Windows Azure.</p>
+<p><img id="106907" src="description/portal-data-event.png" alt="portal-data-event" width="700" height="443"></p>
+</li></ol>
+<p><strong>Authentication, Authorization, and Service-Side Scripts</strong></p>
+<ol>
+<li>
+<p>You will now add a table to store our session data. Switch back to Visual Studio and stop debugging.</p>
+</li><li>
+<p>Open Server Explorer, Expand <strong>Mobile Services</strong> under <strong>Windows Azure</strong>, right-click your mobile service and select
+<strong>Create Table...</strong>. Create a new table named <strong>Session</strong> and set the permissions to
+<strong>Only Authenticated Users</strong>. By setting this policy you prevent unauthorized users from accessing and modifying this table.</p>
+<p><img id="106908" src="description/newtable-session.png" alt="newtable-session" width="500" height="484"></p>
+</li><li>
+<p>Configure authentication using Twitter or Facebook.</p>
+<blockquote>
+<p><strong>Note:</strong> Details on how to configure <strong>Mobile Services</strong> authentication with identity providers such as
+<strong>Twitter</strong> and <strong>Facebook</strong> can be found at <a href="http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/https://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/#register">
+http://code.msdn.microsoft.com/windowsapps/Event-Buddy-ddafd9b6/https://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/#register</a>.</p>
+</blockquote>
+</li><li>
+<p>In Visual Studio, open the <strong>Login.xaml.cs</strong> file.</p>
+</li><li>
+<p>In order to enable Twitter authentication, locate the <strong>LoginTwitter</strong> method and add the following code (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await App.{yourClient}.LoginAsync(MobileServiceAuthenticationProvider.Twitter); </pre>
+<div class="preview">
+<pre class="js">await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.LoginAsync(MobileServiceAuthenticationProvider.Twitter);&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> If you choose to authenticate with Facebook, instead of executing the previous step, add the following code in the LoginFacebook method (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+</blockquote>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await App.{yourClient}.LoginAsync(MobileServiceAuthenticationProvider.Facebook); </pre>
+<div class="preview">
+<pre class="js">await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.LoginAsync(MobileServiceAuthenticationProvider.Facebook);&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>You will now add the necessary code to save, load and update the session table. Open
+<strong>SessionsPage.xaml.cs</strong>.</p>
+</li><li>
+<p>Navigate to the <strong>SaveSession</strong> method and locate <em>// TODO: Save Session</em>. Replace the comment with the following code (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await App.{yourClient}.GetTable&lt;Session&gt;().InsertAsync(item); </pre>
+<div class="preview">
+<pre class="js">await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.GetTable&lt;Session&gt;().InsertAsync(item);&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>Navigate to the <strong>LoadSessions</strong> method and locate <em>// TODO: Query Sessions for selected eventItem.Id</em>. Replace the comment with the following code (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">Sessions = await App.{yourClient}.GetTable&lt;Session&gt;().Where(e =&gt; e.EventId == Event.Id).ToEnumerableAsync();</pre>
+<div class="preview">
+<pre class="js">Sessions&nbsp;=&nbsp;await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.GetTable&lt;Session&gt;().Where(e&nbsp;=&gt;&nbsp;e.EventId&nbsp;==&nbsp;Event.Id).ToEnumerableAsync();</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>Navigate to the <strong>UpdateSession</strong> method and locate <em>// TODO: Update Session</em>. Replace the comment with the following code (replace
+<em>{yourClient}</em> with the appropriate field):</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await App.{yourClient}.GetTable&lt;Session&gt;().UpdateAsync(item); </pre>
+<div class="preview">
+<pre class="js">await&nbsp;App.<span class="js__brace">{</span>yourClient<span class="js__brace">}</span>.GetTable&lt;Session&gt;().UpdateAsync(item);&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+</li><li>
+<p>In Server Explorer, expand the <strong>Session</strong> table of your mobile service. Then right-click the
+<strong>insert.js</strong> script file and select <strong>Edit script</strong>.</p>
+<p><img id="106909" src="description/edit-sessioninsert-menu-option.png" alt="edit-sessioninsert-menu-option" width="361" height="205"></p>
+</li><li>
+<p>The script opens in an editor window. Here you can insert a JavaScript function that is going to be invoked whenever someone performs an insert. And it expects the item that is being inserted and the user (which has been verified and authenticated on the
+ server so you can trust the data inside that object).</p>
+</li><li>
+<p>Update the insert script to the below code. This JavaScript will simply go out to Twitter's APIs, retrieve the profile picture for the speaker using the speaker's Twitter account, and store the URL of the picture with the session record. Make sure to replace
+ the placeholders with your Twitter's consumer key and consumer secret.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function insert(item, user, request) {
+    item.userId = user.userId;
+
+    if (item.speaker) {
+        // get these from https://dev.twitter.com/apps
+        var twitterConsumerKey = &quot;{YourAppsConsumerKey}&quot;;
+        var twitterConsumerSecret = &quot;{YourAppsConsumerSecret}&quot;;
+
+        // This works for users signed in with Twitter auth, otherwise
+        // you can use your own values for this from https://dev.twitter.com/apps 
+        // these are on the same page under &quot;your access token&quot; section
+        user.getIdentities({
+            success: function (identities) {
+                var userToken = identities.twitter.accessToken;
+                var userSecret = identities.twitter.accessTokenSecret;
+
+                console.log('identities: ', identities);
+                console.log('userToken: ', userToken);
+                console.log('userSecret: ', userSecret);
+
+                var OAuth = require('OAuth');
+                var oauth = new OAuth.OAuth(
+                    'https://api.twitter.com/oauth/request_token',
+                    'https://api.twitter.com/oauth/access_token',
+                    twitterConsumerKey,
+                    twitterConsumerSecret,
+                    '1.0A',
+                    null,
+                    'HMAC-SHA1'
+                    );
+
+                oauth.get(&quot;https://api.twitter.com/1.1/users/show.json?screen_name=&quot; &#43; item.speaker, userToken, userSecret,
+                function (error, data) {                    
+                    //console.log(&quot;error: &quot;, error);
+                    console.log(&quot;data: &quot;, data);
+
+                    if (data) {
+                        var json = JSON.parse(data);
+                        if (json.profile_image_url) {
+                            var biggerImg = json.profile_image_url.replace(&quot;normal&quot;, &quot;bigger&quot;);
+                            item.img = biggerImg;
+                            request.execute();
+                        } else {
+                            item.img = &quot;Assets/NoProfile.png&quot;;
+                            request.execute();
+                        }
+                    } else {
+                        item.img = &quot;Assets/NoProfile.png&quot;;
+                        request.execute();
+                    }
+                });
+            },
+            error: function (error) {
+                console.log(&quot;getIdentities error: &quot;, error);
+
+                item.img = &quot;Assets/NoProfile.png&quot;;
+                request.execute();
+            }
+        });
+    }
+    else {
+        item.img = &quot;Assets/NoProfile.png&quot;;
+        request.execute();
+    }
+}</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;insert(item,&nbsp;user,&nbsp;request)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;item.userId&nbsp;=&nbsp;user.userId;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(item.speaker)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;get&nbsp;these&nbsp;from&nbsp;https://dev.twitter.com/apps</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;twitterConsumerKey&nbsp;=&nbsp;<span class="js__string">&quot;{YourAppsConsumerKey}&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;twitterConsumerSecret&nbsp;=&nbsp;<span class="js__string">&quot;{YourAppsConsumerSecret}&quot;</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;This&nbsp;works&nbsp;for&nbsp;users&nbsp;signed&nbsp;in&nbsp;with&nbsp;Twitter&nbsp;auth,&nbsp;otherwise</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;you&nbsp;can&nbsp;use&nbsp;your&nbsp;own&nbsp;values&nbsp;for&nbsp;this&nbsp;from&nbsp;https://dev.twitter.com/apps&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;these&nbsp;are&nbsp;on&nbsp;the&nbsp;same&nbsp;page&nbsp;under&nbsp;&quot;your&nbsp;access&nbsp;token&quot;&nbsp;section</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user.getIdentities(<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;<span class="js__operator">function</span>&nbsp;(identities)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;userToken&nbsp;=&nbsp;identities.twitter.accessToken;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;userSecret&nbsp;=&nbsp;identities.twitter.accessTokenSecret;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">'identities:&nbsp;'</span>,&nbsp;identities);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">'userToken:&nbsp;'</span>,&nbsp;userToken);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">'userSecret:&nbsp;'</span>,&nbsp;userSecret);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;OAuth&nbsp;=&nbsp;require(<span class="js__string">'OAuth'</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;oauth&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;OAuth.OAuth(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">'https://api.twitter.com/oauth/request_token'</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">'https://api.twitter.com/oauth/access_token'</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twitterConsumerKey,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twitterConsumerSecret,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">'1.0A'</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">'HMAC-SHA1'</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oauth.get(<span class="js__string">&quot;https://api.twitter.com/1.1/users/show.json?screen_name=&quot;</span>&nbsp;&#43;&nbsp;item.speaker,&nbsp;userToken,&nbsp;userSecret,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error,&nbsp;data)&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//console.log(&quot;error:&nbsp;&quot;,&nbsp;error);</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">&quot;data:&nbsp;&quot;</span>,&nbsp;data);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(data)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;json&nbsp;=&nbsp;JSON.parse(data);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(json.profile_image_url)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;biggerImg&nbsp;=&nbsp;json.profile_image_url.replace(<span class="js__string">&quot;normal&quot;</span>,&nbsp;<span class="js__string">&quot;bigger&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.img&nbsp;=&nbsp;biggerImg;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;<span class="js__statement">else</span>&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.img&nbsp;=&nbsp;<span class="js__string">&quot;Assets/NoProfile.png&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;<span class="js__statement">else</span>&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.img&nbsp;=&nbsp;<span class="js__string">&quot;Assets/NoProfile.png&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error:&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">&quot;getIdentities&nbsp;error:&nbsp;&quot;</span>,&nbsp;error);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.img&nbsp;=&nbsp;<span class="js__string">&quot;Assets/NoProfile.png&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">else</span>&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.img&nbsp;=&nbsp;<span class="js__string">&quot;Assets/NoProfile.png&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="JavaScript">
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Take into account that in order to show an update and retrieve a new Twitter handler picture, you must paste the above code into the
+<strong>update.js</strong> script, and rename the function to <em>update</em>. This way, whenever you change a session with a different Twitter handle, the new picture URL will be retrieved and saved.</p>
+</blockquote>
+</li><li>
+<p>Press <strong>Ctrl&#43;S</strong> to save the changes to the script and wait until it is successfully saved.</p>
+</li><li>
+<p>Run the <strong>Windows Store</strong> application.</p>
+</li><li>
+<p>Right-click or swipe up to view the app bar. Select <strong>Login</strong> from the app bar and select Twitter from the list of login options. (You can also use Facebook to authenticate.)</p>
+<p><img id="106910" src="description/eventbuddy-login-options.png" alt="eventbuddy-login-options" width="700" height="393"></p>
+</li><li>
+<p>You should see the Twitter login page load in the center of the application. Enter your Twitter username and password and click
+<strong>Sign In</strong>.</p>
+</li><li>
+<p>Click on the existing Event created in the previous Segment. Right click or use the swipe gesture to expose the bottom AppBar and click
+<strong>Add Session</strong>.</p>
+</li><li>
+<p>Add a session name and speaker name (which should be their twitter handle) in the Add Session window. Click
+<strong>Save Session</strong>.</p>
+</li><li>
+<p>You should see the session added and the Twitter picture of the speaker displayed with the session details.</p>
+<p><img id="106911" src="description/eventbuddy-session-list.png" alt="eventbuddy-session-list" width="700" height="393"></p>
+</li></ol>
+<p><strong>Push Notifications</strong></p>
+<ol>
+<li>
+<p>You will now update EventBuddy in order to allow attendees to be able to rate sessions. Once they rate a session, the speaker will receive a live tile update which shows the rating.</p>
+</li><li>
+<p>Go back to Visual Studio and stop debugging. In Solution Explorer, right-click the Windows Store project, click
+<strong>Add</strong> and then <strong>Push Notification...</strong>. This starts the Add Push Notification Wizard.</p>
+<p><img id="106912" src="description/add-push-notification-menu-option.png" alt="add-push-notification-menu-option" width="599" height="707"></p>
+</li><li>
+<p>Click <strong>Next</strong>, sign in to your Windows Store account, then supply a name in
+<strong>Reserve a new app name</strong> and click <strong>Reserve</strong>.</p>
+<p><img id="106913" src="description/push-notifications-step1.png" alt="push-notifications-step1" width="800" height="650"></p>
+</li><li>
+<p>Click the new registration in the <strong>App Name</strong> list, then click <strong>
+Next</strong>.</p>
+<p><img id="106914" src="description/push-notifications-step2.png" alt="push-notifications-step2" width="800" height="650"></p>
+</li><li>
+<p>Click the name of the mobile service that you created, then click <strong>Next</strong> and
+<strong>Finish</strong>.</p>
+<p><img id="106915" src="description/push-notifications-step3.png" alt="push-notifications-step3" width="800" height="650"></p>
+</li><li>
+<p>The mobile service is updated to register your app package SID and client secret and a new
+<strong>channels</strong> table is created. Mobile Services is now configured to work with Windows Push Notification Services (WNS) to be able to send notifications to your app.</p>
+</li><li>
+<p>In Solution Explorer, expand <strong>services</strong>, <strong>mobile services</strong>, your service name, and open the generated code file. Inspect the
+<strong>UploadChannel</strong> method that obtains the installation ID and channel for the device and inserts this data into the new channels table.</p>
+<p>A call to this method was also added by the wizard to the <strong>OnLaunched</strong> event handler in the
+<strong>App.xaml.cs</strong> code file. This ensures that registration of the device is attempted whenever the app is launched.</p>
+</li><li>
+<p>However, the Event Buddy application requires each registered channel to be associated with the authenticated user. This means that the channel registration should take place only when the user logs in, and not when the app is launched. Open
+<strong>App.xaml.cs</strong> and locate the <strong>UploadChannel</strong> call at the bottom of the
+<strong>OnLaunched</strong> method. Make note of that line <strong>and delete it</strong> from the
+<strong>OnLaunched</strong> method.</p>
+</li><li>
+<p>Open <strong>EventsPage.xaml.cs</strong> and locate the <strong>onLoggedIn</strong> method. Paste the
+<strong>UploadChannel</strong> call at the top of the method. The updated method should look like the following:</p>
+<p><img id="106916" src="description/upload-channel-call-moved-to-onloggedin.png" alt="upload-channel-call-moved-to-onloggedin" width="411" height="121"></p>
+</li><li>
+<p>In Server Explorer, expand <strong>Windows Azure</strong>, <strong>Mobile Services</strong>, your service name, and
+<strong>channels</strong>. Then, open the <strong>insert.js</strong> file. This file contains JavaScript code that is executed when a client sends a request to register a device by inserting data into the channels table; it checks for an existing registration
+ for the device, and also contains code that sends a push notification when a new registration is added to the channels table</p>
+</li><li>
+<p>In the insert script, locate the line that calls to <strong>sendNotifications</strong> and comment it out, or remove it.</p>
+</li><li>
+<p>Add the following code right after the line of code you commented in the previous step to associate the channel to the authenticated user.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">item.userId = user.userId;</pre>
+<div class="preview">
+<pre class="js">item.userId&nbsp;=&nbsp;user.userId;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="JavaScript">
+</code></pre>
+</li><li>
+<p>The updated insert script should look like the following:</p>
+<p><img id="106917" src="description/update-channelinsert-script.png" alt="update-channelinsert-script" width="641" height="570"></p>
+</li><li>
+<p>Press <strong>CTRL&#43;S</strong> to save the script.</p>
+</li><li>
+<p>Create a new table to store ratings. In Server Explorer, right-click your mobile services and select
+<strong>Create Table...</strong>. Name it <strong>Rating</strong> and set permissions to
+<strong>Only Authenticated Users</strong>.</p>
+<p><img id="106918" src="description/newtable-rating.png" alt="newtable-rating" width="500" height="484"></p>
+</li><li>
+<p>In Server Explorer, expand the <strong>Rating</strong> table, open the <strong>
+insert.js</strong> file and replace the current insert function with the following code.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">function insert(item, user, request) {
+      request.execute({
+             success: function() {
+                     request.respond();
+                     sendNotifications(item, user);
+             }
+      });
+}
+
+function sendNotifications(item, user) {
+      var sql = &quot;SELECT DISTINCT c.channelUri, s.name FROM channels c &quot; &#43; 
+      &quot;INNER JOIN Session s ON c.userId = s.userId AND s.id = ?&quot;;
+      console.log(sql, item.sessionId);
+      mssql.query(sql, [item.sessionId], {
+             success: function(results) {
+                     console.log(results);
+                     if (results.length === 0)
+                     {
+                            return;
+                     }
+                     var channels = results.map(function(r) { return r.channelUri });
+                     push.wns.sendTileWideSmallImageAndText04(channels, {
+                            image1src: item.imageUrl,
+                            text1: item.rating &#43; &quot; stars&quot;,
+                            text2: item.raterName &#43; &quot; just rated your session '&quot; &#43; results[0].name &#43; &quot;'&quot;
+                     },
+                     { success: console.log });
+             }
+      });
+}</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;insert(item,&nbsp;user,&nbsp;request)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.execute(<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;<span class="js__operator">function</span>()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.respond();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sendNotifications(item,&nbsp;user);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;sendNotifications(item,&nbsp;user)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sql&nbsp;=&nbsp;<span class="js__string">&quot;SELECT&nbsp;DISTINCT&nbsp;c.channelUri,&nbsp;s.name&nbsp;FROM&nbsp;channels&nbsp;c&nbsp;&quot;</span>&nbsp;&#43;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;INNER&nbsp;JOIN&nbsp;Session&nbsp;s&nbsp;ON&nbsp;c.userId&nbsp;=&nbsp;s.userId&nbsp;AND&nbsp;s.id&nbsp;=&nbsp;?&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(sql,&nbsp;item.sessionId);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mssql.query(sql,&nbsp;[item.sessionId],&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;<span class="js__operator">function</span>(results)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(results);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(results.length&nbsp;===&nbsp;<span class="js__num">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;channels&nbsp;=&nbsp;results.map(<span class="js__operator">function</span>(r)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;r.channelUri&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push.wns.sendTileWideSmallImageAndText04(channels,&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image1src:&nbsp;item.imageUrl,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text1:&nbsp;item.rating&nbsp;&#43;&nbsp;<span class="js__string">&quot;&nbsp;stars&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text2:&nbsp;item.raterName&nbsp;&#43;&nbsp;<span class="js__string">&quot;&nbsp;just&nbsp;rated&nbsp;your&nbsp;session&nbsp;'&quot;</span>&nbsp;&#43;&nbsp;results[<span class="js__num">0</span>].name&nbsp;&#43;&nbsp;<span class="js__string">&quot;'&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;success:&nbsp;console.log&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<pre><code class="C#">
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> This script uses a bit of SQL to look up the Channel URI and name for the current user from the Channel table. This channel information is used by Windows Notification Services to send a push message to a specific user. Once it has
+ the channel information, it will call out to the Windows Notification Service with one line of code and send a push notification to the client application.</p>
+</blockquote>
+</li><li>
+<p>Press <strong>CTRL&#43;S</strong> to save the changes to the server-side script.</p>
+</li><li>
+<p>Open the <strong>App.xaml.cs</strong> file in the <strong>Windows Store</strong> project and locate the mobile service's static field declaration at the top of the
+<strong>App</strong> class. Make note of the mobile service url and mobile service key.</p>
+</li><li>
+<p>Open the <strong>App.xaml.cs</strong> file in the <strong>Windows Phone 8</strong> project and replace the placeholders
+<strong>{mobile-service-url}</strong> and <strong>{mobile-service-key}</strong> with the values obtained in the previous step.</p>
+</li><li>
+<p>Go back to Visual Studio and run the <strong>Windows Store</strong> app.</p>
+</li><li>
+<p>You will now pin the EventBuddy app to the start screen, so you can see when the push notifications arrives:</p>
+<ul>
+<li>Press the Windows logo key to go to the Start screen. </li><li>Swipe up from the middle of the screen or click the arrow button in the lower-left corner to go to the Apps view.
+</li><li>In the Apps view, swipe up from the bottom of the screen and tap Customize or, if using a mouse, right-click an empty space on the screen and click Customize.
+</li><li>Find the app in the apps list and tap it or click it. </li><li>Tap or click Pin to Start. </li></ul>
+</li><li>
+<p>If you are using the Windows Phone emulator, run the <strong>Windows Phone 8</strong> project from Visual Studio in order to start the app in the emulator. If you are using a Windows Phone device, start the Event Buddy app from the device.</p>
+</li><li>
+<p>In the Event Buddy Windows Phone 8 app, log in and select the event that you created earlier. Then select a session to view the session details.</p>
+</li><li>
+<p>Rate a session by selecting 1-5 stars.</p>
+<p><img id="106919" src="description/phone-session-rating.png" alt="phone-session-rating"></p>
+</li><li>
+<p>Go to the Windows 8 <strong>Start Screen</strong>. Notice that the Event Buddy tile is updated with the session and rating information.</p>
+<p><img id="106920" src="description/start-push-notification.png" alt="start-push-notification" width="500" height="412"></p>
+</li></ol>
+<h3 id="Known_Issues">Known Issues</h3>
+<ol>
+<li>
+<p>When trying to send a push notification using the Windows Phone 8 application, the client might not receive the notification. This is likely caused by not having registered the application in the Windows Store (this is being done by Visual Studio as part
+ of the process that configures Push Notifications).</p>
+<p>If you review your Mobile Services logs you might find the following error:</p>
+<p><em>Error in script '/table/Rating.insert.js'. Error: The cloud service is not authorized to send a notification to this URI even though they are authenticated.</em></p>
+<p>Follow the steps in the <strong>Running the Sample</strong> section of this document, to add Push Notifications to the application to resolve the issue.</p>
+</li><li>
+<p>EventBuddy allows users to associate files to sessions by uploading them to SkyDrive. However, if you try to upload a file to SkyDrive and you receive a message saying that there was an error while logging in to Skydrive, it is likely by not having registered
+ the application in the Windows Store (this is being done by Visual Studio as part of the process that configures Push Notifications).</p>
+</li><li>
+<p>When uploading a file with the Windows 8 application, the download link returned by the Skydrive API
+<strong>expires in 1 hour</strong>. After an hour has passed, you won't be able to download the file with your Windows Phone client.</p>
+</li></ol>
+<h3 id="Summary">Summary</h3>
+<p>In this sample you've seen how a developer can quickly connect an offline application to the cloud to store data and add support for authentication. You've seen how easily you can connect different devices to the same services and interact with them using
+ push notifications.</p>
+<p>&nbsp;</p>
+<p>Want to see More Windows Store app samples using Windows Azure Mobile Services - check out the
+<a href="http://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=Technology&amp;f%5B0%5D.Value=Windows%20Azure%20Mobile%20Services&amp;f%5B0%5D.Text=Windows%20Azure%20Mobile%20Services" >
+full listing</a>. If you cant find a specific&nbsp;Windows Azure Mobile Services&nbsp;scenaro in the
+<a href="http://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=Technology&amp;f%5B0%5D.Value=Windows%20Azure%20Mobile%20Services&amp;f%5B0%5D.Text=Windows%20Azure%20Mobile%20Services" >
+full listing</a> please&nbsp;feel free to reach out to me on Twitter&nbsp;via&nbsp;<a href="http://www.twitter.com/cloudnick" >@cloudnick</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

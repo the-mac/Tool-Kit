@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AsyncLiveConnectSDK</id>
+    <version>1.0.5</version>
+    <title>Async Live Connect SDK</title>
+    <authors>bc3tech</authors>
+    <owners>bc3tech</owners>
+    <projectUrl>http://asynclivesdk.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A package that enables the use of the async/await pattern with Microsoft's Live Connect SDK on Windows Phone.</description>
+    <summary>Use Async CTP Live Connect SDK on Windows Phone 7 and 8</summary>
+    <releaseNotes>Tested against Async CTP v0.3, WP8, and Live Connect SDK 5.2</releaseNotes>
+    <copyright>2012</copyright>
+    <language>en-US</language>
+    <tags>live connect, sdk, windows live, async ctp, async,</tags>
+    <dependencies>
+      <group targetFramework="WindowsPhone7.1">
+        <dependency id="AsyncCTP" version="0.3" />
+      </group>
+    </dependencies>
+    <references>
+      <reference file="LiveSDKAsync.dll" />
+      <reference file="Microsoft.Live.Controls.dll" />
+      <reference file="Microsoft.Live.dll" />
+      <reference file="LiveSDKAsync.WP8.dll" />
+    </references>
+  </metadata>
+</package>

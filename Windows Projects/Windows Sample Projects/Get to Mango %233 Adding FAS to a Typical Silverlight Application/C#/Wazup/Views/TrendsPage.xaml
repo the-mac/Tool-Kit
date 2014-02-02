@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Wazup.Views.TrendsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:localHelpers="clr-namespace:Wazup.Helpers"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    >
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="TrendTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="#" FontSize="32" MinHeight="72" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFC425" Margin="0,0,1,0"  />
+                <TextBlock Text="{Binding trend_index}" FontSize="32" MinHeight="72" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFC425" Margin="0,0,5,0"  />
+                <TextBlock x:Name="TextBlockTrend" Text="{Binding name}" MouseLeftButtonUp="TextBlockTrend_MouseLeftButtonUp" FontSize="32" MinHeight="72" VerticalAlignment="Center" HorizontalAlignment="Left"  />
+            </StackPanel>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,16,0,27">
+            <TextBlock x:Name="ApplicationTitle" Text="TWITTER TRENDS" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="top trends" Margin="9,-8,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListBox ItemsSource="{Binding Trends}" ItemTemplate="{StaticResource TrendTemplate}" FontSize="32" />
+            <localHelpers:ProgressBarWithText Text="Loading Trends..." ShowProgress="{Binding IsTrendsLoading}" />
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Trends by whatthetrend.com" VerticalAlignment="Top" Grid.Row="1" Foreground="#99FFFFFF" Margin="0,0,0,5"/>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonDigg" IconUri="/Resources/App.Digg.png" Text="Digg" Click="AppbarButtonDigg_Click" />
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonTwitter" IconUri="/Resources/App.Twitter.png" Text="Twitter" Click="AppbarButtonTwitter_Click" />
+            <shell:ApplicationBarIconButton x:Name="AppbarButtonBlog" IconUri="/Resources/App.Blog.png" Text="Blog" Click="AppbarButtonBlog_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

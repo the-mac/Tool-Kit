@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext">
+      <summary>
+            The main class representing the authority issuing tokens for your target services
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.#ctor(System.String)">
+      <summary>
+            Constructor to create the context with the address of the authority
+            Using this constructor will turn ON validation of the authority URL by default
+            </summary>
+      <param name="authority">Address of the authority to issue token</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.#ctor(System.String,System.Boolean)">
+      <summary>
+            Constructor to create the context with the address of the authority and flag to turn address validation off
+            Using this constructor, address validation can be turned off. Make sure you are aware of the security implication of not validating the address.
+            </summary>
+      <param name="authority">Address of the authority to issue token</param>
+      <param name="validateAuthority">Flag to turn address validation ON or OFF.</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireTokenAsync(System.String,System.String)">
+      <summary>
+            Acquires a security token from the authority
+            </summary>
+      <param name="resource">Identifier of the target resource, recipient of the requested token</param>
+      <param name="clientId">Identifier of the client requesting the token</param>
+      <returns>In case of success, it contains an Access Token, a Refresh Token and the Access Token's expiration time. In case of failure, it provides information through the Error and Error Description properties</returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireTokenAsync(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+            Acquires security token from the authority
+            </summary>
+      <param name="resource">Identifier of the target resource, recipient of the requested token</param>
+      <param name="clientId">Identifier of the client requesting the token</param>
+      <param name="redirectUri">Address to return to upon receiving a response from the authority. Setting this parameter will cause authentication to take place in a new browser session, with no access to previously stored cookies. Leave this parameter as null if you want to have access to any previously stored cookies.</param>
+      <param name="loginHint">This parameter will be used to pre-populate the username field in the authentication form. Please note that the end user can still edit the username field and authenticate as a different user. This parameter can be null.</param>
+      <param name="extraQueryParameters">This parameter will be appended as is to the querystring in the HTTP autentication request to the authority. The parameter can be null.</param>
+      <returns>In case of success, it contains Access Token, Refresh Token and the Access Token's expiration time. In case of failure, it contains Error and Error Description</returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.AcquireTokenByRefreshTokenAsync(System.String,System.String)">
+      <summary>
+            Acquires a security token from the authority using a Refresh Token previously received
+            The Refresh Token will not be stored in the token cache
+            </summary>
+      <param name="refreshToken">Refresh Token to use in the refresh flow</param>
+      <param name="clientId">Name or ID of the client requesting the token</param>
+      <returns>In case of success, it contains: Access Token, Refresh Token and Access Token Expiration Time. In case of failure, it contains: Error and Error Description</returns>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationContext.TokenCache">
+      <summary>
+            Property to customize AAL's token caching behavior. By default, TokenCache is set to an instance of class DefaultTokenCache which is a persistent cache based on PasswordVault. 
+            DefaultTokenCache will automatically save tokens whenever you obtain them. Cached tokens will be available only to the application that saved them. 
+            The DefaultTokenCache will outlive the application's execution, and will be available in subsequent runs.
+            To turn OFF token caching, set TokenCache to null.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationStatus">
+      <summary>
+            Represents the outcome of one authentication operation
+            </summary>
+    </member>
+    <member name="F:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationStatus.Succeeded">
+      <summary>
+            Authentication Succeeded
+            </summary>
+    </member>
+    <member name="F:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationStatus.Failed">
+      <summary>
+            Authentication Failed
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult">
+      <summary>
+            Contains the results of one token acquisition operation. 
+            It can either contain the requested token (and supporting data) or information about why the token acquisition failed
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.Status">
+      <summary>
+            The outcome of the token acquisition operation
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.AccessToken">
+      <summary>
+            The Access Token requested
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.RefreshToken">
+      <summary>
+            The Refresh Token associated with the requested Access Token. Note: not all operations will return a Refresh Token
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.ExpiresOn">
+      <summary>
+            The point in time in which the Access Token returned in the AccessToken property ceases to be valid
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.Error">
+      <summary>
+            In case of error, this property provides details
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.AuthenticationResult.ErrorDescription">
+      <summary>
+            In case of error, this property provides detailed information on what caused it
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache">
+      <summary>
+            Default implementation of a token cache for Windows Store applications.
+            AAL uses DefaultTokenCache automatically.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.ITokenCache">
+      <summary>
+            Interface representing the essential operations required to implement a token cache.
+            New classes will need to implement this interface in order to be used as token caches in AAL
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.ITokenCache.Add(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey,Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue)">
+      <summary>
+            Adds a new item in the cache
+            </summary>
+      <param name="key">The cache key of the object being added</param>
+      <param name="value">The object to be cached</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.ITokenCache.Get(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey)">
+      <summary>
+            Retrieves a specific object from the cache
+            </summary>
+      <param name="key">The cache key associated to the object being retrieved</param>
+      <returns></returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.ITokenCache.Remove(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey)">
+      <summary>
+            Removes a specific object from the cache
+            </summary>
+      <param name="key">The cache key associated to the object to be removed </param>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.ITokenCache.ClockSkew">
+      <summary>
+            Represents the clock skew between the local machine and the token issuing authority
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.#ctor">
+      <summary>
+            Default constructor
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.Add(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey,Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue)">
+      <summary>
+            Adds a new token in the cache. The token and accompanying info will be persisted in the PasswordVault
+            </summary>
+      <param name="key">The cache key to be used for identifying the new entry in the cache</param>
+      <param name="value">The token (and accompanying info) to be cached </param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.Get(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey)">
+      <summary>
+            Retrieves a cache entry matching with the provided key
+            </summary>
+      <param name="key">The key of the entry to retrieve</param>
+      <returns>A cached token corresponding to the key provided</returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.Remove(Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey)">
+      <summary>
+            Removes form the cache the specific entry matching with the provided key
+            </summary>
+      <param name="key">The key of the entry to remove</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.RetrieveAllKeys">
+      <summary>
+            Returns the list of all the keys in the cache
+            </summary>
+      <returns>The list of all the keys in the cache </returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.Clear">
+      <summary>
+            Empties the cache, by eliminating all entries
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.DefaultTokenCache.ClockSkew">
+      <summary>
+            Represents the clock skew between the local machine and the authority issuing the tokens to be cached
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey">
+      <summary>
+            class representing a composite key for a token cache
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.#ctor(System.String,System.String,System.String)">
+      <summary>
+            TokenCacheKey constructor
+            </summary>
+      <param name="authority">The authority that issued the token being cached</param>
+      <param name="resource">The resource for which the cached token is meant to be used with</param>
+      <param name="clientId">The identifier of the client application which acquired the cached token in the first place</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.#ctor(System.String,System.String,System.String,System.String)">
+      <summary>
+            TokenCacheKey constructor
+            </summary>
+      <param name="authority">Aauthority that issued the token being cached</param>
+      <param name="resource">Resource for which the cached token is meant to be used with</param>
+      <param name="clientId">Identifier of the client application which acquired the cached token in the first place</param>
+      <param name="user">Username that was provided at token acquisition time</param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.ToString">
+      <summary>
+            Writes a string representing the current TokenCacheKey instance
+            </summary>
+      <returns>A string representing the current TokenCacheKey instance</returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.FromString(System.String)">
+      <summary>
+            Builds a new TokenCacheKey instance from its string representation        
+            </summary>
+      <param name="cacheKey">A string representation of a TokenCacheKey</param>
+      <returns>A TokenCacheKey containing the settings stored in the string in input</returns>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.Authority">
+      <summary>
+            "&gt;Authority that issued the token being cached
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.Resource">
+      <summary>
+            Resource for which the cached token is meant to be used with
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.ClientId">
+      <summary>
+            Identifier of the client application which acquired the cached token in the first place
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheKey.User">
+      <summary>
+            Username that was provided at token acquisition time
+            </summary>
+    </member>
+    <member name="T:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue">
+      <summary>
+            Represents the content item of a token cache
+            </summary>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.#ctor(System.String,System.String,System.DateTimeOffset)">
+      <summary>
+            TokenCacheValue constructor
+            </summary>
+      <param name="accessToken">An Access Token</param>
+      <param name="refreshToken">The Refresh Token meant to refresh the associated Access Token</param>
+      <param name="expiresOn"> The point in time in which the Access Token provided in accessToken ceases to be valid </param>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.ToString">
+      <summary>
+            Writes a string representing the current TokenCacheValue instance
+            </summary>
+      <returns>A string representing the current TokenCacheValue instance</returns>
+    </member>
+    <member name="M:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.FromString(System.String)">
+      <summary>
+            Builds a new TokenCacheValue from its string representation
+            </summary>
+      <param name="cacheValue">A string representation of a TokenCacheValue</param>
+      <returns>A new TokenCacheValue instance containing the settings stored in the string in input </returns>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.AccessToken">
+      <summary>
+            An Access Token
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.RefreshToken">
+      <summary>
+            The Refresh Token meant to refresh the associated Access TOken
+            </summary>
+    </member>
+    <member name="P:Microsoft.Preview.WindowsAzure.ActiveDirectory.Authentication.TokenCacheValue.ExpiresOn">
+      <summary>
+            The point in time in which the Access Token stored in the AccessToken property ceases to be valid
+            </summary>
+    </member>
+  </members>
+</doc>

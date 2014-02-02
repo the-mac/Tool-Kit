@@ -1,0 +1,54 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CSWP8SkydriveNote.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <TextBlock x:Name="ApplicationTitle" Text="SkyDrive NoteBook" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Note List" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
+            <ListBox x:Name="listBox_NoteList" 
+                     ItemsSource="StaticResource noteList"
+                     Margin="0,0,0,60"
+                     BorderThickness="1" Hold="listBox_NoteList_Hold" Tap="listBox_NoteList_Tap">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="0,5,0,0"
+                                    Background="DarkRed"  Width="450">
+                            <TextBlock Text="{Binding Title}"></TextBlock>
+                            <TextBlock Text="{Binding LastEditTime}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button x:Name="btn_NewNote" Content="New Note" Margin="0,620,0,0" 
+                    Background="DarkRed" BorderThickness="0"
+                    Click="btn_NewNote_Click"></Button>
+            <!--<Button x:Name="btn_Upload" Content="Save to SkyDrive" Margin="240,620,0,0"
+                    Background="DarkRed" BorderThickness="0"
+                    Click="btn_Upload_Click"></Button>-->
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

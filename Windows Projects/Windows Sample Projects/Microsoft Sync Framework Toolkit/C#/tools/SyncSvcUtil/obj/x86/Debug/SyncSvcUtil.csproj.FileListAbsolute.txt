@@ -1,0 +1,7 @@
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\bin\SyncSvcUtil.exe.config
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\bin\SyncSvcUtil.XML
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\bin\SyncSvcUtil.exe
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\bin\SyncSvcUtil.pdb
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\tools\SyncSvcUtil\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\tools\SyncSvcUtil\obj\x86\Debug\SyncSvcUtil.exe
+E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\tools\SyncSvcUtil\obj\x86\Debug\SyncSvcUtil.pdb

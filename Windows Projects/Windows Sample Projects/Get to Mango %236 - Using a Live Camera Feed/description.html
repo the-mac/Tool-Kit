@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Get to Mango #6 - Using a Live Camera Feed</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Get to Mango #6 - Using a Live Camera Feed</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Silverlight
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">10/13/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Get-to-Mango-6-Using-a-d25e003d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div><a href="http://channel9.msdn.com/posts/Get-to-Mango-6-Using-a-Live-Camera-Feed">Corresponding VIDEO for this CODE SAMPLE</a></div>
+<h1>Introduction</h1>
+<div>New in Windows Phone 7.5 is the <strong>ability to use the direct camera feed</strong> in your application. This video and sample walk you through the process of how to use the camera feed in your application.</div>
+<h1><span>Building the Sample</span></h1>
+<div>Full details for this sample are available in the included file, Transcript.docx.</div>
+<div><span style="font-size:20px; font-weight:bold">Description</span></div>
+<div>Windows Phone Mango offers two possible approaches for accessing a live camera feed</div>
+<div>One approach is using Silverlight 4&rsquo;s Webcam feature. This allows to record audio and video, with data from the camera supplied to the application via an asynchronous callback.</div>
+<div>A different approach is to use the PhotoCamera class. This class allows us to control the phone&rsquo;s camera and respond to events such as the camera&rsquo;s button being pressed, allowing for better integration with the device. When using the phone
+ camera, we need to actively request data from the camera from our code.</div>
+<div>We will be using the PhotoCamera as it gives us greater control and ease of use in our scenario &ndash; to create an application that allows taking pictures after applying various effects to them.</div>
+<h1>Demo</h1>
+<div>Let us have a look at a nearly finished version of the application, with which we will demonstrate how easy it is to add and manipulate a live camera feed.</div>
+<ul>
+<li>Start by going over the solution in the starter folder. The main page, used for displaying the live feed and applying effects (focus on the rectangle containing the video brush), the preview page used for showing captured images and the various effect classes
+ which process images to apply an effect. </li><li>Run the application and show its current state (without a camera feed). </li><li>Open MainPage.xaml and locate the radio button called &ldquo;effectsRadioButton&rdquo;. Add the following event handler: Click=&quot;RadioButton_Click&quot;.
+</li><li>Locate the radio button called located under the &ldquo;lstFrames&rdquo; listbox. Add the following event handler: Click=&quot;frameRadioButton_Click&quot;.
+</li><li>Open MainPage.xaml.cs and examine the fields at the top of the class. </li><li>Add the following code to the OnNavigatedTo method (instead of the placeholder). This code initializes the camera, registers to its various events and then sets it as the source for the video brush displayed on the main page:
+</li></ul>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">if(null == camera)
+{
+    camera = new PhotoCamera();
+ 
+    camera.Initialized &#43;= camera_Initialized;
+ 
+    //Event is fired when the button is half pressed
+    CameraButtons.ShutterKeyHalfPressed &#43;= camera_ButtonHalfPress;
+ 
+    //Event is fired when the button is fully pressed
+    CameraButtons.ShutterKeyPressed &#43;= camera_ButtonFullPress;
+    //Event is fired when the capture sequence is complete and an image is available.
+    camera.CaptureImageAvailable &#43;= camera_CaptureImageAvailable;
+ 
+    camera.CaptureCompleted &#43;= camera_CaptureCompleted;
+ 
+    //Set the VideoBrush source to the camera
+    viewfinderBrush.SetSource(camera);
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">if</span>(<span class="cs__keyword">null</span>&nbsp;==&nbsp;camera)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;camera&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;PhotoCamera();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;camera.Initialized&nbsp;&#43;=&nbsp;camera_Initialized;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Event&nbsp;is&nbsp;fired&nbsp;when&nbsp;the&nbsp;button&nbsp;is&nbsp;half&nbsp;pressed</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CameraButtons.ShutterKeyHalfPressed&nbsp;&#43;=&nbsp;camera_ButtonHalfPress;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Event&nbsp;is&nbsp;fired&nbsp;when&nbsp;the&nbsp;button&nbsp;is&nbsp;fully&nbsp;pressed</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CameraButtons.ShutterKeyPressed&nbsp;&#43;=&nbsp;camera_ButtonFullPress;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Event&nbsp;is&nbsp;fired&nbsp;when&nbsp;the&nbsp;capture&nbsp;sequence&nbsp;is&nbsp;complete&nbsp;and&nbsp;an&nbsp;image&nbsp;is&nbsp;available.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;camera.CaptureImageAvailable&nbsp;&#43;=&nbsp;camera_CaptureImageAvailable;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;camera.CaptureCompleted&nbsp;&#43;=&nbsp;camera_CaptureCompleted;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Set&nbsp;the&nbsp;VideoBrush&nbsp;source&nbsp;to&nbsp;the&nbsp;camera</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;viewfinderBrush.SetSource(camera);&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<ul>
+<li>
+<div class="endscriptcode">&nbsp;Add the following code to the OnNavigatedFrom method (instead of the placeholder). This code performs cleanup before leaving the main page:</div>
+</li></ul>
+<div><br>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">CameraButtons.ShutterKeyPressed -= camera_ButtonFullPress;
+CameraButtons.ShutterKeyHalfPressed -= camera_ButtonHalfPress;
+ 
+pumpEffectedFrames = false;
+camera.Dispose();
+camera = null;</pre>
+<div class="preview">
+<pre class="csharp">CameraButtons.ShutterKeyPressed&nbsp;-=&nbsp;camera_ButtonFullPress;&nbsp;
+CameraButtons.ShutterKeyHalfPressed&nbsp;-=&nbsp;camera_ButtonHalfPress;&nbsp;
+&nbsp;&nbsp;
+pumpEffectedFrames&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+camera.Dispose();&nbsp;
+camera&nbsp;=&nbsp;<span class="cs__keyword">null</span>;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<ul>
+<li>Let us start reviewing the different handlers for various camera events. We will begin with the camera_Initialized handler. This handler simply examines the camera&rsquo;s available resolutions, picks the first one that is 640 pixels wide and simulates
+ an effect selection by calling EffectSelected. </li><li>EffectSelected changes the display according to the selected effect. If no effect is selected (this is implemented by the &ldquo;echo&rdquo; effect) then the live video feed is displayed. Otherwise, a frame may be selected (and displayed) and the user may
+ have chosen to apply an effect to the live feed. If an effect was indeed applied, the live feed is replaced with a bitmap that we will update from code using altered live feed information according to the selected effect. This may require us to start the image
+ processing thread and so we call StartImageProcessing. </li><li>StartImageProcessing&nbsp; simply initializes the bitmap we use to store the processing result and initializes the thread that pumps data from the camera and processes it. This thread logic is implemented in the PumpEffectFrames method.
+</li><li>PumpEffectFrames&nbsp; is simply a loop that updates the preview image using a call to PushProcessedFrame with some synchronization in place to avoid updating the preview while a picture is being taken.
+</li><li>PushProcessedFrame and GetPreviewBuffer are both used to get the preview buffer from the camera as 32-bits of ARGB data, apply the current effect to them and then place the result in the preview bitmap.
+</li><li>Jump to one of the effect classes (the negative effect is fairly simple) to show how an effect manipulates the data from the preview buffer.
+</li><li>Moving back to the other camera event handlers we can take a look at camera_ButtonHalfPress, which causes the camera to focus, and camera_ButtonHalfPress, which tells the camera to pause all further updates to the preview image and then uses the PhotoCamera
+ instance to take a picture. </li><li>Once an image is available after the capture, camera_CaptureImageAvailable is invoked, applying the selected effect to the image and saving it to both the image hub and the preview area in the application itself. Later, camera_CaptureComplete is called
+ to restore the preview image updates. </li></ul>
+<h1>Summary</h1>
+<div>In this video, we walked you through an application that utilizes a live camera feed and saw how we can alter this feed in real-time to supply the end user with a unique experience. I hope to see you in our other videos.</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

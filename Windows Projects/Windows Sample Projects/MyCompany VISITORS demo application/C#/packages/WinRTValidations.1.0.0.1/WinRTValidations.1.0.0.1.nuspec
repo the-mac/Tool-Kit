@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>WinRTValidations</id>
+    <version>1.0.0.1</version>
+    <title>Windows 8 Validations</title>
+    <authors>JosuéYeray</authors>
+    <owners>JosuéYeray</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Silverlight like textbox validations for Windows 8. Adding a simple behavior to your textbox you can make text validations with regular expressions, numeric / non numeric or not empty conditions. Also  you can control when the validation is realized: on loaded, on keypress, on tapped, on lost focus...</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>Windows Store, validations</tags>
+    <dependencies>
+      <group targetFramework="Windows8.0">
+        <dependency id="WinRtBehaviors" version="1.0.3" />
+      </group>
+    </dependencies>
+    <references>
+      <reference file="WinRTValidations.dll" />
+    </references>
+  </metadata>
+</package>
