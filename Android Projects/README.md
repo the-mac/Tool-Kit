@@ -8,8 +8,5 @@ Learning Android:
 
 http://cse.spsu.edu/cslab/tutors/android.htm
 
-http://developer.android.com/training/index.html
+http://developer.android.com/training/basics/firstapp/index.html
 
-
-If you are testing an Android application
-========
