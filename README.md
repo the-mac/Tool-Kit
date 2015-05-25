@@ -1,7 +1,7 @@
 Tool-Kit
 ========
 
-Location for Mobile Application Club (MAC) members to add/access content.
+Location for Mobile Application Community (MAC) members to add/access content.
 
 Learning Git
 ========
