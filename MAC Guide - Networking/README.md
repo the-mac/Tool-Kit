@@ -6,14 +6,14 @@ Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, a
 Android Client
 ========
 
-The Android client project is built in Android Studio. The project has 1 Major file title NetworkClient.java, and 2 lesser/supporting files for strings and visual layouts.
+The [Android](http://www.android.com/index.html) client project is built in [Android Studio](http://developer.android.com/tools/studio/index.html). The project has 1 Major file titled [NetworkClient.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/AndroidClient/app/src/main/java/us/mac/the/networking/NetworkClient.java), and 2 lesser/supporting files for strings and visual layouts.
 
 iOS Client
 ========
 
-The iOS client project is built in Xcode. The project has 1 Major file title NetworkClient.m, and 2 lesser/supporting files for strings and visual layouts.
+The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https://developer.apple.com/xcode/). The project has 1 Major file titled [NetworkClient.m](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/iOS%20Client/iOS%20Client/NetworkClient.m), and 4 lesser/supporting files for network connection and visual layouts.
 
 
 Network Server
 ========
-The Server is a Pure Java application titled Server.java, that starts a TCP connection awaiting clients.
+The Server is a Pure [Java](http://www.java.com/en/download/faq/develop.xml) application titled [Server.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/Wifi%20Server/src/Server.java), that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) connection awaiting clients.
