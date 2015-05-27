@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="BM_EF5_WebService.SpatialService" CodeBehind="SpatialService.svc.cs" %>

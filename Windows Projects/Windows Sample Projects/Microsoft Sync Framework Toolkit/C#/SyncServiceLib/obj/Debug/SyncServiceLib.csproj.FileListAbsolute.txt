@@ -1,9 +1,0 @@
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\server\Microsoft.Synchronization.Services.XML
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\server\Microsoft.Synchronization.Services.dll
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\server\Microsoft.Synchronization.Services.pdb
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\ResolveAssemblyReference.cache
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\Microsoft.Synchronization.Services.diagxslt.resources
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\ResGen.read.1.tlog
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\ResGen.write.1.tlog
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\Microsoft.Synchronization.Services.dll
-E:\SYNC_FX_V3_CODEPLEX_1\Sql\sync\src\odatasync\syncopensrc\src\SyncServiceLib\obj\Debug\Microsoft.Synchronization.Services.pdb

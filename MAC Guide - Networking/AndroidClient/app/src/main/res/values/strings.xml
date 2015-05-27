@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NetworkTutorial</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">Hello World, AClientActivity!</string>
+    <string name="connect_prompt">Start the client by pressing the connect button</string>
+    <string name="send_prompt">Enter your message and press the send button</string>
+    <string name="ip_address">IP Address</string>
+    <string name="message_prompt">Say something...</string>
+    <string name="device_ip">Device\'s IP Address: </string>
+    <string name="server_ip">Server\'s IP Address: </string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="send">Send</string>
+
+</resources>
+

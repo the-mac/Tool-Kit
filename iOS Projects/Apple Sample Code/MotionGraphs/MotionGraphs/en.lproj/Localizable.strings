@@ -1,5 +1,0 @@
-/* 
-  Localizable.strings
-*/
-
-"graphSegmentFormat" = "%1.2f, %1.2f, %1.2f"; // Format string for accessibility text for last x, y, z values added.

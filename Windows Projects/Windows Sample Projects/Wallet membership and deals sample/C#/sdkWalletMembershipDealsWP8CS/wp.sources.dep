@@ -1,6 +1,0 @@
-BUILD_PASS1_CONSUMES= \
-    src\appplat\src\frameworks\microsoft.phone.interop\runtime|PASS1 \
-    src\appplat\src\frameworks\microsoft.phone\runtime|PASS1 \
-    src\runtimes\silverlight\xcp\clr\clrlib\net|PASS1 \
-    src\runtimes\silverlight\xcp\clr\clrlib\slm|PASS1 \
-

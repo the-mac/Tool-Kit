@@ -1,1 +1,0 @@
-This is just not XML.  In fact, it's plain text!

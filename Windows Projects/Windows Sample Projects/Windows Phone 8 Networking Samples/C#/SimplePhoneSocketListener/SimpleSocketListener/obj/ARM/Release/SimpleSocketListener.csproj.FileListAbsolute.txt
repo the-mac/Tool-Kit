@@ -1,5 +1,0 @@
-C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\SimpleSocketListener\obj\ARM\Release\App.g.cs
-C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\SimpleSocketListener\obj\ARM\Release\MainPage.g.cs
-C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\SimpleSocketListener\obj\ARM\Release\SimpleSocketListener.g.resources
-C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\SimpleSocketListener\obj\ARM\Release\SimpleSocketListener.Resources.AppResources.resources
-C:\Users\timlav\Desktop\BUILD DEMOS\SimplePhoneSocketListener\SimpleSocketListener\obj\ARM\Release\SimpleSocketListener.csproj.GenerateResource.Cache

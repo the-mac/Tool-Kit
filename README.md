@@ -3,6 +3,17 @@ Tool-Kit
 
 Location for Mobile Application Community (MAC) members to add/access content.
 
+MAC Guides
+========
+
+MAC Guides are intended to assist in learning Mobile development. Each sample application will have the full source, but there will be instructions available on how to build the project(s) from scratch.
+
+MAC Guide - Networking
+========
+
+Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, and 1 Network Server). The Server is a Pure Java application, that starts a TCP Server awaiting for connections from its clients. The clients are Android and iOS projects, that can send a message that is altered and returned to the client.
+
+
 Learning Git
 ========
 
