@@ -18,4 +18,4 @@ The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https:/
 
 Wifi Network Server
 ========
-The Server is a pure [Java](http://www.java.com/en/download/faq/develop.xml) application titled [Server.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/Wifi%20Server/src/Server.java), that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) connection awaiting clients. The Server must be connected to a Wifi Netwrk to allow the clients to connect to it locally (on the same Wifi Network).
+The Server is a pure [Java](http://www.java.com/en/download/faq/develop.xml) application titled [Server.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/Wifi%20Server/src/Server.java), that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) connection awaiting clients. The Server must be connected to a Wifi Network to allow the clients to connect to it locally (on the same Wifi Network).
