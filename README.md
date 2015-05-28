@@ -11,8 +11,9 @@ MAC Guides are intended to assist in learning Mobile development. Each sample ap
 MAC Guide - Networking
 ========
 
-Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, and 1 Network Server). The Server is a Pure Java application, that starts a TCP Server awaiting for connections from its clients. The clients are Android and iOS projects, that can send a message that is altered and returned to the client.
+Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, and 1 Network Server).
 
+The Server is a pure [Java](http://www.java.com/en/download/faq/develop.xml) application, that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) Server awaiting for connections from its clients. The clients are [Android](http://www.android.com/index.html) and [iOS](https://www.apple.com/ios/) projects, that can send a message to the Wifi Server that is altered and returned to the [Client](http://en.wikipedia.org/wiki/Client_(computing)).
 
 Learning Git
 ========
