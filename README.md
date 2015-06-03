@@ -8,7 +8,8 @@ MAC Guides
 
 MAC Guides are intended to assist in learning Mobile development. Each sample application will have the full source, but there will be instructions available on how to build the project(s) from scratch.
 
-**Please feel free to join in!** One of the simplest ways to get involved is proof reading our content and submitting suggested changes. And if you're feeling a bit ambitious, you can even create your own guides (i.e., Ruby Server, Windows Mobile Client, and more) based upon our existing ([Server](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Server%20Template.md), [Client](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Client%20Template.md)) templates.
+##Please feel free to join in!
+One of the simplest ways to get involved is proof reading our content and submitting suggested changes. And if you're feeling a bit ambitious, you can even create your own guides (i.e., Ruby Server, Windows Mobile Client, and more) based upon our existing ([Server](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Server%20Template.md), [Client](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Client%20Template.md)) templates.
 
 MAC Guide - [Networking](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking)
 ========
