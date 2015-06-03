@@ -8,7 +8,7 @@ MAC Guides
 
 MAC Guides are intended to assist in learning Mobile development. Each sample application will have the full source, but there will be instructions available on how to build the project(s) from scratch.
 
-MAC Guide - Networking
+MAC Guide - [Networking](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking)
 ========
 
 Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, and 1 Network Server).
