@@ -8,7 +8,7 @@ MAC Guides
 
 MAC Guides are intended to assist in learning Mobile development. Each sample application will have the full source, but there will be instructions available on how to build the project(s) from scratch.
 
-Please feel free to join in. One of the simplest ways to get involved is proof reading our content and submitting suggested changes. And if you're feeling a bit ambitious, you can even create your own guides (i.e., Ruby Server, Windows Mobile Client, and more) based upon our existing ([Server](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Server%20Template.md), [Client](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Client%20Template.md)) templates.
+**Please feel free to join in!** One of the simplest ways to get involved is proof reading our content and submitting suggested changes. And if you're feeling a bit ambitious, you can even create your own guides (i.e., Ruby Server, Windows Mobile Client, and more) based upon our existing ([Server](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Server%20Template.md), [Client](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Client%20Template.md)) templates.
 
 MAC Guide - [Networking](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking)
 ========
@@ -17,8 +17,10 @@ Inside of the MAC Guide - Networking folder are 3 projects (2 Network Clients, a
 
 The Server is a pure [Java](http://www.java.com/en/download/faq/develop.xml) application, that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) Server awaiting for connections from its clients. The clients are [Android](http://www.android.com/index.html) and [iOS](https://www.apple.com/ios/) projects, that can send a message to the Wifi Server that is altered and returned to the [Client](http://en.wikipedia.org/wiki/Client_(computing)).
 
-Learning Git
+Other Resources
 ========
+
+###Learning Git
 
 * https://help.github.com/articles/set-up-git#platform-all
 
@@ -33,8 +35,7 @@ Learning Git
 * http://pcottle.github.io/learnGitBranching/index.html
 
 
-Building MAC Git
-========
+###Building MAC Git
 
 * http://www.doublecloud.org/2013/01/how-to-read-git-repository-using-java-apis/
 
