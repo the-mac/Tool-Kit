@@ -10,6 +10,11 @@ Android Client
 
 The [Android](http://www.android.com/index.html) client project is built in [Android Studio](http://developer.android.com/tools/studio/index.html). The project has 1 Major file titled [NetworkClient.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/AndroidClient/app/src/main/java/us/mac/the/networking/NetworkClient.java), and 2 lesser/supporting files for strings and visual layouts.
 
+Android Eclipse Client - [MAC Guide](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo)
+========
+
+The [Android](http://www.android.com/index.html) client project is built in [Eclipse](https://eclipse.org/). The project has 1 Major file titled [NetworkClient.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/AndroidEclipseClient/src/us/mac/the/networking/NetworkClient.java), and 2 lesser/supporting files for strings and visual layouts.
+
 iOS Client
 ========
 
