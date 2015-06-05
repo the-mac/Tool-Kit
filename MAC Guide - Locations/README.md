@@ -8,13 +8,13 @@ The locations will be a predetermined list of locations (City, Latitude, Longitu
 Android Google Client
 ========
 
-The [Android](http://www.android.com/index.html) client project is built in [Android Studio](http://developer.android.com/tools/studio/index.html). The starter projects provided by Google can be found [here](https://github.com/googlemaps/hellomap-android).
+The [Android](http://www.android.com/index.html) client project is built in [Android Studio](http://developer.android.com/tools/studio/index.html). The starter project provided by Google can be found [here](https://github.com/googlemaps/hellomap-android).
 
 
 iOS Google Client
 ========
 
-The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https://developer.apple.com/xcode/). The starter projects provided by Google can be found [here](https://github.com/googlemaps/hellomap-ios).
+The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https://developer.apple.com/xcode/). The starter project provided by Google can be found [here](https://github.com/googlemaps/hellomap-ios).
 
 
 <!--
