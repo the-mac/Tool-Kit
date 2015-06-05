@@ -14,9 +14,9 @@ One of the simplest ways to get involved is proof reading our content and submit
 MAC Guide - [Locations](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Locations)
 ========
 
-Inside of the MAC Guide - Locations folder are 2 projects (1 Android Locations Client, and 1 iOS Locations Client).
+Inside of the MAC Guide - Locations folder are 2 projects (1 [Android](http://www.android.com/index.html) Locations Client, and 1 [iOS](https://www.apple.com/ios/) Locations Client).
 
-The locations will be a predetermined list of locations (City, Latitude, Longitude) around the world. These locations will be used for directions, showing Street View, and displaying different map view types. 
+The locations will be a predetermined list (in [JSON Format](http://json.org/example)) of locations (City, Latitude, Longitude) around the world. These locations will be used for directions, showing [Street View](https://www.instantstreetview.com/), and displaying different [Map View Types](http://www.w3schools.com/googleapi/google_maps_types.asp).
 
 MAC Guide - [Networking](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking)
 ========
