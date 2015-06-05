@@ -25,10 +25,16 @@ NSString* ipAddress;
     [self.connect setTitle:@"Connect" forState:UIControlStateNormal];
     [self.connect setTitle:@"Disconnect" forState:UIControlStateSelected];
     
-    [self setText:ipBoxID with: ipAddress];
-    [self setText:textID with: @"To start the client press the connect button"];
+    if([ipAddress isEqualToString:@"error"]) {
+        [self setText:ipHintID with: @"Check Wifi"];
+        [self setValues:ipBoxID with:false];
+    }
+    else {
+        [self setText:ipBoxID with: ipAddress];
+        [self setValues:ipBoxID with:true];
+    }
     
-    [self setValues:ipBoxID with:true];
+    [self setText:textID with: @"To start the client press the connect button"];
     [self setValues:msgBoxID with:false];
     [self setValues:sendID with:false];
     
@@ -43,6 +49,7 @@ NSString* ipAddress;
     switch(view)
     {
         case ipBoxID: [self.ipBox setText:content]; break;
+        case ipHintID: [self.ipBox setPlaceholder:content]; break;
         case msgBoxID: [self.msgBox setText:content]; break;
         case textID: [self.text setText:[content stringByAppendingString:@"\n\n"]]; break;
         case appendTextID: [self.text setText:[NSString stringWithFormat:@"%@%@\n\n",self.text.text,content]]; break;
@@ -101,25 +108,28 @@ NSString* ipAddress;
     NSLog(@"setUpIOStreams");
     
     self.mCommunicator = [[Communicator alloc] init];
-        
+    
     self.mCommunicator->host = [NSString stringWithFormat:@"http://%@",self.ipBox.text];
     self.mCommunicator->port = 8888;
-        
-    [self.mCommunicator setup];
+    
+    [self.mCommunicator setup: self];
+    
 }
 
 - (void)enableConnection {
     @try {
         if(self.mCommunicator == nil) [self setUpIOStreams];
+        else {
+            [self setText:textID with:[NSString stringWithFormat:@"%@%@",@"Device's IP Address: ",ipAddress]];
+            [self setText:appendTextID with:[NSString stringWithFormat:@"%@%@",@"Server's IP Address: ",self.ipBox.text]];
+            [self setText:msgBoxHintID with: @"Say something..."];
+            [self setText:appendTextID with: @"Enter your message then press the send button"];
+            
+            [self setValues:sendID with:true];
+            [self setValues:msgBoxID with:true];
+            [self setValues:ipBoxID with:false];
+        }
         
-        [self setText:textID with:[NSString stringWithFormat:@"%@%@",@"Device's IP Address: ",ipAddress]];
-        [self setText:appendTextID with:[NSString stringWithFormat:@"%@%@",@"Server's IP Address: ",self.ipBox.text]];
-        [self setText:msgBoxHintID with: @"Say something..."];
-        [self setText:appendTextID with: @"Enter your message then press the send button"];
-    
-        [self setValues:sendID with:true];
-        [self setValues:msgBoxID with:true];
-        [self setValues:ipBoxID with:false];
     } @catch (NSException * e) {
         [self setValues:connectID with:false];
     }
@@ -132,20 +142,18 @@ NSString* ipAddress;
         @try {
             [self.mCommunicator close];
             self.mCommunicator = nil;
-        } @catch (NSException * e) { }
+        } @catch (NSException * e) {}
         
-        [self setText:textID with:@"Press the connect button to start the client"];
-        [self setText:msgBoxID with: @""];
-        [self setText:msgBoxHintID with: @""];
-        
-        [self setValues:ipBoxID with:true];
-        [self setValues:msgBoxID with:false];
-        [self setValues:sendID with:false];
     }
-    else
-    {
-        [self setValues:connectID with:false];
-    }
+    
+    [self setText:textID with:@"Press the connect button to start the client"];
+    [self setText:msgBoxID with: @""];
+    [self setText:msgBoxHintID with: @""];
+    
+    [self setValues:ipBoxID with:true];
+    [self setValues:msgBoxID with:false];
+    [self setValues:sendID with:false];
+    [self setValues:connectID with:false];
 }
 
 - (IBAction)sendDatOverConnection

@@ -8,36 +8,32 @@
 
 #import <Foundation/Foundation.h>
 #import "Communicator.h"
+#import "NetworkClient.h"
 
 CFReadStreamRef readStream;
 CFWriteStreamRef writeStream;
 
 NSInputStream *inputStream;
 NSOutputStream *outputStream;
+NetworkClient *networkClient;
 
 @implementation Communicator
 
-- (void)setup {
+- (void)setup :(NetworkClient*) client {
+    networkClient = client;
     NSURL *url = [NSURL URLWithString:host];
-    
-    NSLog(@"Setting up connection to %@ : %i", [url absoluteString], port);
     
     CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)[url host], port, &readStream, &writeStream);
     
     if(!CFWriteStreamOpen(writeStream)) {
-        NSLog(@"Error, writeStream not open");
         
         return;
     }
+    
     [self open];
-    
-    NSLog(@"Status of outputStream: %lu", [outputStream streamStatus]);
-    
-    return;
 }
 
 - (void)open {
-    NSLog(@"Opening streams.");
     
     inputStream = (__bridge NSInputStream *)readStream;
     outputStream = (__bridge NSOutputStream *)writeStream;
@@ -51,7 +47,6 @@ NSOutputStream *outputStream;
 }
 
 - (void)close {
-    NSLog(@"Closing streams.");
     
     [inputStream close];
     [outputStream close];
@@ -66,26 +61,22 @@ NSOutputStream *outputStream;
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)event {
-    NSLog(@"Stream triggered.");
     
     switch(event) {
         case NSStreamEventHasSpaceAvailable: {
             if(stream == outputStream) {
-                NSLog(@"outputStream is ready.");
+                NSLog(@"outputStream is ready.\n\n");
+                [networkClient enableConnection];
             }
+            
             break;
         }
         default: {
             NSLog(@"Stream is sending an Event: %i", event);
-            
+            if(event == NSStreamEventErrorOccurred) [networkClient disableConnection];
             break;
         }
     }
-}
-
-- (void)readIn:(NSString *)s {
-    NSLog(@"Reading in the following:");
-    NSLog(@"%@", s);
 }
 
 - (void)writeOut:(NSString *)s {
@@ -93,10 +84,6 @@ NSOutputStream *outputStream;
     uint8_t *buf = (uint8_t *)[output UTF8String];
     
     [outputStream write:buf maxLength:strlen((char *)buf)];
-    
-    NSLog(@"Writing out the following:");
-    NSLog(@"%@", s);
-    
 }
 
 - (NSString *) readIn {
@@ -113,8 +100,6 @@ NSOutputStream *outputStream;
         }
     }
     
-    NSLog(@"Reading in the following:");
-    NSLog(@"%@", total);
     [self close];
     
     return total;

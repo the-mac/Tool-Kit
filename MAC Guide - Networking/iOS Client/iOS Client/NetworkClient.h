@@ -15,6 +15,7 @@
 #define connectID 1232
 #define sendID 1233
 #define ipBoxID 1234
+#define ipHintID 1134
 #define msgBoxID 1235
 #define textID 1236
 #define appendTextID 1237
@@ -32,6 +33,8 @@
 - (IBAction)onClick:(id)sender;
 
 - (IBAction)sendDatOverConnection;
+- (void) enableConnection;
+- (void) disableConnection;
 
 @end
 

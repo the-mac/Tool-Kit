@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class NetworkClient;
 @interface Communicator : NSObject <NSStreamDelegate> {
 @public
     
@@ -18,7 +19,7 @@
     int port;
 }
 
-- (void)setup;
+- (void)setup:(NetworkClient*) client;
 - (void)open;
 - (void)close;
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
