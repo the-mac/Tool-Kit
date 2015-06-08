@@ -1,14 +1,14 @@
 //
 //  Communicator.m
-//  iOS Client
+//  iOS Swift Client
 //
-//  Created by Christopher Miller on 5/26/15.
+//  Created by Christopher Miller on 6/7/15.
 //  Copyright (c) 2015 The MAC. All rights reserved.
-//  Source: https://gist.github.com/rjungemann/446256
+//
 
 #import <Foundation/Foundation.h>
 #import "Communicator.h"
-#import "NetworkClient.h"
+#import "iOS_Swift_Client-Swift.h"
 
 CFReadStreamRef readStream;
 CFWriteStreamRef writeStream;
@@ -52,10 +52,11 @@ NetworkClient *networkClient;
 }
 
 - (void)setup :(NetworkClient*) client {
+    self.connected = NO;
     networkClient = client;
-    NSURL *url = [NSURL URLWithString:host];
+    NSURL *url = [NSURL URLWithString:self.host];
     
-    CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)[url host], port, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)[url host], self.port, &readStream, &writeStream);
     
     if(!CFWriteStreamOpen(writeStream)) {
         
@@ -81,9 +82,11 @@ NetworkClient *networkClient;
     
     [inputStream open];
     [outputStream open];
+    self.connected = YES;
 }
 
 - (void)close {
+    self.connected = NO;
     
     [inputStream close];
     [outputStream close];
@@ -109,7 +112,10 @@ NetworkClient *networkClient;
         }
         default: {
             NSLog(@"Stream is sending an Event: %i", event);
-            if(event == NSStreamEventErrorOccurred) [networkClient disableConnection];
+            if(event == NSStreamEventErrorOccurred) {
+                self.connected = NO;
+                [networkClient disableConnection];
+            }
             break;
         }
     }

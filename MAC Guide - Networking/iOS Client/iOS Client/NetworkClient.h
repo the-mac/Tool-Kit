@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#include <ifaddrs.h>
-#include <arpa/inet.h>
 #import "Communicator.h"
 
 #define connectID 1232
@@ -37,4 +35,3 @@
 - (void) disableConnection;
 
 @end
-

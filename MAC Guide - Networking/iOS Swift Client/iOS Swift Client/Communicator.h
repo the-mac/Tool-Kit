@@ -1,25 +1,25 @@
 //
 //  Communicator.h
-//  iOS Client
+//  iOS Swift Client
 //
-//  Created by Christopher Miller on 5/26/15.
+//  Created by Christopher Miller on 6/7/15.
 //  Copyright (c) 2015 The MAC. All rights reserved.
-//  Source: https://gist.github.com/rjungemann/446256
+//
 
-#ifndef AClient_Communicator_h
-#define AClient_Communicator_h
+#ifndef iOS_Swift_Client_Communicator_h
+#define iOS_Swift_Client_Communicator_h
 
 #import <Foundation/Foundation.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
 @class NetworkClient;
-@interface Communicator : NSObject <NSStreamDelegate> {
-@public
-    
-    NSString *host;
-    int port;
-}
+@interface Communicator : NSObject <NSStreamDelegate>
+
+@property (nonatomic, retain) NSString* host;
+@property (nonatomic) int port;
+@property (nonatomic) BOOL connected;
+
 + (NSString *)getLocalIpAddress;
 - (void)setup:(NetworkClient*) client;
 - (void)open;

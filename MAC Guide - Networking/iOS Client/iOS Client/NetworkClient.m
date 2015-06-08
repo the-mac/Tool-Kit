@@ -20,7 +20,7 @@ NSString* ipAddress;
 }
 
 - (void)setUpAllViews {
-    ipAddress = [self getLocalIpAddress];
+    ipAddress = [Communicator getLocalIpAddress];
     
     [self.connect setTitle:@"Connect" forState:UIControlStateNormal];
     [self.connect setTitle:@"Disconnect" forState:UIControlStateSelected];
@@ -73,37 +73,6 @@ NSString* ipAddress;
     }
 }
 
-- (NSString *)getLocalIpAddress {
-    
-    NSString *address = @"error";
-    struct ifaddrs *interfaces = NULL;
-    struct ifaddrs *temp_addr = NULL;
-    int success = 0;
-    // retrieve the current interfaces - returns 0 on success
-    success = getifaddrs(&interfaces);
-    if (success == 0) {
-        // Loop through linked list of interfaces
-        temp_addr = interfaces;
-        while(temp_addr != NULL) {
-            if(temp_addr->ifa_addr->sa_family == AF_INET) {
-                // Check if interface is en0 which is the wifi connection on the iPhone
-                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
-                    // Get NSString from C String
-                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
-                    
-                }
-                
-            }
-            
-            temp_addr = temp_addr->ifa_next;
-        }
-    }
-    // Free memory
-    freeifaddrs(interfaces);
-    return address;
-    
-}
-
 - (void)setUpIOStreams {
     NSLog(@"setUpIOStreams");
     
@@ -119,16 +88,15 @@ NSString* ipAddress;
 - (void)enableConnection {
     @try {
         if(self.mCommunicator == nil) [self setUpIOStreams];
-        else {
-            [self setText:textID with:[NSString stringWithFormat:@"%@%@",@"Device's IP Address: ",ipAddress]];
-            [self setText:appendTextID with:[NSString stringWithFormat:@"%@%@",@"Server's IP Address: ",self.ipBox.text]];
-            [self setText:msgBoxHintID with: @"Say something..."];
-            [self setText:appendTextID with: @"Enter your message then press the send button"];
-            
-            [self setValues:sendID with:true];
-            [self setValues:msgBoxID with:true];
-            [self setValues:ipBoxID with:false];
-        }
+        
+        [self setText:textID with:[NSString stringWithFormat:@"%@%@",@"Device's IP Address: ",ipAddress]];
+        [self setText:appendTextID with:[NSString stringWithFormat:@"%@%@",@"Server's IP Address: ",self.ipBox.text]];
+        [self setText:msgBoxHintID with: @"Say something..."];
+        [self setText:appendTextID with: @"Enter your message then press the send button"];
+        
+        [self setValues:sendID with:true];
+        [self setValues:msgBoxID with:true];
+        [self setValues:ipBoxID with:false];
         
     } @catch (NSException * e) {
         [self setValues:connectID with:false];
