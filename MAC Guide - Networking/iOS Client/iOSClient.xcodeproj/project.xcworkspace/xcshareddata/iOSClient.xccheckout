@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E22C0F22-D4CB-4871-B278-959E8B6970F8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>iOSClient</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>069D1A10015D498825B3FF01E8949D8244A64106</key>
 		<string>https://github.com/the-mac/Tool-Kit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MAC Guide - Networking/iOS Client/iOSClient.xcodeproj/project.xcworkspace</string>
+	<string>MAC Guide - Networking/iOS Client/iOSClient.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>069D1A10015D498825B3FF01E8949D8244A64106</key>
