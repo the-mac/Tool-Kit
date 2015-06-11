@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E22C0F22-D4CB-4871-B278-959E8B6970F8</string>
+	<string>07320783-E9A2-4B2F-B611-E17BE79806BA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/the-mac/Tool-Kit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MAC Guide - Networking/iOS Client/iOSClient.xcodeproj/project.xcworkspace</string>
+	<string>MAC Guide - Networking/iOS Interfaces/iOS Interfaces.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>069D1A10015D498825B3FF01E8949D8244A64106</key>
