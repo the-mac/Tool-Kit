@@ -108,7 +108,7 @@ NetworkClient *networkClient;
             break;
         }
         default: {
-            NSLog(@"Stream is sending an Event: %i", event);
+            NSLog(@"Stream is sending an Event: %ul", event);
             if(event == NSStreamEventErrorOccurred) [networkClient disableConnection];
             break;
         }
