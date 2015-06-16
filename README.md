@@ -1,7 +1,7 @@
 Tool-Kit
 ========
 
-Location for Mobile Application Community (MAC) members to add/access content.
+Location for Mobile Application Community (MAC) members to add/access tools to build their next favorite app.
 
 MAC Guides
 ========
