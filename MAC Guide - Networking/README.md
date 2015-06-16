@@ -15,12 +15,12 @@ The [Android](http://www.android.com/index.html) client project is built in [And
 
 The [Android](http://www.android.com/index.html) client project is built in [Eclipse](https://eclipse.org/). The project has 1 Major file titled [NetworkClient.java](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/AndroidEclipseClient/src/us/mac/the/networking/NetworkClient.java), and 2 lesser/supporting files for strings and visual layouts.
 
-iOS Client
+[iOS Client](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking/iOS%20Client) - [MAC Guide](https://github.com/the-mac/Tool-Kit/wiki/iOS-Network-(Xcode)-HowTo)
 ========
 
 The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https://developer.apple.com/xcode/). The project has 1 Major file titled [NetworkClient.m](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/iOS%20Client/iOS%20Client/NetworkClient.m), and 4 lesser/supporting files for network connection and visual layouts.
 
-iOS Swift Client
+[iOS Swift Client](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking/iOS%20Swift%20Client) - [MAC Guide](https://github.com/the-mac/Tool-Kit/wiki/iOS-Swift-Network-(Xcode)-HowTo)
 ========
 
 The [iOS](https://www.apple.com/ios/) client project is built in [Xcode](https://developer.apple.com/xcode/). The project has 1 Major file titled [NetworkClient.swift](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guide%20-%20Networking/iOS%20Swift%20Client/iOS%20Swift%20Client/NetworkClient.swift), and 3 lesser/supporting files for network connection and visual layouts.
