@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Android PHP Client</string>
+
+    <string name="prompt">Message to be sent to PHP Server</string>
+
+</resources>

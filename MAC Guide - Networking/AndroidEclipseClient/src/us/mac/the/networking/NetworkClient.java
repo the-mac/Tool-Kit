@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.Formatter;
 import android.view.View;
@@ -30,6 +31,7 @@ public class NetworkClient extends Activity {
 
     private Socket client;
     private String ipAddress;
+    private String ipSentence;
     private DataOutputStream outToServer;
     private BufferedReader inFromServer;
 
@@ -93,19 +95,28 @@ public class NetworkClient extends Activity {
         return Formatter.formatIpAddress(info.getIpAddress());
     }
 
-    private void setUpIOStreams() throws IOException
+    private void setUpIOStreams() throws Exception
     {
-        InetAddress addr = InetAddress.getByName(
-                ipBox.getText().toString());
+    	new AsyncTask<Void, Void, Object>() {
+    		@Override
+    		protected Void doInBackground(Void... params) {
+    			try {
+    				InetAddress addr = InetAddress.getByName(
+    						ipBox.getText().toString());
 
-        client = new Socket(addr, 8888);
+    				client = new Socket(addr, 8888);
 
-        outToServer = new DataOutputStream(
-                client.getOutputStream());
+    				outToServer = new DataOutputStream(
+    						client.getOutputStream());
 
-        inFromServer = new BufferedReader(
-                new InputStreamReader(
-                        client.getInputStream()));
+    				inFromServer = new BufferedReader(
+    						new InputStreamReader(
+    								client.getInputStream()));
+    			}
+    			catch(Exception e) {}
+    			return null;
+    		}
+    	}.execute().get();
     }
 
     private void enableConnection()
@@ -123,7 +134,7 @@ public class NetworkClient extends Activity {
             setValues(R.id.send,true);
             setValues(R.id.ipBox,false);
             setValues(R.id.msgBox,true);
-        } catch (IOException e) {
+        } catch (Exception e) {
 
             setValues(R.id.connect,false);
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
@@ -131,16 +142,28 @@ public class NetworkClient extends Activity {
 
     }
 
-    private void disableConnection()
+    private void disableConnection() throws Exception
     {
         if(client != null)
         {
-            try {
-                client.close();
-            } catch (IOException e) {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            }
 
+        	new AsyncTask<Void, Void, Object>() {
+        		@Override
+        		protected Void doInBackground(Void... params) {
+
+                    try {
+                        client.close();
+                    } catch (final IOException e) {
+                    	runOnUiThread(new Runnable() {
+							@Override public void run() {
+								Toast.makeText(NetworkClient.this, e.toString(), Toast.LENGTH_LONG).show();
+							}
+						});
+                    }
+        			return null;
+        		}
+        	}.execute().get();
+        	
             setText(R.id.text,"Press the connect button to start the client");
             setText(R.id.msgBox,"");
             setText(msgBoxHint,"");
@@ -156,21 +179,37 @@ public class NetworkClient extends Activity {
         }
     }
 
-    private void sendDataOverConnection()
+    private void sendDataOverConnection() throws Exception
     {
-        String sentence = msgBox.getText().toString() + "\n";
+        ipSentence = msgBox.getText().toString() + "\n";
         setText(R.id.msgBox, "");
         try {
-            if(client.isClosed()) setUpIOStreams();
 
-            outToServer.writeBytes(sentence);
-            String modifiedSentence = inFromServer.readLine();
+        	new AsyncTask<Void, Void, Object>() {
+        		@Override
+        		protected Void doInBackground(Void... params) {
 
-            sentence = ("OUT TO SERVER: " + sentence);
-            sentence += "\n" +("IN FROM SERVER: " + modifiedSentence);
-            client.close();
+                    try {
+                        if(client.isClosed()) setUpIOStreams();
 
-        } catch (IOException e) {
+                        outToServer.writeBytes(ipSentence);
+                        String modifiedSentence = inFromServer.readLine();
+
+                        ipSentence = ("OUT TO SERVER: " + ipSentence);
+                        ipSentence += "\n" +("IN FROM SERVER: " + modifiedSentence);
+                        client.close();
+                    } catch (final Exception e) {
+                    	runOnUiThread(new Runnable() {
+							@Override public void run() {
+								Toast.makeText(NetworkClient.this, e.toString(), Toast.LENGTH_LONG).show();
+							}
+						});
+                    }
+                    
+        			return null;
+        		}
+        	}.execute().get();
+        } catch (Exception e) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
 
             setValues(R.id.ipBox,true);
@@ -178,23 +217,29 @@ public class NetworkClient extends Activity {
             setValues(R.id.send,false);
             setValues(R.id.msgBox,false);
         }
-        setText(appendText, sentence);
+
+        setText(appendText, ipSentence);
     }
 
     public void onClick(View v)
     {
-        switch(v.getId())
-        {
-            case R.id.connect:
-                if(connect.isChecked())
-                    enableConnection();
-                else
-                    disableConnection();
-                break;
-            case R.id.send:
-                sendDataOverConnection();
-                break;
-        }
+    	try {
+			
+    		switch(v.getId())
+    		{
+    		case R.id.connect:
+    			if(connect.isChecked())
+    				enableConnection();
+    			else
+    				disableConnection();
+    			break;
+    		case R.id.send:
+    			sendDataOverConnection();
+    			break;
+    		}
+		} catch (Exception e) {
+			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+		}
     }
 
 }

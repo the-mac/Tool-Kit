@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+	    
+		<EditText
+		    android:id="@+id/editText"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_weight="1"
+		    android:background="#333333"
+		    android:text="@string/prompt"
+		    android:textColor="#88000000"
+		    android:textColorHighlight="#000000"
+		    android:textStyle="bold" />
+	        
+	    <Button
+	        android:id="@+id/button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="sendJSON"
+	        android:text="Send JSON" />
+	</LinearLayout>
+        
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textColor="#88000000"
+        android:background="#88333333"
+        android:textColorHighlight="#000000" />
+</LinearLayout>
