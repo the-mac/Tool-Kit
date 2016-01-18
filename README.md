@@ -11,19 +11,19 @@ MAC Guides are intended to assist in learning Mobile App Development. Each guide
 ##Feel free to join in!
 One of the simplest ways to get involved is proof reading our content and submitting suggested changes. And if you're feeling a bit ambitious, you can even create your own guides (i.e., Ruby Server, Windows Mobile Client, and more) based upon our existing ([Server](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Server%20Template.md), [Client](https://github.com/the-mac/Tool-Kit/blob/master/MAC%20Guides%20-%20Wiki%20Resources/MAC%20Guides%20-%20Wiki%20Client%20Template.md)) templates.
 
-MAC Guide - [Locations](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Locations)
-========
-
-Inside of the MAC Guide - Locations folder are 2 projects (1 [Android](http://www.android.com/index.html) Locations Client, and 1 [iOS](https://www.apple.com/ios/) Locations Client).
-
-The locations will be a predetermined list (in [JSON Format](http://json.org/example)) of locations (City, Latitude, Longitude) around the world. These locations will be used for directions, showing [Street View](https://www.instantstreetview.com/), and displaying different [Map View Types](http://www.w3schools.com/googleapi/google_maps_types.asp).
-
 MAC Guide - [Networking](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Networking)
 ========
 
 Inside of the MAC Guide - Networking folder are 5 projects (4 Network Clients, and 1 Network Server).
 
 The Server is a pure [Java](http://www.java.com/en/download/faq/develop.xml) application, that starts a [TCP](http://www.webopedia.com/TERM/T/TCP.html) Server awaiting for connections from its clients. The clients are [Android](http://www.android.com/index.html) and [iOS](https://www.apple.com/ios/) projects, that can send a message to the Wifi Server that is altered and returned to the [Client](http://en.wikipedia.org/wiki/Client_(computing)).
+
+MAC Guide - [Locations](https://github.com/the-mac/Tool-Kit/tree/master/MAC%20Guide%20-%20Locations)
+========
+
+Inside of the MAC Guide - Locations folder are 2 projects (1 [Android](http://www.android.com/index.html) Locations Client, and 1 [iOS](https://www.apple.com/ios/) Locations Client).
+
+The locations will be a predetermined list (in [JSON Format](http://json.org/example)) of locations (City, Latitude, Longitude) around the world. These locations will be used for directions, showing [Street View](https://www.instantstreetview.com/), and displaying different [Map View Types](http://www.w3schools.com/googleapi/google_maps_types.asp).
 
 Other Resources
 ========
