@@ -3,6 +3,8 @@ Tool-Kit
 
 Location for Mobile Application Community (MAC) members to add/access tools to build their next favorite app.
 
+![MAC](https://media.licdn.com/mpr/mpr/jc/AAEAAQAAAAAAAAJ3AAAAJGIyY2NmZDk0LWFhODAtNDRlZi1hZGRhLWNkODhlNzQ2ZTFkZA.png)
+
 MAC Guides
 ========
 
