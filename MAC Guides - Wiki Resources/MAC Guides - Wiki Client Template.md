@@ -3,7 +3,7 @@ The version of android used in this guide is 2.3.3 - Level 10 (Gingerbread to si
 
 Prerequisites for this guide are HowTo:
 * [Build a Java Application (in Eclipse)](https://github.com/the-mac/Tool-Kit/wiki/Java-(Eclipse)---How-To)
-* [Build an Android Application (in Eclipse)](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo)
+* [Build an Android Application (in Studio)](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)-HowTo)
 
 In this guide, you will be covering the following topics:
 * [Set Up Android Project](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#1-set-up-android-project)
