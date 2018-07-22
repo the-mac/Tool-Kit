@@ -6,13 +6,13 @@ Prerequisites for this guide are HowTo:
 * [Build an Android Application (in Studio)](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)-HowTo)
 
 In this guide, you will be covering the following topics:
-* [Set Up Android Project](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#1-set-up-android-project)
-* [Run the template project on an emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#2-run-the-template-project-on-an-emulator)
-* [Set up the Front End (UI Configuration)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#3-set-up-the-front-end-ui-configuration)
-* [Run the Front End project on an emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#4-run-the-front-end-project-on-an-emulator)
-* [Complete Front End (Control View States)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#5-complete-front-end-control-view-states)
-* [Complete Back End (Network Configuration)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#6-complete-back-end-network-configuration)
-* [Run Client application with Wifi Server](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Eclipse)--HowTo#7-run-client-application-with-wifi-server)
+* [Set Up Android Project](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#1-set-up-android-project)
+* [Run the template project on an emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#2-run-the-template-project-on-an-emulator)
+* [Set up the Front End (UI Configuration)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#3-set-up-the-front-end-ui-configuration)
+* [Run the Front End project on an emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#4-run-the-front-end-project-on-an-emulator)
+* [Complete Front End (Control View States)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#5-complete-front-end-control-view-states)
+* [Complete Back End (Network Configuration)](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#6-complete-back-end-network-configuration)
+* [Run Client application with Wifi Server](https://github.com/the-mac/Tool-Kit/wiki/Android-Network-(Studio)--HowTo#7-run-client-application-with-wifi-server)
 
 The source code for this project can be found [here](https://github.com/the-mac/Tool-Kit/raw/master/MAC%20Guide%20-%20Networking/AndroidEclipseClient.zip).
 
@@ -21,7 +21,7 @@ The guide concludes with an Android Client that connects to a Java Server's TCP 
 ## 1 Set Up Android Project
 
 ### 1.1 Create an Android Project
-Select File → New → Other → Android → Android Project and create the Android project, by entering the name "AndroidEclipseClient" in the box labeled Project Name and select SDK Version 2.3.3.
+Select File → New → Other → Android → Android Project and create the Android project, by entering the name "AndroidClient" in the box labeled Project Name and select SDK Version 2.3.3.
 
 ![Create an Android Project](https://raw.githubusercontent.com/the-mac/Tool-Kit/master/MAC%20Guides%20-%20Wiki%20Resources/images/Screen%20Shot%202015-06-03%20at%204.31.27%20AM.png)
 
@@ -46,7 +46,7 @@ Create class by the name "NetworkClient" by pasting the contents below onto the 
 	import android.app.Activity;
 	import android.os.Bundle;
 	
-	public class NetworkClient extends Activity{
+	public class NetworkClient extends Activity {
 	   
 	    /** Called when the activity is first created. */
 	    @Override
@@ -72,11 +72,11 @@ Note: While "res" contains structured values which are known to the Android plat
 
 ## 2 Run the template project on an emulator
 
-### 2.1 Follow HowTo [Build an Android Application (in Eclipse)](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo)
+### 2.1 Follow HowTo [Build an Android Application (in Eclipse)](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo)
 
 Note: With this guide you can learn the basics of how to work with Android Eclipse projects and some of Eclipse's nifty features. 
 
-The most relevant section is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with Android projects in Eclipse.
+The most relevant section is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with Android projects in Eclipse.
 
 Once you have a working emulator, you can start the Android Application. First select your project, or right click on it, then select Run-As-> Android Application and be patient, because the emulator starts up very slowly. You should get a blank screen, but the application will run.
 
@@ -289,7 +289,7 @@ From now on I assume you are able to use the properties menu on the UI elements,
 ## 4 Run the Front End project on an emulator
 
 ### 4.1 Restart the Android Application
-The most relevant pre-requisite you will need here is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
+The most relevant pre-requisite you will need here is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
 
 Select your project, right click on it, Run-As-> Android Application and be patient, because the emulator starts up very slowly. You should get the following result:
 
@@ -401,7 +401,7 @@ The "implements OnClickListener", "connect.setOnClickListener" and "public void 
 
 
 ### 5.3 Restart the Android Application
-The most relevant pre-requisite is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
+The most relevant pre-requisite is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
 
 Select your project, right click on it, Run-As-> Android Application and be patient, because the emulator starts up very slowly. With the new changes you can now input anythting you like into the ipBox EditText. The Android Application will now allow you to click on the Connect Button and show the contents of the ipBox as a Toast (Pop-Up). You should get the result in following image:
 
@@ -528,7 +528,7 @@ Here is main.xml file with the addition of the onClick property on the "connect"
 	</LinearLayout>
 
 ### 5.5 Restart the Android Application
-The most relevant pre-requisite is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
+The most relevant pre-requisite is [#3 Run sample implementation on Emulator](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#3-run-sample-implementation-on-emulator), and the remaining sections help to familiarize with android projects in eclipse.
 
 Select your project, right click on it, Run-As-> Android Application and be patient, because the emulator starts up very slowly. You should get the result in the following image:
 
@@ -740,10 +740,10 @@ Note: With this guide you can learn the basics of how to run Java TCP Server pro
 * Retrieves the socket's input/output streams and opens a reader/writer on them.
 * Communicates using the I/O Streams via client by reading/writing from/to socket.
 
-### 7.3 Follow HowTo [Run sample implementation on Actual Device](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#4-run-sample-implementation-on-actual-device)
+### 7.3 Follow HowTo [Run sample implementation on Actual Device](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#4-run-sample-implementation-on-actual-device)
 Note: With this guide you can learn the basics of how to run Android Eclipse projects and some other nifty features.
 
-The most relevant section is [#4.2 Run API Demos sample on Device](https://github.com/the-mac/Tool-Kit/wiki/Android-(Eclipse)--HowTo#42-run-api-demos-sample-on-device), and the remaining sections help to familiarize with android and eclipse.
+The most relevant section is [#4.2 Run API Demos sample on Device](https://github.com/the-mac/Tool-Kit/wiki/Android-(Studio)--HowTo#42-run-api-demos-sample-on-device), and the remaining sections help to familiarize with android and eclipse.
 
 ### 7.4 Run Client application on Device
 
