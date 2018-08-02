@@ -30,7 +30,8 @@ The locations will be a predetermined list (in [JSON Format](http://json.org/exa
 Other Resources
 ========
 
-###Learning Git
+Learning Git
+========
 
 * https://help.github.com/articles/set-up-git#platform-all
 
@@ -45,7 +46,8 @@ Other Resources
 * http://pcottle.github.io/learnGitBranching/index.html
 
 
-###Building MAC Git
+Building MAC Git
+========
 
 * http://www.doublecloud.org/2013/01/how-to-read-git-repository-using-java-apis/
 
